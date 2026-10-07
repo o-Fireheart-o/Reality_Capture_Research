@@ -13,8 +13,9 @@ Reality Capture 분야를 다섯 개의 연구 질문으로 나눠 조사한 한
 
 | 문서 | 다루는 질문 |
 |------|-------------|
-| [00. 용어집](docs/00-glossary.md) | 공통 용어 67개 |
+| [00. 용어집](docs/00-glossary.md) | 공통 용어 69개 |
 | [01. 도구 지형도](docs/01-tools.md) | 세상에는 어떤 Reality Capture 도구들이 있는가 |
+| └ [COLMAP 심층](docs/01-tools/colmap.md) | 오픈소스 SfM·MVS 기준 구현은 무엇이고 어디까지 쓸 수 있는가 |
 | [02. 역사와 진행 방향](docs/02-history.md) | Reality Capture는 어떤 역사를 가지고 있으며 현재 어떻게 발전해 가고 있는가 |
 | [03. 현재의 쓰임새](docs/03-use-cases.md) | Reality Capture는 현 시대에 어떻게 사용되고 있는가 |
 | [04. 연계 기술 지도](docs/04-adjacent-tech.md) | Reality Capture 기술과 연계할 수 있는 기술은 어떤 것이 있는가 |

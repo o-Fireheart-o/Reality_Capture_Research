@@ -58,8 +58,9 @@ docs/05-learning-roadmap.md  질문 5
 
 | 문서 | 담당 질문 | 상태 |
 |------|-----------|------|
-| `00-glossary.md` | 공통 | 완료 (67개 용어, 6개 문서 병합) |
+| `00-glossary.md` | 공통 | 완료 (69개 용어, 7개 문서 병합) |
 | `01-tools.md` | 1 | 완료 |
+| `01-tools/colmap.md` | 1 (도구 심층) | 완료 |
 | `02-history.md` | 2 | 완료 |
 | `03-use-cases.md` | 3 | 완료 |
 | `04-adjacent-tech.md` | 4 | 완료 |

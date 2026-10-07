@@ -1,7 +1,7 @@
 # 00. 용어집
 
 작성일: 2026-09-21
-최종수정일: 2026-09-21
+최종수정일: 2026-10-07
 
 Reality Capture 문서 묶음에서 쓰는 용어를 한곳에 모았다. 각 용어는 여기서 한 번만 정의하고,
 다른 문서에서는 이 문서로 링크한다. 정의 뒤의 URL은 그 정의의 근거이며 확인 날짜는 2026-09-21이다.
@@ -75,6 +75,16 @@ https://colmap.github.io/
 
 **MVS(Multi-View Stereo)**
 자세가 이미 알려진 다시점 영상에서 조밀한 점군이나 메시를 생성하는 후속 단계.
+https://colmap.github.io/
+
+**전역 SfM(Global SfM)**
+모든 사진 쌍의 상대 자세를 한꺼번에 풀어 전체 카메라 자세를 정한 뒤 번들조정을 하는 방식. 사진을 한 장씩
+붙여 나가는 증분 SfM보다 빠르다. → [01-tools/colmap.md](01-tools/colmap.md) 2.3절
+https://arxiv.org/abs/2407.20219
+
+**COLMAP**
+사진 묶음에서 카메라 자세와 희소 점군(SfM), 조밀 점군과 메시(MVS)를 복원하는 BSD 라이선스 오픈소스
+파이프라인. 3DGS·NeRF 연구 코드가 입력 포맷으로 널리 쓴다. → [01-tools/colmap.md](01-tools/colmap.md)
 https://colmap.github.io/
 
 **번들조정(Bundle Adjustment)**

@@ -1,7 +1,7 @@
 # Reality Capture 도구 지형도
 
 작성일: 2026-09-21
-최종수정일: 2026-09-21
+최종수정일: 2026-10-07
 담당 질문: 핵심 연구 질문 1 — 세상에는 어떤 Reality Capture 도구들이 있는가
 
 ---
@@ -194,7 +194,7 @@ Cupix가 이 계열의 대표다. 작업자가 360 카메라를 들고 현장을
 
 **Pix4D.** 구독 중심이다. PIX4Dmapper가 연 3,990달러 안팎으로, 측량과 농업, 건설용 템플릿 워크플로를 갖췄다 **(벤더)**. 가이드가 잘 잡힌 대신 자유도는 낮다([Vagon 비교 글](https://vagon.io/blog/agisoft-metashape-vs-pix4d-which-photogrammetry-software-should-you-choose), 확인 2026-09-21).
 
-**오픈소스.** COLMAP이 SfM/MVS의 기준 구현이고, OpenDroneMap은 OpenSfM으로 카메라 자세를 풀고 OpenMVS로 조밀화하는 항공 사진측량 파이프라인이다([ODM 저장소의 OpenMVS 단계 코드](https://github.com/OpenDroneMap/ODM/blob/master/stages/openmvs.py), 확인 2026-09-21). 비용은 없고 학습 곡선이 비용이다.
+**오픈소스.** COLMAP이 SfM/MVS의 기준 구현이고, OpenDroneMap은 OpenSfM으로 카메라 자세를 풀고 OpenMVS로 조밀화하는 항공 사진측량 파이프라인이다([ODM 저장소의 OpenMVS 단계 코드](https://github.com/OpenDroneMap/ODM/blob/master/stages/openmvs.py), 확인 2026-09-21). 비용은 없고 학습 곡선이 비용이다. COLMAP의 파이프라인, 산출물, 한계는 심층 문서 [01-tools/colmap.md](01-tools/colmap.md)에 따로 정리했다.
 
 ### 점군 처리와 플랫폼
 
@@ -249,6 +249,16 @@ Postshot은 로컬 처리, Polycam은 모바일과 웹, Luma AI는 클라우드 
 **셋. 한 방식으로 끝나는 현장은 없다.** TLS는 정밀하지만 느리고, 핸드헬드는 빠르지만 표류하며, 360은 값싸지만 치수를 못 재고, 드론은 넓지만 실내에 못 들어간다. 지하 터널에서 핸드헬드 3종을 비교한 논문이 장비마다 고유한 강약점이 있다고 결론 낸 것도 같은 맥락이다. 도구 선택은 조합의 문제다.
 
 **넷. 제품명과 소유 구조가 빠르게 바뀐다.** ContextCapture는 iTwin Capture가 됐고, RealityCapture는 RealityScan이 됐으며, GeoSLAM과 HoloBuilder는 FARO 안으로 들어갔다. 자료를 읽을 때 날짜를 먼저 확인해야 하는 이유다.
+
+---
+
+## 도구 심층 문서
+
+개별 도구를 깊게 다룬 문서는 `docs/01-tools/` 아래에 둔다. 이 문서는 그 인덱스를 겸한다.
+
+| 문서 | 다루는 것 | 작성일 |
+|------|-----------|--------|
+| [COLMAP](01-tools/colmap.md) | 오픈소스 SfM·MVS 기준 구현. 파이프라인, 산출물 규약, 4.x 변화(전역 매퍼, 360 카메라), 3DGS 생태계, 한계 | 2026-10-07 |
 
 ---
 
