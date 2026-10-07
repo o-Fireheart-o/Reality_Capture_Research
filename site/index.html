@@ -244,6 +244,7 @@ details.more[open] summary::before{content:"− "; }
     <li><a href="#tools"><span class="n">01</span><span>도구 지형도</span></a></li>
     <li><a href="#tools-map" class="nav-sub">취득 방식 8종 지도</a></li>
     <li><a href="#tools-precision" class="nav-sub">정밀도 비교</a></li>
+    <li><a href="#colmap" class="nav-sub">심층 · COLMAP</a></li>
     <li><a href="#history"><span class="n">02</span><span>역사와 진행 방향</span></a></li>
     <li><a href="#history-chain" class="nav-sub">병목 → 돌파 사슬</a></li>
     <li><a href="#history-timeline" class="nav-sub">연표</a></li>
@@ -268,12 +269,12 @@ details.more[open] summary::before{content:"− "; }
 <header class="mast">
   <div class="eyebrow">Reality Capture 심층 리서치 · 2026</div>
   <h1>현실을 숫자로<br>바꾸는 기술의 지형도</h1>
-  <p class="lede">사진측량에서 라이다, SLAM, 가우시안 스플래팅까지. 다섯 개의 연구 질문에 답하기 위해 쓴 여섯 편의 문서를 한 장으로 묶었습니다. <b>전 산업을 훑되 건설·AEC를 주 렌즈로 삼습니다.</b></p>
+  <p class="lede">사진측량에서 라이다, SLAM, 가우시안 스플래팅까지. 다섯 개의 연구 질문에 답하기 위해 쓴 문서 일곱 편을 한 장으로 묶었습니다. <b>전 산업을 훑되 건설·AEC를 주 렌즈로 삼습니다.</b></p>
   <div class="meta-row">
     <span>작성일 2026-09-21</span>
     <span>최종수정일 2026-10-07</span>
-    <span>원문 6편 · 약 1,900행</span>
-    <span>모든 출처 확인일 2026-09-21</span>
+    <span>원문 7편 · 약 2,100행</span>
+    <span>출처 확인일 2026-09-21 · COLMAP 절 2026-10-07</span>
   </div>
 </header>
 <section id="summary">
@@ -284,7 +285,7 @@ details.more[open] summary::before{content:"− "; }
     <div class="card">
       <span class="kicker">질문 1 · 도구</span>
       <h4>여덟 가지 취득 방식이 있고, 하나로 끝나는 현장은 없다</h4>
-      <p>사진측량·TLS·모바일 SLAM·드론·360·구조광/ToF·항공위성 라이다·NeRF/3DGS. 정밀·속도·범위·비용이 서로 어긋나 조합으로 쓸 수밖에 없습니다. <a href="#tools">→ 01장</a></p>
+      <p>사진측량·TLS·모바일 SLAM·드론·360·구조광/ToF·항공위성 라이다·NeRF/3DGS. 정밀·속도·범위·비용이 서로 어긋나 조합으로 쓸 수밖에 없습니다. <a href="#tools">→ 01장</a> · <a href="#colmap">COLMAP 심층</a></p>
     </div>
     <div class="card">
       <span class="kicker">질문 2 · 역사</span>
@@ -308,7 +309,7 @@ details.more[open] summary::before{content:"− "; }
     </div>
     <div class="card">
       <span class="kicker">부록 · 용어</span>
-      <h4>여섯 문서의 용어를 한곳에</h4>
+      <h4>모든 문서의 용어를 한곳에</h4>
       <p>총론·취득·처리·신경렌더링·포맷·BIM·좌표계·연계기술·역사·현장 열 갈래로 묶은 용어집입니다. <a href="#glossary">→ 용어집</a></p>
     </div>
   </div>
@@ -322,7 +323,7 @@ details.more[open] summary::before{content:"− "; }
   </div>
 
   <h3>출처를 읽는 법</h3>
-  <p>여섯 문서가 서로 다른 표기를 썼기에 이 페이지에서는 하나로 통일했습니다. 모든 사실 주장 뒤에 성격 칩이 붙습니다.</p>
+  <p>문서마다 표기가 달랐기에 이 페이지에서는 하나로 통일했습니다. 모든 사실 주장 뒤에 성격 칩이 붙습니다.</p>
   <ul class="legend">
     <li><span class="chip ac">학술</span> 논문·학회·동료검토</li>
     <li><span class="chip td">제3자</span> 업계 매체·조사기관·독립 평가</li>
@@ -682,6 +683,8 @@ details.more[open] summary::before{content:"− "; }
   <p><b>가우시안 스플래팅이 표준으로 들어왔습니다.</b> 2026년 2월 3일 Khronos가 KHR_gaussian_splatting 확장을 발표했습니다. glTF 2.0 파일 안에 스플랫의 위치·방향·크기·색·불투명도를 저장하고 렌더링 해석 규칙을 정합니다. 지원하지 않는 뷰어에서는 점군으로 폴백하며 메시나 지형 자산과 한 장면에 공존합니다. CesiumJS, Esri ArcGIS, Niantic Spatial의 Scaniverse, XGRIDS Lixel Cybercolor가 릴리스 후보를 구현 중이고 비준은 2026년 2분기 예정입니다. <b>3DGS 논문 발표(2023년 7월)부터 표준 확장까지 약 2년 반이 걸렸습니다.</b></p>
   <p class="src">출처: <a href="https://www.ri.cmu.edu/pub_files/2011/1/2011-huber-e57-v3.pdf">Huber, E57 포맷 논문 (CMU)</a> <span class="chip ac">학술</span> · <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000418.shtml">미 의회도서관 LAS 기술서</a> <span class="chip td">제3자</span> · <a href="https://www.ogc.org/standards/3dtiles/">OGC 3D Tiles</a> <span class="chip st">표준</span> · <a href="https://www.ogc.org/standards/i3s/">OGC I3S</a> <span class="chip st">표준</span> · <a href="https://www.khronos.org/news/press/gltf-gaussian-splatting-press-release">Khronos 보도자료</a> <span class="chip st">표준</span></p>
 
+  <p class="note"><b>더 깊이.</b> 오픈소스 사진측량의 기준 구현인 COLMAP은 바로 다음 <a href="#colmap">01 심층 절</a>에서 따로 다룹니다. 파이프라인, 결과 파일 규약, 360 지원, 3DGS와의 관계, 한계를 정리했습니다.</p>
+
   <h3>01장이 남긴 것 네 가지</h3>
   <div class="grid c2">
     <div class="card"><span class="kicker">하나</span><h4>정밀도 수치는 조건과 함께 읽는다</h4><p>DJI L2의 5 cm는 실험실 조건값이고 NavVis VLX 3의 5 mm는 500 m² 전용 시험 환경에서 나왔습니다. 사양서는 출발점이지 결론이 아닙니다.</p></div>
@@ -689,6 +692,119 @@ details.more[open] summary::before{content:"− "; }
     <div class="card"><span class="kicker">셋</span><h4>한 방식으로 끝나는 현장은 없다</h4><p>TLS는 정밀하지만 느리고, 핸드헬드는 빠르지만 표류하며, 360은 값싸지만 치수를 못 재고, 드론은 넓지만 실내에 못 들어갑니다. 도구 선택은 조합의 문제입니다.</p></div>
     <div class="card"><span class="kicker">넷</span><h4>제품명과 소유 구조가 빠르게 바뀐다</h4><p>ContextCapture는 iTwin Capture가, RealityCapture는 RealityScan이 됐고, GeoSLAM과 HoloBuilder는 FARO 안으로 들어갔습니다. 자료의 날짜를 먼저 확인해야 합니다.</p></div>
   </div>
+</section>
+<section id="colmap">
+  <div class="sec-head"><span class="sec-num">01 심층</span><h2>COLMAP</h2></div>
+  <p class="q"><b>질문 1 심층.</b> 01장이 “SfM/MVS의 기준 구현”이라고 한 줄로 소개한 오픈소스 도구는 무엇이고, 어디까지 쓸 수 있는가</p>
+
+  <p>COLMAP은 사진 묶음에서 카메라 위치와 3차원 모델을 복원하는 <b>무료 오픈소스 파이프라인</b>입니다. 현장 납품물을 뽑는 상용 도구라기보다 <b>다른 도구와 연구가 기대는 바닥</b>에 가깝습니다. 3DGS와 NeRF 연구 코드는 대부분 COLMAP 결과를 입력으로 받고, 새 복원 기법은 COLMAP과 비교한 수치부터 내놓습니다.</p>
+
+  <div class="kpi">
+    <div><div class="v">4.2.1</div><div class="k">최신 안정판 · 2026-09-29</div></div>
+    <div><div class="v">BSD</div><div class="k">라이선스 · 의존성은 별도</div></div>
+    <div><div class="v">2016</div><div class="k">대표 논문 · CVPR, ECCV</div></div>
+    <div><div class="v">≈12.9k</div><div class="k">GitHub 별 · 2026-10-07 조회</div></div>
+  </div>
+  <p class="src">Johannes L. Schönberger가 박사과정 중 만들었고 지금은 Schönberger, Paul-Edouard Sarlin, Shaohui Liu가 관리합니다. GUI, 명령줄, C++ 라이브러리, Python 바인딩(PyCOLMAP)으로 쓸 수 있습니다. 출처: <a href="https://colmap.github.io/">COLMAP 문서</a> <span class="chip vd">벤더</span> · <a href="https://github.com/colmap/colmap/releases">GitHub 릴리스</a> <span class="chip vd">벤더</span> · <a href="https://openaccess.thecvf.com/content_cvpr_2016/html/Schonberger_Structure-From-Motion_Revisited_CVPR_2016_paper.html">CVPR 2016 논문</a> <span class="chip ac">학술</span> · <a href="https://colmap.github.io/license.html">라이선스</a> <span class="chip vd">벤더</span></p>
+  <p class="note"><b>칩 읽는 법.</b> 오픈소스라 “벤더”가 회사는 아닙니다. 여기서 <span class="chip vd">벤더</span>는 COLMAP 개발진이 자기 도구를 스스로 설명한 문서와 릴리스 노트를 뜻합니다.</p>
+
+  <h3>사진에서 점군까지 일곱 단계</h3>
+  <p>앞의 세 단계(SfM)가 카메라 위치와 희소 점군을 만들고, 뒤의 네 단계(MVS)가 그 결과로 조밀 점군과 메시를 만듭니다.</p>
+  <div class="stage"><span class="sid">①</span><div><h4>특징 추출</h4><p>사진마다 특징점을 찾는다. 기본은 SIFT이고, 4.0부터 ALIKED, 4.2부터 LoMa 같은 학습 기반 특징을 ONNX로 쓸 수 있다.</p></div></div>
+  <div class="stage"><span class="sid">②</span><div><h4>매칭 · 기하 검증</h4><p>어떤 사진 쌍을 비교할지 고른다. 처리 시간이 여기서 갈린다. 4.0부터 LightGlue 매칭을 지원한다.</p></div></div>
+  <div class="stage"><span class="sid">③</span><div><h4>매퍼 (SfM)</h4><p>카메라 자세와 3D 점을 푼다. 증분·전역·계층 세 방식 가운데 고른다. 결과는 축척과 위치가 임의인 희소 모델이다.</p></div></div>
+  <div class="stage"><span class="sid">④</span><div><h4>왜곡 보정</h4><p>렌즈 왜곡을 걷어 낸 사진을 만든다.</p></div></div>
+  <div class="stage"><span class="sid">⑤</span><div><h4>PatchMatch 스테레오</h4><p>사진마다 깊이 맵과 법선 맵을 계산한다. <b>CUDA GPU가 필요하다.</b> 4.2부터 AMD GPU용 ROCm/HIP 빌드도 된다.</p></div></div>
+  <div class="stage"><span class="sid">⑥</span><div><h4>융합</h4><p>깊이·법선 맵을 합쳐 조밀 점군 <span style="font-family:var(--mono)">fused.ply</span>를 만든다.</p></div></div>
+  <div class="stage"><span class="sid">⑦</span><div><h4>메시화</h4><p>포아송 또는 들로네 방식으로 표면을 만든다. 4.0에서 메시 단순화와 텍스처 매핑이 들어왔다.</p></div></div>
+  <p class="pipe">처음엔 한 줄로 끝까지: <b>colmap automatic_reconstructor</b> --workspace_path ./project --image_path ./project/images</p>
+  <p class="src">출처: <a href="https://colmap.github.io/tutorial.html">튜토리얼</a> <span class="chip vd">벤더</span> · <a href="https://colmap.github.io/faq.html">FAQ</a> <span class="chip vd">벤더</span> · <a href="https://github.com/colmap/colmap/releases/tag/4.0.0">4.0.0 릴리스 노트</a> <span class="chip vd">벤더</span> · <a href="https://github.com/colmap/colmap/releases/tag/4.2.0">4.2.0 릴리스 노트</a> <span class="chip vd">벤더</span></p>
+
+  <h4>매칭 방식은 사진의 성격에 맞춘다</h4>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>방식</th><th>무엇을 비교하나</th><th>건설 현장에 옮기면</th></tr></thead>
+      <tbody>
+        <tr><td>Exhaustive</td><td>모든 쌍. 사진 수백 장 규모까지</td><td>소규모 실내 한 공간</td></tr>
+        <tr><td>Sequential</td><td>순서가 있는 프레임, 어휘 트리 기반 루프 검출 포함</td><td>360 카메라로 걸으며 찍은 연속 영상 <span class="chip es">추정</span></td></tr>
+        <tr><td>Vocabulary Tree</td><td>시각적으로 비슷한 사진끼리. 수천 장 규모</td><td>여러 날 찍은 기록 사진을 섞을 때 <span class="chip es">추정</span></td></tr>
+        <tr><td>Spatial</td><td>GPS 등 위치가 가까운 사진끼리</td><td>드론 측량 사진 <span class="chip es">추정</span></td></tr>
+        <tr><td>Transitive</td><td>이미 있는 매칭 관계를 따라 넓힌다</td><td>다른 방식의 보강</td></tr>
+        <tr><td>Custom</td><td>사용자가 지정한 쌍이나 미리 계산한 매칭</td><td>외부 SLAM·GPS로 후보 쌍을 이미 아는 경우</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>4.x에서 달라진 것</h3>
+  <div class="grid c3">
+    <div class="card">
+      <span class="kicker">4.0 · 2026-03</span>
+      <h4>전역 매퍼가 본체로</h4>
+      <p>별도 프로젝트였던 GLOMAP(ECCV 2024)이 <span style="font-family:var(--mono)">global_mapper</span>로 들어왔고 GLOMAP 저장소는 폐기됐습니다. 개발진은 증분 방식보다 <b>보통 10~100배 빠르고 품질은 같거나 낫다</b>고 밝힙니다 <span class="chip vd">벤더</span>. 카메라 내부 변수 추정 방식이 달라 결과 파라미터가 달라질 수 있습니다.</p>
+    </div>
+    <div class="card">
+      <span class="kicker">4.1 · 2026-06</span>
+      <h4>360 파노라마를 그대로</h4>
+      <p>구면(등장방형) 카메라 모델이 추가돼 360 사진을 잘라 넣지 않고 복원할 수 있습니다. 릴리스 노트는 원근 사진으로 잘라 넣는 기존 방식보다 <b>대체로 빠르지만 덜 정확하다</b>고 직접 적습니다 <span class="chip vd">벤더</span>. GPU 번들조정 Caspar도 이때 들어왔습니다.</p>
+    </div>
+    <div class="card">
+      <span class="kicker">4.2 · 2026-09</span>
+      <h4>규모와 하드웨어 폭</h4>
+      <p>전역 매퍼가 끊어진 덩어리를 따로 복원하고, 계층 매퍼를 GUI와 Python에서 고를 수 있게 됐습니다. AMD GPU 조밀 복원, 학습 기반 LoMa 특징, 로컬 웹 3D 뷰어가 추가됐습니다 <span class="chip vd">벤더</span>.</p>
+    </div>
+  </div>
+  <p class="src">출처: <a href="https://github.com/colmap/colmap/releases/tag/4.0.0">4.0.0</a> · <a href="https://github.com/colmap/colmap/releases/tag/4.1.0">4.1.0</a> · <a href="https://github.com/colmap/colmap/releases/tag/4.2.0">4.2.0</a> 릴리스 노트 <span class="chip vd">벤더</span> · <a href="https://github.com/colmap/glomap">GLOMAP 저장소</a> <span class="chip vd">벤더</span> · <a href="https://arxiv.org/abs/2407.20219">GLOMAP 논문</a> <span class="chip ac">학술</span></p>
+
+  <h3>결과를 넘길 때 틀리는 두 지점</h3>
+  <p>희소 모델은 <span style="font-family:var(--mono)">cameras</span>(내부 변수), <span style="font-family:var(--mono)">images</span>(사진별 자세와 2D 특징점), <span style="font-family:var(--mono)">points3D</span>(3D 점과 그 점이 보인 사진 목록) 세 파일이 핵심이고, 바이너리와 텍스트 두 형식이 있습니다.</p>
+  <ul>
+    <li><b>저장된 자세는 월드→카메라 변환입니다.</b> 카메라 중심은 <span style="font-family:var(--mono)">−Rᵀ·t</span>로 따로 계산해야 합니다. 카메라 축은 X 오른쪽, Y 아래, Z 앞입니다 <span class="chip vd">벤더</span>. Y가 위를 향하는 뷰어로 넘기면 축을 뒤집어야 합니다 <span class="chip es">추정</span>.</li>
+    <li><b>단위가 미터가 아닙니다.</b> 사진만으로는 실제 크기와 위치를 알 수 없습니다. <span style="font-family:var(--mono)">model_aligner</span>로 GPS나 기준점 좌표에 맞추는데, <b>좌표를 아는 사진이 최소 3장</b> 있어야 상사변환을 추정합니다 <span class="chip vd">벤더</span>. 국가 좌표계와 수직 기준면 처리, 정확도 검증은 사용자 몫입니다 <span class="chip es">추정</span>.</li>
+  </ul>
+  <p class="src">출처: <a href="https://colmap.github.io/format.html">출력 포맷 문서</a> <span class="chip vd">벤더</span> · <a href="https://colmap.github.io/faq.html">FAQ</a> <span class="chip vd">벤더</span></p>
+
+  <h3>누가 COLMAP 위에 서 있나</h3>
+  <p><b>3DGS 원 구현</b>은 자기 장면을 학습시키려면 COLMAP을 설치하고 <span style="font-family:var(--mono)">convert.py</span>를 돌리라고 안내합니다. 입력 폴더도 COLMAP의 <span style="font-family:var(--mono)">sparse/0/</span> 구조 그대로입니다. <b>nerfstudio</b>도 사진·영상 처리에 COLMAP을 쓰되, 휴대폰 LiDAR나 SLAM으로 자세를 이미 구한 데이터와 Metashape·RealityCapture·ODM이 내보낸 카메라 값은 COLMAP 없이 받습니다.</p>
+  <p>그래서 COLMAP 포맷은 <b>신경 렌더링 쪽의 사실상 교환 포맷</b>이 됐습니다 <span class="chip es">추정</span>. 상용 도구가 COLMAP 형식으로 내보낼 수 있는지가 3DGS 연계 가능성을 가릅니다.</p>
+  <p>DUSt3R·VGGT 같은 순전파 모델은 사진이 10장 미만일 때 COLMAP보다 완전성이 최대 50% 좋았지만, 사진이 많아질수록 자세 신뢰도가 떨어졌습니다. <b>대체재보다 보완재</b>입니다. COLMAP 쪽도 ALIKED·LightGlue 같은 학습 기반 부품을 흡수하고 있습니다.</p>
+  <p class="src">출처: <a href="https://github.com/graphdeco-inria/gaussian-splatting">graphdeco-inria/gaussian-splatting</a> <span class="chip ac">학술</span> · <a href="https://docs.nerf.studio/quickstart/custom_dataset.html">nerfstudio 문서</a> <span class="chip td">제3자</span> · <a href="https://arxiv.org/abs/2507.14798">arXiv 2507.14798</a> <span class="chip ac">학술</span></p>
+
+  <h3>상용 도구와 무엇이 다른가</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>관점</th><th>COLMAP</th><th>상용 사진측량 도구</th></tr></thead>
+      <tbody>
+        <tr><td>비용</td><td>무료</td><td>무료~수천 달러 <span class="chip vd">벤더</span></td></tr>
+        <tr><td>내부 통제</td><td>모든 단계와 코드가 열려 있음</td><td>옵션은 있으나 알고리즘은 닫혀 있음</td></tr>
+        <tr><td>측량 기능</td><td>GPS·기준점 상사변환 정렬까지</td><td>GCP 관리, 좌표계 라이브러리, 정확도 보고서, 정사영상·DEM <span class="chip es">추정</span></td></tr>
+        <tr><td>결과 성향</td><td>미세 요철을 잘 살림</td><td>Metashape는 내부 필터링으로 매끄러움</td></tr>
+        <tr><td>지원</td><td>커뮤니티(GitHub 이슈)</td><td>벤더 기술 지원</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>결과 성향의 근거는 2026년 5월 노면 거칠기 평가입니다. 스마트폰 사진으로 비교했더니 <b>COLMAP이 미세 질감에 가장 민감했고 Metashape가 가장 매끄러웠으며, 3DGS는 노이즈가 크고 점 밀도가 낮았습니다.</b> 프리프린트이고 대상이 노면 하나라 일반화는 조심해야 합니다. 미세 질감에 민감하다는 말은 노이즈가 덜 걸러진다는 뜻일 수도 있습니다 <span class="chip es">추정</span>.</p>
+  <p class="src">출처: <a href="https://arxiv.org/abs/2605.29452">Elmegdar·Xiao, arXiv 2605.29452</a> <span class="chip ac">학술</span></p>
+
+  <h3>쓰기 전에 알아 둘 한계</h3>
+  <ul>
+    <li><b>GPU.</b> 조밀 복원은 CUDA 또는 ROCm/HIP GPU가 있어야 합니다. 리눅스 배포판 기본 패키지에는 GPU 지원이 빠져 있어 직접 빌드해야 하고, GPU용 Python 휠은 현재 리눅스용만 있습니다 <span class="chip vd">벤더</span>.</li>
+    <li><b>촬영 조건.</b> 질감 없는 면(흰 벽)을 피하고, 모든 물체가 최소 3장에 보이게 하고, 조명을 고르게 하고 반사를 피하고, 제자리에서 돌지 말고 옮겨 가며 찍으라고 문서가 직접 권합니다 <span class="chip vd">벤더</span>. 흰 벽·유리·반복 패턴이 많은 건설 실내와는 정면으로 부딪칩니다 <span class="chip es">추정</span>.</li>
+    <li><b>규모.</b> 사진이 수천 장을 넘으면 조밀 복원에서 메모리가 먼저 모자랍니다. 장면 분할, 참조 사진 수 축소, 캐시 조정을 권합니다 <span class="chip vd">벤더</span>.</li>
+    <li><b>배포 파일.</b> Windows 바이너리는 코드 서명이 없어 첫 실행 때 보안 경고가 뜰 수 있습니다 <span class="chip vd">벤더</span>. 서명 없는 실행 파일을 막는 회사라면 미리 확인해야 합니다.</li>
+    <li><b>라이선스.</b> COLMAP은 BSD지만 함께 빌드하는 의존성의 라이선스가 결과물에 영향을 줄 수 있다고 명시합니다 <span class="chip vd">벤더</span>. 제품에 넣으려면 의존성을 따로 검토해야 합니다 <span class="chip es">추정</span>.</li>
+  </ul>
+  <p class="src">출처: <a href="https://colmap.github.io/install.html">설치 문서</a> <span class="chip vd">벤더</span> · <a href="https://colmap.github.io/tutorial.html">튜토리얼</a> <span class="chip vd">벤더</span> · <a href="https://colmap.github.io/faq.html">FAQ</a> <span class="chip vd">벤더</span></p>
+
+  <p class="note"><b>AEC 관점.</b> <span class="chip es">추정</span> 정확도 보고서와 측량 좌표계 처리가 상용 도구만큼 갖춰져 있지 않아 결과를 그대로 측량 성과로 납품하기는 어렵습니다. 대신 <b>상용 도구 결과를 검증하는 독립 기준선</b>, <b>360 영상과 현장 사진을 3DGS로 넘기는 통로</b>, <b>원리를 배우는 교재</b>로서 값이 큽니다. 05장 로드맵이 첫 3개월 과제로 COLMAP을 꼽은 이유입니다. 4.1의 360 모델이 줄이는 정확도가 현장 허용오차 안에 드는지는 데이터로 확인해야 합니다.</p>
+
+  <details class="more">
+    <summary>이 절이 답하지 못한 것</summary>
+    <ul>
+      <li>COLMAP과 상용 도구의 절대 정확도를 같은 조건에서 비교한 동료검토 연구를 찾지 못했습니다. 건설 현장 비교 연구가 하나 검색됐지만 철회된 논문이라 쓰지 않았습니다.</li>
+      <li>전역 매퍼와 Caspar의 속도 주장, 360 모델의 정확도 손실은 개발진 자료로만 확인했습니다.</li>
+      <li>원문은 저장소의 <span style="font-family:var(--mono)">docs/01-tools/colmap.md</span>입니다.</li>
+    </ul>
+  </details>
 </section>
 <section id="history">
   <div class="sec-head"><span class="sec-num">02</span><h2>역사와 진행 방향</h2></div>
@@ -1448,7 +1564,7 @@ details.more[open] summary::before{content:"− "; }
 </section>
 <section id="glossary">
   <div class="sec-head"><span class="sec-num">부록</span><h2>용어집</h2></div>
-  <p>여섯 문서에 나오는 용어를 한곳에 모았습니다. 각 용어는 여기서 한 번만 정의하고, 본문에서는 이 용어집을 기준으로 씁니다. 정의 뒤 링크는 그 정의의 근거입니다.</p>
+  <p>리서치 문서에 나오는 용어를 한곳에 모았습니다. 각 용어는 여기서 한 번만 정의하고, 본문에서는 이 용어집을 기준으로 씁니다. 정의 뒤 링크는 그 정의의 근거입니다.</p>
   <label for="glFilter" class="src" style="display:block;margin-top:18px">용어 찾기</label>
   <input id="glFilter" class="gl-filter" type="search" placeholder="예: 번들조정, LOA, SLAM" autocomplete="off">
   <p class="src" id="glEmpty" hidden>일치하는 용어가 없습니다. 한글 또는 영문 약어로 다시 찾아 보세요.</p>
@@ -1583,10 +1699,10 @@ details.more[open] summary::before{content:"− "; }
   <div class="sec-head"><span class="sec-num">부록</span><h2>출처 원칙</h2></div>
   <p>웹에서 얻은 사실은 빨리 낡습니다. 그래서 이 페이지는 날짜를 신뢰도의 근거로 삼습니다.</p>
   <ul>
-    <li><b>모든 사실 주장에는 출처 링크를 붙였습니다.</b> 확인 날짜는 2026-09-21입니다. 출처 없이 쓴 판단에는 <span class="chip es">추정</span>을 달았습니다.</li>
+    <li><b>모든 사실 주장에는 출처 링크를 붙였습니다.</b> 확인 날짜는 2026-09-21이고, COLMAP 심층 절만 2026-10-07입니다. 출처 없이 쓴 판단에는 <span class="chip es">추정</span>을 달았습니다.</li>
     <li><b>벤더 발표와 제3자 검증을 나눴습니다.</b> 스펙 수치는 누가 측정했는지를 칩으로 표시했습니다.</li>
     <li><b>†</b> 표시는 사이트가 자동 조회를 막아 본문은 읽지 못하고, 검색 결과와 표준 번호로 존재만 확인했다는 뜻입니다. 학술 출판사와 시장조사 링크도 서지정보와 초록까지만 읽었습니다.</li>
-    <li><b>이 페이지는 요약본입니다.</b> 원문은 마크다운 문서 여섯 편(<span style="font-family:var(--mono)">docs/00</span>~<span style="font-family:var(--mono)">05</span>)이며, 서술이 다르면 원문이 기준입니다.</li>
+    <li><b>이 페이지는 요약본입니다.</b> 원문은 마크다운 문서 일곱 편(<span style="font-family:var(--mono)">docs/00</span>~<span style="font-family:var(--mono)">05</span>, <span style="font-family:var(--mono)">docs/01-tools/colmap.md</span>)이며, 서술이 다르면 원문이 기준입니다.</li>
   </ul>
   <ul class="legend">
     <li><span class="chip ac">학술</span> 논문·학회·동료검토</li>
@@ -1599,8 +1715,8 @@ details.more[open] summary::before{content:"− "; }
 </section>
 
 <footer class="foot">
-  작성일 2026-09-21 · 최종수정일 2026-10-07 · 출처 확인일 2026-09-21<br>
-  다섯 개의 연구 질문(도구, 역사, 쓰임새, 연계 기술, 학습)에 답하려고 쓴 문서 여섯 편을 한 장으로 묶었습니다.
+  작성일 2026-09-21 · 최종수정일 2026-10-07 · 출처 확인일 2026-09-21(COLMAP 절 2026-10-07)<br>
+  다섯 개의 연구 질문(도구, 역사, 쓰임새, 연계 기술, 학습)에 답하려고 쓴 문서 일곱 편을 한 장으로 묶었습니다.
 </footer>
 
 </div>

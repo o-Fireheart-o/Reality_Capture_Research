@@ -6,7 +6,7 @@
     <div class="card">
       <span class="kicker">질문 1 · 도구</span>
       <h4>여덟 가지 취득 방식이 있고, 하나로 끝나는 현장은 없다</h4>
-      <p>사진측량·TLS·모바일 SLAM·드론·360·구조광/ToF·항공위성 라이다·NeRF/3DGS. 정밀·속도·범위·비용이 서로 어긋나 조합으로 쓸 수밖에 없습니다. <a href="#tools">→ 01장</a></p>
+      <p>사진측량·TLS·모바일 SLAM·드론·360·구조광/ToF·항공위성 라이다·NeRF/3DGS. 정밀·속도·범위·비용이 서로 어긋나 조합으로 쓸 수밖에 없습니다. <a href="#tools">→ 01장</a> · <a href="#colmap">COLMAP 심층</a></p>
     </div>
     <div class="card">
       <span class="kicker">질문 2 · 역사</span>
@@ -30,7 +30,7 @@
     </div>
     <div class="card">
       <span class="kicker">부록 · 용어</span>
-      <h4>여섯 문서의 용어를 한곳에</h4>
+      <h4>모든 문서의 용어를 한곳에</h4>
       <p>총론·취득·처리·신경렌더링·포맷·BIM·좌표계·연계기술·역사·현장 열 갈래로 묶은 용어집입니다. <a href="#glossary">→ 용어집</a></p>
     </div>
   </div>
@@ -44,7 +44,7 @@
   </div>
 
   <h3>출처를 읽는 법</h3>
-  <p>여섯 문서가 서로 다른 표기를 썼기에 이 페이지에서는 하나로 통일했습니다. 모든 사실 주장 뒤에 성격 칩이 붙습니다.</p>
+  <p>문서마다 표기가 달랐기에 이 페이지에서는 하나로 통일했습니다. 모든 사실 주장 뒤에 성격 칩이 붙습니다.</p>
   <ul class="legend">
     <li><span class="chip ac">학술</span> 논문·학회·동료검토</li>
     <li><span class="chip td">제3자</span> 업계 매체·조사기관·독립 평가</li>
@@ -403,6 +403,8 @@
   </div>
   <p><b>가우시안 스플래팅이 표준으로 들어왔습니다.</b> 2026년 2월 3일 Khronos가 KHR_gaussian_splatting 확장을 발표했습니다. glTF 2.0 파일 안에 스플랫의 위치·방향·크기·색·불투명도를 저장하고 렌더링 해석 규칙을 정합니다. 지원하지 않는 뷰어에서는 점군으로 폴백하며 메시나 지형 자산과 한 장면에 공존합니다. CesiumJS, Esri ArcGIS, Niantic Spatial의 Scaniverse, XGRIDS Lixel Cybercolor가 릴리스 후보를 구현 중이고 비준은 2026년 2분기 예정입니다. <b>3DGS 논문 발표(2023년 7월)부터 표준 확장까지 약 2년 반이 걸렸습니다.</b></p>
   <p class="src">출처: <a href="https://www.ri.cmu.edu/pub_files/2011/1/2011-huber-e57-v3.pdf">Huber, E57 포맷 논문 (CMU)</a> <span class="chip ac">학술</span> · <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000418.shtml">미 의회도서관 LAS 기술서</a> <span class="chip td">제3자</span> · <a href="https://www.ogc.org/standards/3dtiles/">OGC 3D Tiles</a> <span class="chip st">표준</span> · <a href="https://www.ogc.org/standards/i3s/">OGC I3S</a> <span class="chip st">표준</span> · <a href="https://www.khronos.org/news/press/gltf-gaussian-splatting-press-release">Khronos 보도자료</a> <span class="chip st">표준</span></p>
+
+  <p class="note"><b>더 깊이.</b> 오픈소스 사진측량의 기준 구현인 COLMAP은 바로 다음 <a href="#colmap">01 심층 절</a>에서 따로 다룹니다. 파이프라인, 결과 파일 규약, 360 지원, 3DGS와의 관계, 한계를 정리했습니다.</p>
 
   <h3>01장이 남긴 것 네 가지</h3>
   <div class="grid c2">
