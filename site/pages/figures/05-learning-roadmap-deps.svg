@@ -1,0 +1,59 @@
+<svg viewBox="0 0 760 310" role="img" aria-label="기반 역량 2.1부터 2.7까지를 문서 순서대로 이은 도식. 각 상자에 어디까지 배우면 되는지 핵심 항목을 적었다">
+  <text class="t-hd" x="16" y="22">기반 역량 일곱 가지 (문서 순서 = 의존 순서)</text>
+  <path d="M289 64 C 289 44, 665 44, 665 64" fill="none" stroke="var(--muted)" stroke-dasharray="4 3"></path>
+  <text class="t-tick" x="477" y="40" text-anchor="middle">같은 문제, 다른 어휘</text>
+  <rect x="16" y="64" width="170" height="92" rx="3" fill="var(--near-soft)" stroke="var(--near)"></rect>
+  <text class="t-lab" x="28" y="86">2.1 선형대수·3D 기하</text>
+  <text class="t-tick" x="28" y="108">동차좌표 · SE(3)/SO(3)</text>
+  <text class="t-tick" x="28" y="125">쿼터니언 ↔ 회전행렬</text>
+  <text class="t-tick" x="28" y="142">Helmert · Kabsch/Horn</text>
+  <rect x="204" y="64" width="170" height="92" rx="3" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="216" y="86">2.2 사진측량 원리</text>
+  <text class="t-tick" x="216" y="108">내부표정 · 외부표정</text>
+  <text class="t-tick" x="216" y="125">공선조건식 · 전방교회법</text>
+  <text class="t-tick" x="216" y="142">GSD ↔ 기대 정확도</text>
+  <rect x="392" y="64" width="170" height="92" rx="3" fill="var(--near-soft)" stroke="var(--near)"></rect>
+  <text class="t-lab" x="404" y="86">2.3 확률과 최적화</text>
+  <text class="t-tick" x="404" y="108">Gauss-Newton · LM</text>
+  <text class="t-tick" x="404" y="125">공분산 · 로버스트 손실</text>
+  <text class="t-tick" x="404" y="142">EKF · 그래프 SLAM</text>
+  <rect x="580" y="64" width="170" height="92" rx="3" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="592" y="86">2.4 컴퓨터 비전 기초</text>
+  <text class="t-tick" x="592" y="108">RANSAC · 기본/필수행렬</text>
+  <text class="t-tick" x="592" y="125">스테레오 · MVS</text>
+  <text class="t-tick" x="592" y="142">학습 기반 매칭</text>
+  <line x1="186" y1="110" x2="198" y2="110" stroke="var(--ink)" stroke-width="1.2"></line>
+  <path d="M196 106 L204 110 L196 114 Z" fill="var(--ink)"></path>
+  <line x1="374" y1="110" x2="386" y2="110" stroke="var(--ink)" stroke-width="1.2"></line>
+  <path d="M384 106 L392 110 L384 114 Z" fill="var(--ink)"></path>
+  <line x1="562" y1="110" x2="574" y2="110" stroke="var(--ink)" stroke-width="1.2"></line>
+  <path d="M572 106 L580 110 L572 114 Z" fill="var(--ink)"></path>
+  <path d="M665 156 V178 H101 V196" fill="none" stroke="var(--ink)" stroke-width="1.2"></path>
+  <path d="M97 194 L101 202 L105 194 Z" fill="var(--ink)"></path>
+  <rect x="16" y="202" width="170" height="92" rx="3" fill="var(--far-soft)" stroke="var(--far)"></rect>
+  <text class="t-lab" x="28" y="224">2.5 점군 처리</text>
+  <text class="t-tick" x="28" y="246">ICP 계열 · 전역 정합</text>
+  <text class="t-tick" x="28" y="263">복셀 다운샘플링 · 법선</text>
+  <text class="t-tick" x="28" y="280">E57 · LAS · LAZ · PLY</text>
+  <rect x="204" y="202" width="170" height="92" rx="3" fill="var(--far-soft)" stroke="var(--far)"></rect>
+  <text class="t-lab" x="216" y="224">2.6 Python과 C++</text>
+  <text class="t-tick" x="216" y="246">NumPy 벡터화</text>
+  <text class="t-tick" x="216" y="263">남의 C++ 읽고 고치기</text>
+  <text class="t-tick" x="216" y="280">CMake 빌드가 진입 장벽</text>
+  <rect x="392" y="202" width="170" height="92" rx="3" fill="var(--far-soft)" stroke="var(--far)"></rect>
+  <text class="t-lab" x="404" y="224">2.7 클라우드·데이터</text>
+  <text class="t-tick" x="404" y="246">옥트리 LOD</text>
+  <text class="t-tick" x="404" y="263">COPC · EPT</text>
+  <text class="t-tick" x="404" y="280">HTTP range 부분 로딩</text>
+  <line x1="186" y1="248" x2="198" y2="248" stroke="var(--ink)" stroke-width="1.2"></line>
+  <path d="M196 244 L204 248 L196 252 Z" fill="var(--ink)"></path>
+  <line x1="374" y1="248" x2="386" y2="248" stroke="var(--ink)" stroke-width="1.2"></line>
+  <path d="M384 244 L392 248 L384 252 Z" fill="var(--ink)"></path>
+  <rect x="592" y="210" width="14" height="14" rx="2" fill="var(--near-soft)" stroke="var(--near)"></rect>
+  <text class="t-tick" x="614" y="221">수학 바탕</text>
+  <rect x="592" y="236" width="14" height="14" rx="2" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-tick" x="614" y="247">재구성 원리</text>
+  <rect x="592" y="262" width="14" height="14" rx="2" fill="var(--far-soft)" stroke="var(--far)"></rect>
+  <text class="t-tick" x="614" y="273">실무 도구</text>
+  <text class="t-tick" x="592" y="294" fill="var(--muted)">색 구분은 추정</text>
+</svg>

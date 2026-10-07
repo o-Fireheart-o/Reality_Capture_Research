@@ -1,0 +1,28 @@
+<svg viewBox="0 0 760 270" role="img" aria-label="기하와 외형의 분업. 라이다와 SLAM 스캐너가 치수 정확도를, 가우시안 스플랫이 사실적 외형을 맡고, 둘을 합친 혼합 워크플로가 측량 등급을 표방한다">
+  <defs>
+    <marker id="h02split" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" fill="var(--muted)"></path>
+    </marker>
+  </defs>
+  <rect x="10" y="14" width="300" height="94" rx="3" fill="var(--far-soft)" stroke="var(--far)" stroke-width="1"></rect>
+  <text class="t-hd" x="24" y="38">라이다 · SLAM 스캐너</text>
+  <text class="t-lab" x="24" y="58" style="fill:var(--far)">기하(치수) 담당</text>
+  <text class="t-tick" x="24" y="78">실내 약 5 mm, 실외 10 mm 이상</text>
+  <text class="t-tick" x="24" y="95">NavVis VLX·BLK2GO, 2024년 제3자 평가</text>
+  <rect x="10" y="126" width="300" height="94" rx="3" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1"></rect>
+  <text class="t-hd" x="24" y="150">사진 · 영상 → 가우시안 스플랫</text>
+  <text class="t-lab" x="24" y="170" style="fill:var(--near)">외형(사실감) 담당</text>
+  <text class="t-tick" x="24" y="190">1080p에서 30 fps 이상 실시간 렌더링</text>
+  <text class="t-tick" x="24" y="207">치수는 보장하지 않는다</text>
+  <line x1="312" y1="61" x2="404" y2="104" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#h02split)"></line>
+  <line x1="312" y1="173" x2="404" y2="130" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#h02split)"></line>
+  <rect x="410" y="60" width="340" height="114" rx="3" fill="var(--surface)" stroke="var(--ink)" stroke-width="1"></rect>
+  <text class="t-hd" x="426" y="86">혼합 워크플로</text>
+  <text class="t-lab" x="426" y="108">벤더가 '측량 등급'을 내세우는 결과물</text>
+  <text class="t-tick" x="426" y="130">정확도는 라이다·SLAM이 만든다</text>
+  <text class="t-tick" x="426" y="148">스플랫은 그 정확도를 물려받을 뿐</text>
+  <text class="t-tick" x="426" y="164">스스로 만들어 내지 않는다</text>
+  <rect x="410" y="190" width="340" height="56" rx="3" fill="none" stroke="var(--rule)" stroke-width="1" stroke-dasharray="4 3"></rect>
+  <text class="t-lab" x="426" y="213">추정 · 건설 실무의 다음 단계</text>
+  <text class="t-tick" x="426" y="233">기록용 캡처와 검측용 캡처를 다른 등급으로 운영</text>
+</svg>

@@ -1,0 +1,41 @@
+<svg viewBox="0 0 760 300" role="img" aria-label="SLAM 표류와 폐합 도식. 왼쪽은 시작점으로 돌아오지 않아 휜 궤적의 오차가 남는 경우, 오른쪽은 시작점으로 돌아와 폐합으로 오차를 바로잡는 경우">
+  <defs>
+    <marker id="ar-slam" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" fill="var(--near)"></path>
+    </marker>
+    <marker id="ar-slam2" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" fill="var(--far)"></path>
+    </marker>
+  </defs>
+  <text class="t-hd" x="20" y="26">폐합 없이 끝난 스캔</text>
+  <text class="t-tick" x="20" y="44" fill="var(--muted)">긴 복도에서 단서가 사라지면 궤적이 휜다</text>
+  <line x1="50" y1="205" x2="300" y2="205" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="5 4"></line>
+  <text class="t-tick" x="50" y="226" fill="var(--muted)">실제 동선 (곧은 복도)</text>
+  <path d="M50 205 Q190 205 300 130" fill="none" stroke="var(--far)" stroke-width="2" marker-end="url(#ar-slam2)"></path>
+  <text class="t-lab" x="96" y="160" fill="var(--far)">추정 궤적 — 표류</text>
+  <circle cx="50" cy="205" r="6" fill="var(--ink)"></circle>
+  <text class="t-tick" x="40" y="186" fill="var(--ink)">시작</text>
+  <circle cx="300" cy="205" r="4" fill="var(--muted)"></circle>
+  <line x1="318" y1="134" x2="318" y2="201" stroke="var(--ink)" stroke-width="1" stroke-dasharray="2 2"></line>
+  <line x1="312" y1="134" x2="324" y2="134" stroke="var(--ink)" stroke-width="1"></line>
+  <line x1="312" y1="201" x2="324" y2="201" stroke="var(--ink)" stroke-width="1"></line>
+  <text class="t-tick" x="330" y="164" fill="var(--ink)">남는</text>
+  <text class="t-tick" x="330" y="179" fill="var(--ink)">오차</text>
+  <line x1="390" y1="14" x2="390" y2="252" stroke="var(--rule)" stroke-width="1"></line>
+  <text class="t-hd" x="412" y="26">시작점으로 되돌아오는 동선</text>
+  <text class="t-tick" x="412" y="44" fill="var(--muted)">지난 곳을 다시 알아보면 누적 오차를 되돌린다</text>
+  <path d="M450 215 L700 215 L700 95 L450 95 Z" fill="none" stroke="var(--near)" stroke-width="2"></path>
+  <path d="M450 215 L700 222 L714 106 L476 80 L494 186" fill="none" stroke="var(--far)" stroke-width="1.5" opacity="0.8"></path>
+  <circle cx="494" cy="186" r="4" fill="var(--far)"></circle>
+  <line x1="491" y1="190" x2="458" y2="210" stroke="var(--near)" stroke-width="1.5" marker-end="url(#ar-slam)"></line>
+  <text class="t-lab" x="512" y="172" fill="var(--near)">폐합 (loop closure)</text>
+  <text class="t-tick" x="512" y="190" fill="var(--muted)">"여기는 시작점이다"를 인식</text>
+  <circle cx="450" cy="215" r="6" fill="var(--ink)"></circle>
+  <text class="t-tick" x="436" y="238" fill="var(--ink)">시작 = 끝</text>
+  <line x1="20" y1="276" x2="48" y2="276" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="5 4"></line>
+  <text class="t-tick" x="56" y="280">실제 동선</text>
+  <line x1="150" y1="276" x2="178" y2="276" stroke="var(--far)" stroke-width="2"></line>
+  <text class="t-tick" x="186" y="280">보정 전 추정 궤적</text>
+  <line x1="330" y1="276" x2="358" y2="276" stroke="var(--near)" stroke-width="2"></line>
+  <text class="t-tick" x="366" y="280">폐합으로 바로잡은 궤적</text>
+</svg>

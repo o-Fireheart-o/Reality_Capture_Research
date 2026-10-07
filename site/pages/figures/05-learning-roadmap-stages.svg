@@ -1,0 +1,43 @@
+<svg viewBox="0 0 760 368" role="img" aria-label="0에서 3개월, 3에서 12개월, 1년 이상의 세 단계로 나눈 학습 로드맵 계단 도식. 기간은 모두 추정">
+  <text class="t-hd" x="16" y="22">세 단계 로드맵 (기간은 모두 추정)</text>
+  <rect x="16" y="150" width="232" height="164" rx="3" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-hd" x="28" y="174">0~3개월</text>
+  <text class="t-lab" x="28" y="194">한 번은 끝까지 돌려 본다</text>
+  <text class="t-tick" x="28" y="220">· SfM/MVS 파이프라인 (COLMAP)</text>
+  <text class="t-tick" x="28" y="238">· 사진측량 기초 이론</text>
+  <text class="t-tick" x="28" y="256">· 점군 다루기 (Open3D)</text>
+  <text class="t-tick" x="28" y="274">· 검수 감각 (CloudCompare)</text>
+  <text class="t-tick" x="28" y="292">· 좌표계 (세계측지계)</text>
+  <rect x="264" y="96" width="232" height="218" rx="3" fill="var(--near-soft)" stroke="var(--near)"></rect>
+  <text class="t-hd" x="276" y="120">3~12개월</text>
+  <text class="t-lab" x="276" y="140">원리로 내려가고 도메인으로 넓힌다</text>
+  <text class="t-tick" x="276" y="166">· 다시점 기하 (Hartley·Zisserman)</text>
+  <text class="t-tick" x="276" y="184">· 컴퓨터 비전 전반 (Szeliski)</text>
+  <text class="t-tick" x="276" y="202">· 최적화·상태추정 (Barfoot)</text>
+  <text class="t-tick" x="276" y="220">· 회전 표현 (Solà)</text>
+  <text class="t-tick" x="276" y="238">· 번들조정 구현 (Ceres · GTSAM)</text>
+  <text class="t-tick" x="276" y="256">· 데이터 엔지니어링 (PDAL)</text>
+  <text class="t-tick" x="276" y="274">· BIM·표준 (IfcOpenShell)</text>
+  <text class="t-tick" x="276" y="292">· 드론 운용 자격</text>
+  <rect x="512" y="42" width="232" height="272" rx="3" fill="var(--far-soft)" stroke="var(--far)"></rect>
+  <text class="t-hd" x="524" y="66">1년 이상</text>
+  <text class="t-lab" x="524" y="86">세로획을 깊게, 가로획을 하나 고른다</text>
+  <text class="t-tick" x="524" y="106" fill="var(--muted)">4장에서 고른 조합에 따라 갈라진다</text>
+  <text class="t-tick" x="524" y="134">4.1 · 3D 딥러닝 (Pointcept)</text>
+  <text class="t-tick" x="524" y="152">4.1 · NeRF/3DGS (nerfstudio)</text>
+  <text class="t-tick" x="524" y="178">4.2 · buildingSMART 인증</text>
+  <text class="t-tick" x="524" y="196">4.2 · 측량및지형공간정보기사</text>
+  <text class="t-tick" x="524" y="214">4.1·4.2 · ASPRS 인증</text>
+  <text class="t-tick" x="524" y="240">4.3 · 대용량 서비스 (Potree)</text>
+  <text class="t-tick" x="524" y="266">공통 · 텍스처·메시화</text>
+  <text class="t-tick" x="524" y="284">공통 · 드론 매핑 (OpenDroneMap)</text>
+  <line x1="16" y1="332" x2="736" y2="332" stroke="var(--ink)" stroke-width="1.2"></line>
+  <path d="M734 327 L744 332 L734 337 Z" fill="var(--ink)"></path>
+  <line x1="16" y1="326" x2="16" y2="338" stroke="var(--ink)"></line>
+  <line x1="256" y1="326" x2="256" y2="338" stroke="var(--ink)"></line>
+  <line x1="504" y1="326" x2="504" y2="338" stroke="var(--ink)"></line>
+  <text class="t-tick" x="16" y="356">시작</text>
+  <text class="t-tick" x="256" y="356" text-anchor="middle">3개월</text>
+  <text class="t-tick" x="504" y="356" text-anchor="middle">12개월</text>
+  <text class="t-tick" x="744" y="356" text-anchor="end">시간</text>
+</svg>

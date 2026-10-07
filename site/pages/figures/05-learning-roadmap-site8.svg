@@ -1,0 +1,29 @@
+<svg viewBox="0 0 760 300" role="img" aria-label="T자형 역량 도식. 세로획은 Reality Capture와 기하·오차론, 가로획은 ML, BIM·AEC, 플랫폼·클라우드, 제품·사업 네 갈래">
+        <rect x="60" y="30" width="640" height="46" fill="var(--far-soft)" stroke="var(--far)" stroke-width="1" rx="2"></rect>
+        <line x1="220" y1="30" x2="220" y2="76" stroke="var(--far)" stroke-width="1" stroke-dasharray="3 3"></line>
+        <line x1="380" y1="30" x2="380" y2="76" stroke="var(--far)" stroke-width="1" stroke-dasharray="3 3"></line>
+        <line x1="540" y1="30" x2="540" y2="76" stroke="var(--far)" stroke-width="1" stroke-dasharray="3 3"></line>
+        <text class="t-hd" x="140" y="51" text-anchor="middle">+ ML 엔지니어</text>
+        <text class="t-tick" x="140" y="67" text-anchor="middle">3D 딥러닝</text>
+        <text class="t-hd" x="300" y="51" text-anchor="middle">+ BIM·AEC 컨설턴트</text>
+        <text class="t-tick" x="300" y="67" text-anchor="middle">정보관리 · 표준</text>
+        <text class="t-hd" x="460" y="51" text-anchor="middle">+ 플랫폼·클라우드</text>
+        <text class="t-tick" x="460" y="67" text-anchor="middle">대용량 공간데이터</text>
+        <text class="t-hd" x="620" y="51" text-anchor="middle">+ 제품·사업개발</text>
+        <text class="t-tick" x="620" y="67" text-anchor="middle">고객 문제 정의</text>
+
+        <rect x="320" y="76" width="120" height="196" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1" rx="2"></rect>
+        <text class="t-hd" x="380" y="104" text-anchor="middle">Reality Capture</text>
+        <text class="t-tick" x="380" y="134" text-anchor="middle">점군 처리</text>
+        <text class="t-tick" x="380" y="160" text-anchor="middle">사진측량 · SLAM</text>
+        <text class="t-tick" x="380" y="186" text-anchor="middle">번들조정 · 최적화</text>
+        <text class="t-tick" x="380" y="212" text-anchor="middle">좌표변환 · 기준계</text>
+        <text class="t-tick" x="380" y="238" text-anchor="middle">기하 · 오차론</text>
+
+        <text class="t-lab" x="300" y="200" text-anchor="end">세로획: 깊게, 오래 간다</text>
+        <text class="t-tick" x="300" y="216" text-anchor="end">도구는 3년이면 바뀌지만</text>
+        <text class="t-tick" x="300" y="232" text-anchor="end">최소제곱은 안 바뀐다</text>
+        <text class="t-lab" x="460" y="200">가로획: 하나만 고른다</text>
+        <text class="t-tick" x="460" y="216">지금 조직에 자리가 있는</text>
+        <text class="t-tick" x="460" y="232">방향이어야 연습할 수 있다</text>
+      </svg>

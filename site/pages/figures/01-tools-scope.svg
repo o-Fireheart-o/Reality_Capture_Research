@@ -1,0 +1,38 @@
+<svg viewBox="0 0 760 266" role="img" aria-label="이 문서가 다루는 Reality Capture 범위. 포함하는 취득 방식 여덟 가지와 제외한 네 갈래, 그리고 Scan-to-BIM 접점">
+  <rect x="20" y="36" width="430" height="218" rx="4" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1"></rect>
+  <text class="t-hd" x="34" y="26">포함 — 현실을 측정해 좌표를 가진 3차원 데이터로</text>
+  <rect x="34" y="52" width="196" height="34" rx="3" fill="var(--surface)" stroke="var(--rule)" stroke-width="1"></rect>
+  <text class="t-lab" x="46" y="74">사진측량</text>
+  <rect x="240" y="52" width="196" height="34" rx="3" fill="var(--surface)" stroke="var(--rule)" stroke-width="1"></rect>
+  <text class="t-lab" x="252" y="74">지상 고정식 라이다 (TLS)</text>
+  <rect x="34" y="96" width="196" height="34" rx="3" fill="var(--surface)" stroke="var(--rule)" stroke-width="1"></rect>
+  <text class="t-lab" x="46" y="118">모바일·핸드헬드 라이다</text>
+  <rect x="240" y="96" width="196" height="34" rx="3" fill="var(--surface)" stroke="var(--rule)" stroke-width="1"></rect>
+  <text class="t-lab" x="252" y="118">드론·UAV 항공촬영</text>
+  <rect x="34" y="140" width="196" height="34" rx="3" fill="var(--surface)" stroke="var(--rule)" stroke-width="1"></rect>
+  <text class="t-lab" x="46" y="162">360 파노라마 이미징</text>
+  <rect x="240" y="140" width="196" height="34" rx="3" fill="var(--surface)" stroke="var(--rule)" stroke-width="1"></rect>
+  <text class="t-lab" x="252" y="162">구조광·ToF 스캐너</text>
+  <rect x="34" y="184" width="196" height="34" rx="3" fill="var(--surface)" stroke="var(--rule)" stroke-width="1"></rect>
+  <text class="t-lab" x="46" y="206">항공·위성 라이다</text>
+  <rect x="240" y="184" width="196" height="34" rx="3" fill="var(--surface)" stroke="var(--near)" stroke-width="1" stroke-dasharray="4 3"></rect>
+  <text class="t-lab" x="252" y="206">NeRF·3DGS (렌더링 계열)</text>
+  <text class="t-tick" x="34" y="243" fill="var(--muted)">점선 칸: 측량보다 렌더링에 무게가 실리지만 입력이 현실 촬영물이라 포함</text>
+  <text class="t-hd" x="520" y="26" fill="var(--muted)">제외</text>
+  <rect x="520" y="52" width="226" height="40" rx="3" fill="var(--sunk)" stroke="var(--rule)" stroke-width="1"></rect>
+  <text class="t-lab" x="532" y="69">CAD·BIM 저작 도구</text>
+  <text class="t-tick" x="532" y="85" fill="var(--muted)">현실을 측정하지 않는다</text>
+  <rect x="520" y="102" width="226" height="40" rx="3" fill="var(--sunk)" stroke="var(--rule)" stroke-width="1"></rect>
+  <text class="t-lab" x="532" y="119">CMM·레이저 트래커</text>
+  <text class="t-tick" x="532" y="135" fill="var(--muted)">마이크로미터급, 정밀도 체계가 다르다</text>
+  <rect x="520" y="152" width="226" height="40" rx="3" fill="var(--sunk)" stroke="var(--rule)" stroke-width="1"></rect>
+  <text class="t-lab" x="532" y="169">의료 영상 (CT·MRI)</text>
+  <text class="t-tick" x="532" y="185" fill="var(--muted)">규제와 워크플로가 따로 있다</text>
+  <rect x="520" y="202" width="226" height="40" rx="3" fill="var(--sunk)" stroke="var(--rule)" stroke-width="1"></rect>
+  <text class="t-lab" x="532" y="219">분광 중심 광학 위성</text>
+  <text class="t-tick" x="532" y="235" fill="var(--muted)">2차원 영상 분석이 목적</text>
+  <line x1="452" y1="72" x2="518" y2="72" stroke="var(--far)" stroke-width="1.2" stroke-dasharray="4 3"></line>
+  <text class="t-tick" x="485" y="64" text-anchor="middle" fill="var(--far)">접점</text>
+  <text class="t-tick" x="485" y="88" text-anchor="middle" fill="var(--far)">Scan-</text>
+  <text class="t-tick" x="485" y="101" text-anchor="middle" fill="var(--far)">to-BIM</text>
+</svg>

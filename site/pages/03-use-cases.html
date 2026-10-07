@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>03. Reality Capture는 현 시대에 어떻게 사용되고 있는가</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Song+Myung&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<nav class="nav" aria-label="목차">
+  <div class="nav-brand">리서치 노트 · 2026</div>
+  <div class="nav-title"><a href="../index.html" style="color:inherit;text-decoration:none">Reality Capture 지형도</a></div>
+  <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navList">목차 열기</button>
+  <ul class="nav-list" id="navList">
+    <li><a class="pg" href="00-glossary.html"><span>00 · 용어집</span></a></li>
+    <li><a class="pg" href="01-tools.html"><span>01 · 도구 지형도</span></a></li>
+    <li><a class="pg" href="01-tools/colmap.html"><span>01 심층 · COLMAP</span></a></li>
+    <li><a class="pg" href="02-history.html"><span>02 · 역사와 진행 방향</span></a></li>
+    <li><a class="pg cur" href="03-use-cases.html" aria-current="page"><span>03 · 현재의 쓰임새</span></a></li>
+    <li><a class="pg" href="04-adjacent-tech.html"><span>04 · 연계 기술 지도</span></a></li>
+    <li><a class="pg" href="05-learning-roadmap.html"><span>05 · 학습 로드맵</span></a></li>
+    <li class="toc-title">이 문서</li>
+    <li><a class="nav-sub" href="#이-문서를-읽는-법">이 문서를 읽는 법</a></li>
+    <li><a class="nav-sub" href="#1-건설aec">1. 건설·AEC</a></li>
+    <li><a class="nav-sub" href="#2-부동산시설관리">2. 부동산·시설관리</a></li>
+    <li><a class="nav-sub" href="#3-토목인프라">3. 토목·인프라</a></li>
+    <li><a class="nav-sub" href="#4-플랜트에너지">4. 플랜트·에너지</a></li>
+    <li><a class="nav-sub" href="#5-문화재와-디지털-아카이브">5. 문화재와 디지털 아카이브</a></li>
+    <li><a class="nav-sub" href="#6-제조물류">6. 제조·물류</a></li>
+    <li><a class="nav-sub" href="#7-게임영화-버추얼-프로덕션">7. 게임·영화 버추얼 프로덕션</a></li>
+    <li><a class="nav-sub" href="#8-자율주행-hd맵">8. 자율주행 HD맵</a></li>
+    <li><a class="nav-sub" href="#9-보험재난-대응">9. 보험·재난 대응</a></li>
+    <li><a class="nav-sub" href="#10-한계와-실패-요인">10. 한계와 실패 요인</a></li>
+    <li><a class="nav-sub" href="#11-질문-3에-대한-답">11. 질문 3에 대한 답</a></li>
+    <li><a class="nav-sub" href="#용어-후보">용어 후보</a></li>
+  </ul>
+  <div class="nav-foot">원문: <a href="https://github.com/o-Fireheart-o/Reality_Capture_Research/blob/master/docs/03-use-cases.md" target="_blank" rel="noopener">03-use-cases.md</a><br>한 장 요약: <a href="../index.html">요약 페이지</a></div>
+</nav>
+<main class="main">
+<div class="col doc">
+<header class="mast">
+  <div class="eyebrow">Reality Capture 심층 리서치 · 문서</div>
+  <h1>03. Reality Capture는 현 시대에 어떻게 사용되고 있는가</h1>
+  <div class="doc-meta"><span>작성일 2026-09-21</span><span>최종수정일 2026-10-07</span></div>
+</header>
+<p><strong>범위 렌즈:</strong> 전 산업을 훑되 건설·AEC를 주 렌즈로 삼는다. 그래서 1장이 가장 두껍고, 나머지 산업은 "AEC와 무엇이 다른가"를 기준으로 짧게 정리했다.</p>
+<h2 id="이-문서를-읽는-법">이 문서를 읽는 법</h2>
+<ul>
+<li>사례마다 마지막에 <code>파이프라인: 장비 → 소프트웨어 → 산출물(사용자)</code> 한 줄을 달았다. 추상적인 효용이 아니라 누가 무엇을 들고 나가는지를 보려는 장치다.</li>
+<li>출처 뒤 대괄호는 출처의 성격이다. <code>[벤더]</code>는 공급사 자사 자료, <code>[제3자]</code>는 언론·조사기관, <code>[학술]</code>은 논문, <code>[공공]</code>은 정부·공공기관 문서를 뜻한다.</li>
+<li>벤더 사례집의 절감 수치는 제품을 팔려고 쓴 글에 실린 숫자다. 제3자 벤치마크와 같은 무게로 읽으면 안 된다. 이 문서에서는 벤더가 주장한 수치임을 문장 안에 명시했다.</li>
+<li>모든 출처의 확인 날짜는 2026-09-21이다.</li>
+<li>출처를 찾지 못한 판단은 문장 끝에 <code><span class="est">(추정)</span></code>으로 표시했다.</li>
+</ul>
+<hr />
+<h2 id="1-건설aec">1. 건설·AEC</h2>
+<p>건설에서 Reality Capture가 파고든 지점은 대체로 하나다. <strong>"지금 현장이 어떤 상태인지"를 말로 다투지 않고 데이터로 확정하는 일.</strong> 진행률, 설계 대비 오차, 준공 상태, 분쟁 증거가 전부 같은 뿌리에서 갈라져 나온다.</p>
+<figure><div class="fig-box wide"><svg viewBox="0 0 760 318" role="img" aria-label="건설 생애주기 네 단계(제작, 시공, 준공·하자, 운영)에 1장의 쓰임새를 배치한 도식">
+  <rect x="10" y="14" width="176" height="38" rx="3" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1"></rect>
+  <text class="t-hd" x="98" y="32" text-anchor="middle">제작</text>
+  <text class="t-tick" x="98" y="46" text-anchor="middle">공장</text>
+  <rect x="198" y="14" width="176" height="38" rx="3" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1"></rect>
+  <text class="t-hd" x="286" y="32" text-anchor="middle">시공</text>
+  <text class="t-tick" x="286" y="46" text-anchor="middle">현장</text>
+  <rect x="386" y="14" width="176" height="38" rx="3" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1"></rect>
+  <text class="t-hd" x="474" y="32" text-anchor="middle">준공 · 하자</text>
+  <text class="t-tick" x="474" y="46" text-anchor="middle">마감 이후</text>
+  <rect x="574" y="14" width="176" height="38" rx="3" fill="var(--far-soft)" stroke="var(--far)" stroke-width="1"></rect>
+  <text class="t-hd" x="662" y="32" text-anchor="middle">운영</text>
+  <text class="t-tick" x="662" y="46" text-anchor="middle">시설관리 · 개조</text>
+  <path d="M186 33 L196 33" fill="none" stroke="var(--muted)" stroke-width="1.5"></path>
+  <path d="M374 33 L384 33" fill="none" stroke="var(--muted)" stroke-width="1.5"></path>
+  <path d="M562 33 L572 33" fill="none" stroke="var(--muted)" stroke-width="1.5"></path>
+  <rect x="10" y="62" width="176" height="186" rx="3" fill="var(--surface)" stroke="var(--rule-soft)" stroke-width="1"></rect>
+  <rect x="198" y="62" width="176" height="186" rx="3" fill="var(--surface)" stroke="var(--rule-soft)" stroke-width="1"></rect>
+  <rect x="386" y="62" width="176" height="186" rx="3" fill="var(--surface)" stroke="var(--rule-soft)" stroke-width="1"></rect>
+  <rect x="574" y="62" width="176" height="186" rx="3" fill="var(--surface)" stroke="var(--rule-soft)" stroke-width="1"></rect>
+  <text class="t-lab" x="22" y="86">1.3 PC 부재 검사</text>
+  <text class="t-tick" x="22" y="103">설계 도면과 실측 점군 대조</text>
+  <text class="t-tick" x="22" y="119">현장 반입 전 합부 판정</text>
+  <text class="t-lab" x="210" y="86">1.1 진행률 · 360 워크</text>
+  <text class="t-tick" x="210" y="103">주간 area · room walk</text>
+  <text class="t-lab" x="210" y="130">1.2 scan-vs-BIM</text>
+  <text class="t-tick" x="210" y="147">부재별 편차 · 커버리지</text>
+  <text class="t-lab" x="210" y="174">1.4 비계 안전 점검</text>
+  <text class="t-tick" x="210" y="191">로봇 + 라이다 → 이상 목록</text>
+  <text class="t-lab" x="210" y="218">1.5 토공 · 물량</text>
+  <text class="t-tick" x="210" y="235">드론 사진측량 → 체적</text>
+  <text class="t-lab" x="398" y="86">1.6 하자 관리</text>
+  <text class="t-tick" x="398" y="103">편차 리포트로 위치 특정</text>
+  <text class="t-tick" x="398" y="135">덮이기 전 기록을 꺼내</text>
+  <text class="t-tick" x="398" y="151">배관 · 전기 위치 확인</text>
+  <path d="M330 99 C 360 99, 360 131, 392 131" fill="none" stroke="var(--near)" stroke-width="1.2" stroke-dasharray="3 3"></path>
+  <text class="t-tick" x="398" y="185" fill="var(--muted)">↖ 시공 중 event walk가</text>
+  <text class="t-tick" x="398" y="201" fill="var(--muted)">이 기록을 남긴다</text>
+  <text class="t-lab" x="586" y="86">1.2 scan-to-BIM</text>
+  <text class="t-tick" x="586" y="103">as-built BIM 작성</text>
+  <text class="t-lab" x="586" y="130">2장 시설관리</text>
+  <text class="t-tick" x="586" y="147">도면 갱신 · 반입 동선</text>
+  <text class="t-lab" x="586" y="174">4장 플랜트 개조</text>
+  <text class="t-tick" x="586" y="191">셧다운 전 스캔 · 간섭 검토</text>
+  <rect x="586" y="206" width="152" height="32" rx="3" fill="var(--far-soft)" stroke="none"></rect>
+  <text class="t-tick" x="662" y="220" text-anchor="middle">생애주기 비용의 60%가</text>
+  <text class="t-tick" x="662" y="234" text-anchor="middle">운영 단계에 몰린다</text>
+  <rect x="198" y="260" width="364" height="44" rx="3" fill="var(--sunk)" stroke="var(--rule)" stroke-width="1"></rect>
+  <text class="t-lab" x="210" y="279">1.7 공정 분쟁 증거</text>
+  <text class="t-tick" x="210" y="295">타임스탬프 · 위치가 박힌 시점별 기록이 단계마다 쌓인다</text>
+</svg></div><figcaption><span class="fig-label">그림 1</span><b>1장의 쓰임새를 건설 생애주기에 놓으면.</b> 공장 제작부터 운영까지 단계마다 Reality Capture가 끼어드는 자리가 있다. 단계 구분과 배치는 이 문서의 사례를 정리한 것이다<span class="est">(추정)</span>. 60%는 You 등의 리뷰 논문이 인용한 수치다.</figcaption></figure>
+
+<h3 id="11-시공-진행률-추적-360-워크">1.1 시공 진행률 추적 — 360 워크</h3>
+<p>Devcon Construction은 캘리포니아 산타클라라의 NVIDIA 본사 현장(8개 층, 약 160만 제곱피트)을 OpenSpace로 기록했다. 현장 인력이 안전모에 360 카메라를 달고 걸어 다니며 주마다 세 가지 워크를 찍는다. 구역 전체를 도는 area walk, 방 단위로 들어가는 room walk, 마감에 덮이기 전 상태를 남기는 event walk다. 한 개 층 28만 제곱피트를 도는 데 30분이 걸렸고, 다른 소프트웨어로는 하루가 걸리던 일이라고 사례집은 적었다. 파일럿 단계에서 경쟁 제품 대비 2~3배, 넓은 구역에서는 10배 빠르다는 것도 벤더 사례집의 주장이다. 현장소장은 직접 나가 보지 않고 가상 워크스루로 공정을 갱신했고, RFI 처리와 목업 검토에도 같은 기록을 썼다. (출처: <a href="https://www.openspace.ai/resources/case-studies/devcon-construction-uses-openspace-to-capture-a-complete-record-of-1-6m-square-foot-project-site/" target="_blank" rel="noopener">https://www.openspace.ai/resources/case-studies/devcon-construction-uses-openspace-to-capture-a-complete-record-of-1-6m-square-foot-project-site/</a> , 확인 2026-09-21) <code>[벤더]</code></p>
+<figure class="photo"><div class="fig-box"><img src="img/03-use-cases-360-site.jpg" alt="공사 중인 건물과 타워크레인, 맞은편 완공 건물, 보도까지 한 장에 담긴 360도 등장방형 사진. 아래쪽에 촬영자의 손이 보인다" loading="lazy"></div><figcaption><span class="fig-label">그림 2</span><b>360 카메라로 찍은 공사장 한 장.</b> 스웨덴 말뫼의 공사 현장 앞에서 찍은 사진을 등장방형으로 펼쳤다. 위아래 왜곡을 감수하는 대신 사방이 한 프레임에 들어간다. 360 워크는 이런 프레임을 걸으며 연속으로 찍고, 소프트웨어가 촬영 위치를 도면에 매핑한다. 이 사진 자체는 360 워크 제품으로 찍은 것이 아니다.<span class="credit">사진: Rose Abrams · <a href="https://commons.wikimedia.org/wiki/File:360_photos_of_upper_Malm%C3%B6_-_Construction_near_Niagara_1.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener">CC BY 4.0</a></span></figcaption></figure>
+
+<p>파이프라인: 안전모 장착 360 카메라 → OpenSpace(촬영 경로를 도면에 자동 매핑) → 날짜별 가상 워크스루(현장소장·공무팀·발주처)</p>
+<h3 id="12-as-built-대-설계-비교-scan-to-bim과-scan-vs-bim">1.2 as-built 대 설계 비교 — scan-to-BIM과 scan-vs-BIM</h3>
+<p>두 작업은 이름이 비슷하지만 방향이 반대다. scan-to-BIM은 점군에서 모델을 새로 만들고, scan-vs-BIM은 이미 있는 모델과 점군을 대조한다. 시공 중에 주기적으로 돌리기 쉬운 쪽은 후자다<span class="est">(추정)</span>.</p>
+<p>Cintoo의 진행 모니터링 워크플로가 전형적이다. 지상 스캐너나 SLAM 스캐너로 받은 점군을 Revit·IFC·NWD 모델과 겹치고, 밀리미터 단위로 허용 오차를 정한 뒤 부재별로 결과를 뽑는다. 결과물은 CSV다. 스캔 데이터가 부재를 얼마나 덮었는지(커버리지 비율), 실제 시공이 모델에서 최대·평균·최소 얼마나 벗어났는지가 부재 ID와 함께 줄줄이 나온다. 이 표를 현장 엔지니어는 시공 오차를 잡는 데 쓰고, 품질팀은 합부 판정에, 발주처는 기성 근거에 쓴다. (출처: <a href="https://cintoo.com/en/blog/progress-monitoring" target="_blank" rel="noopener">https://cintoo.com/en/blog/progress-monitoring</a> , 확인 2026-09-21) <code>[벤더]</code></p>
+<figure><div class="fig-box wide"><svg viewBox="0 0 760 330" role="img" aria-label="scan-to-BIM과 scan-vs-BIM의 방향 차이, 그리고 scan-vs-BIM 진행 모니터링 워크플로가 부재별 CSV 리포트를 세 수요자에게 넘기는 흐름">
+  <text class="t-hd" x="16" y="42">scan-to-BIM</text>
+  <rect x="140" y="22" width="110" height="34" rx="3" fill="var(--surface)" stroke="var(--near)"></rect>
+  <text class="t-lab" x="195" y="44" text-anchor="middle">점군</text>
+  <path d="M250 39 L286 39 M280 34 L286 39 L280 44" fill="none" stroke="var(--near)" stroke-width="1.5"></path>
+  <rect x="290" y="22" width="150" height="34" rx="3" fill="var(--near-soft)" stroke="var(--near)"></rect>
+  <text class="t-lab" x="365" y="44" text-anchor="middle">BIM 모델을 새로 만든다</text>
+  <text class="t-tick" x="456" y="36">결과: as-built BIM</text>
+  <text class="t-tick" x="456" y="52">전통 방식은 엔지니어 수작업 → AI 기반으로 이동 중</text>
+  <text class="t-hd" x="16" y="96">scan-vs-BIM</text>
+  <rect x="140" y="76" width="110" height="34" rx="3" fill="var(--surface)" stroke="var(--far)"></rect>
+  <text class="t-lab" x="195" y="98" text-anchor="middle">점군</text>
+  <path d="M250 93 L286 93" fill="none" stroke="var(--far)" stroke-width="1.5"></path>
+  <path d="M290 93 L254 93" fill="none" stroke="var(--far)" stroke-width="1.5"></path>
+  <path d="M260 88 L254 93 L260 98 M280 88 L286 93 L280 98" fill="none" stroke="var(--far)" stroke-width="1.5"></path>
+  <rect x="290" y="76" width="150" height="34" rx="3" fill="var(--far-soft)" stroke="var(--far)"></rect>
+  <text class="t-lab" x="365" y="98" text-anchor="middle">이미 있는 BIM</text>
+  <text class="t-tick" x="456" y="90">결과: 부재별 편차 목록</text>
+  <text class="t-tick" x="456" y="106">시공 중 주기적으로 돌리기 쉬운 쪽 · 추정</text>
+  <line x1="10" y1="128" x2="750" y2="128" stroke="var(--rule)" stroke-width="1"></line>
+  <text class="t-hd" x="10" y="152">scan-vs-BIM 진행 모니터링 (Cintoo 워크플로 예)</text>
+  <rect x="10" y="166" width="132" height="58" rx="3" fill="var(--surface)" stroke="var(--far)"></rect>
+  <text class="t-hd" x="76" y="190" text-anchor="middle">① 취득</text>
+  <text class="t-tick" x="76" y="208" text-anchor="middle">지상 · SLAM 스캐너</text>
+  <rect x="154" y="166" width="132" height="58" rx="3" fill="var(--surface)" stroke="var(--far)"></rect>
+  <text class="t-hd" x="220" y="190" text-anchor="middle">② 정합</text>
+  <text class="t-tick" x="220" y="208" text-anchor="middle">Revit · IFC · NWD</text>
+  <rect x="298" y="166" width="132" height="58" rx="3" fill="var(--surface)" stroke="var(--far)"></rect>
+  <text class="t-hd" x="364" y="190" text-anchor="middle">③ 허용 오차</text>
+  <text class="t-tick" x="364" y="208" text-anchor="middle">밀리미터 단위로 설정</text>
+  <rect x="442" y="166" width="132" height="58" rx="3" fill="var(--far-soft)" stroke="var(--far)"></rect>
+  <text class="t-hd" x="508" y="190" text-anchor="middle">④ CSV 리포트</text>
+  <text class="t-tick" x="508" y="208" text-anchor="middle">부재별 결과</text>
+  <path d="M142 195 L152 195" fill="none" stroke="var(--far)" stroke-width="1.5"></path>
+  <path d="M286 195 L296 195" fill="none" stroke="var(--far)" stroke-width="1.5"></path>
+  <path d="M430 195 L440 195" fill="none" stroke="var(--far)" stroke-width="1.5"></path>
+  <path d="M574 195 L590 195 L590 170 L604 170 M590 195 L604 216 M590 195 L590 262 L604 262" fill="none" stroke="var(--rule)" stroke-width="1.2"></path>
+  <rect x="604" y="150" width="146" height="40" rx="3" fill="var(--surface)" stroke="var(--near)"></rect>
+  <text class="t-lab" x="616" y="167">현장 엔지니어</text>
+  <text class="t-tick" x="616" y="183">시공 오차 잡기</text>
+  <rect x="604" y="196" width="146" height="40" rx="3" fill="var(--surface)" stroke="var(--near)"></rect>
+  <text class="t-lab" x="616" y="213">품질팀</text>
+  <text class="t-tick" x="616" y="229">합부 판정</text>
+  <rect x="604" y="242" width="146" height="40" rx="3" fill="var(--surface)" stroke="var(--near)"></rect>
+  <text class="t-lab" x="616" y="259">발주처</text>
+  <text class="t-tick" x="616" y="275">기성 근거</text>
+  <text class="t-tick" x="10" y="254" fill="var(--muted)">CSV 한 줄 = 부재 하나</text>
+  <rect x="10" y="262" width="96" height="26" fill="var(--sunk)" stroke="var(--rule)"></rect>
+  <rect x="106" y="262" width="120" height="26" fill="var(--sunk)" stroke="var(--rule)"></rect>
+  <rect x="226" y="262" width="116" height="26" fill="var(--sunk)" stroke="var(--rule)"></rect>
+  <rect x="342" y="262" width="116" height="26" fill="var(--sunk)" stroke="var(--rule)"></rect>
+  <rect x="458" y="262" width="116" height="26" fill="var(--sunk)" stroke="var(--rule)"></rect>
+  <text class="t-tick" x="58" y="279" text-anchor="middle">부재 ID</text>
+  <text class="t-tick" x="166" y="279" text-anchor="middle">커버리지 비율</text>
+  <text class="t-tick" x="284" y="279" text-anchor="middle">최대 편차</text>
+  <text class="t-tick" x="400" y="279" text-anchor="middle">평균 편차</text>
+  <text class="t-tick" x="516" y="279" text-anchor="middle">최소 편차</text>
+  <text class="t-tick" x="10" y="312">커버리지가 낮으면 그 부재의 편차 판정은 믿을 수 없다</text>
+</svg></div><figcaption><span class="fig-label">그림 3</span><b>두 작업은 방향이 반대다.</b> scan-to-BIM은 점군에서 모델을 새로 만들고, scan-vs-BIM은 있는 모델과 점군을 맞춰 편차를 뽑는다. 아래 흐름은 Cintoo가 설명한 진행 모니터링 워크플로를 옮긴 것이다(벤더 자료). 결과는 부재 한 줄짜리 CSV이고, 같은 표를 세 수요자가 다른 목적으로 쓴다.</figcaption></figure>
+
+<p>학계 쪽 정리도 봐 둘 만하다. You, Chen, Xue가 Automation in Construction 182권(2026, 논문번호 106755)에 실은 리뷰는 58개 사례를 훑어 scan-to-BIM이 규칙 기반에서 AI 기반으로 넘어가는 중이라고 정리했다. 이 논문이 짚은 문제는 두 가지다. 전통적인 scan-to-BIM은 엔지니어 수작업이라 시간과 인력이 많이 들고 사람 실수에 취약하다. 게다가 건물 생애주기 비용의 60%가 운영 단계에 몰려 있는데, as-built BIM을 손으로 만들다 보면 유지보수 자체가 늦어진다. (출처: <a href="https://doi.org/10.1016/j.autcon.2025.106755" target="_blank" rel="noopener">https://doi.org/10.1016/j.autcon.2025.106755</a> , 저자 사전출판본 <a href="https://frankxue.com/pdf/you26automated.pdf" target="_blank" rel="noopener">https://frankxue.com/pdf/you26automated.pdf</a> , 확인 2026-09-21) <code>[학술]</code></p>
+<figure class="photo"><div class="fig-box"><img src="img/03-use-cases-scan-to-bim.jpg" alt="회색 점군으로 보이는 기계실 안에 청록색 배관 모델이 겹쳐 있다" loading="lazy"></div><figcaption><span class="fig-label">그림 4</span><b>scan-to-BIM의 결과물.</b> 회색은 라이다로 찍은 기계실 점군이고, 청록색은 그 위에 세운 배관 BIM 모델이다. 오리건 주립대(Yelda Turkan)가 제공한 이미지다. 이런 배관을 한 줄씩 손으로 그리는 일이 위 논문이 짚은 시간·인력 문제다.<span class="credit">사진: Oregon State University · <a href="https://commons.wikimedia.org/wiki/File:Scan-to-BIM_Mechanical_Room.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/2.0" target="_blank" rel="noopener">CC BY-SA 2.0</a></span></figcaption></figure>
+
+<p>파이프라인: 지상 레이저 스캐너 또는 SLAM 백팩 → Cintoo·Navisworks 등에서 BIM과 정합 → 부재별 편차·커버리지 리포트(현장 엔지니어·품질팀·발주처)</p>
+<h3 id="13-준공-검수와-부재-품질-검사">1.3 준공 검수와 부재 품질 검사</h3>
+<p>공장에서 만든 부재를 현장에 싣고 오기 전에 걸러 내는 쪽으로도 쓰인다. 자연과환경은 스캔비와 함께 3차원 공간 라이다로 PC(프리캐스트 콘크리트) 품질관리를 자동화하는 기술을 검증했다고 2026년 6월 밝혔다. 설계 도면과 실제 제작된 부재를 디지털로 비교해 사람 손을 타는 검사 과정의 오차를 줄이겠다는 구상이다. 다만 보도에 정확도나 절감률 같은 정량 수치는 없었고, 기술 타당성 확인 단계라고만 나와 있다. (출처: <a href="https://www.etoday.co.kr/news/view/2593030" target="_blank" rel="noopener">https://www.etoday.co.kr/news/view/2593030</a> , 확인 2026-09-21) <code>[제3자]</code></p>
+<p>파이프라인: 3차원 공간 라이다 스캐너 → 설계 도면과 실측 점군 대조 → 부재별 합부 판정(제조사 품질팀·현장 검수자)</p>
+<h3 id="14-안전-점검">1.4 안전 점검</h3>
+<p>가설재는 형상이 규칙적이라 자동 판독을 붙이기 좋은 대상이다<span class="est">(추정)</span>. 연세대 Juhyeon Kim 등은 ISARC 2025에서 4족 보행 로봇에 지상 라이다를 얹어 비계 점군을 모으고, 딥러닝 세그멘테이션으로 부재를 분류한 뒤 클러스터링과 들로네 삼각분할을 거쳐 3D CAD 모델을 복원하는 절차를 발표했다. CAD 모델링 단계에서 F1 점수 97.44%를 보고했고, 발판 누락이나 수평재 오설치 같은 이상을 짚어 냈다. (출처: <a href="https://yonsei.elsevierpure.com/en/publications/integrated-framework-for-scaffold-monitoring-from-point-cloud-acq/" target="_blank" rel="noopener">https://yonsei.elsevierpure.com/en/publications/integrated-framework-for-scaffold-monitoring-from-point-cloud-acq/</a> , 확인 2026-09-21) <code>[학술]</code></p>
+<p>파이프라인: 4족 보행 로봇 + 지상 라이다 → 딥러닝 세그멘테이션·CAD 복원 → 비계 이상 목록(안전관리자)</p>
+<h3 id="15-물량-산출과-토공">1.5 물량 산출과 토공</h3>
+<p>드론 사진측량으로 토공량과 야적더미 체적을 재는 일은 이제 현장에서 특별한 축에 들지 않는다<span class="est">(추정)</span>. RTK 드론에 지상기준점을 더해 쓰면 체적 오차가 1~3% 수준이라는 게 서비스 업체들이 내세우는 숫자이고, 사람이 하루 걸려 걷던 부지를 한 시간 안쪽 비행으로 끝낸다는 설명도 같은 출처에서 나온다. 수백 점을 재던 일이 수백만 점을 재는 일로 바뀐 셈인데, 이 수치는 전부 서비스 판매자의 자료라는 점을 감안해야 한다. (출처: <a href="https://www.impactaerial.co.uk/2026/07/28/drone-stockpile-measurement-the-2026-professional-guide-to-volumetric-surveys/" target="_blank" rel="noopener">https://www.impactaerial.co.uk/2026/07/28/drone-stockpile-measurement-the-2026-professional-guide-to-volumetric-surveys/</a> , <a href="https://www.propelleraero.com/blog/how-stockpile-volume-measurement-works-in-drone-surveying-with-propeller/" target="_blank" rel="noopener">https://www.propelleraero.com/blog/how-stockpile-volume-measurement-works-in-drone-surveying-with-propeller/</a> , 확인 2026-09-21) <code>[벤더]</code></p>
+<p>규모가 작은 계측까지 쓰임새가 내려오고 있다. 미국 연방도로청은 휴대형 라이다(pocket lidar)로 굴착 트렌치를 재는 실험을 보고서로 냈다(FHWA-HRT-25-015, Pocket Lidar for Trench Measurement). (출처: <a href="https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-25-015.pdf" target="_blank" rel="noopener">https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-25-015.pdf</a> , 확인 2026-09-21) <code>[공공]</code></p>
+<p>파이프라인: RTK 드론 + 지상기준점 → 사진측량 처리(Propeller·Pix4D 등) → 정사영상·DSM·체적 리포트(공무팀·토공 협력사·발주처)</p>
+<h3 id="16-하자-관리">1.6 하자 관리</h3>
+<p>하자 관리에서 Reality Capture가 하는 일은 두 가지로 갈린다. 하나는 위치 특정이다. 부재별 편차 리포트에 오차가 큰 부재가 ID로 찍혀 나오므로, 하자 목록을 도면 위 좌표에 붙일 수 있다(1.2 참조). 다른 하나는 덮이기 전 상태를 보존하는 일이다. 마감 뒤에 문제가 터졌을 때 벽을 뜯지 않고 촬영 기록에서 배관·전기 위치를 확인하는 용도인데, OpenSpace 사례의 event walk가 바로 이 목적으로 돌아간다. (출처: <a href="https://www.openspace.ai/resources/case-studies/devcon-construction-uses-openspace-to-capture-a-complete-record-of-1-6m-square-foot-project-site/" target="_blank" rel="noopener">https://www.openspace.ai/resources/case-studies/devcon-construction-uses-openspace-to-capture-a-complete-record-of-1-6m-square-foot-project-site/</a> , 확인 2026-09-21) <code>[벤더]</code></p>
+<p>다만 표면 아래는 어느 쪽으로도 보이지 않는다. 철근 부식이나 배면 공동처럼 표면 뒤에 있는 결함은 스캔으로 잡히지 않으므로 별도 비파괴검사가 따라붙어야 한다(3장 참조).</p>
+<p>파이프라인: 360 카메라 또는 지상 스캐너 → 날짜별 기록과 BIM 편차 리포트 → 위치가 찍힌 하자 목록(하자 담당·유지관리팀)</p>
+<h3 id="17-공정-분쟁-증거">1.7 공정 분쟁 증거</h3>
+<p>시공사가 공기 연장이나 추가 공사비를 주장하려면 그 시점 현장이 어땠는지를 입증해야 한다. Cintoo는 편차 리포트의 수요자 가운데 하나로 "법적·계약적 증거가 필요한 시공사"를 직접 꼽는다. (출처: <a href="https://cintoo.com/en/blog/progress-monitoring" target="_blank" rel="noopener">https://cintoo.com/en/blog/progress-monitoring</a> , 확인 2026-09-21) <code>[벤더]</code></p>
+<p>사진이 증거로 인정받으려면 세 가지가 필요하다. 무엇을 찍었는지, 언제 어디서 찍었는지, 찍은 뒤 손대지 않았는지다. 그래서 타임스탬프와 GPS 메타데이터를 박아 찍고, 변경 이력이 끊기지 않는 시스템에 보관하는 쪽으로 실무가 정리되는 중이다. (출처: <a href="https://www.kraaft.com/en/articles/construction-photo-evidence-how-site-documentation-wins-disputes-and-insurance-claims-2026-guide" target="_blank" rel="noopener">https://www.kraaft.com/en/articles/construction-photo-evidence-how-site-documentation-wins-disputes-and-insurance-claims-2026-guide</a> , 확인 2026-09-21) <code>[벤더]</code></p>
+<p>360 촬영이 여기서 유리한 이유는 화질이 아니라 선택 편향이 없다는 점이다. 사람이 찍을 곳을 고르면 불리한 장면은 빠지지만, 한 번 걸으면 모든 프레임이 도면에 자동으로 매핑되므로 사람의 선택 없이 커버리지가 고르게 남는다. (출처: <a href="https://www.openspace.ai/blog/construction-dispute-documentation/" target="_blank" rel="noopener">https://www.openspace.ai/blog/construction-dispute-documentation/</a> , 확인 2026-09-21) <code>[벤더]</code> 참고로 "건설 분쟁의 70%가 문서 부실에서 비롯된다"는 식으로 자주 인용되는 FMI 통계가 있는데, 확인된 경로가 벤더 블로그의 재인용이라 이 문서에서는 근거로 쓰지 않았다.</p>
+<p>파이프라인: 안전모 360 카메라 또는 지상 스캐너 → 도면 매핑과 타임스탬프·위치 메타데이터 보존 → 시점별 현장 기록(공무팀·법무팀·중재 대리인)</p>
+<hr />
+<h2 id="2-부동산시설관리">2. 부동산·시설관리</h2>
+<p>부동산은 건설과 달리 <strong>설득</strong>이 목적이다. 오차 몇 밀리미터가 아니라 "가 보고 싶게 만드는가"가 성패를 가른다.</p>
+<p>Matterport가 모아 놓은 통계를 보면 미국 매물의 약 22%에 가상 투어가 붙어 있고(하버드 비즈니스 스쿨 자료 인용), 디지털 트윈을 쓰는 부동산 회사는 15%에 그친다(Statista 인용). 가상 투어가 있으면 31% 더 빨리 팔린다는 수치도 함께 실려 있는데, 이건 Matterport 자사 블로그를 출처로 단 자기 인용이라 따로 봐야 한다. (출처: <a href="https://matterport.com/learn/real-estate-photography/stats" target="_blank" rel="noopener">https://matterport.com/learn/real-estate-photography/stats</a> , 확인 2026-09-21) <code>[벤더]</code></p>
+<p>시설관리 쪽 쓰임새는 결이 다르다. 준공 도면과 실제가 어긋난 건물에서 도면을 갱신하고, 설비를 교체하기 전에 반입 동선과 이격을 확인하는 일이다. 여기서는 가상 투어의 완성도보다 치수를 믿을 수 있느냐가 먼저다<span class="est">(추정)</span>.</p>
+<p>파이프라인: 스테이션형 3D 카메라(Matterport Pro 계열) 또는 360 카메라 → 클라우드 재구성(평면도·치수 자동 생성) → 웹 가상투어·평면도(중개사·자산운용사·FM팀)</p>
+<hr />
+<h2 id="3-토목인프라">3. 토목·인프라</h2>
+<p>도로·교량·터널은 대상이 길고 선형이라 정지식 스캔만으로는 감당이 안 된다. 그래서 차량에 스캐너를 얹고 지나가며 훑는 방식이 자주 쓰인다.</p>
+<figure class="photo"><div class="fig-box"><img src="img/03-use-cases-mms-car.jpg" alt="흰색 승용차 지붕 랙 위에 노란색 레이저 측량 장비와 GNSS 안테나가 달려 있다" loading="lazy"></div><figcaption><span class="fig-label">그림 5</span><b>지붕에 레이저 장비를 얹은 모바일 매핑 차량.</b> 독일 광섬유망 사업자 Deutsche Glasfaser가 망 설계 측량에 쓰는 차량이다. 도로·터널 점검용이나 정밀도로지도용 MMS는 아니지만, 차에 스캐너와 위치 센서를 싣고 달리며 훑는다는 원리는 같다.<span class="credit">사진: Germanist2017 · <a href="https://commons.wikimedia.org/wiki/File:Mobile_Mapping_Car_(Vermessungsfahrzeug).jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></span></figcaption></figure>
+
+<p>미국 연방도로청은 터널 점검용 레이저 스캐닝을 이렇게 설명한다. 스캐너를 차량에 얹고 위치를 기록하며 통과시키거나, 표지를 깔아 놓고 여러 지점에서 고정 촬영해 합친다. 빔을 360도로 돌려 터널 형상을 나선형으로 훑기 때문에 표지판·설비 같은 부속물까지 같이 들어온다. 잡히는 것은 타일 탈락과 박리, 큰 균열 같은 표면 손상, 누수, 예상치 못한 변위, 부속물 위치와 건축한계 저촉이다. 장점으로는 취득이 빠르고, 국부 변형과 건축한계 문제를 잡아내며, 비접촉이고 기하 왜곡이 없다는 점을 든다. 한계도 같은 문서에 적혀 있다. 표면 아래 결함은 못 보고, 레이저 입사각과 표면 반사율에 결과가 흔들리며, 가시선 안에 든 것만 보인다. (출처: <a href="https://infotechnology.fhwa.dot.gov/laser-scanning/" target="_blank" rel="noopener">https://infotechnology.fhwa.dot.gov/laser-scanning/</a> , 확인 2026-09-21) <code>[공공]</code></p>
+<p>국내에서는 국토교통부가 스마트 건설기술 로드맵에서 드론 측량과 BIM, 가상시공을 공정 안으로 들이겠다는 방향을 밝혀 왔다. (출처: <a href="https://www.industrynews.co.kr/news/articleView.html?idxno=27635" target="_blank" rel="noopener">https://www.industrynews.co.kr/news/articleView.html?idxno=27635</a> , 확인 2026-09-21) <code>[제3자]</code></p>
+<p>파이프라인: 차량 탑재 라이다(MMS) 또는 고정식 지상 스캐너 → 점군 정합·단면 추출 → 터널 내공 단면·변위 보고서(시설 관리주체·점검 용역사)</p>
+<hr />
+<h2 id="4-플랜트에너지">4. 플랜트·에너지</h2>
+<p>가동 중인 플랜트는 도면과 실물이 다르다. 수십 년간 개조가 쌓였고 그 기록이 도면에 반영되지 않은 경우가 흔하다. 셧다운 기간에 배관을 갈아 끼우려는데 현장에 가 보니 안 들어가는 상황이 여기서 나온다.</p>
+<p>그래서 셧다운 전에 스캔해 점군을 확보하고, 신규 설계를 이 점군 위에 얹어 간섭을 미리 잡는다. 스풀을 공장에서 만들어 와 한 번에 맞추는 것(First Time Right)이 목표다. AGV나 컨베이어, 로봇을 들이는 개조에서도 순서는 같다. (출처: <a href="https://www.asbuilt3d.com/post/pre-turnaround-laser-scanning-checklist" target="_blank" rel="noopener">https://www.asbuilt3d.com/post/pre-turnaround-laser-scanning-checklist</a> , <a href="https://iscano.com/real-world-applications-laser-scanning-lidar/industrial-plant-3d-scanning/" target="_blank" rel="noopener">https://iscano.com/real-world-applications-laser-scanning-lidar/industrial-plant-3d-scanning/</a> , 확인 2026-09-21) <code>[벤더]</code></p>
+<p>이 분야 자료에는 "14일 셧다운에서 72시간 단축, 240만 달러 절감" 식의 사례가 자주 실린다. 다만 확인 가능한 출처가 전부 스캔 서비스 제공사의 블로그이고 제3자 검증본을 찾지 못했다. 방향은 그럴듯하지만 숫자 자체는 근거로 쓰기 어렵다.</p>
+<p>파이프라인: 지상 레이저 스캐너(Leica RTC360 등) 또는 SLAM 스캐너 → 점군을 배관 설계 도구에 정합 후 간섭 검토 → 스풀 제작도·셧다운 작업 순서(공사팀·제작사·운전팀)</p>
+<hr />
+<h2 id="5-문화재와-디지털-아카이브">5. 문화재와 디지털 아카이브</h2>
+<p>이 분야는 목적이 하나다. <strong>사라질 것을 미리 찍어 두는 일.</strong></p>
+<p>앤드루 탤런(Andrew Tallon)은 2010년부터 폴 블레어(Paul Blaer)와 함께 노트르담 대성당을 레이저로 스캔했다. 스캐너를 쉰 번 옮겨 가며 내외부를 훑어 10억 점이 넘는 데이터를 남겼다. 2014년 캔터베리 대성당에서는 55억 점을 모았다. 탤런은 2018년 세상을 떠났고, 이듬해 노트르담에 불이 났다. 그가 남긴 기록은 복원 과정에서 원형을 확인하는 참조 자료가 됐다. (출처: <a href="https://en.wikipedia.org/wiki/Andrew_Tallon" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Andrew_Tallon</a> , 확인 2026-09-21) <code>[제3자]</code></p>
+<p>조직적으로 같은 일을 하는 곳이 CyArk다. 2003년 벤 카크라(Ben Kacyra)가 세운 비영리 단체로, 레이저 스캔과 사진측량으로 유산을 기록하고 데이터를 공개한다. Google Arts &amp; Culture와 함께 연 Open Heritage에서 18개국 27개 유적의 3D 데이터를 공개했다. (출처: <a href="https://artsandculture.google.com/story/open-heritage-sharing-3d-data-with-the-world/-AXx62Vr4vwlKA" target="_blank" rel="noopener">https://artsandculture.google.com/story/open-heritage-sharing-3d-data-with-the-world/-AXx62Vr4vwlKA</a> , <a href="https://www.cyark.org/whoweare/" target="_blank" rel="noopener">https://www.cyark.org/whoweare/</a> , 확인 2026-09-21) <code>[제3자]</code> <code>[벤더]</code></p>
+<figure class="photo"><div class="fig-box"><img src="img/03-use-cases-church-tls.jpg" alt="검은 배경 위에 반투명하게 떠 있는 목조 교회 점군. 종탑 골조와 둥근 천장이 보인다" loading="lazy"></div><figcaption><span class="fig-label">그림 6</span><b>루마니아 그로시 목조 교회의 지상 레이저 스캔 점군.</b> 아라드주 역사 목조 교회를 목록화하는 문화 프로젝트에서 Faro Focus X330으로 실내만 스캔했다. 사라지기 전에 형상을 남기는 일을 개별 연구자가 아니라 프로젝트 단위로 하는 사례다.<span class="credit">사진: Muzeul National al Banatului · <a href="https://commons.wikimedia.org/wiki/File:Biserica_de_lemn_din_Gro%C8%99i_(Arad,_Romania)_-_45d5dc236697487dbe714b6ad60ef502.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener">CC BY 4.0</a></span></figcaption></figure>
+
+<p>한계는 남는다. 점군은 형상을 남기지만 재료의 결, 가공 흔적, 구조가 하중을 받아 온 이력까지 담지는 못한다. 복원 장인이 참조할 수 있는 범위는 어디까지나 "그때 그 형상"이다<span class="est">(추정)</span>.</p>
+<p>파이프라인: 지상 레이저 스캐너와 사진측량 → 점군 정합·메시·텍스처 생성 → 아카이브 데이터셋·웹 3D 공개본(보존 담당자·복원 장인·연구자)</p>
+<hr />
+<h2 id="6-제조물류">6. 제조·물류</h2>
+<p>Amazon은 기존 창고를 라이다로 스캔해 점군을 만든다. 벽과 게이트는 물론 컨베이어와 보관 설비까지 약 3cm 정밀도로 잡는다고 밝혔다. 이 점군을 Autodesk Construction Cloud에서 3D 모델로 바꾸고 ProModel 시뮬레이션에 넣어 인력 효율과 장비 가동을 따져 본다. 라이다 도입으로 모델링이 몇 주 앞당겨졌고, 디지털 트윈 구축 시간이 기존 방식 대비 최대 80% 줄었으며, 공간 활용률은 15%, 노동 생산성은 40% 개선됐다고 한다. 자동화 설비에 돈을 넣기 전에 시뮬레이션으로 먼저 따져 보자는 발상이다. 다만 이 수치는 AWS가 자사 블로그에 실은 것이다. (출처: <a href="https://aws.amazon.com/blogs/supply-chain/aws-simulation-and-digital-twin-to-increase-warehouse-productivity/" target="_blank" rel="noopener">https://aws.amazon.com/blogs/supply-chain/aws-simulation-and-digital-twin-to-increase-warehouse-productivity/</a> , 확인 2026-09-21) <code>[벤더]</code></p>
+<p>공장 레이아웃 쪽에서는 실내 모바일 매핑이 자주 쓰인다. 전기·전자 작업대 제조사 Elabo가 NavVis M6로 14,000제곱미터를 6시간에 스캔했다고 공급사 사례집에 적혀 있다. 생산을 세우지 않으려면 이 정도 속도가 필요했을 것이다<span class="est">(추정)</span>. 점군은 NavVis IndoorViewer와 IPO.Plan을 거쳐 공장 증설 시뮬레이션에 들어갔다. (출처: <a href="https://www.navvis.com/blog/68-how-digital-twins-are-being-used-in-factory-planning" target="_blank" rel="noopener">https://www.navvis.com/blog/68-how-digital-twins-are-being-used-in-factory-planning</a> , 확인 2026-09-21) <code>[벤더]</code></p>
+<p>파이프라인: 실내 모바일 매핑 시스템(NavVis M6 등) 또는 지상 라이다 → IndoorViewer·ProModel·IPO.Plan → 레이아웃 시뮬레이션·이격 검토(생산기술팀·설비팀)</p>
+<hr />
+<h2 id="7-게임영화-버추얼-프로덕션">7. 게임·영화 버추얼 프로덕션</h2>
+<p>촬영 현장에서는 정확도보다 <strong>눈에 어떻게 보이는가</strong>가 기준이다. 밀리미터를 맞출 필요가 없고 대신 머리카락, 연기, 반사면처럼 기존 메시 기반 재구성이 감당하지 못하던 소재를 담아야 한다.</p>
+<p>2026년 현재 실무의 무게중심은 3D 가우시안 스플래팅으로 옮겨 갔다. 상업 작업 기준으로 NeRF는 같은 목적에서 3DGS에 자리를 내줬는데, 렌더가 훨씬 빠르고 실시간·웹 파이프라인에 그대로 얹히기 때문이다. 3DGS는 대상을 단단한 기하로 복원하려 들지 않고 공간에 퍼진 빛의 색과 투과를 잡는 방식이라, LED 볼륨에 띄울 실사 배경을 만드는 데 맞는다. 스캔 결과를 Unreal Engine에 넣어 LED 월에 띄우면 스튜디오 안에서도 "로케이션 촬영"이 가능하다. (출처: <a href="https://www.kiriengine.app/blog/3DGSvsPhotogrammetryvsLiDAR" target="_blank" rel="noopener">https://www.kiriengine.app/blog/3DGSvsPhotogrammetryvsLiDAR</a> , <a href="https://www.broadcastnow.co.uk/comment/what-is-gaussian-splatting/5219454.article" target="_blank" rel="noopener">https://www.broadcastnow.co.uk/comment/what-is-gaussian-splatting/5219454.article</a> , <a href="https://visualskies.com/title-projects/enhancing-3d-scanning/" target="_blank" rel="noopener">https://visualskies.com/title-projects/enhancing-3d-scanning/</a> , 확인 2026-09-21) <code>[벤더]</code> <code>[제3자]</code></p>
+<p>파이프라인: 드론·지상 라이다·사진측량 리그 → 3DGS 또는 사진측량 재구성 → Unreal Engine 에셋·LED 월 배경 플레이트(VFX 아티스트·촬영팀)</p>
+<hr />
+<h2 id="8-자율주행-hd맵">8. 자율주행 HD맵</h2>
+<p>자율주행용 지도는 정확도 요구가 다른 분야와 자릿수가 다르다. 차선 단위 형상과 도로 경계, 교통 통제 요소를 센티미터급으로 담아야 한다. 시장 규모는 2026년 13억 4천만 달러에서 2033년 24억 3천만 달러로, 연평균 8.9% 성장이 예상된다. HERE, Baidu, TomTom, NVIDIA, Mobileye가 주요 공급자로 꼽힌다. 구축만큼 어려운 게 갱신이라, 커넥티드 차량이 올린 센서 관측으로 변화를 자동 탐지하는 쪽으로 기울고 있다. Mobileye는 비전 데이터를 크라우드소싱해 지도를 갱신한다. (출처: <a href="https://www.marketsandmarkets.com/Market-Reports/hd-map-autonomous-vehicle-market-141078517.html" target="_blank" rel="noopener">https://www.marketsandmarkets.com/Market-Reports/hd-map-autonomous-vehicle-market-141078517.html</a> , 확인 2026-09-21) <code>[제3자]</code></p>
+<p>한국은 국가가 직접 만든다. 국토지리정보원이 정밀도로지도를 구축·갱신하며, 차선과 도로시설, 표지시설을 3차원 전자지도로 제작한다. 갱신은 선의가 아니라 규정으로 돌아간다. 도로관리청은 신설·확장 공사의 경우 준공(개통) 7일 전까지 MMS 표준자료를 직접 제출해야 하고, 개량·보수는 14일 전까지 통보해야 한다(2021년 규정 개정 기준). (출처: <a href="https://www.koit.co.kr/news/articleView.html?idxno=84833" target="_blank" rel="noopener">https://www.koit.co.kr/news/articleView.html?idxno=84833</a> , 근거 규정 "정밀도로지도의 구축 및 갱신 등에 관한 규정" 국토지리정보원고시 제2023-4338호 <a href="https://www.law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000229524" target="_blank" rel="noopener">https://www.law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000229524</a> , 확인 2026-09-21) <code>[제3자]</code> <code>[공공]</code></p>
+<p>파이프라인: MMS 차량(라이다와 카메라, GNSS/INS) → 점군 정합·차선/표지 벡터화 → 정밀도로지도 레이어(자율주행 개발사·지도 사업자·국토지리정보원)</p>
+<hr />
+<h2 id="9-보험재난-대응">9. 보험·재난 대응</h2>
+<p>재난 현장에서는 정확도보다 <strong>속도</strong>가 전부다.</p>
+<p>2018년 캘리포니아 캠프파이어 때가 대표 사례다. 앨러미다 카운티 보안관실을 비롯한 16개 드론 팀이 이틀 동안 516회를 비행해 7만 장을 찍었고, 약 17,000에이커를 지도로 만들었다. 장비는 DJI Phantom 4, 처리는 DroneDeploy였다. 데이터를 받은 뒤 하루 만에 대화형 지도가 나왔다. 뷰트 카운티는 이 지도를 공개했고, 주민은 여기서 받은 이미지를 보험사에 제출해 며칠에서 몇 주 걸리던 청구 처리를 앞당겼다. FEMA 지원 신청에도 쓰였다. (출처: <a href="https://dronelife.com/2019/01/08/california-drones-stitch-helpful-aerial-maps-in-wake-of-deadly-camp-fire/" target="_blank" rel="noopener">https://dronelife.com/2019/01/08/california-drones-stitch-helpful-aerial-maps-in-wake-of-deadly-camp-fire/</a> , 확인 2026-09-21) <code>[제3자]</code></p>
+<p>파이프라인: 소형 드론(DJI Phantom 4 등) → DroneDeploy 클라우드 정사영상·3D 재구성 → 공개 피해 지도·청구 첨부 자료(지자체·보험 손해사정사·주민)</p>
+<hr />
+<h2 id="10-한계와-실패-요인">10. 한계와 실패 요인</h2>
+<p>앞 장에는 잘된 사례만 모았다. 실제 도입 현장이 걸려 넘어지는 지점은 따로 있다.</p>
+<p><strong>데이터 용량.</strong> 레이저 스캐너가 뱉는 점군은 저장 공간과 인프라를 크게 잡아먹는다. 기존 파일 포맷과 데이터 구조 자체가 이 정도 규모를 다루도록 만들어지지 않았다. (출처: <a href="https://doi.org/10.1016/j.autcon.2025.106755" target="_blank" rel="noopener">https://doi.org/10.1016/j.autcon.2025.106755</a> , 확인 2026-09-21) <code>[학술]</code></p>
+<p><strong>차폐와 현장 여건.</strong> 가구나 천장에 가려진 것은 스캐너가 못 보면 그만이다. 안 보이는 것을 알고리즘이 추측하면 틀린 모델이 나온다. 현장 점군은 심한 차폐와 적치물, 들쭉날쭉한 점 밀도, 노이즈가 겹쳐 경계가 뭉개지고 구조가 모호해진다. (출처: <a href="https://doi.org/10.1016/j.autcon.2025.106755" target="_blank" rel="noopener">https://doi.org/10.1016/j.autcon.2025.106755</a> , 확인 2026-09-21) <code>[학술]</code> 레이저 스캔은 가시선 안에 든 것만 보이고, 입사각과 표면 반사율에 따라 결과가 흔들린다. (출처: <a href="https://infotechnology.fhwa.dot.gov/laser-scanning/" target="_blank" rel="noopener">https://infotechnology.fhwa.dot.gov/laser-scanning/</a> , 확인 2026-09-21) <code>[공공]</code></p>
+<p><strong>표면 아래는 안 보인다.</strong> 철근 부식, 배면 공동, 내부 박리처럼 표면 뒤에 있는 결함은 스캔으로 잡히지 않는다. Reality Capture는 비파괴검사를 대체하지 못하고 그 앞단에서 위치를 좁혀 줄 뿐이다. (출처: <a href="https://infotechnology.fhwa.dot.gov/laser-scanning/" target="_blank" rel="noopener">https://infotechnology.fhwa.dot.gov/laser-scanning/</a> , 확인 2026-09-21) <code>[공공]</code></p>
+<p><strong>좌표계 정합.</strong> 스캔 커버리지가 모자라거나 정합 오차가 끼면 인식 정확도가 그만큼 떨어진다. (출처: <a href="https://doi.org/10.1016/j.autcon.2025.106755" target="_blank" rel="noopener">https://doi.org/10.1016/j.autcon.2025.106755</a> , 확인 2026-09-21) <code>[학술]</code> 여러 회차 스캔을 시간순으로 비교하는 진행률 추적에서는 회차 간 기준점이 어긋나는 순간 비교 자체가 무의미해진다<span class="est">(추정)</span>.</p>
+<p><strong>자동화의 한계.</strong> 점군 의미 분할을 딥러닝으로 돌리려면 대규모 라벨 데이터가 필요한데, 현장에서 이 데이터를 모으기가 어렵다. 라벨링 비용이 크고 차폐와 센서 노이즈가 품질을 깎는다. (출처: <a href="https://doi.org/10.1016/j.autcon.2025.106755" target="_blank" rel="noopener">https://doi.org/10.1016/j.autcon.2025.106755</a> , 확인 2026-09-21) <code>[학술]</code></p>
+<p><strong>숙련 인력.</strong> 전통적인 scan-to-BIM은 결국 엔지니어가 손으로 모델을 세우는 일이라 시간과 인력이 들고 사람 실수도 생긴다. (출처: <a href="https://doi.org/10.1016/j.autcon.2025.106755" target="_blank" rel="noopener">https://doi.org/10.1016/j.autcon.2025.106755</a> , 확인 2026-09-21) <code>[학술]</code></p>
+<p><strong>갱신 주기.</strong> 점군은 찍은 순간의 사실일 뿐이다. 현장이 바뀌면 곧바로 낡는다. 한국이 정밀도로지도 갱신을 선의에 맡기지 않고 통보 기한을 규정으로 못 박은 것도 같은 이유다. (출처: <a href="https://www.koit.co.kr/news/articleView.html?idxno=84833" target="_blank" rel="noopener">https://www.koit.co.kr/news/articleView.html?idxno=84833</a> , 확인 2026-09-21) <code>[제3자]</code></p>
+<p><strong>ROI 입증.</strong> 도구를 샀다고 효과가 따라오지 않는다. Procore와 Dodge Construction Network가 북미·EMEA·ANZ의 건설 실무자 1,500명 이상을 조사한 결과, 도구를 충분히 쓰는 집단은 82%가 프로젝트 성과가 나아졌다고 답한 반면 가볍게 쓰는 집단은 31%에 그쳤다. 차이를 낸 건 교육, 그리고 경영진이 같은 방향을 보는지와 프로세스를 일관되게 지키는지였다. (출처: <a href="https://www.procore.com/blog/from-beginner-to-expert-the-roi-of-optimized-construction-tech-adoption" target="_blank" rel="noopener">https://www.procore.com/blog/from-beginner-to-expert-the-roi-of-optimized-construction-tech-adoption</a> , 확인 2026-09-21) <code>[벤더]</code> <code>[제3자]</code></p>
+<p><strong>수치의 출처 편중.</strong> 이 문서를 쓰면서 가장 자주 부딪힌 문제다. 시간 절감과 비용 절감 수치의 대부분이 공급사 사례집에서 나온다. 제3자 벤치마크는 학술 논문 쪽에 있지만 그쪽은 정확도와 알고리즘 성능을 재지, 현장 ROI를 재지 않는다. 벤더 수치와 학술 수치 사이에 "실제 현장에서 돈이 얼마나 굳었는가"를 독립적으로 검증한 자료가 없다.</p>
+<figure><div class="fig-box wide"><svg viewBox="0 0 760 318" role="img" aria-label="10장의 실패 요인 여덟 가지를 센서, 데이터, 사람과 조직 세 묶음으로 나누고, 공통 문제로 수치의 출처 편중을 둔 도식">
+  <rect x="10" y="14" width="236" height="32" rx="3" fill="var(--near-soft)" stroke="var(--near)"></rect>
+  <text class="t-hd" x="128" y="35" text-anchor="middle">센서가 못 보는 것</text>
+  <rect x="262" y="14" width="236" height="32" rx="3" fill="var(--near-soft)" stroke="var(--near)"></rect>
+  <text class="t-hd" x="380" y="35" text-anchor="middle">데이터를 다루는 일</text>
+  <rect x="514" y="14" width="236" height="32" rx="3" fill="var(--near-soft)" stroke="var(--near)"></rect>
+  <text class="t-hd" x="632" y="35" text-anchor="middle">사람과 조직</text>
+  <rect x="10" y="54" width="236" height="190" rx="3" fill="var(--surface)" stroke="var(--rule-soft)"></rect>
+  <rect x="262" y="54" width="236" height="190" rx="3" fill="var(--surface)" stroke="var(--rule-soft)"></rect>
+  <rect x="514" y="54" width="236" height="190" rx="3" fill="var(--surface)" stroke="var(--rule-soft)"></rect>
+  <text class="t-lab" x="22" y="78">차폐와 현장 여건</text>
+  <text class="t-tick" x="22" y="95">가려진 것은 점군에 없다</text>
+  <text class="t-tick" x="22" y="111">입사각 · 반사율에 결과가 흔들린다</text>
+  <text class="t-lab" x="22" y="140">표면 아래 결함</text>
+  <text class="t-tick" x="22" y="157">철근 부식 · 배면 공동 · 내부 박리</text>
+  <text class="t-tick" x="22" y="173">비파괴검사를 대체하지 못한다</text>
+  <text class="t-lab" x="274" y="78">데이터 용량</text>
+  <text class="t-tick" x="274" y="95">기존 파일 포맷이 감당하지 못한다</text>
+  <text class="t-lab" x="274" y="124">좌표계 정합</text>
+  <text class="t-tick" x="274" y="141">정합 오차만큼 인식 정확도 하락</text>
+  <text class="t-lab" x="274" y="170">자동화의 한계</text>
+  <text class="t-tick" x="274" y="187">딥러닝용 라벨 데이터가 모자란다</text>
+  <text class="t-lab" x="526" y="78">숙련 인력</text>
+  <text class="t-tick" x="526" y="95">scan-to-BIM은 손으로 모델링</text>
+  <text class="t-lab" x="526" y="124">갱신 주기</text>
+  <text class="t-tick" x="526" y="141">현장이 바뀌면 점군은 곧 낡는다</text>
+  <text class="t-lab" x="526" y="170">ROI 입증 (성과 개선 인정 비율)</text>
+  <text class="t-tick" x="526" y="196">충분히 쓰는 집단</text>
+  <rect x="628" y="186" width="82" height="13" fill="var(--far)"></rect>
+  <text class="t-tick" x="714" y="197">82%</text>
+  <text class="t-tick" x="526" y="220">가볍게 쓰는 집단</text>
+  <rect x="628" y="210" width="31" height="13" fill="var(--far)"></rect>
+  <text class="t-tick" x="663" y="221">31%</text>
+  <line x1="628" y1="180" x2="628" y2="230" stroke="var(--rule)" stroke-width="1"></line>
+  <rect x="10" y="256" width="740" height="50" rx="3" fill="var(--sunk)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="22" y="277">공통 문제: 수치의 출처 편중</text>
+  <text class="t-tick" x="22" y="295">시간 · 비용 절감 수치는 대부분 벤더 사례집, 학술 논문은 정확도만 잰다 → 현장 ROI를 독립 검증한 자료가 비어 있다</text>
+</svg></div><figcaption><span class="fig-label">그림 7</span><b>실패 요인 한눈에 보기.</b> 위 아홉 항목을 세 묶음과 공통 문제로 다시 나눴다. 묶음은 이 문서의 판단이다<span class="est">(추정)</span>. ROI 막대는 Procore·Dodge 조사의 성과 개선 인정 비율을 같은 축척으로 그렸다.</figcaption></figure>
+
+<hr />
+<h2 id="11-질문-3에-대한-답">11. 질문 3에 대한 답</h2>
+<p>현재 Reality Capture의 쓰임새는 세 갈래로 굳었다.</p>
+<p>첫째, <strong>기록</strong>이다. 덮이기 전에 찍어 두는 일. 360 워크, 문화재 스캔, 재난 직후 항공 촬영이 여기 든다. 정확도보다 빠뜨린 데가 없느냐가 먼저다.</p>
+<p>둘째, <strong>대조</strong>다. 찍은 것을 설계나 이전 회차와 맞춰 보는 일. scan-vs-BIM, 진행률 추적, 배관 간섭 검토, PC 부재 검수가 같은 계열이다. 산출물은 언제나 편차 목록이고, 이게 돈이 오가는 판단(기성, 재시공, 청구)으로 바로 이어진다.</p>
+<p>셋째, <strong>입력</strong>이다. 다른 시스템에 먹이는 일. 창고 시뮬레이션의 기하 정보, 자율주행 HD맵, LED 월 배경 플레이트가 여기 든다. 이때 점군은 최종 산출물이 아니라 원재료다.</p>
+<figure><div class="fig-box wide"><svg viewBox="0 0 760 256" role="img" aria-label="Reality Capture 쓰임새 세 갈래 도식: 기록, 대조, 입력">
+        <rect x="290" y="12" width="180" height="34" rx="3" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1"></rect>
+        <text class="t-hd" x="380" y="34" text-anchor="middle">취득한 3차원 데이터</text>
+        <path d="M380 46 L380 62 L150 62 L150 78" fill="none" stroke="var(--rule)" stroke-width="1.2"></path>
+        <path d="M380 46 L380 78" fill="none" stroke="var(--rule)" stroke-width="1.2"></path>
+        <path d="M380 46 L380 62 L610 62 L610 78" fill="none" stroke="var(--rule)" stroke-width="1.2"></path>
+        <g>
+          <rect x="34" y="78" width="232" height="44" rx="3" fill="var(--surface)" stroke="var(--near)" stroke-width="1.4"></rect>
+          <text x="150" y="98" font-size="14" font-weight="600" text-anchor="middle" fill="var(--ink)" font-family="var(--body)">기록</text>
+          <text class="t-tick" x="150" y="113" text-anchor="middle">덮이기 전에 찍어 둔다</text>
+          <text class="t-lab" x="46" y="145">· 360 워크 · event walk</text>
+          <text class="t-lab" x="46" y="162">· 문화재 스캔</text>
+          <text class="t-lab" x="46" y="179">· 재난 직후 항공 촬영</text>
+          <text class="t-tick" x="46" y="206" fill="var(--far)">판단 기준</text>
+          <text class="t-lab" x="46" y="222">정확도보다 빠뜨린 데가 없느냐</text>
+        </g>
+        <g>
+          <rect x="278" y="78" width="204" height="44" rx="3" fill="var(--surface)" stroke="var(--near)" stroke-width="1.4"></rect>
+          <text x="380" y="98" font-size="14" font-weight="600" text-anchor="middle" fill="var(--ink)" font-family="var(--body)">대조</text>
+          <text class="t-tick" x="380" y="113" text-anchor="middle">설계·이전 회차와 맞춰 본다</text>
+          <text class="t-lab" x="290" y="145">· scan-vs-BIM · 진행률</text>
+          <text class="t-lab" x="290" y="162">· 배관 간섭 검토</text>
+          <text class="t-lab" x="290" y="179">· PC 부재 검수</text>
+          <text class="t-tick" x="290" y="206" fill="var(--far)">산출물</text>
+          <text class="t-lab" x="290" y="222">언제나 편차 목록 — 돈이 오간다</text>
+        </g>
+        <g>
+          <rect x="494" y="78" width="232" height="44" rx="3" fill="var(--surface)" stroke="var(--near)" stroke-width="1.4"></rect>
+          <text x="610" y="98" font-size="14" font-weight="600" text-anchor="middle" fill="var(--ink)" font-family="var(--body)">입력</text>
+          <text class="t-tick" x="610" y="113" text-anchor="middle">다른 시스템에 먹인다</text>
+          <text class="t-lab" x="506" y="145">· 창고 시뮬레이션</text>
+          <text class="t-lab" x="506" y="162">· 자율주행 HD맵</text>
+          <text class="t-lab" x="506" y="179">· LED 월 배경 플레이트</text>
+          <text class="t-tick" x="506" y="206" fill="var(--far)">위치</text>
+          <text class="t-lab" x="506" y="222">최종 산출물이 아니라 원재료</text>
+        </g>
+      </svg></div><figcaption><span class="fig-label">그림 8</span><b>쓰임새 세 갈래.</b> 기록은 빠짐없이 찍어 두는 일, 대조는 설계나 이전 회차와 맞춰 편차를 뽑는 일, 입력은 점군을 다른 시스템의 원재료로 넘기는 일이다. 건설·AEC는 셋을 모두 쓴다.</figcaption></figure>
+
+<p>건설·AEC는 이 세 갈래를 모두 쓰는 드문 산업이다. 다만 셋째 계열, 그러니까 점군을 다른 엔진에 먹이는 방향은 제조·물류나 자율주행 쪽이 더 멀리 가 있다.</p>
+<hr />
+<h2 id="용어-후보">용어 후보</h2>
+<ul>
+<li><strong>scan-to-BIM</strong> — 레이저 스캔 점군에서 as-built BIM 모델을 새로 만드는 작업 — <a href="https://doi.org/10.1016/j.autcon.2025.106755" target="_blank" rel="noopener">https://doi.org/10.1016/j.autcon.2025.106755</a></li>
+<li><strong>scan-vs-BIM</strong> — 스캔 점군을 기존 BIM 모델과 대조해 설치 여부와 시공 오차를 판정하는 작업 — <a href="https://cintoo.com/en/blog/progress-monitoring" target="_blank" rel="noopener">https://cintoo.com/en/blog/progress-monitoring</a></li>
+<li><strong>as-built BIM</strong> — 설계 모델이 아니라 실제 시공된 상태를 반영한 BIM 모델 — <a href="https://doi.org/10.1016/j.autcon.2025.106755" target="_blank" rel="noopener">https://doi.org/10.1016/j.autcon.2025.106755</a></li>
+<li><strong>차폐(occlusion)</strong> — 다른 물체에 가려 스캐너 시야에 들어오지 않아 점군에 구멍이 생기는 현상 — <a href="https://doi.org/10.1016/j.autcon.2025.106755" target="_blank" rel="noopener">https://doi.org/10.1016/j.autcon.2025.106755</a></li>
+<li><strong>정합(registration)</strong> — 서로 다른 위치와 시점에서 찍은 점군을 하나의 좌표계로 합치는 작업 — <a href="https://doi.org/10.1016/j.autcon.2025.106755" target="_blank" rel="noopener">https://doi.org/10.1016/j.autcon.2025.106755</a></li>
+<li><strong>커버리지 비율</strong> — 특정 부재를 스캔 데이터가 얼마나 덮었는지 나타내는 지표. 낮으면 편차 판정을 믿을 수 없다 — <a href="https://cintoo.com/en/blog/progress-monitoring" target="_blank" rel="noopener">https://cintoo.com/en/blog/progress-monitoring</a></li>
+<li><strong>MMS(이동형측량시스템)</strong> — 차량에 라이다와 카메라, GNSS/INS를 싣고 주행하며 도로를 3차원으로 측량하는 시스템 — <a href="https://www.koit.co.kr/news/articleView.html?idxno=84833" target="_blank" rel="noopener">https://www.koit.co.kr/news/articleView.html?idxno=84833</a></li>
+<li><strong>정밀도로지도</strong> — 자율주행 지원을 위해 차선·도로시설·표지시설을 3차원으로 제작한 전자지도. 국토지리정보원이 구축·갱신한다 — <a href="https://www.law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000229524" target="_blank" rel="noopener">https://www.law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000229524</a></li>
+<li><strong>HD맵</strong> — 차선 단위 형상과 도로 경계, 교통 통제 요소를 센티미터급 정확도로 담은 자율주행용 지도 — <a href="https://www.marketsandmarkets.com/Market-Reports/hd-map-autonomous-vehicle-market-141078517.html" target="_blank" rel="noopener">https://www.marketsandmarkets.com/Market-Reports/hd-map-autonomous-vehicle-market-141078517.html</a></li>
+<li><strong>정사영상(orthomosaic)</strong> — 항공·드론 사진의 기하 왜곡을 보정해 지도처럼 축척이 일정하도록 이어 붙인 영상 — <a href="https://dronelife.com/2019/01/08/california-drones-stitch-helpful-aerial-maps-in-wake-of-deadly-camp-fire/" target="_blank" rel="noopener">https://dronelife.com/2019/01/08/california-drones-stitch-helpful-aerial-maps-in-wake-of-deadly-camp-fire/</a></li>
+<li><strong>3D 가우시안 스플래팅(3DGS)</strong> — 대상을 단단한 기하로 복원하는 대신 공간에 분포한 빛의 색과 투과를 재현하는 실시간 렌더링 기법 — <a href="https://www.broadcastnow.co.uk/comment/what-is-gaussian-splatting/5219454.article" target="_blank" rel="noopener">https://www.broadcastnow.co.uk/comment/what-is-gaussian-splatting/5219454.article</a></li>
+<li><strong>LED 볼륨</strong> — 실사 배경을 띄운 LED 월로 둘러싼 촬영 세트. 스캔 에셋을 Unreal Engine으로 띄워 쓴다 — <a href="https://www.kiriengine.app/blog/3DGSvsPhotogrammetryvsLiDAR" target="_blank" rel="noopener">https://www.kiriengine.app/blog/3DGSvsPhotogrammetryvsLiDAR</a></li>
+<li><strong>event walk</strong> — 마감에 덮이기 전 상태를 남기려고 특정 시점에 도는 360 촬영 — <a href="https://www.openspace.ai/resources/case-studies/devcon-construction-uses-openspace-to-capture-a-complete-record-of-1-6m-square-foot-project-site/" target="_blank" rel="noopener">https://www.openspace.ai/resources/case-studies/devcon-construction-uses-openspace-to-capture-a-complete-record-of-1-6m-square-foot-project-site/</a></li>
+<li><strong>First Time Right</strong> — 스캔 기반 간섭 검토로 사전 제작한 배관 스풀이 현장에서 한 번에 맞도록 하는 목표 — <a href="https://www.asbuilt3d.com/post/pre-turnaround-laser-scanning-checklist" target="_blank" rel="noopener">https://www.asbuilt3d.com/post/pre-turnaround-laser-scanning-checklist</a></li>
+<li><strong>포켓 라이다</strong> — 스마트폰이나 태블릿에 들어간 소형 라이다 센서. FHWA가 굴착 트렌치 계측용으로 시험했다 — <a href="https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-25-015.pdf" target="_blank" rel="noopener">https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-25-015.pdf</a></li>
+<li><strong>Open Heritage</strong> — CyArk와 Google Arts &amp; Culture가 공개한 문화유산 3D 데이터 아카이브 — <a href="https://artsandculture.google.com/story/open-heritage-sharing-3d-data-with-the-world/-AXx62Vr4vwlKA" target="_blank" rel="noopener">https://artsandculture.google.com/story/open-heritage-sharing-3d-data-with-the-world/-AXx62Vr4vwlKA</a></li>
+</ul>
+<div class="pager"><a href="02-history.html">← 02 · 역사와 진행 방향</a><a href="04-adjacent-tech.html">04 · 연계 기술 지도 →</a></div>
+<footer class="foot">이 페이지는 <a href="https://github.com/o-Fireheart-o/Reality_Capture_Research/blob/master/docs/03-use-cases.md" target="_blank" rel="noopener">docs/03-use-cases.md</a>에서 자동으로 만들었습니다. 내용이 다르면 원문이 기준입니다.</footer>
+</div>
+</main>
+</div>
+<script>
+(function(){
+  var b=document.getElementById('navToggle'), l=document.getElementById('navList');
+  function set(o){l.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');b.textContent=o?'목차 닫기':'목차 열기';}
+  b.addEventListener('click',function(){set(!l.classList.contains('open'));});
+  l.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});
+})();
+</script>
+</body>
+</html>

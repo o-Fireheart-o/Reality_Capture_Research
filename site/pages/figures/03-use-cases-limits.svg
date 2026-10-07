@@ -1,0 +1,38 @@
+<svg viewBox="0 0 760 318" role="img" aria-label="10장의 실패 요인 여덟 가지를 센서, 데이터, 사람과 조직 세 묶음으로 나누고, 공통 문제로 수치의 출처 편중을 둔 도식">
+  <rect x="10" y="14" width="236" height="32" rx="3" fill="var(--near-soft)" stroke="var(--near)"></rect>
+  <text class="t-hd" x="128" y="35" text-anchor="middle">센서가 못 보는 것</text>
+  <rect x="262" y="14" width="236" height="32" rx="3" fill="var(--near-soft)" stroke="var(--near)"></rect>
+  <text class="t-hd" x="380" y="35" text-anchor="middle">데이터를 다루는 일</text>
+  <rect x="514" y="14" width="236" height="32" rx="3" fill="var(--near-soft)" stroke="var(--near)"></rect>
+  <text class="t-hd" x="632" y="35" text-anchor="middle">사람과 조직</text>
+  <rect x="10" y="54" width="236" height="190" rx="3" fill="var(--surface)" stroke="var(--rule-soft)"></rect>
+  <rect x="262" y="54" width="236" height="190" rx="3" fill="var(--surface)" stroke="var(--rule-soft)"></rect>
+  <rect x="514" y="54" width="236" height="190" rx="3" fill="var(--surface)" stroke="var(--rule-soft)"></rect>
+  <text class="t-lab" x="22" y="78">차폐와 현장 여건</text>
+  <text class="t-tick" x="22" y="95">가려진 것은 점군에 없다</text>
+  <text class="t-tick" x="22" y="111">입사각 · 반사율에 결과가 흔들린다</text>
+  <text class="t-lab" x="22" y="140">표면 아래 결함</text>
+  <text class="t-tick" x="22" y="157">철근 부식 · 배면 공동 · 내부 박리</text>
+  <text class="t-tick" x="22" y="173">비파괴검사를 대체하지 못한다</text>
+  <text class="t-lab" x="274" y="78">데이터 용량</text>
+  <text class="t-tick" x="274" y="95">기존 파일 포맷이 감당하지 못한다</text>
+  <text class="t-lab" x="274" y="124">좌표계 정합</text>
+  <text class="t-tick" x="274" y="141">정합 오차만큼 인식 정확도 하락</text>
+  <text class="t-lab" x="274" y="170">자동화의 한계</text>
+  <text class="t-tick" x="274" y="187">딥러닝용 라벨 데이터가 모자란다</text>
+  <text class="t-lab" x="526" y="78">숙련 인력</text>
+  <text class="t-tick" x="526" y="95">scan-to-BIM은 손으로 모델링</text>
+  <text class="t-lab" x="526" y="124">갱신 주기</text>
+  <text class="t-tick" x="526" y="141">현장이 바뀌면 점군은 곧 낡는다</text>
+  <text class="t-lab" x="526" y="170">ROI 입증 (성과 개선 인정 비율)</text>
+  <text class="t-tick" x="526" y="196">충분히 쓰는 집단</text>
+  <rect x="628" y="186" width="82" height="13" fill="var(--far)"></rect>
+  <text class="t-tick" x="714" y="197">82%</text>
+  <text class="t-tick" x="526" y="220">가볍게 쓰는 집단</text>
+  <rect x="628" y="210" width="31" height="13" fill="var(--far)"></rect>
+  <text class="t-tick" x="663" y="221">31%</text>
+  <line x1="628" y1="180" x2="628" y2="230" stroke="var(--rule)" stroke-width="1"></line>
+  <rect x="10" y="256" width="740" height="50" rx="3" fill="var(--sunk)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="22" y="277">공통 문제: 수치의 출처 편중</text>
+  <text class="t-tick" x="22" y="295">시간 · 비용 절감 수치는 대부분 벤더 사례집, 학술 논문은 정확도만 잰다 → 현장 ROI를 독립 검증한 자료가 비어 있다</text>
+</svg>

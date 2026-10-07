@@ -1,0 +1,44 @@
+<svg viewBox="0 0 760 330" role="img" aria-label="Reality Capture 데이터 포맷 지도. E57은 IFC로, LAS와 LAZ는 3D Tiles와 I3S로, RCP와 RCS는 Autodesk 밖에서 벽에 막히고, USD는 glTF로 이어진다">
+  <defs>
+    <marker id="ar-fmt" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" fill="var(--near)"></path>
+    </marker>
+  </defs>
+  <text class="t-hd" x="20" y="24">교환·작업 포맷</text>
+  <text class="t-hd" x="390" y="24">넘겨받는 쪽</text>
+  <rect x="20" y="40" width="310" height="62" rx="3" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1"></rect>
+  <text class="t-lab" x="32" y="60" fill="var(--ink)">E57 (ASTM E2807)</text>
+  <text class="t-tick" x="32" y="77" fill="var(--muted)">지상 스캔 교환용. 좌표·RGB·강도에</text>
+  <text class="t-tick" x="32" y="93" fill="var(--muted)">파노라마와 스캔 지점별 자세까지 담는다</text>
+  <line x1="334" y1="71" x2="384" y2="71" stroke="var(--near)" stroke-width="1.2" marker-end="url(#ar-fmt)"></line>
+  <rect x="390" y="40" width="350" height="62" rx="3" fill="var(--surface)" stroke="var(--rule)" stroke-width="1"></rect>
+  <text class="t-lab" x="402" y="60" fill="var(--ink)">IFC (buildingSMART)</text>
+  <text class="t-tick" x="402" y="77" fill="var(--muted)">개방형 BIM 스키마. 점군을 담지 않고</text>
+  <text class="t-tick" x="402" y="93" fill="var(--muted)">Scan-to-BIM 결과물이 도착하는 목적지</text>
+  <rect x="20" y="112" width="310" height="62" rx="3" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1"></rect>
+  <text class="t-lab" x="32" y="132" fill="var(--ink)">LAS / LAZ (ASPRS)</text>
+  <text class="t-tick" x="32" y="149" fill="var(--muted)">항공·광역용. 기하 중심이라 스캔 자세와</text>
+  <text class="t-tick" x="32" y="165" fill="var(--muted)">파노라마는 없다. LAZ는 무손실 압축본</text>
+  <line x1="334" y1="143" x2="384" y2="143" stroke="var(--near)" stroke-width="1.2" marker-end="url(#ar-fmt)"></line>
+  <rect x="390" y="112" width="350" height="62" rx="3" fill="var(--surface)" stroke="var(--rule)" stroke-width="1"></rect>
+  <text class="t-lab" x="402" y="132" fill="var(--ink)">3D Tiles · I3S (OGC)</text>
+  <text class="t-tick" x="402" y="149" fill="var(--muted)">건물·지형·점군 같은 대용량 3차원 데이터를</text>
+  <text class="t-tick" x="402" y="165" fill="var(--muted)">웹으로 스트리밍한다</text>
+  <rect x="20" y="184" width="310" height="62" rx="3" fill="var(--sunk)" stroke="var(--rule)" stroke-width="1"></rect>
+  <text class="t-lab" x="32" y="204" fill="var(--ink)">RCP / RCS (Autodesk ReCap)</text>
+  <text class="t-tick" x="32" y="221" fill="var(--muted)">고유 포맷. Autodesk 생태계 안에서는</text>
+  <text class="t-tick" x="32" y="237" fill="var(--muted)">빠르고 편하다</text>
+  <line x1="334" y1="215" x2="384" y2="215" stroke="var(--far)" stroke-width="1.2" stroke-dasharray="4 3"></line>
+  <line x1="388" y1="195" x2="388" y2="235" stroke="var(--far)" stroke-width="3"></line>
+  <text class="t-lab" x="402" y="211" fill="var(--far)">밖으로 나가는 순간 벽이 된다</text>
+  <text class="t-tick" x="402" y="228" fill="var(--muted)">납품 규격을 정할 때 미리 합의할 것 · 추정</text>
+  <rect x="20" y="256" width="310" height="62" rx="3" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1"></rect>
+  <text class="t-lab" x="32" y="276" fill="var(--ink)">USD (AOUSD)</text>
+  <text class="t-tick" x="32" y="293" fill="var(--muted)">저작과 교환 담당</text>
+  <text class="t-tick" x="32" y="309" fill="var(--muted)">AOUSD·Khronos 연락 협정으로 정렬</text>
+  <line x1="334" y1="287" x2="384" y2="287" stroke="var(--near)" stroke-width="1.2" marker-end="url(#ar-fmt)"></line>
+  <rect x="390" y="256" width="350" height="62" rx="3" fill="var(--surface)" stroke="var(--rule)" stroke-width="1"></rect>
+  <text class="t-lab" x="402" y="276" fill="var(--ink)">glTF (Khronos)</text>
+  <text class="t-tick" x="402" y="293" fill="var(--muted)">배포와 전달 담당</text>
+  <text class="t-tick" x="402" y="309" fill="var(--far)">+ KHR_gaussian_splatting (2026-02 발표)</text>
+</svg>

@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>05. 학습 로드맵 — 무엇을 더 배워야 발전할 수 있는가</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Song+Myung&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<nav class="nav" aria-label="목차">
+  <div class="nav-brand">리서치 노트 · 2026</div>
+  <div class="nav-title"><a href="../index.html" style="color:inherit;text-decoration:none">Reality Capture 지형도</a></div>
+  <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navList">목차 열기</button>
+  <ul class="nav-list" id="navList">
+    <li><a class="pg" href="00-glossary.html"><span>00 · 용어집</span></a></li>
+    <li><a class="pg" href="01-tools.html"><span>01 · 도구 지형도</span></a></li>
+    <li><a class="pg" href="01-tools/colmap.html"><span>01 심층 · COLMAP</span></a></li>
+    <li><a class="pg" href="02-history.html"><span>02 · 역사와 진행 방향</span></a></li>
+    <li><a class="pg" href="03-use-cases.html"><span>03 · 현재의 쓰임새</span></a></li>
+    <li><a class="pg" href="04-adjacent-tech.html"><span>04 · 연계 기술 지도</span></a></li>
+    <li><a class="pg cur" href="05-learning-roadmap.html" aria-current="page"><span>05 · 학습 로드맵</span></a></li>
+    <li class="toc-title">이 문서</li>
+    <li><a class="nav-sub" href="#0-이-문서를-읽는-법">0. 이 문서를 읽는 법</a></li>
+    <li><a class="nav-sub" href="#1-전제-왜-기술-하나로는-부족한가">1. 전제: 왜 기술 하나로는 부족한가</a></li>
+    <li><a class="nav-sub" href="#2-기반-역량">2. 기반 역량</a></li>
+    <li><a class="nav-sub" href="#3-도메인-지식">3. 도메인 지식</a></li>
+    <li><a class="nav-sub" href="#4-t자형-조합-시나리오">4. T자형 조합 시나리오</a></li>
+    <li><a class="nav-sub" href="#5-단계별-로드맵">5. 단계별 로드맵</a></li>
+    <li><a class="nav-sub" href="#6-손으로-해볼-실습-과제">6. 손으로 해볼 실습 과제</a></li>
+    <li><a class="nav-sub" href="#7-배우지-않아도-되는-것-과대평가된-것">7. 배우지 않아도 되는 것 / 과대평가된 것</a></li>
+    <li><a class="nav-sub" href="#8-한-줄-요약">8. 한 줄 요약</a></li>
+    <li><a class="nav-sub" href="#용어-후보">용어 후보</a></li>
+  </ul>
+  <div class="nav-foot">원문: <a href="https://github.com/o-Fireheart-o/Reality_Capture_Research/blob/master/docs/05-learning-roadmap.md" target="_blank" rel="noopener">05-learning-roadmap.md</a><br>한 장 요약: <a href="../index.html">요약 페이지</a></div>
+</nav>
+<main class="main">
+<div class="col doc">
+<header class="mast">
+  <div class="eyebrow">Reality Capture 심층 리서치 · 문서</div>
+  <h1>05. 학습 로드맵 — 무엇을 더 배워야 발전할 수 있는가</h1>
+  <div class="doc-meta"><span>작성일 2026-09-21</span><span>최종수정일 2026-10-07</span></div>
+</header>
+<blockquote>
+<p><strong>담당 질문(핵심 연구 질문 5)</strong>: 한 가지 기술만으로는 발전하기 어려운 시대에, 무엇을 더 배워야 발전할 수 있는가</p>
+<p><strong>범위 렌즈</strong>: 전 산업을 훑되 건설·AEC 관점을 주 렌즈로 삼는다. 자율주행·문화재·플랜트 사례도 참고하지만, 우선순위를 매길 때의 기준은 "건설 현장과 BIM 워크플로에서 값이 나오는가"다.</p>
+</blockquote>
+<h2 id="0-이-문서를-읽는-법">0. 이 문서를 읽는 법</h2>
+<ul>
+<li>여기 적힌 학습 자원은 2026-09-21에 하나씩 확인한 것만 실었다. 존재를 확인하지 못한 자료는 넣지 않았다.</li>
+<li>URL 뒤의 <code>†</code> 표시는 그 사이트가 자동 조회를 막거나(403, 인증서 오류, 리다이렉트 루프) 본문을 읽어 오지 못해, 검색 결과에 인용된 내용과 표준 번호로만 교차 확인했다는 뜻이다. 문서가 있다는 사실은 확인했지만 본문은 읽지 못했다.</li>
+<li>본문 안에 <code>[제목](URL)</code> 형태로 넣은 학술 출판사(Springer, ScienceDirect) 링크와 채용 사이트 링크, 시장조사 보고서 링크도 같은 사정이다. 서지정보와 초록 수준까지만 확인했고 전문은 읽지 못했다. 표시가 지저분해져 <code>†</code>를 따로 붙이지 않았으니 이 문단을 기준으로 읽으면 된다.</li>
+<li>출처가 없는 판단에는 <code><span class="est">(추정)</span></code>을 붙였다. 특히 학습 기간 숫자는 전부 추정이다. 사람마다 배경이 다르므로 그대로 믿지 말고 자기 출발점에 맞춰 늘리거나 줄이면 된다.</li>
+<li>벤더가 만든 자료와 학술·제3자 자료를 구분해 표기했다.</li>
+</ul>
+<hr />
+<h2 id="1-전제-왜-기술-하나로는-부족한가">1. 전제: 왜 기술 하나로는 부족한가</h2>
+<p>막연한 자기계발 구호 대신 이 분야에서 실제로 관찰되는 사실 세 가지에서 출발한다.</p>
+<h3 id="11-채용이-요구하는-능력의-폭이-이미-넓다">1.1 채용이 요구하는 능력의 폭이 이미 넓다</h3>
+<p>Reality Capture 직무 공고를 읽어 보면 장비 운용 하나만 요구하는 자리는 드물다. Amazon의 Reality Capture BIM Engineer 공고는 Autodesk 계열(Civil 3D, Revit, Navisworks, ReCap, BIM 360) 경험과 점군 처리·모델링 경험을 함께 요구한다(<a href="https://www.amazon.jobs/en/jobs/2503498/reality-capture-bim-engineer" target="_blank" rel="noopener">amazon.jobs 공고 2503498</a>, 확인 2026-09-21 — 채용 공고이므로 1차 자료). Los Alamos National Laboratory의 Reality Capture Specialist 공고는 현장 스캐닝, 점군 정합과 품질관리, scan-to-BIM을 한 사람이 독립적으로 수행해야 한다고 명시한다(<a href="https://lanl.jobs/search/jobdetails/reality-capture-specialist-lidar-registration-and-bim-modeling/e9dcedcb-c944-4c60-b67c-4bf854943fbf" target="_blank" rel="noopener">lanl.jobs</a>, 확인 2026-09-21).</p>
+<p>이런 공고에서 반복되는 항목이 하나 있다. 좌표계와 단위, 측량 기준점을 이해하고 있느냐다. 장비를 잘 다루는 사람이 아니라 측량 기준계와 BIM 좌표계 사이에서 데이터를 잃지 않고 옮길 줄 아는 사람을 찾는다.</p>
+<h3 id="12-자동화되니까-안-배워도-된다는-아직-사실이-아니다">1.2 "자동화되니까 안 배워도 된다"는 아직 사실이 아니다</h3>
+<p>scan-to-BIM 자동화 연구는 오래 쌓였지만 리뷰 계열 연구가 내놓는 결론은 여전히 비슷하다. 딥러닝 기반 분할이 벽·바닥·천장 같은 주요 부재까지는 처리해도 나머지 객체는 사람이 모델링해야 하고, 가려진(occluded) 영역은 복원이 어렵다. 학습에 필요한 라벨링 점군을 구하는 비용도 병목이다. 합성 데이터로 메우려 하면 도메인 갭 탓에 정확도가 떨어진다(<a href="https://link.springer.com/chapter/10.1007/978-981-92-2743-3_40" target="_blank" rel="noopener">Harnessing Indoor 3D Point Cloud Reconstruction for Automated Scan-to-BIM Workflows: A Systematic Review, Springer</a>, 확인 2026-09-21 — 학술 리뷰; <a href="https://www.sciencedirect.com/science/article/abs/pii/S0926580524002097" target="_blank" rel="noopener">DawNet, Automation in Construction</a>, 확인 2026-09-21 — 학술 논문).</p>
+<p>당분간 값이 붙는 자리는 자동화 결과를 판단하고 고치는 사람 쪽이다. 판단하려면 원리를 알아야 한다.</p>
+<h3 id="13-신기술의-정확도-한계가-곧-학습-항목이-된다">1.3 신기술의 정확도 한계가 곧 학습 항목이 된다</h3>
+<p>3D Gaussian Splatting은 2023년 논문 발표 이후 급속히 퍼졌다(<a href="https://github.com/graphdeco-inria/gaussian-splatting" target="_blank" rel="noopener">graphdeco-inria/gaussian-splatting, ACM TOG 42(4), 2023</a>, 확인 2026-09-21 — 저자 공개 구현). 그런데 건물을 대상으로 공간 정확도를 측정한 ISPRS 연구를 보면 3DGS의 정확도는 입력 영상 수와 초기 점군 품질, 학습 반복 횟수 같은 조건에 크게 좌우된다. 같은 연구에서 영상 기반 초기화(COLMAP, Pix4D)가 휴대폰 LiDAR 초기화보다 공간 지표에서 나았다(<a href="https://isprs-annals.copernicus.org/articles/XI-M-1-2026/31/2026/isprs-annals-XI-M-1-2026-31-2026.html" target="_blank" rel="noopener">McNally 외, A Comprehensive Evaluation of the Spatial Accuracy of Building Gaussian Splatting, ISPRS Annals XI-M-1-2026</a>, 확인 2026-09-21 — 학술 논문).</p>
+<p>콘크리트 부재를 대상으로 3DGS와 레이저 스캐닝을 비교한 연구도 비슷하다. 전체 형상은 비슷하게 나왔지만 평면 노이즈가 커서 레이저 스캔 점군에서는 보이던 처짐과 휨 세부가 3DGS 점군에서 사라졌다(<a href="https://link.springer.com/chapter/10.1007/978-981-95-8489-5_53" target="_blank" rel="noopener">Comparing 3D Gaussian Splatting and Laser Scanning for Assessing the Condition of Structural Concrete Elements for Circular Reuse, Springer</a>, 확인 2026-09-21 — 학술 논문).</p>
+<p>여기서 실무자가 답해야 할 질문이 생긴다. 어느 용도에 어느 센서를 쓸 것인가. 이 판단을 내리려면 기하학·측량 오차론·품질 규격을 모두 알아야 한다. 도구 사용법만 알아서는 답이 나오지 않는다.</p>
+<hr />
+<h2 id="2-기반-역량">2. 기반 역량</h2>
+<p>항목마다 "왜 필요한가", "어디까지 하면 되는가", "대표 자원"을 붙였다. 순서는 중요도가 아니라 의존 관계를 따랐다.</p>
+<figure><div class="fig-box wide"><svg viewBox="0 0 760 310" role="img" aria-label="기반 역량 2.1부터 2.7까지를 문서 순서대로 이은 도식. 각 상자에 어디까지 배우면 되는지 핵심 항목을 적었다">
+  <text class="t-hd" x="16" y="22">기반 역량 일곱 가지 (문서 순서 = 의존 순서)</text>
+  <path d="M289 64 C 289 44, 665 44, 665 64" fill="none" stroke="var(--muted)" stroke-dasharray="4 3"></path>
+  <text class="t-tick" x="477" y="40" text-anchor="middle">같은 문제, 다른 어휘</text>
+  <rect x="16" y="64" width="170" height="92" rx="3" fill="var(--near-soft)" stroke="var(--near)"></rect>
+  <text class="t-lab" x="28" y="86">2.1 선형대수·3D 기하</text>
+  <text class="t-tick" x="28" y="108">동차좌표 · SE(3)/SO(3)</text>
+  <text class="t-tick" x="28" y="125">쿼터니언 ↔ 회전행렬</text>
+  <text class="t-tick" x="28" y="142">Helmert · Kabsch/Horn</text>
+  <rect x="204" y="64" width="170" height="92" rx="3" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="216" y="86">2.2 사진측량 원리</text>
+  <text class="t-tick" x="216" y="108">내부표정 · 외부표정</text>
+  <text class="t-tick" x="216" y="125">공선조건식 · 전방교회법</text>
+  <text class="t-tick" x="216" y="142">GSD ↔ 기대 정확도</text>
+  <rect x="392" y="64" width="170" height="92" rx="3" fill="var(--near-soft)" stroke="var(--near)"></rect>
+  <text class="t-lab" x="404" y="86">2.3 확률과 최적화</text>
+  <text class="t-tick" x="404" y="108">Gauss-Newton · LM</text>
+  <text class="t-tick" x="404" y="125">공분산 · 로버스트 손실</text>
+  <text class="t-tick" x="404" y="142">EKF · 그래프 SLAM</text>
+  <rect x="580" y="64" width="170" height="92" rx="3" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="592" y="86">2.4 컴퓨터 비전 기초</text>
+  <text class="t-tick" x="592" y="108">RANSAC · 기본/필수행렬</text>
+  <text class="t-tick" x="592" y="125">스테레오 · MVS</text>
+  <text class="t-tick" x="592" y="142">학습 기반 매칭</text>
+  <line x1="186" y1="110" x2="198" y2="110" stroke="var(--ink)" stroke-width="1.2"></line>
+  <path d="M196 106 L204 110 L196 114 Z" fill="var(--ink)"></path>
+  <line x1="374" y1="110" x2="386" y2="110" stroke="var(--ink)" stroke-width="1.2"></line>
+  <path d="M384 106 L392 110 L384 114 Z" fill="var(--ink)"></path>
+  <line x1="562" y1="110" x2="574" y2="110" stroke="var(--ink)" stroke-width="1.2"></line>
+  <path d="M572 106 L580 110 L572 114 Z" fill="var(--ink)"></path>
+  <path d="M665 156 V178 H101 V196" fill="none" stroke="var(--ink)" stroke-width="1.2"></path>
+  <path d="M97 194 L101 202 L105 194 Z" fill="var(--ink)"></path>
+  <rect x="16" y="202" width="170" height="92" rx="3" fill="var(--far-soft)" stroke="var(--far)"></rect>
+  <text class="t-lab" x="28" y="224">2.5 점군 처리</text>
+  <text class="t-tick" x="28" y="246">ICP 계열 · 전역 정합</text>
+  <text class="t-tick" x="28" y="263">복셀 다운샘플링 · 법선</text>
+  <text class="t-tick" x="28" y="280">E57 · LAS · LAZ · PLY</text>
+  <rect x="204" y="202" width="170" height="92" rx="3" fill="var(--far-soft)" stroke="var(--far)"></rect>
+  <text class="t-lab" x="216" y="224">2.6 Python과 C++</text>
+  <text class="t-tick" x="216" y="246">NumPy 벡터화</text>
+  <text class="t-tick" x="216" y="263">남의 C++ 읽고 고치기</text>
+  <text class="t-tick" x="216" y="280">CMake 빌드가 진입 장벽</text>
+  <rect x="392" y="202" width="170" height="92" rx="3" fill="var(--far-soft)" stroke="var(--far)"></rect>
+  <text class="t-lab" x="404" y="224">2.7 클라우드·데이터</text>
+  <text class="t-tick" x="404" y="246">옥트리 LOD</text>
+  <text class="t-tick" x="404" y="263">COPC · EPT</text>
+  <text class="t-tick" x="404" y="280">HTTP range 부분 로딩</text>
+  <line x1="186" y1="248" x2="198" y2="248" stroke="var(--ink)" stroke-width="1.2"></line>
+  <path d="M196 244 L204 248 L196 252 Z" fill="var(--ink)"></path>
+  <line x1="374" y1="248" x2="386" y2="248" stroke="var(--ink)" stroke-width="1.2"></line>
+  <path d="M384 244 L392 248 L384 252 Z" fill="var(--ink)"></path>
+  <rect x="592" y="210" width="14" height="14" rx="2" fill="var(--near-soft)" stroke="var(--near)"></rect>
+  <text class="t-tick" x="614" y="221">수학 바탕</text>
+  <rect x="592" y="236" width="14" height="14" rx="2" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-tick" x="614" y="247">재구성 원리</text>
+  <rect x="592" y="262" width="14" height="14" rx="2" fill="var(--far-soft)" stroke="var(--far)"></rect>
+  <text class="t-tick" x="614" y="273">실무 도구</text>
+  <text class="t-tick" x="592" y="294" fill="var(--muted)">색 구분은 추정</text>
+</svg></div><figcaption><span class="fig-label">그림 1</span><b>기반 역량 일곱 가지와 각각 어디까지 배우면 되는가.</b> 문서 순서가 곧 의존 순서다. 2.2 사진측량과 2.4 컴퓨터 비전은 같은 문제를 다른 어휘로 부르는 영역이라 점선으로 이었다. 수학·원리·실무 도구로 나눈 색 구분은 필자의 해석이다<span class="est">(추정)</span>.</figcaption></figure>
+
+<h3 id="21-선형대수와-3d-기하-좌표변환-회전-표현">2.1 선형대수와 3D 기하 — 좌표변환, 회전 표현</h3>
+<p><strong>왜</strong>: Reality Capture의 오류는 결국 좌표계 문제로 환원된다. 스캔 월드 좌표, 프로젝트 좌표, 측량 기준계, BIM 내부 좌표 사이에는 저마다 다른 변환 관계가 있다. 회전을 오일러각으로 다루다 짐벌락을 만나거나, 스케일이 섞인 유사변환을 강체변환으로 착각하는 사고가 현장에서 반복된다.</p>
+<figure><div class="fig-box wide"><svg viewBox="0 0 760 352" role="img" aria-label="스캔 월드 좌표에서 프로젝트 좌표, 측량 기준계, BIM 내부 좌표로 이어지는 좌표계 사슬과, 강체변환과 유사변환의 차이">
+  <text class="t-hd" x="16" y="22">데이터가 거쳐 가는 네 좌표계</text>
+  <rect x="16" y="40" width="160" height="56" rx="3" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="96" y="73" text-anchor="middle">스캔 월드 좌표</text>
+  <rect x="205" y="40" width="160" height="56" rx="3" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="285" y="73" text-anchor="middle">프로젝트 좌표</text>
+  <rect x="394" y="40" width="160" height="56" rx="3" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="474" y="66" text-anchor="middle">측량 기준계</text>
+  <text class="t-tick" x="474" y="84" text-anchor="middle">예: KGD2002</text>
+  <rect x="583" y="40" width="160" height="56" rx="3" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="663" y="73" text-anchor="middle">BIM 내부 좌표</text>
+  <line x1="176" y1="68" x2="197" y2="68" stroke="var(--ink)" stroke-width="1.2"></line>
+  <path d="M195 64 L203 68 L195 72 Z" fill="var(--ink)"></path>
+  <line x1="365" y1="68" x2="386" y2="68" stroke="var(--ink)" stroke-width="1.2"></line>
+  <path d="M384 64 L392 68 L384 72 Z" fill="var(--ink)"></path>
+  <line x1="554" y1="68" x2="575" y2="68" stroke="var(--ink)" stroke-width="1.2"></line>
+  <path d="M573 64 L581 68 L573 72 Z" fill="var(--ink)"></path>
+  <text class="t-tick" x="16" y="118">화살표마다 서로 다른 변환이 끼어든다. 한 곳에서 변환 종류를 잘못 고르면 오차가 끝까지 따라간다</text>
+  <line x1="16" y1="136" x2="744" y2="136" stroke="var(--rule)"></line>
+  <text class="t-hd" x="16" y="160">강체변환 (SE(3))</text>
+  <text class="t-ink" x="16" y="182" font-size="13">x′ = R · x + t</text>
+  <text class="t-tick" x="16" y="200">회전 + 이동. 크기는 그대로다</text>
+  <rect x="70" y="230" width="60" height="60" fill="none" stroke="var(--muted)" stroke-dasharray="4 3"></rect>
+  <rect x="210" y="226" width="60" height="60" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1.5" transform="rotate(20 240 256)"></rect>
+  <path d="M136 260 Q 168 236 196 252" fill="none" stroke="var(--muted)"></path>
+  <path d="M190 246 L199 254 L188 256 Z" fill="var(--muted)"></path>
+  <line x1="372" y1="148" x2="372" y2="304" stroke="var(--rule)"></line>
+  <text class="t-hd" x="392" y="160">유사변환 (7-parameter Helmert)</text>
+  <text class="t-ink" x="392" y="182" font-size="13">x′ = s · R · x + t</text>
+  <text class="t-tick" x="392" y="200">회전 + 이동 + 축척 s. 크기까지 바뀐다</text>
+  <rect x="440" y="240" width="44" height="44" fill="none" stroke="var(--muted)" stroke-dasharray="4 3"></rect>
+  <rect x="584" y="218" width="72" height="72" fill="var(--far-soft)" stroke="var(--far)" stroke-width="1.5" transform="rotate(20 620 254)"></rect>
+  <path d="M490 260 Q 525 236 560 252" fill="none" stroke="var(--muted)"></path>
+  <path d="M554 246 L563 254 L552 256 Z" fill="var(--muted)"></path>
+  <rect x="16" y="312" width="728" height="34" rx="3" fill="var(--sunk)"></rect>
+  <text class="t-tick" x="28" y="333">현장에서 반복되는 사고: 축척이 섞인 유사변환을 강체변환으로 착각한다. 회전을 오일러각으로 다루다 짐벌락을 만난다</text>
+</svg></div><figcaption><span class="fig-label">그림 2</span><b>좌표계 사슬과 두 가지 변환.</b> 스캔 데이터는 BIM에 닿기까지 좌표계를 여러 번 갈아탄다. 강체변환은 크기를 보존하고, 7-parameter Helmert 유사변환은 축척 s까지 바꾼다. 둘을 혼동하는 것이 현장에서 반복되는 사고다.</figcaption></figure>
+
+<p><strong>어디까지</strong>: 동차좌표, SE(3)/SO(3), 쿼터니언과 회전행렬의 상호 변환, 유사변환(7-parameter Helmert)과 강체변환의 차이, 최소제곱 기반 점군 정렬(Kabsch/Horn)을 손으로 유도할 수 있으면 충분하다.</p>
+<p><strong>대표 자원</strong></p>
+<ul>
+<li>Joan Solà, <em>Quaternion kinematics for the error-state Kalman filter</em> — 쿼터니언, 회전군의 Lie 구조, 회전 섭동과 미분을 실전 추정식까지 끌고 간다 — <a href="https://arxiv.org/abs/1711.02508" target="_blank" rel="noopener">https://arxiv.org/abs/1711.02508</a> (확인 2026-09-21, 학술 자료·무료)</li>
+<li>Cyrill Stachniss, <em>Photogrammetry I &amp; II</em> 중 동차좌표·카메라 외부/내부표정 강의 — <a href="https://www.ipb.uni-bonn.de/photogrammetry-i-ii/" target="_blank" rel="noopener">https://www.ipb.uni-bonn.de/photogrammetry-i-ii/</a> (확인 2026-09-21, 대학 강의·영상 무료)</li>
+</ul>
+<h3 id="22-사진측량-원리">2.2 사진측량 원리</h3>
+<p><strong>왜</strong>: SfM 소프트웨어의 버튼은 몇 개 안 되지만 결과가 틀렸을 때 원인을 찾으려면 그 안에서 무슨 일이 일어나는지 알아야 한다. 촬영 계획(중복도, 촬영 고도, GSD), 표정 요소, 지상기준점(GCP) 배치, 렌즈 왜곡 모델을 모르면 "왜 휘었는지" 설명하지 못한다.</p>
+<p><strong>어디까지</strong>: 내부표정과 외부표정의 구분, 공선조건식, 전방교회법, 항공삼각측량, 정사영상 생성 원리. 여기에 더해 GSD와 기대 정확도의 관계를 계산할 줄 알아야 한다.</p>
+<p><strong>대표 자원</strong></p>
+<ul>
+<li>Cyrill Stachniss, <em>Photogrammetry I &amp; II</em> (Uni Bonn) — 카메라 기초부터 에피폴라 기하, 번들조정, 항공삼각측량, 정사영상까지 학부 두 학기 분량. 영상은 공개, 슬라이드는 강의자 이메일 요청 — 강의 페이지 <a href="https://www.ipb.uni-bonn.de/photogrammetry-i-ii/" target="_blank" rel="noopener">https://www.ipb.uni-bonn.de/photogrammetry-i-ii/</a> , 2021년 플레이리스트 <a href="https://www.youtube.com/playlist?list=PLgnQpQtFTOGRYjqjdZxTEQPZuFHQa7O7Y" target="_blank" rel="noopener">https://www.youtube.com/playlist?list=PLgnQpQtFTOGRYjqjdZxTEQPZuFHQa7O7Y</a> † (확인 2026-09-21, 대학 강의·무료)</li>
+<li>Richard Hartley, Andrew Zisserman, <em>Multiple View Geometry in Computer Vision</em>, 2nd ed., Cambridge University Press, 2004 — 다시점 기하의 정본. 에피폴라 기하와 삼중초점 텐서 등 일부 장은 무료 PDF — <a href="https://www.robots.ox.ac.uk/~vgg/hzbook/" target="_blank" rel="noopener">https://www.robots.ox.ac.uk/~vgg/hzbook/</a> (확인 2026-09-21, 학술 교재·일부 무료)</li>
+</ul>
+<h3 id="23-확률과-최적화-번들조정-상태추정">2.3 확률과 최적화 — 번들조정, 상태추정</h3>
+<p><strong>왜</strong>: 번들조정은 Reality Capture 파이프라인의 심장이다. 어느 관측을 얼마나 믿을지(가중치), 이상치를 어떻게 걷어낼지(robust loss), 해가 왜 발산하는지를 이해하지 못하면 정합 실패 앞에서 재촬영밖에 할 게 없다. 모바일 매핑과 SLAM으로 넘어가면 칼만 필터 계열과 팩터그래프가 바로 뒤따른다.</p>
+<p><strong>어디까지</strong>: 비선형 최소제곱(Gauss-Newton, Levenberg-Marquardt), 희소 야코비안 구조, 공분산 전파, 로버스트 손실함수, EKF와 그래프 기반 SLAM의 차이.</p>
+<p><strong>대표 자원</strong></p>
+<ul>
+<li>Timothy D. Barfoot, <em>State Estimation for Robotics</em>, 2nd ed., Cambridge University Press, 2024(초판 2017) — 저자 페이지에서 PDF를 무료 공개한다. 행렬 Lie군 위의 추정을 한 권으로 정리했다 — <a href="http://asrl.utias.utoronto.ca/~tdb/" target="_blank" rel="noopener">http://asrl.utias.utoronto.ca/~tdb/</a> (확인 2026-09-21, 학술 교재·무료)</li>
+<li>Ceres Solver — Google이 2010년부터 유지하는 비선형 최소제곱 라이브러리. 번들조정 예제가 문서에 포함돼 있다 — <a href="https://github.com/ceres-solver/ceres-solver" target="_blank" rel="noopener">https://github.com/ceres-solver/ceres-solver</a> (확인 2026-09-21, 오픈소스)</li>
+<li>GTSAM — 팩터그래프 기반 센서융합 라이브러리. BSD 라이선스, C++에 Python·MATLAB 바인딩 — <a href="https://gtsam.org/" target="_blank" rel="noopener">https://gtsam.org/</a> (확인 2026-09-21, 오픈소스)</li>
+</ul>
+<h3 id="24-컴퓨터-비전-기초">2.4 컴퓨터 비전 기초</h3>
+<p><strong>왜</strong>: 특징점 검출과 매칭, 스테레오 정합, 삼각측량은 사진측량과 컴퓨터 비전이 같은 문제를 다른 어휘로 부르는 영역이다. 두 어휘를 모두 알아야 논문과 벤더 문서를 오갈 수 있다. 딥러닝 기반 매칭이 고전 기법을 대체해 가는 흐름을 읽으려면 더더욱 그렇다.</p>
+<p><strong>어디까지</strong>: 필터링·에지·특징기술자, RANSAC, 기본행렬과 필수행렬, 스테레오와 MVS, 최근의 학습 기반 매칭.</p>
+<p><strong>대표 자원</strong></p>
+<ul>
+<li>Richard Szeliski, <em>Computer Vision: Algorithms and Applications</em>, 2nd ed., 2022 — 전자판을 저자 사이트에서 개인 사용 목적으로 내려받을 수 있다(재배포 금지) — <a href="https://szeliski.org/Book/" target="_blank" rel="noopener">https://szeliski.org/Book/</a> (확인 2026-09-21, 학술 교재)</li>
+</ul>
+<h3 id="25-점군-처리">2.5 점군 처리</h3>
+<p><strong>왜</strong>: 촬영이 끝나면 일이 시작된다. 정합, 노이즈 제거, 다운샘플링, 분할, 메시화, 포맷 변환이 실무 시간의 대부분을 먹는다. 라이브러리 서너 개는 코드로 다룰 줄 알아야 한다.</p>
+<p><strong>어디까지</strong>: ICP 계열 정합(point-to-point, point-to-plane, colored ICP)과 전역 정합의 차이, 복셀 다운샘플링, 법선 추정, RANSAC 평면 분할, 포맷(E57/LAS/LAZ/PLY) 상호 변환.</p>
+<p><strong>대표 자원</strong></p>
+<ul>
+<li>Open3D — MIT 라이선스, C++/Python, 정합·재구성·시각화·ML 연동을 한 패키지로 제공한다 — <a href="https://www.open3d.org/" target="_blank" rel="noopener">https://www.open3d.org/</a> , 저장소 <a href="https://github.com/isl-org/Open3D" target="_blank" rel="noopener">https://github.com/isl-org/Open3D</a> (확인 2026-09-21, 오픈소스)</li>
+<li>Point Cloud Library(PCL) — BSD 라이선스 C++ 라이브러리. 필터, 특징, 정합, 분할, 표면 재구성 모듈로 나뉜다 — <a href="https://pointclouds.org/" target="_blank" rel="noopener">https://pointclouds.org/</a> (확인 2026-09-21, 오픈소스)</li>
+<li>PDAL(Point Data Abstraction Library) — "점군의 GDAL". JSON 파이프라인으로 30여 개 포맷 변환과 좌표계 변환, 필터링을 선언적으로 기술한다 — <a href="https://pdal.org/" target="_blank" rel="noopener">https://pdal.org/</a> (확인 2026-09-21, 오픈소스)</li>
+<li>CloudCompare — 점군·메시 비교와 거리 계산에 쓰는 오픈소스 데스크톱 도구. 실무 검수에서 사실상 표준처럼 쓰인다<span class="est">(추정)</span> — <a href="https://www.cloudcompare.org/" target="_blank" rel="noopener">https://www.cloudcompare.org/</a> (확인 2026-09-21, 오픈소스)</li>
+</ul>
+<h3 id="26-프로그래밍-python과-c">2.6 프로그래밍 — Python과 C++</h3>
+<p><strong>왜</strong>: Python 없이는 실험 속도가 나지 않고, C++ 없이는 성능이 필요한 지점에서 막힌다. 이 분야의 핵심 라이브러리가 C++로 짜여 Python 바인딩을 얹는 구조라 두 언어를 오가는 일이 잦다. COLMAP은 PyCOLMAP을, Open3D와 GTSAM은 각자 Python 바인딩을 제공한다.</p>
+<p><strong>어디까지</strong>: Python은 NumPy 벡터화, 시각화, 데이터 파이프라인 작성까지. C++는 남의 코드를 읽고 빌드하고 고치는 수준이면 시작으로 충분하다. CMake로 의존성을 엮어 빌드할 줄 아는 게 실질적인 진입 장벽이다.</p>
+<p><strong>대표 자원</strong></p>
+<ul>
+<li>COLMAP 문서 — SfM/MVS 파이프라인의 CLI와 PyCOLMAP 바인딩, 입출력 포맷 설명 — <a href="https://colmap.github.io/" target="_blank" rel="noopener">https://colmap.github.io/</a> (확인 2026-09-21, 오픈소스 문서)</li>
+</ul>
+<h3 id="27-클라우드와-데이터-엔지니어링">2.7 클라우드와 데이터 엔지니어링</h3>
+<p><strong>왜</strong>: 현장 하나에서 수십 GB, 프로젝트 하나에서 테라바이트가 나온다. 로컬 워크스테이션으로 버티는 단계를 넘어서면 저장·전송·스트리밍이 곧 제품 경쟁력이 된다. 플랫폼형 사업에서는 이 영역이 본체다.</p>
+<p><strong>어디까지</strong>: 옥트리 기반 LOD 구조, 클라우드 네이티브 포맷(COPC, EPT), HTTP range request 기반 부분 로딩, 객체 스토리지 비용 구조, 배치 처리 오케스트레이션.</p>
+<p><strong>대표 자원</strong></p>
+<ul>
+<li>Potree — WebGL 점군 렌더러. 옥트리 다중해상도 구조로 대용량 점군을 브라우저에 띄운다. TU Wien 연구에서 출발했다 — <a href="https://github.com/potree/potree" target="_blank" rel="noopener">https://github.com/potree/potree</a> (확인 2026-09-21, 오픈소스)</li>
+<li>PDAL 파이프라인 문서 — 대량 점군 배치 처리와 좌표변환을 선언적으로 기술하는 방식 — <a href="https://pdal.org/" target="_blank" rel="noopener">https://pdal.org/</a> (확인 2026-09-21, 오픈소스 문서)</li>
+<li>Cloud Optimized Point Cloud(COPC) 해설 — 단일 파일 안에 옥트리로 공간 정렬해 부분 읽기를 가능하게 하는 포맷 — <a href="https://lidarnews.com/cloud-optimized-point-clouds-copc/" target="_blank" rel="noopener">https://lidarnews.com/cloud-optimized-point-clouds-copc/</a> † (확인 2026-09-21, 업계 매체)</li>
+</ul>
+<hr />
+<h2 id="3-도메인-지식">3. 도메인 지식</h2>
+<p>기술만 익히고 도메인을 건너뛰면 정확한데 쓸모없는 산출물이 나온다.</p>
+<h3 id="31-건설-공정과-bim-워크플로">3.1 건설 공정과 BIM 워크플로</h3>
+<p>발주-설계-시공-유지관리 단계마다 필요한 정보가 다르다. 스캔 데이터가 어느 단계의 어떤 의사결정에 들어가는지 모르면 납품 규격을 정할 수 없다.</p>
+<ul>
+<li><strong>ISO 19650 시리즈</strong> — 건설 자산의 생애주기 정보관리 국제표준. Part 1은 개념과 원칙, Part 2는 자산 인도 단계의 정보관리 프로세스를 규정한다 — <a href="https://www.iso.org/standard/68078.html" target="_blank" rel="noopener">https://www.iso.org/standard/68078.html</a> † (확인 2026-09-21, 국제표준)</li>
+<li><strong>IFC / ISO 16739-1:2024</strong> — openBIM 데이터 교환 스키마. IFC4.3이 2024년 3월 ISO 표준으로 발행됐고, 인프라 영역까지 확장됐다 — <a href="https://www.iso.org/standard/84123.html" target="_blank" rel="noopener">https://www.iso.org/standard/84123.html</a> † (확인 2026-09-21, 국제표준)</li>
+<li><strong>IfcOpenShell</strong> — IFC를 코드로 읽고 쓰는 오픈소스 툴킷. IFC2X3/IFC4/IFC4X3을 지원하며 C++과 Python에서 쓸 수 있다 — <a href="https://ifcopenshell.org/" target="_blank" rel="noopener">https://ifcopenshell.org/</a> (확인 2026-09-21, 오픈소스)</li>
+<li><strong>국토교통부 「건설산업 BIM 기본지침」</strong> — 2020년 12월 발표. BIM 정의, 적용 대상, 절차, 공통 표준을 제시한다 — <a href="https://www.molit.go.kr/USR/policyData/m_34681/dtl.jsp?srch_usr_titl=Y&amp;psize=10&amp;lcmspage=1&amp;id=4516" target="_blank" rel="noopener">https://www.molit.go.kr/USR/policyData/m_34681/dtl.jsp?srch_usr_titl=Y&amp;psize=10&amp;lcmspage=1&amp;id=4516</a> † , 보도자료 <a href="https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95084979" target="_blank" rel="noopener">https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95084979</a> † (확인 2026-09-21, 정부 지침)</li>
+<li><strong>국토교통부 「건설산업 BIM 시행지침」</strong> — 발주자편·설계자편·시공자편으로 나뉜 실행 지침 — <a href="https://www.molit.go.kr/USR/policyData/m_34681/dtl.jsp?srch_usr_titl=Y&amp;psize=10&amp;lcmspage=1&amp;id=4634" target="_blank" rel="noopener">https://www.molit.go.kr/USR/policyData/m_34681/dtl.jsp?srch_usr_titl=Y&amp;psize=10&amp;lcmspage=1&amp;id=4634</a> † (확인 2026-09-21, 정부 지침)</li>
+</ul>
+<h3 id="32-측량-기준계">3.2 측량 기준계</h3>
+<p>국내 현장에서 일한다면 피할 수 없다. 한국은 2002년 1월 1일부터 동경측지계를 버리고 세계측지계 기반의 한국측지계 2002(KGD2002)를 쓴다. GRS80 타원체에 ITRF2000 데이텀을 쓰고, 국가기본도 평면직각좌표계는 경도 2도 간격 네 개 원점 체계다. 표고 기준은 인천만 평균해면이다.</p>
+<ul>
+<li>국토지리정보원 「세계측지계 기술지침서」(2004) — <a href="https://www.ngii.go.kr/other/file_down.do?sq=101741" target="_blank" rel="noopener">https://www.ngii.go.kr/other/file_down.do?sq=101741</a> † (확인 2026-09-21, 정부기관 발행)</li>
+<li>대한민국 EPSG 코드 정리 — 실무에서 좌표계 코드를 고를 때 참고할 만한 정리 — <a href="http://www.gisdeveloper.co.kr/?p=8942" target="_blank" rel="noopener">http://www.gisdeveloper.co.kr/?p=8942</a> † (확인 2026-09-21, 개인 기술 블로그·2차 자료)</li>
+</ul>
+<p>기준계를 배우는 목적은 암기가 아니다. 스캔 좌표를 국가 좌표계에 물릴 때 어떤 변환이 어떤 오차를 낳는지 예측하는 데 있다.</p>
+<h3 id="33-데이터-표준과-품질-규격">3.3 데이터 표준과 품질 규격</h3>
+<ul>
+<li><strong>E57 / ASTM E2807</strong> — 벤더 중립 점군 교환 포맷. 2011년 2월 ASTM 표준으로 승인됐고, XML 메타데이터와 바이너리 점 데이터를 결합한 구조다. 점 좌표·색·강도와 2D 영상을 함께 담는다 — <a href="https://paulbourke.net/dataformats/e57/" target="_blank" rel="noopener">https://paulbourke.net/dataformats/e57/</a> (확인 2026-09-21, 대학 소속 기술 문서), 라이브러리 <a href="http://libe57.org/" target="_blank" rel="noopener">http://libe57.org/</a> † (확인 2026-09-21, 오픈소스)</li>
+<li><strong>ASPRS LAS 1.4(R15)</strong> — 항공 LiDAR 표준 포맷. 분류 필드 256종 확장, WKT 좌표계 표기, 다중 센서 지원이 주요 변경점이다 — 사양서 PDF <a href="https://paulbourke.net/dataformats/laz/LAS_1_4_r15.pdf" target="_blank" rel="noopener">https://paulbourke.net/dataformats/laz/LAS_1_4_r15.pdf</a> † (확인 2026-09-21, 발행처는 ASPRS)</li>
+<li><strong>USIBD Level of Accuracy(LOA) Specification, Version 3.0(2019)</strong> — 기존 시설물 문서화의 정확도 등급 규격. LOA 10(약 50 mm)부터 LOA 50(약 1 mm)까지 다섯 단계로 나눈다. 여기서 헷갈리기 쉬운 지점이 있다. 이 허용오차는 "실제 건물 대비 모델"이 아니라 "점군 대비 BIM 요소"에 적용된다. 점군 자체의 정확도는 별개 문제로 남는다 — <a href="http://usibd.org/product/usibd-level-of-accuracy-loa-specification-guide-version-3-0-2019/" target="_blank" rel="noopener">http://usibd.org/product/usibd-level-of-accuracy-loa-specification-guide-version-3-0-2019/</a> (확인 2026-09-21, 업계 단체 규격), 요약 발표자료 <a href="https://cdn.ymaws.com/www.nysapls.org/resource/resmgr/2019_conference/handouts/hale-g_bim_loa_guide_c120_v2.pdf" target="_blank" rel="noopener">https://cdn.ymaws.com/www.nysapls.org/resource/resmgr/2019_conference/handouts/hale-g_bim_loa_guide_c120_v2.pdf</a> † (확인 2026-09-21, 업계 발표자료)</li>
+</ul>
+<figure><div class="fig-box wide"><svg viewBox="0 0 760 318" role="img" aria-label="USIBD LOA 등급을 로그 눈금 위에 그린 도식과, LOA 허용오차가 점군과 BIM 요소 사이에 적용된다는 설명">
+  <text class="t-hd" x="16" y="22">USIBD LOA 다섯 단계 (로그 눈금)</text>
+  <path d="M150 64 V58 H640 V64" fill="none" stroke="var(--muted)"></path>
+  <text class="t-tick" x="395" y="50" text-anchor="middle">LOA 20 · 30 · 40은 이 사이 (이 문서에는 값이 없다)</text>
+  <line x1="110" y1="110" x2="680" y2="110" stroke="var(--ink)" stroke-width="1.2"></line>
+  <line x1="110" y1="104" x2="110" y2="116" stroke="var(--ink)"></line>
+  <text class="t-tick" x="110" y="132" text-anchor="middle">1 mm</text>
+  <line x1="211" y1="106" x2="211" y2="114" stroke="var(--muted)"></line>
+  <text class="t-tick" x="211" y="132" text-anchor="middle">2</text>
+  <line x1="344" y1="106" x2="344" y2="114" stroke="var(--muted)"></line>
+  <text class="t-tick" x="344" y="132" text-anchor="middle">5</text>
+  <line x1="445" y1="104" x2="445" y2="116" stroke="var(--ink)"></line>
+  <text class="t-tick" x="445" y="132" text-anchor="middle">10 mm</text>
+  <line x1="546" y1="106" x2="546" y2="114" stroke="var(--muted)"></line>
+  <text class="t-tick" x="546" y="132" text-anchor="middle">20</text>
+  <line x1="680" y1="104" x2="680" y2="116" stroke="var(--ink)"></line>
+  <text class="t-tick" x="680" y="132" text-anchor="middle">50 mm</text>
+  <circle cx="110" cy="110" r="7" fill="var(--near)"></circle>
+  <text class="t-lab" x="110" y="82" text-anchor="middle">LOA 50</text>
+  <text class="t-tick" x="110" y="97" text-anchor="middle">약 1 mm</text>
+  <circle cx="680" cy="110" r="7" fill="var(--far)"></circle>
+  <text class="t-lab" x="680" y="82" text-anchor="middle">LOA 10</text>
+  <text class="t-tick" x="680" y="97" text-anchor="middle">약 50 mm</text>
+  <text class="t-tick" x="110" y="156">← 더 엄격 (허용오차 작음)</text>
+  <text class="t-tick" x="680" y="156" text-anchor="end">더 느슨 (허용오차 큼) →</text>
+  <line x1="16" y1="176" x2="744" y2="176" stroke="var(--rule)"></line>
+  <text class="t-hd" x="16" y="200">허용오차가 적용되는 구간</text>
+  <rect x="40" y="218" width="160" height="40" rx="3" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="120" y="243" text-anchor="middle">실제 건물</text>
+  <rect x="300" y="218" width="160" height="40" rx="3" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="380" y="243" text-anchor="middle">점군</text>
+  <rect x="560" y="218" width="160" height="40" rx="3" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="640" y="243" text-anchor="middle">BIM 요소</text>
+  <line x1="200" y1="238" x2="292" y2="238" stroke="var(--muted)" stroke-dasharray="4 3"></line>
+  <path d="M290 234 L298 238 L290 242 Z" fill="var(--muted)"></path>
+  <line x1="460" y1="238" x2="552" y2="238" stroke="var(--near)" stroke-width="2"></line>
+  <path d="M550 234 L558 238 L550 242 Z" fill="var(--near)"></path>
+  <rect x="170" y="272" width="160" height="40" rx="3" fill="var(--far-soft)" stroke="var(--far)" stroke-dasharray="4 3"></rect>
+  <text class="t-tick" x="250" y="288" text-anchor="middle">점군 자체의 정확도</text>
+  <text class="t-tick" x="250" y="304" text-anchor="middle">별개 문제로 남는다</text>
+  <rect x="430" y="272" width="160" height="40" rx="3" fill="var(--near-soft)" stroke="var(--near)"></rect>
+  <text class="t-tick" x="510" y="288" text-anchor="middle">LOA 허용오차는</text>
+  <text class="t-tick" x="510" y="304" text-anchor="middle">여기에 적용된다</text>
+</svg></div><figcaption><span class="fig-label">그림 3</span><b>USIBD LOA 등급의 폭과 적용 구간.</b> LOA 10(약 50 mm)과 LOA 50(약 1 mm)은 50배 차이라 로그 눈금으로 그렸다. 중간 세 등급의 값은 이 문서에서 확인하지 않아 표시하지 않았다. 허용오차는 점군과 BIM 요소 사이에 적용되며, 점군 자체의 정확도는 따로 따져야 한다.</figcaption></figure>
+
+<hr />
+<h2 id="4-t자형-조합-시나리오">4. T자형 조합 시나리오</h2>
+<p>세로획은 Reality Capture다. 가로획을 무엇으로 그을지가 진로를 가른다. 네 가지를 제시한다. 기간은 전부 추정이며, 2장의 기반 역량을 어느 정도 갖췄다는 전제다.</p>
+<figure><div class="fig-box wide"><svg viewBox="0 0 760 300" role="img" aria-label="T자형 역량 도식. 세로획은 Reality Capture와 기하·오차론, 가로획은 ML, BIM·AEC, 플랫폼·클라우드, 제품·사업 네 갈래">
+        <rect x="60" y="30" width="640" height="46" fill="var(--far-soft)" stroke="var(--far)" stroke-width="1" rx="2"></rect>
+        <line x1="220" y1="30" x2="220" y2="76" stroke="var(--far)" stroke-width="1" stroke-dasharray="3 3"></line>
+        <line x1="380" y1="30" x2="380" y2="76" stroke="var(--far)" stroke-width="1" stroke-dasharray="3 3"></line>
+        <line x1="540" y1="30" x2="540" y2="76" stroke="var(--far)" stroke-width="1" stroke-dasharray="3 3"></line>
+        <text class="t-hd" x="140" y="51" text-anchor="middle">+ ML 엔지니어</text>
+        <text class="t-tick" x="140" y="67" text-anchor="middle">3D 딥러닝</text>
+        <text class="t-hd" x="300" y="51" text-anchor="middle">+ BIM·AEC 컨설턴트</text>
+        <text class="t-tick" x="300" y="67" text-anchor="middle">정보관리 · 표준</text>
+        <text class="t-hd" x="460" y="51" text-anchor="middle">+ 플랫폼·클라우드</text>
+        <text class="t-tick" x="460" y="67" text-anchor="middle">대용량 공간데이터</text>
+        <text class="t-hd" x="620" y="51" text-anchor="middle">+ 제품·사업개발</text>
+        <text class="t-tick" x="620" y="67" text-anchor="middle">고객 문제 정의</text>
+        <rect x="320" y="76" width="120" height="196" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1" rx="2"></rect>
+        <text class="t-hd" x="380" y="104" text-anchor="middle">Reality Capture</text>
+        <text class="t-tick" x="380" y="134" text-anchor="middle">점군 처리</text>
+        <text class="t-tick" x="380" y="160" text-anchor="middle">사진측량 · SLAM</text>
+        <text class="t-tick" x="380" y="186" text-anchor="middle">번들조정 · 최적화</text>
+        <text class="t-tick" x="380" y="212" text-anchor="middle">좌표변환 · 기준계</text>
+        <text class="t-tick" x="380" y="238" text-anchor="middle">기하 · 오차론</text>
+        <text class="t-lab" x="300" y="200" text-anchor="end">세로획: 깊게, 오래 간다</text>
+        <text class="t-tick" x="300" y="216" text-anchor="end">도구는 3년이면 바뀌지만</text>
+        <text class="t-tick" x="300" y="232" text-anchor="end">최소제곱은 안 바뀐다</text>
+        <text class="t-lab" x="460" y="200">가로획: 하나만 고른다</text>
+        <text class="t-tick" x="460" y="216">지금 조직에 자리가 있는</text>
+        <text class="t-tick" x="460" y="232">방향이어야 연습할 수 있다</text>
+      </svg></div><figcaption><span class="fig-label">그림 4</span><b>T자형 역량.</b> 세로획은 Reality Capture와 그 밑의 기하·오차론이고, 가로획은 4.1~4.4의 네 조합 가운데 하나를 고른다. 이 구도 자체가 필자의 판단이다<span class="est">(추정)</span>.</figcaption></figure>
+
+<h3 id="41-rc-ml-엔지니어">4.1 RC + ML 엔지니어</h3>
+<p><strong>조합</strong>: Reality Capture + 3D 딥러닝(분할·검출·재구성)</p>
+<p><strong>푸는 실제 문제</strong>: 점군에서 벽·기둥·보·배관을 자동으로 찾아내 모델링 시간을 줄이는 일. 1.2에서 봤듯 이 문제는 아직 풀리지 않았다. 주요 부재 너머의 객체, 가려진 영역, 라벨 데이터 부족과 도메인 갭이 남은 과제다(<a href="https://link.springer.com/chapter/10.1007/978-981-92-2743-3_40" target="_blank" rel="noopener">Springer 리뷰</a>, 확인 2026-09-21). 뒤집어 보면 아직 들어갈 자리가 남아 있다.</p>
+<p><strong>필요한 학습 항목</strong></p>
+<ul>
+<li>3D 딥러닝 아키텍처: 희소 컨볼루션, Point Transformer 계열</li>
+<li>대규모 점군 데이터 파이프라인과 라벨링 전략</li>
+<li>도메인 적응, 합성 데이터 생성</li>
+<li>평가 지표: mIoU와 기하 오차를 함께 보는 습관</li>
+<li>실습 코드베이스: Pointcept — PTv1/v2/v3, SparseUNet 등을 ScanNet·S3DIS·SemanticKITTI·nuScenes 설정으로 제공한다. MIT 라이선스 — <a href="https://github.com/Pointcept/Pointcept" target="_blank" rel="noopener">https://github.com/Pointcept/Pointcept</a> (확인 2026-09-21, 오픈소스)</li>
+</ul>
+<p><strong>예상 진입 기간</strong>: 파이썬과 딥러닝 경험이 있으면 6~9개월, 밑바닥부터면 12~18개월<span class="est">(추정)</span></p>
+<h3 id="42-rc-bimaec-컨설턴트">4.2 RC + BIM·AEC 컨설턴트</h3>
+<p><strong>조합</strong>: Reality Capture + 건설 정보관리·표준</p>
+<p><strong>푸는 실제 문제</strong>: 발주처가 "스캔 떠 주세요"라고만 말할 때, 무엇을 얼마의 정확도로 어떤 포맷으로 납품할지 정의해 주는 일. LOA 등급 선택, 좌표계 합의, IFC 교환 규칙, 검수 기준 작성이 여기 속한다. 장비를 다루는 인력은 많아도 규격을 쓸 줄 아는 사람은 드물다<span class="est">(추정)</span>.</p>
+<p><strong>필요한 학습 항목</strong></p>
+<ul>
+<li>ISO 19650 정보관리 프로세스와 국토교통부 BIM 지침 체계</li>
+<li>USIBD LOA 등급 체계와 그 한계(점군 대비 모델 허용오차라는 점)</li>
+<li>IFC 스키마 구조와 MVD, 교환 요구사항 정의</li>
+<li>측량 기준계와 프로젝트 좌표계 정합 절차</li>
+<li>자격: buildingSMART Professional Certification — Foundation과 Practitioner 두 단계. Foundation은 국제표준 기반 5개 학습 모듈을 다루고, 객관식 25문항에서 75% 이상이면 합격이다 — <a href="https://education.buildingsmart.org/" target="_blank" rel="noopener">https://education.buildingsmart.org/</a> † (확인 2026-09-21, 국제 인증기관)</li>
+</ul>
+<p><strong>예상 진입 기간</strong>: 건설 실무 경험이 있으면 6~12개월. 없으면 현장 경험을 쌓는 기간을 따로 잡아야 한다<span class="est">(추정)</span></p>
+<h3 id="43-rc-플랫폼클라우드-엔지니어">4.3 RC + 플랫폼·클라우드 엔지니어</h3>
+<p><strong>조합</strong>: Reality Capture + 대용량 공간데이터 서비스</p>
+<p><strong>푸는 실제 문제</strong>: 현장에서 올라온 수 TB 점군을 브라우저에서 즉시 돌려 보게 만드는 일. 옥트리 타일링, 부분 스트리밍, 버전 관리, 권한 관리, 비용 최적화가 전부 이 사람 몫이다. 건설 디지털 트윈 시장 자체는 성장 전망이 나오지만(예: 2025년 45억 달러에서 2026년 56억 달러 추정, <a href="https://datanextresearch.com/report/construction-digital-twin-market" target="_blank" rel="noopener">DataNext Research</a>, 확인 2026-09-21 — 상업적 시장조사 보고서이므로 수치는 참고만 한다), 실제 서비스 품질은 이 엔지니어링에서 갈린다.</p>
+<p><strong>필요한 학습 항목</strong></p>
+<ul>
+<li>공간 인덱싱: 옥트리, LOD, COPC/EPT 같은 클라우드 네이티브 포맷</li>
+<li>웹 3D 렌더링: WebGL/WebGPU, Potree·Cesium 계열 뷰어 구조</li>
+<li>배치 처리 오케스트레이션과 객체 스토리지 비용 모델</li>
+<li>PDAL 기반 변환 파이프라인 자동화</li>
+<li>서버 사이드 좌표계 변환</li>
+</ul>
+<p><strong>예상 진입 기간</strong>: 백엔드 경험이 있으면 6~12개월<span class="est">(추정)</span></p>
+<h3 id="44-rc-제품기획사업개발">4.4 RC + 제품기획·사업개발</h3>
+<p><strong>조합</strong>: Reality Capture + 고객 문제 정의</p>
+<p><strong>푸는 실제 문제</strong>: 기술은 되는데 안 팔리는 상황을 푸는 일. 어느 공정에서 누가 무엇 때문에 돈을 쓰는지, 경쟁 대안이 사람인지 다른 소프트웨어인지, 정확도 요구가 규격에서 오는지 관행에서 오는지를 구분해야 한다. 1.3에서 인용한 3DGS 정확도 연구 같은 자료를 읽고 "이 용도에는 쓸 수 있고 저 용도에는 못 쓴다"를 판단하는 능력이 핵심 자산이 된다.</p>
+<p><strong>필요한 학습 항목</strong></p>
+<ul>
+<li>건설 공정과 원가 구조, 발주 방식</li>
+<li>정확도 규격을 읽고 고객 요구로 번역하는 능력(LOA, ISO 19650)</li>
+<li>경쟁 제품의 기술적 한계를 스스로 검증할 만큼의 기술 이해 — 최소한 4.2 수준</li>
+<li>데이터 분석과 사용자 인터뷰</li>
+</ul>
+<p><strong>예상 진입 기간</strong>: 기술 배경이 있으면 3~6개월, 도메인 학습은 계속<span class="est">(추정)</span></p>
+<blockquote>
+<p><strong>고르는 법</strong>: 4.1은 연구 조직이나 대형 벤더, 4.2는 엔지니어링사와 발주처, 4.3은 SaaS 기업, 4.4는 제품 조직에 자리가 있다. 지금 속한 조직에 없는 역할을 고르면 연습할 기회가 없다는 점도 함께 따져 봐야 한다<span class="est">(추정)</span>.</p>
+</blockquote>
+<hr />
+<h2 id="5-단계별-로드맵">5. 단계별 로드맵</h2>
+<figure><div class="fig-box wide"><svg viewBox="0 0 760 368" role="img" aria-label="0에서 3개월, 3에서 12개월, 1년 이상의 세 단계로 나눈 학습 로드맵 계단 도식. 기간은 모두 추정">
+  <text class="t-hd" x="16" y="22">세 단계 로드맵 (기간은 모두 추정)</text>
+  <rect x="16" y="150" width="232" height="164" rx="3" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-hd" x="28" y="174">0~3개월</text>
+  <text class="t-lab" x="28" y="194">한 번은 끝까지 돌려 본다</text>
+  <text class="t-tick" x="28" y="220">· SfM/MVS 파이프라인 (COLMAP)</text>
+  <text class="t-tick" x="28" y="238">· 사진측량 기초 이론</text>
+  <text class="t-tick" x="28" y="256">· 점군 다루기 (Open3D)</text>
+  <text class="t-tick" x="28" y="274">· 검수 감각 (CloudCompare)</text>
+  <text class="t-tick" x="28" y="292">· 좌표계 (세계측지계)</text>
+  <rect x="264" y="96" width="232" height="218" rx="3" fill="var(--near-soft)" stroke="var(--near)"></rect>
+  <text class="t-hd" x="276" y="120">3~12개월</text>
+  <text class="t-lab" x="276" y="140">원리로 내려가고 도메인으로 넓힌다</text>
+  <text class="t-tick" x="276" y="166">· 다시점 기하 (Hartley·Zisserman)</text>
+  <text class="t-tick" x="276" y="184">· 컴퓨터 비전 전반 (Szeliski)</text>
+  <text class="t-tick" x="276" y="202">· 최적화·상태추정 (Barfoot)</text>
+  <text class="t-tick" x="276" y="220">· 회전 표현 (Solà)</text>
+  <text class="t-tick" x="276" y="238">· 번들조정 구현 (Ceres · GTSAM)</text>
+  <text class="t-tick" x="276" y="256">· 데이터 엔지니어링 (PDAL)</text>
+  <text class="t-tick" x="276" y="274">· BIM·표준 (IfcOpenShell)</text>
+  <text class="t-tick" x="276" y="292">· 드론 운용 자격</text>
+  <rect x="512" y="42" width="232" height="272" rx="3" fill="var(--far-soft)" stroke="var(--far)"></rect>
+  <text class="t-hd" x="524" y="66">1년 이상</text>
+  <text class="t-lab" x="524" y="86">세로획을 깊게, 가로획을 하나 고른다</text>
+  <text class="t-tick" x="524" y="106" fill="var(--muted)">4장에서 고른 조합에 따라 갈라진다</text>
+  <text class="t-tick" x="524" y="134">4.1 · 3D 딥러닝 (Pointcept)</text>
+  <text class="t-tick" x="524" y="152">4.1 · NeRF/3DGS (nerfstudio)</text>
+  <text class="t-tick" x="524" y="178">4.2 · buildingSMART 인증</text>
+  <text class="t-tick" x="524" y="196">4.2 · 측량및지형공간정보기사</text>
+  <text class="t-tick" x="524" y="214">4.1·4.2 · ASPRS 인증</text>
+  <text class="t-tick" x="524" y="240">4.3 · 대용량 서비스 (Potree)</text>
+  <text class="t-tick" x="524" y="266">공통 · 텍스처·메시화</text>
+  <text class="t-tick" x="524" y="284">공통 · 드론 매핑 (OpenDroneMap)</text>
+  <line x1="16" y1="332" x2="736" y2="332" stroke="var(--ink)" stroke-width="1.2"></line>
+  <path d="M734 327 L744 332 L734 337 Z" fill="var(--ink)"></path>
+  <line x1="16" y1="326" x2="16" y2="338" stroke="var(--ink)"></line>
+  <line x1="256" y1="326" x2="256" y2="338" stroke="var(--ink)"></line>
+  <line x1="504" y1="326" x2="504" y2="338" stroke="var(--ink)"></line>
+  <text class="t-tick" x="16" y="356">시작</text>
+  <text class="t-tick" x="256" y="356" text-anchor="middle">3개월</text>
+  <text class="t-tick" x="504" y="356" text-anchor="middle">12개월</text>
+  <text class="t-tick" x="744" y="356" text-anchor="end">시간</text>
+</svg></div><figcaption><span class="fig-label">그림 5</span><b>세 단계 로드맵.</b> 먼저 한 번 완주하고, 그다음 원리와 도메인으로 넓히고, 1년이 지나면 4장의 조합 하나로 갈라진다. 괄호 안은 아래 표에 실린 대표 자원이다. 기간은 전부 추정이며, 자기 출발점에 맞춰 늘리거나 줄이면 된다.</figcaption></figure>
+
+<h3 id="51-03개월-한-번은-끝까지-돌려-본다">5.1 0~3개월 — 한 번은 끝까지 돌려 본다</h3>
+<p>목표는 이해가 아니라 완주다. 사진 몇 장에서 점군까지 스스로 만들어 보면 이후 문서를 읽을 때 얻는 것이 달라진다.</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>항목</th>
+<th>무엇을 배우나</th>
+<th>자원</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SfM/MVS 파이프라인</td>
+<td>특징 매칭 → 카메라 자세 복원 → 밀집 재구성의 전 과정</td>
+<td>COLMAP 문서 <a href="https://colmap.github.io/" target="_blank" rel="noopener">https://colmap.github.io/</a> (확인 2026-09-21)</td>
+</tr>
+<tr>
+<td>사진측량 기초 이론</td>
+<td>카메라 모델, 표정, 에피폴라 기하</td>
+<td>Stachniss <em>Photogrammetry I</em> 영상 <a href="https://www.youtube.com/playlist?list=PLgnQpQtFTOGRYjqjdZxTEQPZuFHQa7O7Y" target="_blank" rel="noopener">https://www.youtube.com/playlist?list=PLgnQpQtFTOGRYjqjdZxTEQPZuFHQa7O7Y</a> † (확인 2026-09-21)</td>
+</tr>
+<tr>
+<td>점군 다루기</td>
+<td>로딩, 다운샘플링, 법선 추정, ICP 정합</td>
+<td>Open3D <a href="https://www.open3d.org/" target="_blank" rel="noopener">https://www.open3d.org/</a> (확인 2026-09-21)</td>
+</tr>
+<tr>
+<td>검수 감각</td>
+<td>두 점군의 거리 계산, 단면 확인</td>
+<td>CloudCompare <a href="https://www.cloudcompare.org/" target="_blank" rel="noopener">https://www.cloudcompare.org/</a> (확인 2026-09-21)</td>
+</tr>
+<tr>
+<td>좌표계</td>
+<td>세계측지계, 평면직각좌표계 원점 체계</td>
+<td>국토지리정보원 세계측지계 기술지침서 <a href="https://www.ngii.go.kr/other/file_down.do?sq=101741" target="_blank" rel="noopener">https://www.ngii.go.kr/other/file_down.do?sq=101741</a> † (확인 2026-09-21)</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="52-312개월-원리로-내려가고-도메인으로-넓힌다">5.2 3~12개월 — 원리로 내려가고 도메인으로 넓힌다</h3>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>항목</th>
+<th>무엇을 배우나</th>
+<th>자원</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>다시점 기하</td>
+<td>기본행렬·필수행렬, 삼각측량, 번들조정의 수학</td>
+<td>Hartley &amp; Zisserman <em>MVG</em> 2nd ed. <a href="https://www.robots.ox.ac.uk/~vgg/hzbook/" target="_blank" rel="noopener">https://www.robots.ox.ac.uk/~vgg/hzbook/</a> (확인 2026-09-21)</td>
+</tr>
+<tr>
+<td>컴퓨터 비전 전반</td>
+<td>특징, 스테레오, 학습 기반 방법의 위치</td>
+<td>Szeliski <em>Computer Vision</em> 2nd ed. <a href="https://szeliski.org/Book/" target="_blank" rel="noopener">https://szeliski.org/Book/</a> (확인 2026-09-21)</td>
+</tr>
+<tr>
+<td>최적화·상태추정</td>
+<td>비선형 최소제곱, 공분산, Lie군 위의 추정</td>
+<td>Barfoot <em>State Estimation for Robotics</em> 2nd ed. <a href="http://asrl.utias.utoronto.ca/~tdb/" target="_blank" rel="noopener">http://asrl.utias.utoronto.ca/~tdb/</a> (확인 2026-09-21)</td>
+</tr>
+<tr>
+<td>회전 표현</td>
+<td>쿼터니언, 오차상태 칼만필터</td>
+<td>Solà <a href="https://arxiv.org/abs/1711.02508" target="_blank" rel="noopener">https://arxiv.org/abs/1711.02508</a> (확인 2026-09-21)</td>
+</tr>
+<tr>
+<td>최적화 구현</td>
+<td>번들조정을 직접 풀어 보기</td>
+<td>Ceres Solver <a href="https://github.com/ceres-solver/ceres-solver" target="_blank" rel="noopener">https://github.com/ceres-solver/ceres-solver</a> , GTSAM <a href="https://gtsam.org/" target="_blank" rel="noopener">https://gtsam.org/</a> (확인 2026-09-21)</td>
+</tr>
+<tr>
+<td>데이터 엔지니어링</td>
+<td>포맷 변환, 좌표변환, 배치 파이프라인</td>
+<td>PDAL <a href="https://pdal.org/" target="_blank" rel="noopener">https://pdal.org/</a> (확인 2026-09-21)</td>
+</tr>
+<tr>
+<td>BIM·표준</td>
+<td>정보관리 프로세스, IFC 스키마</td>
+<td>IfcOpenShell <a href="https://ifcopenshell.org/" target="_blank" rel="noopener">https://ifcopenshell.org/</a> , 국토교통부 BIM 기본지침 <a href="https://www.molit.go.kr/USR/policyData/m_34681/dtl.jsp?srch_usr_titl=Y&amp;psize=10&amp;lcmspage=1&amp;id=4516" target="_blank" rel="noopener">https://www.molit.go.kr/USR/policyData/m_34681/dtl.jsp?srch_usr_titl=Y&amp;psize=10&amp;lcmspage=1&amp;id=4516</a> † (확인 2026-09-21)</td>
+</tr>
+<tr>
+<td>드론 운용</td>
+<td>국내 비행 자격</td>
+<td>초경량비행장치 조종자 증명 — 만 14세 이상, 학과 70점 이상, 실기 전 항목 만족 <a href="https://www.easylaw.go.kr/CSP/CnpClsMainBtr.laf?popMenu=ov&amp;csmSeq=1814&amp;ccfNo=2&amp;cciNo=3&amp;cnpClsNo=1" target="_blank" rel="noopener">https://www.easylaw.go.kr/CSP/CnpClsMainBtr.laf?popMenu=ov&amp;csmSeq=1814&amp;ccfNo=2&amp;cciNo=3&amp;cnpClsNo=1</a> † (확인 2026-09-21, 법제처 생활법령정보)</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="53-1년-이상-세로획을-깊게-가로획을-하나-고른다">5.3 1년 이상 — 세로획을 깊게, 가로획을 하나 고른다</h3>
+<p>이 시점부터는 목록을 따라가는 방식이 잘 먹히지 않는다. 4장에서 고른 조합에 따라 갈라진다.</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>방향</th>
+<th>무엇을 배우나</th>
+<th>자원</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3D 딥러닝 (4.1)</td>
+<td>희소 컨볼루션, Point Transformer, 사전학습</td>
+<td>Pointcept <a href="https://github.com/Pointcept/Pointcept" target="_blank" rel="noopener">https://github.com/Pointcept/Pointcept</a> (확인 2026-09-21)</td>
+</tr>
+<tr>
+<td>방사휘도장 계열 (4.1)</td>
+<td>NeRF/3DGS 학습과 한계</td>
+<td>nerfstudio <a href="https://docs.nerf.studio/" target="_blank" rel="noopener">https://docs.nerf.studio/</a> , 3DGS 원 구현 <a href="https://github.com/graphdeco-inria/gaussian-splatting" target="_blank" rel="noopener">https://github.com/graphdeco-inria/gaussian-splatting</a> (확인 2026-09-21)</td>
+</tr>
+<tr>
+<td>BIM 정보관리 (4.2)</td>
+<td>openBIM 표준 체계</td>
+<td>buildingSMART Professional Certification <a href="https://education.buildingsmart.org/" target="_blank" rel="noopener">https://education.buildingsmart.org/</a> † (확인 2026-09-21)</td>
+</tr>
+<tr>
+<td>측량 국가자격 (4.2)</td>
+<td>응용측량, 사진측량 및 원격탐사, GIS·GNSS, 측량학</td>
+<td>측량및지형공간정보기사, Q-Net <a href="http://www.q-net.or.kr/crf005.do?id=crf00503&amp;jmCd=1380" target="_blank" rel="noopener">http://www.q-net.or.kr/crf005.do?id=crf00503&amp;jmCd=1380</a> † (확인 2026-09-21, 한국산업인력공단)</td>
+</tr>
+<tr>
+<td>국제 자격 (4.1·4.2)</td>
+<td>사진측량·원격탐사·LiDAR·UAS 전문 인증</td>
+<td>ASPRS Certification — Scientist 등급 경력 6년, Technologist 등급 3년, Prometric 시험 <a href="https://www.asprs.org/certification" target="_blank" rel="noopener">https://www.asprs.org/certification</a> (확인 2026-09-21)</td>
+</tr>
+<tr>
+<td>대용량 서비스 (4.3)</td>
+<td>웹 스트리밍, 옥트리 LOD</td>
+<td>Potree <a href="https://github.com/potree/potree" target="_blank" rel="noopener">https://github.com/potree/potree</a> (확인 2026-09-21)</td>
+</tr>
+<tr>
+<td>텍스처·메시화 (공통)</td>
+<td>재구성 결과에 텍스처 입히기</td>
+<td>MVS-Texturing(BSD-3) <a href="https://github.com/nmoehrle/mvs-texturing" target="_blank" rel="noopener">https://github.com/nmoehrle/mvs-texturing</a> (확인 2026-09-21)</td>
+</tr>
+<tr>
+<td>드론 매핑 자동화 (공통)</td>
+<td>영상에서 정사영상·DEM·점군 생성</td>
+<td>OpenDroneMap <a href="https://www.opendronemap.org/" target="_blank" rel="noopener">https://www.opendronemap.org/</a> (확인 2026-09-21)</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="6-손으로-해볼-실습-과제">6. 손으로 해볼 실습 과제</h2>
+<p>읽는 것과 돌려 보는 것 사이의 간격이 이 분야에서 유독 크다. 아래 과제는 전부 공개 도구와 공개 데이터로 할 수 있다.</p>
+<h3 id="과제-1-직접-찍은-사진으로-재구성하고-일부러-실패시켜-보기">과제 1 — 직접 찍은 사진으로 재구성하고, 일부러 실패시켜 보기</h3>
+<p>스마트폰으로 건물 외벽이나 실내 공간을 60~120장 찍어 COLMAP으로 SfM과 MVS를 돌린다. 그다음이 본론이다. 중복도를 일부러 낮추거나, 유리·반사면을 넣거나, 조명이 바뀐 사진을 섞어 실패를 재현한다. 실패 원인을 매칭 그래프에서 확인한다.</p>
+<figure class="photo"><div class="fig-box"><img src="img/mvs-dense-facade.jpg" alt="건물 정면을 사진으로 재구성한 조밀 점군. 지붕 기와와 창문은 또렷하지만 흰 벽에는 얼룩 같은 노이즈가 흩어져 있다" loading="lazy"></div><figcaption><span class="fig-label">그림 6</span><b>사진으로 만든 조밀 점군(약 270만 점).</b> 과제 1을 끝까지 돌리면 이런 결과가 나온다. 무늬가 많은 지붕과 창틀은 또렷하지만 질감이 없는 흰 벽에는 노이즈가 흩어진다. 실패를 재현할 때 먼저 볼 곳이 이런 자리다. COLMAP이 아닌 다른 사진측량 소프트웨어의 결과다.<span class="credit">사진: N.ELAC, 상파울루 대학교(USP) · <a href="https://commons.wikimedia.org/wiki/File:Metodo_2_-_dense_point_cloud.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></span></figcaption></figure>
+
+<ul>
+<li>도구: COLMAP <a href="https://colmap.github.io/" target="_blank" rel="noopener">https://colmap.github.io/</a> (확인 2026-09-21)</li>
+</ul>
+<h3 id="과제-2-정합을-직접-구현하고-실패-조건을-기록하기">과제 2 — 정합을 직접 구현하고 실패 조건을 기록하기</h3>
+<p>Open3D로 두 점군을 복셀 다운샘플링 → FPFH 특징 → RANSAC 전역 정합 → point-to-plane ICP 순으로 맞춘다. 초기 자세를 바꿔 가며 수렴 여부를 기록하고, 왜 실패하는지 정리한다.</p>
+<ul>
+<li>도구: Open3D <a href="https://www.open3d.org/" target="_blank" rel="noopener">https://www.open3d.org/</a> (확인 2026-09-21)</li>
+</ul>
+<h3 id="과제-3-3dgs를-학습시키고-레이저-스캔과-비교하기">과제 3 — 3DGS를 학습시키고 레이저 스캔과 비교하기</h3>
+<p>nerfstudio의 splatfacto로 3DGS를 학습시킨 뒤, 같은 대상의 레이저 스캔 점군과 CloudCompare에서 거리를 비교한다. 앞서 인용한 연구가 지적한 평면 노이즈가 실제로 보이는지 확인한다. 자기 눈으로 확인한 한계는 남의 논문 결론보다 오래 남는다.</p>
+<ul>
+<li>도구: nerfstudio <a href="https://docs.nerf.studio/" target="_blank" rel="noopener">https://docs.nerf.studio/</a> , CloudCompare <a href="https://www.cloudcompare.org/" target="_blank" rel="noopener">https://www.cloudcompare.org/</a> (확인 2026-09-21)</li>
+</ul>
+<h3 id="과제-4-공개-데이터셋으로-실내-의미분할-학습시키기">과제 4 — 공개 데이터셋으로 실내 의미분할 학습시키기</h3>
+<p>S3DIS 또는 ScanNet으로 실내 점군 의미분할을 학습시킨다. Pointcept의 설정 파일을 그대로 쓰되, 클래스별 IoU를 뜯어보고 어떤 부재에서 성능이 무너지는지 확인한다. 벽은 잘 맞고 기둥은 안 맞는 이유를 설명할 수 있으면 성공이다.</p>
+<ul>
+<li>데이터: Stanford 2D-3D-S / S3DIS — 3개 건물 6개 구역, 약 6,020 m², 12개 의미 클래스, 약 6.96억 점 (<a href="https://arxiv.org/abs/1702.01105" target="_blank" rel="noopener">Armeni 외, 2017</a>, 확인 2026-09-21), 배포 페이지 <a href="http://buildingparser.stanford.edu/dataset.html" target="_blank" rel="noopener">http://buildingparser.stanford.edu/dataset.html</a> †</li>
+<li>데이터: ScanNet — 1,500개 이상 스캔, 250만 뷰, 인스턴스 단위 의미 라벨. 소속 기관 이메일로 이용약관에 동의한 뒤 받는다 <a href="https://github.com/ScanNet/ScanNet" target="_blank" rel="noopener">https://github.com/ScanNet/ScanNet</a> (확인 2026-09-21)</li>
+<li>코드: Pointcept <a href="https://github.com/Pointcept/Pointcept" target="_blank" rel="noopener">https://github.com/Pointcept/Pointcept</a> (확인 2026-09-21)</li>
+</ul>
+<h3 id="과제-5-옥외-lidar로-스케일을-체감하기">과제 5 — 옥외 LiDAR로 스케일을 체감하기</h3>
+<p>항공 LiDAR 데이터로 분류 모델을 돌려 본다. 실내 데이터와 점 밀도, 클래스 불균형, 메모리 압박이 어떻게 다른지 직접 부딪쳐 보는 게 목적이다.</p>
+<ul>
+<li>데이터: DALES — 10 km² 범위, 5억 점 이상 수작업 라벨, 8개 객체 범주 (<a href="https://arxiv.org/abs/2004.11985" target="_blank" rel="noopener">Varney 외, 2020</a>, 확인 2026-09-21)</li>
+<li>데이터: SemanticKITTI — 10 Hz로 기록한 360도 LiDAR 시퀀스에 의미·인스턴스 라벨을 붙였다 <a href="http://www.semantic-kitti.org/" target="_blank" rel="noopener">http://www.semantic-kitti.org/</a> (확인 2026-09-21)</li>
+</ul>
+<h3 id="과제-6-파이프라인을-자동화하고-웹에-올리기">과제 6 — 파이프라인을 자동화하고 웹에 올리기</h3>
+<p>PDAL 파이프라인으로 E57/LAS를 읽어 좌표계를 변환하고 필터링한 뒤, 타일링해서 Potree로 브라우저에 띄운다. 파일 하나를 손으로 처리하는 것과 100개를 스크립트로 처리하는 것의 차이를 몸으로 배운다.</p>
+<ul>
+<li>도구: PDAL <a href="https://pdal.org/" target="_blank" rel="noopener">https://pdal.org/</a> , Potree <a href="https://github.com/potree/potree" target="_blank" rel="noopener">https://github.com/potree/potree</a> (확인 2026-09-21)</li>
+</ul>
+<h3 id="과제-7-선택-재구성-정확도를-숫자로-내기">과제 7 (선택) — 재구성 정확도를 숫자로 내기</h3>
+<p>벤치마크 데이터로 자기 파이프라인의 정확도를 정량 평가한다. 레이저 스캐너 기준값이 있는 데이터를 써야 의미가 있다.</p>
+<ul>
+<li>데이터: ETH3D — 고해상도 DSLR 다시점 스테레오 학습 13개·평가 12개 장면, 고정밀 레이저 스캐너 기준값 <a href="https://www.eth3d.net/overview" target="_blank" rel="noopener">https://www.eth3d.net/overview</a> (확인 2026-09-21)</li>
+<li>데이터: Tanks and Temples — 실험실 밖 실제 환경에서 촬영, 산업용 레이저 스캐너 기준값 <a href="https://www.tanksandtemples.org/" target="_blank" rel="noopener">https://www.tanksandtemples.org/</a> (확인 2026-09-21)</li>
+</ul>
+<hr />
+<h2 id="7-배우지-않아도-되는-것-과대평가된-것">7. 배우지 않아도 되는 것 / 과대평가된 것</h2>
+<p>목록을 줄이는 것도 로드맵의 일이다. 아래는 "절대 쓸모없다"가 아니라 "먼저 배울 이유가 약하다"는 뜻이다.</p>
+<p><strong>특정 벤더 소프트웨어의 메뉴 구조를 먼저 외우는 일</strong></p>
+<p>Leica Cyclone, Autodesk ReCap, RIEGL RiSCAN PRO는 채용 공고에 자주 등장한다(<a href="https://www.amazon.jobs/en/jobs/2503498/reality-capture-bim-engineer" target="_blank" rel="noopener">amazon.jobs</a>, 확인 2026-09-21). 그런데 같은 공고가 함께 요구하는 것은 좌표계와 측량 기준점 이해, 정합 품질관리다. 원리를 알면 UI는 며칠이면 손에 익고, 원리 없이 UI만 익히면 제품이 바뀔 때마다 처음부터 다시 시작한다<span class="est">(추정)</span>.</p>
+<p><strong>기하 기초 없이 최신 NeRF/3DGS 논문만 따라 읽는 일</strong></p>
+<p>3DGS의 공간 정확도는 입력 영상 수, 초기 점군 품질, 학습 반복 같은 조건에 크게 좌우된다(<a href="https://isprs-annals.copernicus.org/articles/XI-M-1-2026/31/2026/isprs-annals-XI-M-1-2026-31-2026.html" target="_blank" rel="noopener">ISPRS Annals XI-M-1-2026</a>, 확인 2026-09-21). 콘크리트 부재 비교 연구에서는 평면 노이즈 탓에 처짐·휨 세부가 사라졌다(<a href="https://link.springer.com/chapter/10.1007/978-981-95-8489-5_53" target="_blank" rel="noopener">Springer</a>, 확인 2026-09-21). 이런 판단을 하려면 결국 기하와 오차론으로 돌아가야 한다. 논문 편수를 늘리는 것보다 과제 3을 한 번 하는 쪽이 낫다<span class="est">(추정)</span>.</p>
+<p><strong>고급 그래픽스 렌더링 이론</strong></p>
+<p>PBR, 전역조명, 셰이더 최적화는 시각화 제품을 직접 만들 게 아니라면 우선순위가 낮다. Reality Capture에서 렌더링은 결과를 보여 주는 단계지 값을 만드는 단계가 아니다<span class="est">(추정)</span>.</p>
+<p><strong>C++ 템플릿 메타프로그래밍 같은 언어 깊이</strong></p>
+<p>PCL과 Ceres를 읽다 보면 만나게 되지만, 먼저 공부할 대상은 아니다. 남의 코드를 빌드하고 고칠 정도면 오랫동안 충분하다<span class="est">(추정)</span>.</p>
+<p><strong>"완전 자동 scan-to-BIM이 곧 온다"는 전제로 세우는 계획</strong></p>
+<p>리뷰 논문이 공통으로 지적하는 것은 주요 부재를 넘어선 객체, 가려진 영역, 라벨 데이터 부족과 도메인 갭이다(<a href="https://link.springer.com/chapter/10.1007/978-981-92-2743-3_40" target="_blank" rel="noopener">Springer 리뷰</a>, 확인 2026-09-21; <a href="https://www.sciencedirect.com/science/article/abs/pii/S0926580524002097" target="_blank" rel="noopener">DawNet</a>, 확인 2026-09-21). 자동화를 전제로 모델링 역량을 건너뛰면 자동화 결과를 검수할 사람이 사라진다.</p>
+<p><strong>시장조사 보고서의 성장률 숫자</strong></p>
+<p>디지털 트윈 시장 전망치는 발행 기관과 시장 범위 정의에 따라 크게 갈린다. 건설 디지털 트윈 시장 성장률을 연 24%로 잡는 보고서가 있는가 하면(<a href="https://datanextresearch.com/report/construction-digital-twin-market" target="_blank" rel="noopener">DataNext Research</a>, 확인 2026-09-21 — 상업적 시장조사 보고서), 전체 디지털 트윈 시장은 연 40%대로 잡는 보고서도 검색된다(원문 미확인). 방향성 참고용으로는 쓸 수 있어도, 진로 결정의 근거로 삼기에는 약하다.</p>
+<hr />
+<h2 id="8-한-줄-요약">8. 한 줄 요약</h2>
+<p>세로획은 기하와 오차론이다. 도구는 3년이면 바뀌지만 좌표변환과 최소제곱은 안 바뀐다. 가로획은 자기가 속한 조직에 이미 자리가 있는 방향으로 그어야 연습할 기회가 생긴다.</p>
+<hr />
+<h2 id="용어-후보">용어 후보</h2>
+<p>용어집(<code>00-glossary.md</code>)에 올릴 만한 항목을 모았다. 정의는 한 줄로 줄였고, 확정 정의는 용어집에서 다듬는다.</p>
+<ul>
+<li><strong>번들조정(Bundle Adjustment)</strong> — 여러 시점의 관측을 동시에 써서 카메라 자세와 3차원 점 좌표를 비선형 최소제곱으로 함께 보정하는 절차 — <a href="https://github.com/ceres-solver/ceres-solver" target="_blank" rel="noopener">https://github.com/ceres-solver/ceres-solver</a> (확인 2026-09-21)</li>
+<li><strong>SfM(Structure from Motion)</strong> — 여러 장의 영상에서 카메라 자세와 희소 3차원 구조를 복원하는 기법 — <a href="https://colmap.github.io/" target="_blank" rel="noopener">https://colmap.github.io/</a> (확인 2026-09-21)</li>
+<li><strong>MVS(Multi-View Stereo)</strong> — 자세가 알려진 다시점 영상에서 밀집 점군이나 메시를 만드는 기법 — <a href="https://colmap.github.io/" target="_blank" rel="noopener">https://colmap.github.io/</a> (확인 2026-09-21)</li>
+<li><strong>ICP(Iterative Closest Point)</strong> — 두 점군의 대응점을 반복 갱신하며 강체변환을 추정하는 정합 알고리즘 — <a href="https://www.open3d.org/" target="_blank" rel="noopener">https://www.open3d.org/</a> (확인 2026-09-21)</li>
+<li><strong>오차상태 칼만필터(Error-State Kalman Filter)</strong> — 상태 자체가 아니라 오차를 추정해 회전의 비선형성을 다루는 필터 — <a href="https://arxiv.org/abs/1711.02508" target="_blank" rel="noopener">https://arxiv.org/abs/1711.02508</a> (확인 2026-09-21)</li>
+<li><strong>팩터그래프(Factor Graph)</strong> — 변수와 제약을 이분 그래프로 표현해 SLAM·센서융합 문제를 푸는 방식 — <a href="https://gtsam.org/" target="_blank" rel="noopener">https://gtsam.org/</a> (확인 2026-09-21)</li>
+<li><strong>3D Gaussian Splatting(3DGS)</strong> — 장면을 3차원 가우시안 집합으로 표현해 실시간으로 렌더링하는 방사휘도장 기법 — <a href="https://github.com/graphdeco-inria/gaussian-splatting" target="_blank" rel="noopener">https://github.com/graphdeco-inria/gaussian-splatting</a> (확인 2026-09-21)</li>
+<li><strong>E57(ASTM E2807)</strong> — 점 좌표·색·강도와 2D 영상을 함께 담는 벤더 중립 점군 교환 포맷, 2011년 2월 ASTM 승인 — <a href="https://paulbourke.net/dataformats/e57/" target="_blank" rel="noopener">https://paulbourke.net/dataformats/e57/</a> (확인 2026-09-21)</li>
+<li><strong>LAS / LAZ</strong> — ASPRS가 정의한 LiDAR 점군 표준 포맷과 그 압축 형태 — <a href="https://paulbourke.net/dataformats/laz/LAS_1_4_r15.pdf" target="_blank" rel="noopener">https://paulbourke.net/dataformats/laz/LAS_1_4_r15.pdf</a> † (확인 2026-09-21)</li>
+<li><strong>COPC(Cloud Optimized Point Cloud)</strong> — 단일 파일 안에 옥트리로 공간 정렬해 HTTP 부분 읽기를 가능하게 한 점군 포맷 — <a href="https://lidarnews.com/cloud-optimized-point-clouds-copc/" target="_blank" rel="noopener">https://lidarnews.com/cloud-optimized-point-clouds-copc/</a> † (확인 2026-09-21)</li>
+<li><strong>LOA(Level of Accuracy)</strong> — USIBD가 정의한 기존 시설물 문서화 정확도 등급, LOA 10부터 LOA 50까지 — <a href="http://usibd.org/product/usibd-level-of-accuracy-loa-specification-guide-version-3-0-2019/" target="_blank" rel="noopener">http://usibd.org/product/usibd-level-of-accuracy-loa-specification-guide-version-3-0-2019/</a> (확인 2026-09-21)</li>
+<li><strong>IFC(Industry Foundation Classes)</strong> — openBIM 데이터 교환 스키마, IFC4.3이 ISO 16739-1:2024로 발행 — <a href="https://www.iso.org/standard/84123.html" target="_blank" rel="noopener">https://www.iso.org/standard/84123.html</a> † (확인 2026-09-21)</li>
+<li><strong>ISO 19650</strong> — 건설 자산 생애주기 정보관리 국제표준 시리즈 — <a href="https://www.iso.org/standard/68078.html" target="_blank" rel="noopener">https://www.iso.org/standard/68078.html</a> † (확인 2026-09-21)</li>
+<li><strong>KGD2002(한국측지계 2002)</strong> — GRS80 타원체와 ITRF2000 데이텀에 기반한 대한민국 세계측지계 성과 — <a href="https://www.ngii.go.kr/other/file_down.do?sq=101741" target="_blank" rel="noopener">https://www.ngii.go.kr/other/file_down.do?sq=101741</a> † (확인 2026-09-21)</li>
+<li><strong>GSD(Ground Sample Distance)</strong> — 영상 한 픽셀이 대응하는 지상 거리, 촬영 계획과 기대 정확도를 잇는 값 — <a href="https://www.ipb.uni-bonn.de/photogrammetry-i-ii/" target="_blank" rel="noopener">https://www.ipb.uni-bonn.de/photogrammetry-i-ii/</a> (확인 2026-09-21)</li>
+<li><strong>도메인 갭(Domain Gap)</strong> — 학습 데이터와 실제 데이터의 분포 차이로 성능이 떨어지는 현상, 합성 점군 학습의 주요 장애 — <a href="https://www.sciencedirect.com/science/article/abs/pii/S0926580524002097" target="_blank" rel="noopener">https://www.sciencedirect.com/science/article/abs/pii/S0926580524002097</a> (확인 2026-09-21)</li>
+</ul>
+<div class="pager"><a href="04-adjacent-tech.html">← 04 · 연계 기술 지도</a><span></span></div>
+<footer class="foot">이 페이지는 <a href="https://github.com/o-Fireheart-o/Reality_Capture_Research/blob/master/docs/05-learning-roadmap.md" target="_blank" rel="noopener">docs/05-learning-roadmap.md</a>에서 자동으로 만들었습니다. 내용이 다르면 원문이 기준입니다.</footer>
+</div>
+</main>
+</div>
+<script>
+(function(){
+  var b=document.getElementById('navToggle'), l=document.getElementById('navList');
+  function set(o){l.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');b.textContent=o?'목차 닫기':'목차 열기';}
+  b.addEventListener('click',function(){set(!l.classList.contains('open'));});
+  l.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});
+})();
+</script>
+</body>
+</html>

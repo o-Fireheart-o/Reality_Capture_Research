@@ -1,0 +1,59 @@
+<svg viewBox="0 0 760 330" role="img" aria-label="scan-to-BIM과 scan-vs-BIM의 방향 차이, 그리고 scan-vs-BIM 진행 모니터링 워크플로가 부재별 CSV 리포트를 세 수요자에게 넘기는 흐름">
+  <text class="t-hd" x="16" y="42">scan-to-BIM</text>
+  <rect x="140" y="22" width="110" height="34" rx="3" fill="var(--surface)" stroke="var(--near)"></rect>
+  <text class="t-lab" x="195" y="44" text-anchor="middle">점군</text>
+  <path d="M250 39 L286 39 M280 34 L286 39 L280 44" fill="none" stroke="var(--near)" stroke-width="1.5"></path>
+  <rect x="290" y="22" width="150" height="34" rx="3" fill="var(--near-soft)" stroke="var(--near)"></rect>
+  <text class="t-lab" x="365" y="44" text-anchor="middle">BIM 모델을 새로 만든다</text>
+  <text class="t-tick" x="456" y="36">결과: as-built BIM</text>
+  <text class="t-tick" x="456" y="52">전통 방식은 엔지니어 수작업 → AI 기반으로 이동 중</text>
+  <text class="t-hd" x="16" y="96">scan-vs-BIM</text>
+  <rect x="140" y="76" width="110" height="34" rx="3" fill="var(--surface)" stroke="var(--far)"></rect>
+  <text class="t-lab" x="195" y="98" text-anchor="middle">점군</text>
+  <path d="M250 93 L286 93" fill="none" stroke="var(--far)" stroke-width="1.5"></path>
+  <path d="M290 93 L254 93" fill="none" stroke="var(--far)" stroke-width="1.5"></path>
+  <path d="M260 88 L254 93 L260 98 M280 88 L286 93 L280 98" fill="none" stroke="var(--far)" stroke-width="1.5"></path>
+  <rect x="290" y="76" width="150" height="34" rx="3" fill="var(--far-soft)" stroke="var(--far)"></rect>
+  <text class="t-lab" x="365" y="98" text-anchor="middle">이미 있는 BIM</text>
+  <text class="t-tick" x="456" y="90">결과: 부재별 편차 목록</text>
+  <text class="t-tick" x="456" y="106">시공 중 주기적으로 돌리기 쉬운 쪽 · 추정</text>
+  <line x1="10" y1="128" x2="750" y2="128" stroke="var(--rule)" stroke-width="1"></line>
+  <text class="t-hd" x="10" y="152">scan-vs-BIM 진행 모니터링 (Cintoo 워크플로 예)</text>
+  <rect x="10" y="166" width="132" height="58" rx="3" fill="var(--surface)" stroke="var(--far)"></rect>
+  <text class="t-hd" x="76" y="190" text-anchor="middle">① 취득</text>
+  <text class="t-tick" x="76" y="208" text-anchor="middle">지상 · SLAM 스캐너</text>
+  <rect x="154" y="166" width="132" height="58" rx="3" fill="var(--surface)" stroke="var(--far)"></rect>
+  <text class="t-hd" x="220" y="190" text-anchor="middle">② 정합</text>
+  <text class="t-tick" x="220" y="208" text-anchor="middle">Revit · IFC · NWD</text>
+  <rect x="298" y="166" width="132" height="58" rx="3" fill="var(--surface)" stroke="var(--far)"></rect>
+  <text class="t-hd" x="364" y="190" text-anchor="middle">③ 허용 오차</text>
+  <text class="t-tick" x="364" y="208" text-anchor="middle">밀리미터 단위로 설정</text>
+  <rect x="442" y="166" width="132" height="58" rx="3" fill="var(--far-soft)" stroke="var(--far)"></rect>
+  <text class="t-hd" x="508" y="190" text-anchor="middle">④ CSV 리포트</text>
+  <text class="t-tick" x="508" y="208" text-anchor="middle">부재별 결과</text>
+  <path d="M142 195 L152 195" fill="none" stroke="var(--far)" stroke-width="1.5"></path>
+  <path d="M286 195 L296 195" fill="none" stroke="var(--far)" stroke-width="1.5"></path>
+  <path d="M430 195 L440 195" fill="none" stroke="var(--far)" stroke-width="1.5"></path>
+  <path d="M574 195 L590 195 L590 170 L604 170 M590 195 L604 216 M590 195 L590 262 L604 262" fill="none" stroke="var(--rule)" stroke-width="1.2"></path>
+  <rect x="604" y="150" width="146" height="40" rx="3" fill="var(--surface)" stroke="var(--near)"></rect>
+  <text class="t-lab" x="616" y="167">현장 엔지니어</text>
+  <text class="t-tick" x="616" y="183">시공 오차 잡기</text>
+  <rect x="604" y="196" width="146" height="40" rx="3" fill="var(--surface)" stroke="var(--near)"></rect>
+  <text class="t-lab" x="616" y="213">품질팀</text>
+  <text class="t-tick" x="616" y="229">합부 판정</text>
+  <rect x="604" y="242" width="146" height="40" rx="3" fill="var(--surface)" stroke="var(--near)"></rect>
+  <text class="t-lab" x="616" y="259">발주처</text>
+  <text class="t-tick" x="616" y="275">기성 근거</text>
+  <text class="t-tick" x="10" y="254" fill="var(--muted)">CSV 한 줄 = 부재 하나</text>
+  <rect x="10" y="262" width="96" height="26" fill="var(--sunk)" stroke="var(--rule)"></rect>
+  <rect x="106" y="262" width="120" height="26" fill="var(--sunk)" stroke="var(--rule)"></rect>
+  <rect x="226" y="262" width="116" height="26" fill="var(--sunk)" stroke="var(--rule)"></rect>
+  <rect x="342" y="262" width="116" height="26" fill="var(--sunk)" stroke="var(--rule)"></rect>
+  <rect x="458" y="262" width="116" height="26" fill="var(--sunk)" stroke="var(--rule)"></rect>
+  <text class="t-tick" x="58" y="279" text-anchor="middle">부재 ID</text>
+  <text class="t-tick" x="166" y="279" text-anchor="middle">커버리지 비율</text>
+  <text class="t-tick" x="284" y="279" text-anchor="middle">최대 편차</text>
+  <text class="t-tick" x="400" y="279" text-anchor="middle">평균 편차</text>
+  <text class="t-tick" x="516" y="279" text-anchor="middle">최소 편차</text>
+  <text class="t-tick" x="10" y="312">커버리지가 낮으면 그 부재의 편차 판정은 믿을 수 없다</text>
+</svg>

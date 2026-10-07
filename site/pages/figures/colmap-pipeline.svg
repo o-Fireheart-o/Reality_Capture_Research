@@ -1,0 +1,41 @@
+<svg viewBox="0 0 760 250" role="img" aria-label="COLMAP 파이프라인 7단계. SfM 3단계가 희소 모델을, MVS 4단계가 조밀 점군과 메시를 만든다">
+  <rect x="10" y="20" width="330" height="200" rx="3" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1"></rect>
+  <rect x="352" y="20" width="398" height="200" rx="3" fill="var(--far-soft)" stroke="var(--far)" stroke-width="1"></rect>
+  <text class="t-hd" x="24" y="42">SfM · 구조 복원</text>
+  <text class="t-tick" x="24" y="58">카메라 위치 + 희소 점군</text>
+  <text class="t-hd" x="366" y="42">MVS · 조밀 복원</text>
+  <text class="t-tick" x="366" y="58">GPU(CUDA·HIP) 필요</text>
+  <rect x="24" y="80" width="92" height="60" rx="3" fill="var(--surface)" stroke="var(--near)"></rect>
+  <text class="t-hd" x="70" y="104" text-anchor="middle">① 특징 추출</text>
+  <text class="t-tick" x="70" y="122" text-anchor="middle">SIFT · ALIKED</text>
+  <rect x="130" y="80" width="92" height="60" rx="3" fill="var(--surface)" stroke="var(--near)"></rect>
+  <text class="t-hd" x="176" y="104" text-anchor="middle">② 매칭</text>
+  <text class="t-tick" x="176" y="122" text-anchor="middle">+ 기하 검증</text>
+  <rect x="236" y="80" width="92" height="60" rx="3" fill="var(--surface)" stroke="var(--near)"></rect>
+  <text class="t-hd" x="282" y="104" text-anchor="middle">③ 매퍼</text>
+  <text class="t-tick" x="282" y="122" text-anchor="middle">증분·전역·계층</text>
+  <line x1="116" y1="110" x2="128" y2="110" stroke="var(--near)" stroke-width="1.5"></line>
+  <line x1="222" y1="110" x2="234" y2="110" stroke="var(--near)" stroke-width="1.5"></line>
+  <rect x="366" y="80" width="86" height="60" rx="3" fill="var(--surface)" stroke="var(--far)"></rect>
+  <text class="t-hd" x="409" y="104" text-anchor="middle">④ 왜곡 보정</text>
+  <text class="t-tick" x="409" y="122" text-anchor="middle">undistort</text>
+  <rect x="462" y="80" width="86" height="60" rx="3" fill="var(--surface)" stroke="var(--far)"></rect>
+  <text class="t-hd" x="505" y="104" text-anchor="middle">⑤ PatchMatch</text>
+  <text class="t-tick" x="505" y="122" text-anchor="middle">깊이·법선 맵</text>
+  <rect x="558" y="80" width="86" height="60" rx="3" fill="var(--surface)" stroke="var(--far)"></rect>
+  <text class="t-hd" x="601" y="104" text-anchor="middle">⑥ 융합</text>
+  <text class="t-tick" x="601" y="122" text-anchor="middle">fused.ply</text>
+  <rect x="654" y="80" width="86" height="60" rx="3" fill="var(--surface)" stroke="var(--far)"></rect>
+  <text class="t-hd" x="697" y="104" text-anchor="middle">⑦ 메시화</text>
+  <text class="t-tick" x="697" y="122" text-anchor="middle">포아송·들로네</text>
+  <line x1="452" y1="110" x2="460" y2="110" stroke="var(--far)" stroke-width="1.5"></line>
+  <line x1="548" y1="110" x2="556" y2="110" stroke="var(--far)" stroke-width="1.5"></line>
+  <line x1="644" y1="110" x2="652" y2="110" stroke="var(--far)" stroke-width="1.5"></line>
+  <line x1="328" y1="110" x2="364" y2="110" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="3 3"></line>
+  <text class="t-tick" x="24" y="170">입력: 사진 · 동영상 프레임 · 360 파노라마(4.1+)</text>
+  <text class="t-tick" x="24" y="188">산출: cameras · images · points3D</text>
+  <text class="t-tick" x="24" y="206">축척·위치는 임의 → model_aligner로 정렬</text>
+  <text class="t-tick" x="366" y="170">산출: 조밀 점군(fused.ply), 메시(meshed-*.ply)</text>
+  <text class="t-tick" x="366" y="188">4.0+: 메시 단순화(QEM), 텍스처 매핑</text>
+  <text class="t-tick" x="366" y="206">한 줄 실행: colmap automatic_reconstructor</text>
+</svg>

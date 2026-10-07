@@ -1,0 +1,51 @@
+<svg viewBox="0 0 760 318" role="img" aria-label="건설 생애주기 네 단계(제작, 시공, 준공·하자, 운영)에 1장의 쓰임새를 배치한 도식">
+  <rect x="10" y="14" width="176" height="38" rx="3" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1"></rect>
+  <text class="t-hd" x="98" y="32" text-anchor="middle">제작</text>
+  <text class="t-tick" x="98" y="46" text-anchor="middle">공장</text>
+  <rect x="198" y="14" width="176" height="38" rx="3" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1"></rect>
+  <text class="t-hd" x="286" y="32" text-anchor="middle">시공</text>
+  <text class="t-tick" x="286" y="46" text-anchor="middle">현장</text>
+  <rect x="386" y="14" width="176" height="38" rx="3" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1"></rect>
+  <text class="t-hd" x="474" y="32" text-anchor="middle">준공 · 하자</text>
+  <text class="t-tick" x="474" y="46" text-anchor="middle">마감 이후</text>
+  <rect x="574" y="14" width="176" height="38" rx="3" fill="var(--far-soft)" stroke="var(--far)" stroke-width="1"></rect>
+  <text class="t-hd" x="662" y="32" text-anchor="middle">운영</text>
+  <text class="t-tick" x="662" y="46" text-anchor="middle">시설관리 · 개조</text>
+  <path d="M186 33 L196 33" fill="none" stroke="var(--muted)" stroke-width="1.5"></path>
+  <path d="M374 33 L384 33" fill="none" stroke="var(--muted)" stroke-width="1.5"></path>
+  <path d="M562 33 L572 33" fill="none" stroke="var(--muted)" stroke-width="1.5"></path>
+  <rect x="10" y="62" width="176" height="186" rx="3" fill="var(--surface)" stroke="var(--rule-soft)" stroke-width="1"></rect>
+  <rect x="198" y="62" width="176" height="186" rx="3" fill="var(--surface)" stroke="var(--rule-soft)" stroke-width="1"></rect>
+  <rect x="386" y="62" width="176" height="186" rx="3" fill="var(--surface)" stroke="var(--rule-soft)" stroke-width="1"></rect>
+  <rect x="574" y="62" width="176" height="186" rx="3" fill="var(--surface)" stroke="var(--rule-soft)" stroke-width="1"></rect>
+  <text class="t-lab" x="22" y="86">1.3 PC 부재 검사</text>
+  <text class="t-tick" x="22" y="103">설계 도면과 실측 점군 대조</text>
+  <text class="t-tick" x="22" y="119">현장 반입 전 합부 판정</text>
+  <text class="t-lab" x="210" y="86">1.1 진행률 · 360 워크</text>
+  <text class="t-tick" x="210" y="103">주간 area · room walk</text>
+  <text class="t-lab" x="210" y="130">1.2 scan-vs-BIM</text>
+  <text class="t-tick" x="210" y="147">부재별 편차 · 커버리지</text>
+  <text class="t-lab" x="210" y="174">1.4 비계 안전 점검</text>
+  <text class="t-tick" x="210" y="191">로봇 + 라이다 → 이상 목록</text>
+  <text class="t-lab" x="210" y="218">1.5 토공 · 물량</text>
+  <text class="t-tick" x="210" y="235">드론 사진측량 → 체적</text>
+  <text class="t-lab" x="398" y="86">1.6 하자 관리</text>
+  <text class="t-tick" x="398" y="103">편차 리포트로 위치 특정</text>
+  <text class="t-tick" x="398" y="135">덮이기 전 기록을 꺼내</text>
+  <text class="t-tick" x="398" y="151">배관 · 전기 위치 확인</text>
+  <path d="M330 99 C 360 99, 360 131, 392 131" fill="none" stroke="var(--near)" stroke-width="1.2" stroke-dasharray="3 3"></path>
+  <text class="t-tick" x="398" y="185" fill="var(--muted)">↖ 시공 중 event walk가</text>
+  <text class="t-tick" x="398" y="201" fill="var(--muted)">이 기록을 남긴다</text>
+  <text class="t-lab" x="586" y="86">1.2 scan-to-BIM</text>
+  <text class="t-tick" x="586" y="103">as-built BIM 작성</text>
+  <text class="t-lab" x="586" y="130">2장 시설관리</text>
+  <text class="t-tick" x="586" y="147">도면 갱신 · 반입 동선</text>
+  <text class="t-lab" x="586" y="174">4장 플랜트 개조</text>
+  <text class="t-tick" x="586" y="191">셧다운 전 스캔 · 간섭 검토</text>
+  <rect x="586" y="206" width="152" height="32" rx="3" fill="var(--far-soft)" stroke="none"></rect>
+  <text class="t-tick" x="662" y="220" text-anchor="middle">생애주기 비용의 60%가</text>
+  <text class="t-tick" x="662" y="234" text-anchor="middle">운영 단계에 몰린다</text>
+  <rect x="198" y="260" width="364" height="44" rx="3" fill="var(--sunk)" stroke="var(--rule)" stroke-width="1"></rect>
+  <text class="t-lab" x="210" y="279">1.7 공정 분쟁 증거</text>
+  <text class="t-tick" x="210" y="295">타임스탬프 · 위치가 박힌 시점별 기록이 단계마다 쌓인다</text>
+</svg>

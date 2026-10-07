@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>00. 용어집</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Song+Myung&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<nav class="nav" aria-label="목차">
+  <div class="nav-brand">리서치 노트 · 2026</div>
+  <div class="nav-title"><a href="../index.html" style="color:inherit;text-decoration:none">Reality Capture 지형도</a></div>
+  <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navList">목차 열기</button>
+  <ul class="nav-list" id="navList">
+    <li><a class="pg cur" href="00-glossary.html" aria-current="page"><span>00 · 용어집</span></a></li>
+    <li><a class="pg" href="01-tools.html"><span>01 · 도구 지형도</span></a></li>
+    <li><a class="pg" href="01-tools/colmap.html"><span>01 심층 · COLMAP</span></a></li>
+    <li><a class="pg" href="02-history.html"><span>02 · 역사와 진행 방향</span></a></li>
+    <li><a class="pg" href="03-use-cases.html"><span>03 · 현재의 쓰임새</span></a></li>
+    <li><a class="pg" href="04-adjacent-tech.html"><span>04 · 연계 기술 지도</span></a></li>
+    <li><a class="pg" href="05-learning-roadmap.html"><span>05 · 학습 로드맵</span></a></li>
+    <li class="toc-title">이 문서</li>
+    <li><a class="nav-sub" href="#1-총론">1. 총론</a></li>
+    <li><a class="nav-sub" href="#2-취득-방식">2. 취득 방식</a></li>
+    <li><a class="nav-sub" href="#3-처리와-알고리즘">3. 처리와 알고리즘</a></li>
+    <li><a class="nav-sub" href="#4-신경-렌더링">4. 신경 렌더링</a></li>
+    <li><a class="nav-sub" href="#5-데이터-포맷과-표준">5. 데이터 포맷과 표준</a></li>
+    <li><a class="nav-sub" href="#6-bim과-건설">6. BIM과 건설</a></li>
+    <li><a class="nav-sub" href="#7-좌표계와-정확도">7. 좌표계와 정확도</a></li>
+    <li><a class="nav-sub" href="#8-연계-기술">8. 연계 기술</a></li>
+    <li><a class="nav-sub" href="#9-역사-용어">9. 역사 용어</a></li>
+    <li><a class="nav-sub" href="#10-현장실무-용어">10. 현장·실무 용어</a></li>
+    <li><a class="nav-sub" href="#11-지도와-아카이브">11. 지도와 아카이브</a></li>
+  </ul>
+  <div class="nav-foot">원문: <a href="https://github.com/o-Fireheart-o/Reality_Capture_Research/blob/master/docs/00-glossary.md" target="_blank" rel="noopener">00-glossary.md</a><br>한 장 요약: <a href="../index.html">요약 페이지</a></div>
+</nav>
+<main class="main">
+<div class="col doc">
+<header class="mast">
+  <div class="eyebrow">Reality Capture 심층 리서치 · 문서</div>
+  <h1>00. 용어집</h1>
+  <div class="doc-meta"><span>작성일 2026-09-21</span><span>최종수정일 2026-10-07</span></div>
+</header>
+<p>Reality Capture 문서 묶음에서 쓰는 용어를 한곳에 모았다. 각 용어는 여기서 한 번만 정의하고,
+다른 문서에서는 이 문서로 링크한다. 정의 뒤의 URL은 그 정의의 근거이며 확인 날짜는 2026-09-21이다.</p>
+<p>출처를 확인하지 못한 항목은 <span class="est">(추정)</span>으로 표시했다. 확정 전까지는 그대로 인용하지 않는 편이 안전하다.</p>
+<blockquote>
+<p>수집 범위: 여섯 문서(<code>01</code>~<code>05</code> 및 이 문서)의 용어 후보를 모두 병합했다. 중복 정의는 하나로 합치고,
+같은 용어에 출처가 여럿이면 원 논문이나 표준 원문을 우선 인용했다.</p>
+</blockquote>
+<hr />
+<h2 id="1-총론">1. 총론</h2>
+<p><strong>Reality Capture</strong><br />
+실재하는 공간이나 물체를 측정해 3차원 디지털 표현으로 바꾸는 기술 전반. 특정 장비나 방식이 아니라
+취득·처리·활용을 잇는 파이프라인 전체를 가리킨다. → 범위 정의는 <a href="01-tools.html">01-tools.md</a> 0절</p>
+<p><strong>점군(Point Cloud)</strong><br />
+3차원 좌표를 지닌 점의 집합으로 공간을 표현한 데이터. Reality Capture의 가장 기본적인 산출물이다.
+<a href="https://www.mdpi.com/2072-4292/16/17/3256" target="_blank" rel="noopener">https://www.mdpi.com/2072-4292/16/17/3256</a></p>
+<p><strong>디지털 트윈(Digital Twin)</strong><br />
+물리적 자산을 디지털로 복제해 상태 변화를 지속적으로 반영하는 모델. Reality Capture는 트윈을
+실측으로 갱신하는 입력 수단에 해당한다. → <a href="04-adjacent-tech.html">04-adjacent-tech.md</a></p>
+<hr />
+<h2 id="2-취득-방식">2. 취득 방식</h2>
+<p><strong>사진측량(Photogrammetry)</strong><br />
+서로 다른 각도에서 찍은 사진 여러 장에서 3차원 기하를 역산하는 측량 기법.
+<a href="https://colmap.github.io/" target="_blank" rel="noopener">https://colmap.github.io/</a></p>
+<p><strong>라이다(LiDAR)</strong><br />
+레이저 펄스의 왕복 시간이나 위상차로 거리를 측정해 3차원 점군을 만드는 센서.
+<a href="https://toddneff.com/books/lidarhistory/extras/lidarhistory-timeline/" target="_blank" rel="noopener">https://toddneff.com/books/lidarhistory/extras/lidarhistory-timeline/</a></p>
+<p><strong>TLS(Terrestrial Laser Scanning, 지상 레이저 스캐닝)</strong><br />
+삼각대에 고정한 스캐너가 제자리에서 회전하며 취득하는 지상 라이다. 정밀도가 높은 대신 자리를 옮길 때마다
+거치와 정합을 다시 해야 한다.
+<a href="https://leica-geosystems.com/-/media/files/leicageosystems/products/datasheets/leica-rtc360-ds.ashx" target="_blank" rel="noopener">https://leica-geosystems.com/-/media/files/leicageosystems/products/datasheets/leica-rtc360-ds.ashx</a></p>
+<p><strong>SLAM(Simultaneous Localization and Mapping)</strong><br />
+센서 자신의 위치와 주변 지도를 동시에 추정하는 기법. 모바일·핸드헬드 스캐너를 들고 걸어 다니며
+취득할 수 있게 해 주는 핵심 기술이다.
+<a href="https://knowledge.navvis.com/docs/navvis-vlx-3-specifications" target="_blank" rel="noopener">https://knowledge.navvis.com/docs/navvis-vlx-3-specifications</a></p>
+<p><strong>ToF(Time-of-Flight)</strong><br />
+빛이 대상에 갔다 돌아오는 시간을 재어 거리를 구하는 방식.
+<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8593014/" target="_blank" rel="noopener">https://pmc.ncbi.nlm.nih.gov/articles/PMC8593014/</a></p>
+<p><strong>구조광(Structured Light)</strong><br />
+미리 정한 패턴을 대상에 투사하고 그 패턴이 일그러진 모양을 관측해 형상을 계산하는 방식.
+<a href="https://www.artec3d.com/portable-3d-scanners/artec-leo" target="_blank" rel="noopener">https://www.artec3d.com/portable-3d-scanners/artec-leo</a></p>
+<p><strong>MMS(Mobile Mapping System, 이동형측량시스템)</strong><br />
+차량에 라이다·카메라·GNSS/INS를 싣고 주행하며 도로를 3차원으로 측량하는 시스템.
+<a href="https://www.koit.co.kr/news/articleView.html?idxno=84833" target="_blank" rel="noopener">https://www.koit.co.kr/news/articleView.html?idxno=84833</a></p>
+<p><strong>포켓 라이다</strong><br />
+스마트폰이나 태블릿에 내장된 소형 라이다 센서. 미국 FHWA가 굴착 트렌치 계측에 시험 적용했다.
+<a href="https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-25-015.pdf" target="_blank" rel="noopener">https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-25-015.pdf</a></p>
+<hr />
+<h2 id="3-처리와-알고리즘">3. 처리와 알고리즘</h2>
+<p><strong>SfM(Structure-from-Motion)</strong><br />
+영상 집합에서 카메라 자세와 희소 3차원 구조를 동시에 복원하는 절차.
+<a href="https://colmap.github.io/" target="_blank" rel="noopener">https://colmap.github.io/</a></p>
+<p><strong>MVS(Multi-View Stereo)</strong><br />
+자세를 이미 아는 다시점 영상에서 조밀한 점군이나 메시를 생성하는 후속 단계.
+<a href="https://colmap.github.io/" target="_blank" rel="noopener">https://colmap.github.io/</a></p>
+<p><strong>전역 SfM(Global SfM)</strong><br />
+모든 사진 쌍의 상대 자세를 한꺼번에 풀어 전체 카메라 자세를 정한 뒤 번들조정을 하는 방식. 사진을 한 장씩
+붙여 나가는 증분 SfM보다 빠르다. → <a href="01-tools/colmap.html">01-tools/colmap.md</a> 2.3절
+<a href="https://arxiv.org/abs/2407.20219" target="_blank" rel="noopener">https://arxiv.org/abs/2407.20219</a></p>
+<p><strong>COLMAP</strong><br />
+사진 묶음에서 카메라 자세와 희소 점군(SfM), 조밀 점군과 메시(MVS)를 복원하는 BSD 라이선스 오픈소스
+파이프라인. 3DGS·NeRF 연구 코드가 입력 포맷으로 널리 쓴다. → <a href="01-tools/colmap.html">01-tools/colmap.md</a>
+<a href="https://colmap.github.io/" target="_blank" rel="noopener">https://colmap.github.io/</a></p>
+<p><strong>번들조정(Bundle Adjustment)</strong><br />
+여러 시점의 관측을 한꺼번에 써서 카메라 자세와 3차원 점 좌표를 비선형 최소제곱으로 함께 보정하는 절차.
+사진측량과 SLAM 양쪽의 정확도를 떠받치는 계산이다.
+<a href="https://github.com/ceres-solver/ceres-solver" target="_blank" rel="noopener">https://github.com/ceres-solver/ceres-solver</a></p>
+<p><strong>정합(Registration, 점군 정합)</strong><br />
+서로 다른 지점에서 취득한 점군을 하나의 좌표계로 겹쳐 맞추는 작업.
+<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11207371/" target="_blank" rel="noopener">https://pmc.ncbi.nlm.nih.gov/articles/PMC11207371/</a></p>
+<p><strong>ICP(Iterative Closest Point)</strong><br />
+가장 가까운 점 대응을 반복해 갱신하며 두 점군 사이의 강체변환을 추정하는 고전 정합 알고리즘.
+<a href="https://www.open3d.org/" target="_blank" rel="noopener">https://www.open3d.org/</a></p>
+<p><strong>표류(Drift)</strong><br />
+SLAM이 추정한 궤적이 시간이 갈수록 실제 경로에서 벗어나는 누적 오차.
+<a href="https://isprs-archives.copernicus.org/articles/XLVIII-1-W1-2023/517/2023/" target="_blank" rel="noopener">https://isprs-archives.copernicus.org/articles/XLVIII-1-W1-2023/517/2023/</a></p>
+<p><strong>폐합(Loop Closure, 루프 클로저)</strong><br />
+이미 지나온 장소로 되돌아왔음을 인식해 누적된 표류를 보정하는 SLAM 절차.
+<a href="https://isprs-archives.copernicus.org/articles/XLVIII-1-W1-2023/517/2023/" target="_blank" rel="noopener">https://isprs-archives.copernicus.org/articles/XLVIII-1-W1-2023/517/2023/</a></p>
+<p><strong>오차상태 칼만필터(Error-State Kalman Filter)</strong><br />
+상태 자체가 아니라 상태의 오차를 추정해 회전의 비선형성을 다루는 필터. IMU 융합에 널리 쓰인다.
+<a href="https://arxiv.org/abs/1711.02508" target="_blank" rel="noopener">https://arxiv.org/abs/1711.02508</a></p>
+<p><strong>팩터그래프(Factor Graph)</strong><br />
+변수와 제약을 이분 그래프로 표현해 SLAM과 센서 융합 문제를 푸는 방식.
+<a href="https://gtsam.org/" target="_blank" rel="noopener">https://gtsam.org/</a></p>
+<p><strong>순전파 3D 복원(Feed-forward 3D Reconstruction)</strong><br />
+반복 최적화 없이 신경망 한 번의 추론으로 카메라 자세와 점군을 예측하는 방식. 전통적 SfM 파이프라인을
+대체하려는 최근 흐름이다.
+<a href="https://arxiv.org/pdf/2507.08448" target="_blank" rel="noopener">https://arxiv.org/pdf/2507.08448</a></p>
+<p><strong>의미분할(Semantic Segmentation)</strong><br />
+점 하나하나에 벽·바닥·배관 같은 범주 이름을 붙이는 작업.
+<a href="https://arxiv.org/abs/1911.11236" target="_blank" rel="noopener">https://arxiv.org/abs/1911.11236</a></p>
+<p><strong>RandLA-Net</strong><br />
+랜덤 샘플링을 써서 한 번에 100만 점 규모를 처리하는 대규모 점군 의미분할 신경망.
+<a href="https://arxiv.org/abs/1911.11236" target="_blank" rel="noopener">https://arxiv.org/abs/1911.11236</a></p>
+<hr />
+<h2 id="4-신경-렌더링">4. 신경 렌더링</h2>
+<p><strong>NeRF(Neural Radiance Fields)</strong><br />
+장면을 신경망 기반의 연속 체적 함수로 표현해 새로운 시점의 영상을 합성하는 기법. 2020년 발표.
+<a href="https://arxiv.org/abs/2003.08934" target="_blank" rel="noopener">https://arxiv.org/abs/2003.08934</a> (원 논문) · <a href="https://dl.acm.org/doi/abs/10.1007/978-3-030-58452-8_24" target="_blank" rel="noopener">https://dl.acm.org/doi/abs/10.1007/978-3-030-58452-8_24</a></p>
+<p><strong>3DGS(3D Gaussian Splatting)</strong><br />
+장면을 수백만 개의 3차원 가우시안으로 명시적으로 표현해 실시간 렌더링을 가능하게 한 방사휘도장 기법. 2023년 발표.
+<a href="https://arxiv.org/abs/2308.04079" target="_blank" rel="noopener">https://arxiv.org/abs/2308.04079</a> (원 논문) · <a href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/" target="_blank" rel="noopener">https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/</a></p>
+<p><strong>신규 시점 합성(Novel View Synthesis)</strong><br />
+촬영하지 않은 시점에서 본 장면의 영상을 생성하는 작업. NeRF와 3DGS가 겨루는 공통 과제다.
+<a href="https://arxiv.org/abs/2003.08934" target="_blank" rel="noopener">https://arxiv.org/abs/2003.08934</a></p>
+<p><strong>3D VLM(3D Vision-Language Model)</strong><br />
+3차원 임베딩을 이미지·텍스트와 정렬해 자연어로 3차원 데이터를 질의할 수 있게 하는 모델.
+<a href="https://arxiv.org/abs/2609.05583" target="_blank" rel="noopener">https://arxiv.org/abs/2609.05583</a></p>
+<p><strong>Set-of-Mark 프롬프팅</strong><br />
+이미지의 관심 영역에 표시를 얹어 멀티모달 LLM의 분석 정확도를 높이는 기법.
+<a href="http://www.iaarc.org/publications/2024_proceedings_of_the_41st_isarc_lille_france/automated_inspection_report_generation_using_multimodal_large_language_models_and_set-of-mark_prompting.html" target="_blank" rel="noopener">http://www.iaarc.org/publications/2024_proceedings_of_the_41st_isarc_lille_france/automated_inspection_report_generation_using_multimodal_large_language_models_and_set-of-mark_prompting.html</a></p>
+<hr />
+<h2 id="5-데이터-포맷과-표준">5. 데이터 포맷과 표준</h2>
+<p><strong>E57(ASTM E2807)</strong><br />
+점 좌표·색·강도와 2차원 영상을 함께 담는 벤더 중립 점군 교환 포맷. 2011년 2월 ASTM 승인.
+<a href="https://www.ri.cmu.edu/pub_files/2011/1/2011-huber-e57-v3.pdf" target="_blank" rel="noopener">https://www.ri.cmu.edu/pub_files/2011/1/2011-huber-e57-v3.pdf</a> · <a href="https://paulbourke.net/dataformats/e57/" target="_blank" rel="noopener">https://paulbourke.net/dataformats/e57/</a></p>
+<p><strong>LAS / LAZ</strong><br />
+ASPRS가 정한 라이다 점군 바이너리 표준 포맷과 그 무손실 압축본.
+<a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000418.shtml" target="_blank" rel="noopener">https://www.loc.gov/preservation/digital/formats/fdd/fdd000418.shtml</a></p>
+<p><strong>COPC(Cloud Optimized Point Cloud)</strong><br />
+단일 파일 안을 옥트리로 공간 정렬해 HTTP로 필요한 부분만 읽어 올 수 있게 한 점군 포맷.
+<a href="https://lidarnews.com/cloud-optimized-point-clouds-copc/" target="_blank" rel="noopener">https://lidarnews.com/cloud-optimized-point-clouds-copc/</a></p>
+<p><strong>3D Tiles</strong><br />
+대용량 3차원 지리공간 데이터를 계층 타일로 나눠 스트리밍하는 OGC 표준.
+<a href="https://www.ogc.org/standards/3dtiles/" target="_blank" rel="noopener">https://www.ogc.org/standards/3dtiles/</a></p>
+<p><strong>I3S(Indexed 3D Scene Layers)</strong><br />
+대용량 3차원 콘텐츠의 스트리밍과 저장을 위한 OGC 커뮤니티 표준.
+<a href="https://www.ogc.org/announcement/new-version-of-3d-streaming-community-standard-i3s-adopted-and-published-by-ogc/" target="_blank" rel="noopener">https://www.ogc.org/announcement/new-version-of-3d-streaming-community-standard-i3s-adopted-and-published-by-ogc/</a></p>
+<p><strong>옥트리 LOD(Octree Level of Detail)</strong><br />
+공간을 재귀적으로 8등분해 보는 거리에 따라 다른 해상도를 내보내는 자료구조.
+<a href="https://github.com/potree/potree" target="_blank" rel="noopener">https://github.com/potree/potree</a></p>
+<p><strong>Potree</strong><br />
+TU Wien에서 나온 무료 오픈소스 WebGL 점군 뷰어.
+<a href="https://github.com/potree/potree" target="_blank" rel="noopener">https://github.com/potree/potree</a></p>
+<p><strong>OpenUSD</strong><br />
+여러 도구 사이에서 대규모 3차원 장면을 조립하고 교환하기 위한 개방 규격.
+<a href="https://aousd.org/news/alliance-for-openusd-announces-new-member-milestone-industrial-momentum-and-core-specification-progress/" target="_blank" rel="noopener">https://aousd.org/news/alliance-for-openusd-announces-new-member-milestone-industrial-momentum-and-core-specification-progress/</a></p>
+<hr />
+<h2 id="6-bim과-건설">6. BIM과 건설</h2>
+<p><strong>IFC(Industry Foundation Classes)</strong><br />
+buildingSMART의 벤더 중립 개방형 BIM 데이터 스키마. IFC4.3이 ISO 16739-1:2024로 발행되었다.
+<a href="https://www.iso.org/standard/84123.html" target="_blank" rel="noopener">https://www.iso.org/standard/84123.html</a></p>
+<p><strong>Scan-to-BIM</strong><br />
+취득한 점군에서 바닥·벽·개구부 같은 건축 객체를 인식해 의미를 가진 BIM 모델로 변환하는 작업.
+<a href="https://www.opendesign.com/products/scan-to-bim" target="_blank" rel="noopener">https://www.opendesign.com/products/scan-to-bim</a></p>
+<p><strong>scan-vs-BIM</strong><br />
+스캔 점군을 기존 BIM 모델과 대조해 설치 여부와 시공 오차를 판정하는 작업. 모델을 새로 만드는
+Scan-to-BIM과 목적이 다르다.
+<a href="https://cintoo.com/en/blog/progress-monitoring" target="_blank" rel="noopener">https://cintoo.com/en/blog/progress-monitoring</a></p>
+<p><strong>as-built BIM</strong><br />
+설계 모델이 아니라 실제 시공된 상태를 반영한 BIM 모델.
+<a href="https://doi.org/10.1016/j.autcon.2025.106755" target="_blank" rel="noopener">https://doi.org/10.1016/j.autcon.2025.106755</a></p>
+<p><strong>COBie</strong><br />
+준공 시점에 장비 목록·보증·예방정비 정보를 발주처에 넘기기 위한 자산 정보 규격.
+<a href="https://en.wikipedia.org/wiki/COBie" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/COBie</a></p>
+<p><strong>ISO 19650</strong><br />
+건설 자산 생애주기 전반의 정보관리를 다루는 국제표준 시리즈.
+<a href="https://www.iso.org/standard/68078.html" target="_blank" rel="noopener">https://www.iso.org/standard/68078.html</a></p>
+<p><strong>IfcMapConversion</strong><br />
+모델의 로컬 좌표를 지도 좌표로 옮기는 변환을 담는 IFC 엔티티.
+<a href="https://isprs-annals.copernicus.org/articles/X-4-W2-2022/145/2022/" target="_blank" rel="noopener">https://isprs-annals.copernicus.org/articles/X-4-W2-2022/145/2022/</a></p>
+<p><strong>IfcProjectedCRS</strong><br />
+모델이 쓰는 투영 좌표계를 EPSG 코드 등으로 명시하는 IFC 엔티티.
+<a href="https://isprs-annals.copernicus.org/articles/X-4-W2-2022/145/2022/" target="_blank" rel="noopener">https://isprs-annals.copernicus.org/articles/X-4-W2-2022/145/2022/</a></p>
+<hr />
+<h2 id="7-좌표계와-정확도">7. 좌표계와 정확도</h2>
+<p><strong>GCP(Ground Control Point, 지상기준점)</strong><br />
+좌표를 이미 아는 지상 표적으로, 취득 결과를 절대 좌표에 고정하는 기준이 된다.
+<a href="https://enterprise.dji.com/zenmuse-l2/specs" target="_blank" rel="noopener">https://enterprise.dji.com/zenmuse-l2/specs</a></p>
+<p><strong>GSD(Ground Sample Distance)</strong><br />
+영상 한 픽셀이 대응하는 지상 거리. 촬영 계획과 기대 정확도를 잇는 값이다.
+<a href="https://www.ipb.uni-bonn.de/photogrammetry-i-ii/" target="_blank" rel="noopener">https://www.ipb.uni-bonn.de/photogrammetry-i-ii/</a></p>
+<p><strong>KGD2002(한국측지계 2002)</strong><br />
+GRS80 타원체와 ITRF2000 데이텀에 기반한 대한민국 세계측지계 성과.
+<a href="https://www.ngii.go.kr/other/file_down.do?sq=101741" target="_blank" rel="noopener">https://www.ngii.go.kr/other/file_down.do?sq=101741</a></p>
+<p><strong>LOA(Level of Accuracy)</strong><br />
+USIBD가 정의한 기존 시설물 문서화 정확도 등급. LOA 10부터 LOA 50까지 나뉜다.
+<a href="http://usibd.org/product/usibd-level-of-accuracy-loa-specification-guide-version-3-0-2019/" target="_blank" rel="noopener">http://usibd.org/product/usibd-level-of-accuracy-loa-specification-guide-version-3-0-2019/</a></p>
+<p><strong>QL(Quality Level, 품질 등급)</strong><br />
+USGS 3DEP이 정한 라이다 점밀도와 수직정확도 등급 체계.
+<a href="https://www.usgs.gov/3d-elevation-program/topographic-data-quality-levels-qls" target="_blank" rel="noopener">https://www.usgs.gov/3d-elevation-program/topographic-data-quality-levels-qls</a></p>
+<p><strong>헬머트 7 파라미터 변환</strong><br />
+원점 이동 3개, 축척 1개, 회전 3개로 두 좌표계를 잇는 상사 변환. <span class="est">(추정 — 출처 미확인)</span></p>
+<hr />
+<h2 id="8-연계-기술">8. 연계 기술</h2>
+<p><strong>공간 앵커(Spatial Anchor)</strong><br />
+가상 객체에 현실 세계의 위치와 방향을 부여하는 월드 고정 기준계. AR 현장 중첩의 토대다.
+<a href="https://developers.meta.com/horizon/documentation/unity/unity-spatial-anchors-overview/" target="_blank" rel="noopener">https://developers.meta.com/horizon/documentation/unity/unity-spatial-anchors-overview/</a></p>
+<p><strong>GrandSLAM</strong><br />
+LiDAR SLAM·비주얼 SLAM·IMU를 묶은 Leica BLK ARC의 자율 주행·캡처 기술.
+<a href="https://leica-geosystems.com/products/laser-scanners/scanners/leica-blk-arc" target="_blank" rel="noopener">https://leica-geosystems.com/products/laser-scanners/scanners/leica-blk-arc</a></p>
+<p><strong>Autowalk</strong><br />
+Boston Dynamics Spot이 미리 지정한 경로를 사람 개입 없이 반복 주행하는 기능.
+<a href="https://leica-geosystems.com/about-us/news-room/news-overview/2024/09/leica-blk-arc-now-the-first-certified-reality-capture-device-available-for-boston-dynamics-spot" target="_blank" rel="noopener">https://leica-geosystems.com/about-us/news-room/news-overview/2024/09/leica-blk-arc-now-the-first-certified-reality-capture-device-available-for-boston-dynamics-spot</a></p>
+<p><strong>도메인 갭(Domain Gap)</strong><br />
+학습 데이터와 실제 데이터의 분포 차이 때문에 성능이 떨어지는 현상. 합성 점군으로 학습할 때
+가장 자주 부딪히는 장애다.
+<a href="https://www.sciencedirect.com/science/article/abs/pii/S0926580524002097" target="_blank" rel="noopener">https://www.sciencedirect.com/science/article/abs/pii/S0926580524002097</a></p>
+<hr />
+<h2 id="9-역사-용어">9. 역사 용어</h2>
+<p>기술사 서술에 등장하는 옛 장비와 명칭이다. → <a href="02-history.html">02-history.md</a></p>
+<p><strong>métrophotographie(계측사진법)</strong><br />
+에메 로쉐다가 자신의 사진 기반 지형 측량 기법에 붙인 최초의 명칭.
+<a href="https://onlinelibrary.wiley.com/doi/10.1111/phor.12277" target="_blank" rel="noopener">https://onlinelibrary.wiley.com/doi/10.1111/phor.12277</a></p>
+<p><strong>도화기(Stereoplotter)</strong><br />
+중첩 촬영한 두 장의 사진을 입체로 관측해 지형과 구조물을 도면화하는 장비.
+<a href="https://www.asprs.org/wp-content/uploads/pers/1969journal/nov/1969_nov_1160-1168.pdf" target="_blank" rel="noopener">https://www.asprs.org/wp-content/uploads/pers/1969journal/nov/1969_nov_1160-1168.pdf</a></p>
+<p><strong>해석적 도화기(Analytical Plotter)</strong><br />
+기계적 링키지 대신 컴퓨터 연산으로 사진의 기하 관계를 푸는 도화기.
+<a href="https://www.semanticscholar.org/paper/New-principle-for-photogrammetric-plotters-Helava/035a49800133648d2fdf5a3ed03edd1101862ea9" target="_blank" rel="noopener">https://www.semanticscholar.org/paper/New-principle-for-photogrammetric-plotters-Helava/035a49800133648d2fdf5a3ed03edd1101862ea9</a></p>
+<p><strong>디지털 사진측량 워크스테이션(DPW, Softcopy Photogrammetry)</strong><br />
+필름 대신 디지털 화소 영상을 다뤄 대응점 탐색을 자동화한 사진측량 시스템.
+<a href="https://www.sciencedirect.com/science/article/pii/S1195103624002556" target="_blank" rel="noopener">https://www.sciencedirect.com/science/article/pii/S1195103624002556</a></p>
+<hr />
+<h2 id="10-현장실무-용어">10. 현장·실무 용어</h2>
+<p>실제 취득과 운영에서 쓰는 말이다. → <a href="03-use-cases.html">03-use-cases.md</a></p>
+<p><strong>차폐(Occlusion)</strong><br />
+다른 물체에 가려 스캐너 시야에 들어오지 않아 점군에 구멍이 생기는 현상. 현장 취득 품질을
+떨어뜨리는 가장 흔한 원인이다.
+<a href="https://doi.org/10.1016/j.autcon.2025.106755" target="_blank" rel="noopener">https://doi.org/10.1016/j.autcon.2025.106755</a></p>
+<p><strong>커버리지 비율</strong><br />
+특정 부재를 스캔 데이터가 얼마나 덮었는지 나타내는 지표. 이 값이 낮으면 편차 판정을 신뢰할 수 없다.
+<a href="https://cintoo.com/en/blog/progress-monitoring" target="_blank" rel="noopener">https://cintoo.com/en/blog/progress-monitoring</a></p>
+<p><strong>event walk</strong><br />
+마감재에 덮이기 전 상태를 기록으로 남기려고 특정 시점에 현장을 도는 360 촬영.
+<a href="https://www.openspace.ai/resources/case-studies/devcon-construction-uses-openspace-to-capture-a-complete-record-of-1-6m-square-foot-project-site/" target="_blank" rel="noopener">https://www.openspace.ai/resources/case-studies/devcon-construction-uses-openspace-to-capture-a-complete-record-of-1-6m-square-foot-project-site/</a></p>
+<p><strong>First Time Right</strong><br />
+스캔 기반 간섭 검토로 사전 제작한 배관 스풀이 현장에서 한 번에 맞도록 하는 목표.
+<a href="https://www.asbuilt3d.com/post/pre-turnaround-laser-scanning-checklist" target="_blank" rel="noopener">https://www.asbuilt3d.com/post/pre-turnaround-laser-scanning-checklist</a></p>
+<p><strong>정사영상(Orthomosaic)</strong><br />
+항공·드론 사진의 기하 왜곡을 보정해 지도처럼 축척이 일정하도록 이어 붙인 영상.
+<a href="https://dronelife.com/2019/01/08/california-drones-stitch-helpful-aerial-maps-in-wake-of-deadly-camp-fire/" target="_blank" rel="noopener">https://dronelife.com/2019/01/08/california-drones-stitch-helpful-aerial-maps-in-wake-of-deadly-camp-fire/</a></p>
+<p><strong>LED 볼륨</strong><br />
+실사 배경을 띄운 LED 월로 둘러싼 촬영 세트. 취득한 에셋을 Unreal Engine으로 띄워 쓴다.
+<a href="https://www.kiriengine.app/blog/3DGSvsPhotogrammetryvsLiDAR" target="_blank" rel="noopener">https://www.kiriengine.app/blog/3DGSvsPhotogrammetryvsLiDAR</a></p>
+<hr />
+<h2 id="11-지도와-아카이브">11. 지도와 아카이브</h2>
+<p><strong>정밀도로지도</strong><br />
+자율주행 지원을 위해 차선·도로시설·표지시설을 3차원으로 제작한 전자지도. 국토지리정보원이 구축하고 갱신한다.
+<a href="https://www.law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000229524" target="_blank" rel="noopener">https://www.law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000229524</a></p>
+<p><strong>HD맵</strong><br />
+차선 단위 형상과 도로 경계, 교통 통제 요소를 센티미터급 정확도로 담은 자율주행용 지도.
+<a href="https://www.marketsandmarkets.com/Market-Reports/hd-map-autonomous-vehicle-market-141078517.html" target="_blank" rel="noopener">https://www.marketsandmarkets.com/Market-Reports/hd-map-autonomous-vehicle-market-141078517.html</a></p>
+<p><strong>Open Heritage</strong><br />
+CyArk와 Google Arts &amp; Culture가 공개한 문화유산 3차원 데이터 아카이브.
+<a href="https://artsandculture.google.com/story/open-heritage-sharing-3d-data-with-the-world/-AXx62Vr4vwlKA" target="_blank" rel="noopener">https://artsandculture.google.com/story/open-heritage-sharing-3d-data-with-the-world/-AXx62Vr4vwlKA</a></p>
+<div class="pager"><span></span><a href="01-tools.html">01 · 도구 지형도 →</a></div>
+<footer class="foot">이 페이지는 <a href="https://github.com/o-Fireheart-o/Reality_Capture_Research/blob/master/docs/00-glossary.md" target="_blank" rel="noopener">docs/00-glossary.md</a>에서 자동으로 만들었습니다. 내용이 다르면 원문이 기준입니다.</footer>
+</div>
+</main>
+</div>
+<script>
+(function(){
+  var b=document.getElementById('navToggle'), l=document.getElementById('navList');
+  function set(o){l.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');b.textContent=o?'목차 닫기':'목차 열기';}
+  b.addEventListener('click',function(){set(!l.classList.contains('open'));});
+  l.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});
+})();
+</script>
+</body>
+</html>

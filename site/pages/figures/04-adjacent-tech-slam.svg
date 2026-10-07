@@ -1,0 +1,42 @@
+<svg viewBox="0 0 760 334" role="img" aria-label="SLAM 센서 퓨전: LiDAR, IMU, GNSS의 약점이 서로 다르고, 루프 클로저가 누적 오차를 되돌린다">
+  <text class="t-hd" x="20" y="26">센서마다 약한 곳이 다르다</text>
+  <rect x="20" y="42" width="110" height="40" rx="3" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="32" y="67">LiDAR SLAM</text>
+  <rect x="140" y="42" width="250" height="40" rx="3" fill="var(--far-soft)" stroke="var(--far)"></rect>
+  <text class="t-lab" x="152" y="67">특징 없는 복도·터널에서 미끄러짐</text>
+  <rect x="20" y="92" width="110" height="40" rx="3" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="32" y="117">IMU</text>
+  <rect x="140" y="92" width="250" height="40" rx="3" fill="var(--far-soft)" stroke="var(--far)"></rect>
+  <text class="t-lab" x="152" y="117">단독으로는 시간이 갈수록 표류</text>
+  <rect x="20" y="142" width="110" height="40" rx="3" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="32" y="167">GNSS · RTK</text>
+  <rect x="140" y="142" width="250" height="40" rx="3" fill="var(--far-soft)" stroke="var(--far)"></rect>
+  <text class="t-lab" x="152" y="167">실내에서 끊김</text>
+  <text class="t-tick" x="252" y="167">(실외에선 절대 좌표)</text>
+  <line x1="205" y1="186" x2="205" y2="206" stroke="var(--muted)" stroke-width="1.5"></line>
+  <path d="M200 202 L205 212 L210 202 Z" fill="var(--muted)"></path>
+  <rect x="20" y="216" width="370" height="96" rx="4" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1.5"></rect>
+  <text class="t-lab" x="34" y="240">실패 구간이 겹치지 않으므로 묶어서 쓴다</text>
+  <text class="t-tick" x="34" y="262">예: Leica BLK ARC = LiDAR SLAM + 비주얼 SLAM + IMU</text>
+  <text class="t-tick" x="34" y="280">(벤더 설명)</text>
+  <text class="t-tick" x="34" y="300">RTK를 포즈 그래프에 넣으면 절대 위치까지 잡는다</text>
+  <line x1="410" y1="20" x2="410" y2="312" stroke="var(--rule)"></line>
+  <text class="t-hd" x="430" y="26">루프 클로저</text>
+  <path d="M470 220 L470 80 L700 80 L700 220 L478 220" fill="none" stroke="var(--near)" stroke-width="2"></path>
+  <path d="M470 220 L474 80 L712 62 L730 196 L540 246" fill="none" stroke="var(--far)" stroke-width="2" stroke-dasharray="6 4"></path>
+  <circle cx="470" cy="220" r="6" fill="var(--ink)"></circle>
+  <circle cx="540" cy="246" r="4" fill="var(--far)"></circle>
+  <line x1="534" y1="243" x2="478" y2="223" stroke="var(--ink)" stroke-width="1.2" stroke-dasharray="2 3"></line>
+  <path d="M484 219 L474 221 L482 228 Z" fill="var(--ink)"></path>
+  <text class="t-tick" x="424" y="244">출발·복귀</text>
+  <text class="t-tick" x="550" y="262">누적 오차</text>
+  <text class="t-tick" x="500" y="118">같은 장소로 돌아온 것을</text>
+  <text class="t-tick" x="500" y="136">인식하면 오차를 한꺼번에</text>
+  <text class="t-tick" x="500" y="154">되돌린다</text>
+  <line x1="430" y1="278" x2="456" y2="278" stroke="var(--far)" stroke-width="2" stroke-dasharray="6 4"></line>
+  <text class="t-tick" x="462" y="282">보정 전 추정 궤적(표류)</text>
+  <line x1="610" y1="278" x2="636" y2="278" stroke="var(--near)" stroke-width="2"></line>
+  <text class="t-tick" x="642" y="282">보정 후 궤적</text>
+  <text class="t-tick" x="430" y="306">반복 패턴이 많은 실내에서는 거짓 루프 클로저가</text>
+  <text class="t-tick" x="430" y="322">모델을 오히려 뒤틀 수 있다 · 추정</text>
+</svg>

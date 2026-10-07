@@ -1,0 +1,1095 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Reality Capture 연계 기술 지도</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Song+Myung&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<nav class="nav" aria-label="목차">
+  <div class="nav-brand">리서치 노트 · 2026</div>
+  <div class="nav-title"><a href="../index.html" style="color:inherit;text-decoration:none">Reality Capture 지형도</a></div>
+  <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navList">목차 열기</button>
+  <ul class="nav-list" id="navList">
+    <li><a class="pg" href="00-glossary.html"><span>00 · 용어집</span></a></li>
+    <li><a class="pg" href="01-tools.html"><span>01 · 도구 지형도</span></a></li>
+    <li><a class="pg" href="01-tools/colmap.html"><span>01 심층 · COLMAP</span></a></li>
+    <li><a class="pg" href="02-history.html"><span>02 · 역사와 진행 방향</span></a></li>
+    <li><a class="pg" href="03-use-cases.html"><span>03 · 현재의 쓰임새</span></a></li>
+    <li><a class="pg cur" href="04-adjacent-tech.html" aria-current="page"><span>04 · 연계 기술 지도</span></a></li>
+    <li><a class="pg" href="05-learning-roadmap.html"><span>05 · 학습 로드맵</span></a></li>
+    <li class="toc-title">이 문서</li>
+    <li><a class="nav-sub" href="#0-이-문서를-읽는-법-연결-지점이-먼저다">0. 이 문서를 읽는 법 — 연결 지점이 먼저다</a></li>
+    <li><a class="nav-sub" href="#1-bim디지털-트윈">1. BIM·디지털 트윈</a></li>
+    <li><a class="nav-sub" href="#2-컴퓨터-비전딥러닝">2. 컴퓨터 비전·딥러닝</a></li>
+    <li><a class="nav-sub" href="#3-생성형-ai-llmvlm">3. 생성형 AI — LLM·VLM</a></li>
+    <li><a class="nav-sub" href="#4-slam센서-퓨전측위">4. SLAM·센서 퓨전·측위</a></li>
+    <li><a class="nav-sub" href="#5-클라우드대용량-데이터">5. 클라우드·대용량 데이터</a></li>
+    <li><a class="nav-sub" href="#6-xr-arvr">6. XR — AR·VR</a></li>
+    <li><a class="nav-sub" href="#7-로보틱스">7. 로보틱스</a></li>
+    <li><a class="nav-sub" href="#8-iot센서">8. IoT·센서</a></li>
+    <li><a class="nav-sub" href="#9-지리공간gis좌표계">9. 지리공간(GIS)·좌표계</a></li>
+    <li><a class="nav-sub" href="#10-표준상호운용">10. 표준·상호운용</a></li>
+    <li><a class="nav-sub" href="#11-조합-난이도-대비-가치">11. 조합 난이도 대비 가치</a></li>
+    <li><a class="nav-sub" href="#12-이-문서가-답하지-못한-것">12. 이 문서가 답하지 못한 것</a></li>
+    <li><a class="nav-sub" href="#용어-후보">용어 후보</a></li>
+  </ul>
+  <div class="nav-foot">원문: <a href="https://github.com/o-Fireheart-o/Reality_Capture_Research/blob/master/docs/04-adjacent-tech.md" target="_blank" rel="noopener">04-adjacent-tech.md</a><br>한 장 요약: <a href="../index.html">요약 페이지</a></div>
+</nav>
+<main class="main">
+<div class="col doc">
+<header class="mast">
+  <div class="eyebrow">Reality Capture 심층 리서치 · 문서</div>
+  <h1>Reality Capture 연계 기술 지도</h1>
+  <div class="doc-meta"><span>작성일 2026-09-21</span><span>최종수정일 2026-10-07</span></div>
+</header>
+<p>범위 렌즈: 전 산업을 훑되 건설·AEC를 주 렌즈로 삼는다. 같은 기술이라도 현장 시공·유지관리에서
+어떻게 쓰이는지를 우선 본다.</p>
+<hr />
+<h2 id="0-이-문서를-읽는-법-연결-지점이-먼저다">0. 이 문서를 읽는 법 — 연결 지점이 먼저다</h2>
+<p>연계 기술을 나열하기만 하면 목록은 길어지고 쓸모는 줄어든다. 그래서 이 문서는 기술을 소개하는 대신
+<strong>Reality Capture 파이프라인의 어느 지점에 무엇이 붙는가</strong>를 축으로 삼는다.</p>
+<p>파이프라인을 다섯 단계로 끊는다.</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>단계</th>
+<th>이름</th>
+<th>하는 일</th>
+<th>대표 산출물</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S1</td>
+<td>계획·캡처</td>
+<td>현장에서 센서로 원시 데이터를 얻는다</td>
+<td>스캔 원본, 사진, 궤적 로그</td>
+</tr>
+<tr>
+<td>S2</td>
+<td>정합·처리</td>
+<td>여러 스테이션·경로의 데이터를 하나의 좌표계로 묶는다</td>
+<td>통합 점군, 메시, 오소모자이크</td>
+</tr>
+<tr>
+<td>S3</td>
+<td>의미화·모델링</td>
+<td>점 덩어리에 이름을 붙여 객체로 만든다</td>
+<td>분류된 점군, BIM/IFC 모델</td>
+</tr>
+<tr>
+<td>S4</td>
+<td>배포·활용</td>
+<td>사람과 시스템이 꺼내 쓴다</td>
+<td>웹 뷰어, AR 중첩, 보고서</td>
+</tr>
+<tr>
+<td>S5</td>
+<td>운영·갱신</td>
+<td>반복 캡처로 모델을 살아 있게 유지한다</td>
+<td>변화 이력, 자산 상태</td>
+</tr>
+</tbody>
+</table></div>
+<p>아래 열 개 절은 모두 같은 틀을 쓴다. <strong>연결 지점</strong>(어느 단계에 무엇이 들어가고 무엇이 나오는가),
+<strong>결합 방식</strong>(구체적으로 어떻게 붙는가), <strong>AEC 관점</strong>(건설 현장에서 무엇이 달라지는가).</p>
+<figure><div class="fig-box wide"><svg viewBox="0 0 760 330" role="img" aria-label="연계 기술 10가지가 파이프라인 S1에서 S5 중 어느 단계에 붙는지 보여주는 매핑 도표">
+        <rect x="178" y="26" width="106" height="20" fill="var(--sunk)" rx="2"></rect>
+        <rect x="290" y="26" width="106" height="20" fill="var(--sunk)" rx="2"></rect>
+        <rect x="402" y="26" width="106" height="20" fill="var(--sunk)" rx="2"></rect>
+        <rect x="514" y="26" width="106" height="20" fill="var(--sunk)" rx="2"></rect>
+        <rect x="626" y="26" width="106" height="20" fill="var(--sunk)" rx="2"></rect>
+        <text class="t-tick" x="231" y="40" text-anchor="middle">S1 계획·캡처</text>
+        <text class="t-tick" x="343" y="40" text-anchor="middle">S2 정합·처리</text>
+        <text class="t-tick" x="455" y="40" text-anchor="middle">S3 의미화</text>
+        <text class="t-tick" x="567" y="40" text-anchor="middle">S4 배포·활용</text>
+        <text class="t-tick" x="679" y="40" text-anchor="middle">S5 운영·갱신</text>
+        <line x1="284" y1="52" x2="284" y2="312" stroke="var(--rule-soft)" stroke-width="1"></line>
+        <line x1="396" y1="52" x2="396" y2="312" stroke="var(--rule-soft)" stroke-width="1"></line>
+        <line x1="508" y1="52" x2="508" y2="312" stroke="var(--rule-soft)" stroke-width="1"></line>
+        <line x1="620" y1="52" x2="620" y2="312" stroke="var(--rule-soft)" stroke-width="1"></line>
+        <text class="t-lab" x="170" y="70" text-anchor="end">표준 · 상호운용</text>
+        <rect x="178" y="60" width="554" height="12" fill="var(--near)" opacity="0.35" rx="2"></rect>
+        <text class="t-tick" x="455" y="70" text-anchor="middle" fill="var(--ink)">단계 사이 이음매 전체</text>
+        <text class="t-lab" x="170" y="96" text-anchor="end">클라우드 · 대용량</text>
+        <rect x="514" y="86" width="106" height="12" fill="var(--near)" rx="2"></rect>
+        <text class="t-lab" x="170" y="122" text-anchor="end">지리공간 · 좌표계</text>
+        <rect x="290" y="112" width="218" height="12" fill="var(--near)" rx="2"></rect>
+        <text class="t-lab" x="170" y="148" text-anchor="end">BIM · 디지털 트윈</text>
+        <rect x="402" y="138" width="330" height="12" fill="var(--near)" rx="2"></rect>
+        <text class="t-lab" x="170" y="174" text-anchor="end">SLAM · 센서 퓨전</text>
+        <rect x="178" y="164" width="218" height="12" fill="var(--near)" rx="2"></rect>
+        <text class="t-tick" x="287" y="174" text-anchor="middle" fill="var(--paper)">S1 ↔ S2 경계를 지움</text>
+        <text class="t-lab" x="170" y="200" text-anchor="end">컴퓨터 비전 · 딥러닝</text>
+        <rect x="290" y="190" width="218" height="12" fill="var(--near)" rx="2"></rect>
+        <text class="t-lab" x="170" y="226" text-anchor="end">IoT · 센서</text>
+        <rect x="626" y="216" width="106" height="12" fill="var(--near)" rx="2"></rect>
+        <text class="t-lab" x="170" y="252" text-anchor="end">XR — AR · VR</text>
+        <rect x="514" y="242" width="106" height="12" fill="var(--near)" rx="2"></rect>
+        <text class="t-lab" x="170" y="278" text-anchor="end">로보틱스</text>
+        <rect x="178" y="268" width="106" height="12" fill="var(--near)" rx="2"></rect>
+        <rect x="626" y="268" width="106" height="12" fill="var(--near)" rx="2"></rect>
+        <line x1="288" y1="274" x2="622" y2="274" stroke="var(--near)" stroke-width="1" stroke-dasharray="3 3"></line>
+        <text class="t-tick" x="455" y="266" text-anchor="middle">캡처를 반복 가능하게</text>
+        <text class="t-lab" x="170" y="304" text-anchor="end">생성형 AI — LLM · VLM</text>
+        <rect x="514" y="294" width="106" height="12" fill="var(--near)" rx="2"></rect>
+        <line x1="178" y1="316" x2="732" y2="316" stroke="var(--rule)" stroke-width="1"></line>
+      </svg></div><figcaption><span class="fig-label">그림 1</span><b>연계 기술 열 가지가 붙는 단계.</b> 위 표의 S1~S5 위에 1~10절의 연결 지점을 겹쳤다. 표준·상호운용은 단계 사이 이음매 전체에 걸치고, 로보틱스는 캡처(S1)에서 운영(S5)까지 순환을 잇는다.</figcaption></figure>
+
+<p>출처 표기는 <code>(출처: 링크, 확인 2026-09-21, 성격)</code> 형태다. 성격은 벤더/제3자/학술/표준 넷 중 하나다.
+벤더 자료는 자사 제품 홍보가 섞여 있다고 보고 읽어야 한다.</p>
+<hr />
+<h2 id="1-bim디지털-트윈">1. BIM·디지털 트윈</h2>
+<p><strong>연결 지점: S3 → S5.</strong> 통합 점군이 들어가고 IFC 같은 객체 모델이 나온다. 그 모델이 준공 후에는
+자산 대장이 되고, S5의 반복 캡처가 다시 그 모델을 갱신한다. Reality Capture의 출구이자 재입구다.</p>
+<p><strong>결합 방식</strong></p>
+<ul>
+<li><strong>Scan-to-BIM 자동화.</strong> 점군에서 바닥·벽·개구부·경사 지붕을 인식해 IFC로 내보내는 SDK가 상용으로
+  나와 있다. Open Design Alliance의 Scan-to-BIM SDK는 RCP/RCS, LAS, PTS, PCD, XYZ를 입력으로 받고
+  기하 기반과 ML 보조 두 갈래 분류 파이프라인을 쓴다. 다만 이 제품은 아직 베타이고, 자동 방(room)
+  인식이나 대용량 점군 ML 지원은 2026년 로드맵 항목으로 남아 있다
+  (출처: <a href="https://www.opendesign.com/products/scan-to-bim" target="_blank" rel="noopener">https://www.opendesign.com/products/scan-to-bim</a>, 확인 2026-09-21, 벤더).
+  인식 대상이 네 종류뿐이라는 점을 놓치면 안 된다. MEP 배관이나 구조 부재까지 자동으로 뽑는다는 주장은
+  벤더마다 편차가 크므로 따로 검증해야 한다.</li>
+<li><strong>IFC 연계와 좌표 문제.</strong> 점군을 IFC로 옮길 때 가장 먼저 깨지는 것은 형상이 아니라 위치다.
+  9절에서 따로 다룬다.</li>
+<li><strong>COBie로 넘어가는 운영 데이터.</strong> COBie는 장비 목록, 제품 문서, 보증, 예비품, 예방정비 일정을
+  준공 시점에 넘기기 위한 규격이다. 스프레드시트, STEP Part 21(IFC), ifcXML, COBieLite로 전달할 수
+  있다. 미국 NBIMS-US는 2011년 COBie 2.26을 표준의 일부로 승인했고, 영국 BS 1192-4:2014는 실무 지침으로
+  다루며, 미국 GSA P-100(2017)은 자본 사업의 납품물로 COBie를 요구한다
+  (출처: <a href="https://en.wikipedia.org/wiki/COBie" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/COBie</a>, 확인 2026-09-21, 제3자).
+  Reality Capture는 COBie의 "어디에 무엇이 있는가"를 실측으로 채워 준다. 반대로 COBie는 점군에
+  없는 "그것이 무엇이며 언제 고쳐야 하는가"를 채운다. 둘은 서로를 보완한다.</li>
+<li><strong>트윈의 실측 기반 갱신.</strong> 설계 모델은 시공 순간부터 현실과 어긋나기 시작한다. 정기 스캔을 모델에
+  되먹이지 않으면 디지털 트윈은 그냥 오래된 3D 그림이 된다. 이 되먹임 고리가 7절 로보틱스와
+  8절 IoT가 붙는 자리다.</li>
+</ul>
+<p><strong>AEC 관점:</strong> Scan-to-BIM은 여전히 사람 손이 많이 든다. 자동화가 없애는 것은 모델링 전체가 아니라
+반복 트레이싱 구간이고, 검수는 남는다. 이 구간을 어디까지 줄였느냐가 곧 업체 경쟁력이다.</p>
+<hr />
+<h2 id="2-컴퓨터-비전딥러닝">2. 컴퓨터 비전·딥러닝</h2>
+<p><strong>연결 지점: S2 → S3.</strong> 원시 스캔이 들어가고 라벨이 붙은 점/픽셀이 나온다. 1절의 Scan-to-BIM이
+"자동"이라고 말할 때 그 자동을 실제로 수행하는 엔진이 여기다.</p>
+<p><strong>결합 방식</strong></p>
+<ul>
+<li><strong>점군 의미분할(semantic segmentation).</strong> PointNet 계열이 출발점이지만 현장 데이터에 그대로 쓰기엔
+  규모가 걸린다. RandLA-Net은 기존 방법이 작은 점군에서만 학습·동작한다는 한계를 지적하고,
+  랜덤 샘플링에 지역 특징 집계 모듈을 붙여 <strong>한 번에 100만 점</strong>을 처리하며 기존 접근보다
+  <strong>최대 200배 빠르다</strong>고 보고했다. Semantic3D와 SemanticKITTI 두 대규모 벤치마크에서 당시
+  최고 성능을 넘어섰다 (출처: <a href="https://arxiv.org/abs/1911.11236" target="_blank" rel="noopener">https://arxiv.org/abs/1911.11236</a>, 확인 2026-09-21, 학술).
+  현장 스캔 한 건이 수억 점에 이른다는 점을 감안하면, "정확도"보다 "한 번에 몇 점을 삼키는가"가 먼저
+  부딪히는 제약이다.</li>
+<li><strong>자동 정합(registration).</strong> 전통적인 ICP는 초기 위치에 민감하고 지역 최적해에 빠진다. 학습 기반
+  정합은 기하 특징을 직접 학습해 대응점을 찾는 쪽으로 이 문제를 우회한다. 다만 공개된 비교는 주로
+  ModelNet40 같은 합성·소규모 벤치마크에서 나왔고, 겹침이 부분적이고 구조물 패턴이 반복되는 실제
+  건설 현장에서도 같은 우위가 유지되는지는 따로 검증해야 한다 <span class="est">(추정)</span>.</li>
+<li><strong>변화 탐지(change detection).</strong> 준공 예정 상태(4D BIM)와 실측 점군을 맞대어 공정 진척을 추정하는
+  연구가 쌓여 있다. 요소 단위 또는 공정 단위로 진척을 계산해 공정표에 반영하는 구조다 <span class="est">(추정,
+  개별 논문 원문 미확인)</span>.</li>
+<li><strong>이미지 기반 품질 검사.</strong> 점군만으로는 균열 폭이나 표면 결함을 잡기 어렵다. 같은 위치의 고해상도
+  사진에 결함 탐지 모델을 돌리고 그 결과를 점군 좌표에 다시 얹는 방식이 현실적이다. 상용 플랫폼도
+  이 방향으로 간다. Bentley iTwin Capture Cloud Services는 리얼리티 데이터에서 결함을 자동 탐지하고
+  기둥·연석·표지판 같은 지형지물을 추출한다고 밝힌다
+  (출처: <a href="https://www.bentley.com/software/itwin-capture-cloud-services/" target="_blank" rel="noopener">https://www.bentley.com/software/itwin-capture-cloud-services/</a>, 확인 2026-09-21, 벤더).</li>
+</ul>
+<p><strong>AEC 관점:</strong> 학습 데이터가 병목이다. 도로·플랜트처럼 객체가 정형적인 분야는 모델이 잘 붙지만,
+현장마다 가설재와 자재 적치가 제각각인 건축 시공 현장은 라벨링 비용이 그대로 남는다.</p>
+<hr />
+<h2 id="3-생성형-ai-llmvlm">3. 생성형 AI — LLM·VLM</h2>
+<p><strong>연결 지점: S4.</strong> 이미 만들어진 점군·사진·모델이 들어가고 자연어 질의응답과 문서가 나온다.
+2절이 데이터를 "구조화"한다면 이쪽은 구조화된 데이터를 "말로 꺼내 쓰게" 만든다.</p>
+<p><strong>결합 방식</strong></p>
+<ul>
+<li><strong>자연어로 3D 묻기.</strong> 3D Vision-Language Model은 3D 임베딩을 시각·텍스트 표현과 정렬하므로
+  제로샷 분류, 교차 모달 검색, 개방 어휘 인식이 가능하다. 2026년 9월 공개된 개관 논문은
+  언어로 유도하는 3D 가우시안 스플래팅, 3D 형상 생성, 로보틱스용 체화 AI까지 범위를 넓혀 잡는다
+  (출처: <a href="https://arxiv.org/abs/2609.05583" target="_blank" rel="noopener">https://arxiv.org/abs/2609.05583</a>, 확인 2026-09-21, 학술).
+  기존 3D 딥러닝 모델은 텍스트나 이미지를 질의로 삼아 임베딩 공간을 검색하는 일을 원래 지원하지
+  않았다는 지적이 이 흐름의 출발점이다.</li>
+<li><strong>자동 보고서 생성.</strong> 검사 이미지의 관심 영역에 표시를 얹어 멀티모달 LLM에 넘기는 Set-of-Mark
+  프롬프팅으로 시공 검사 보고서를 자동 작성한 사례가 ISARC 2024에 보고됐다. 논문은 사례 연구 결과가
+  "검사 보고서의 기본 요건을 충족"하는 수준이었고 복잡한 장면에서 SoM이 품질을 끌어올렸다고 밝힌다
+  (출처: <a href="http://www.iaarc.org/publications/2024_proceedings_of_the_41st_isarc_lille_france/automated_inspection_report_generation_using_multimodal_large_language_models_and_set-of-mark_prompting.html" target="_blank" rel="noopener">http://www.iaarc.org/publications/2024_proceedings_of_the_41st_isarc_lille_france/automated_inspection_report_generation_using_multimodal_large_language_models_and_set-of-mark_prompting.html</a>,
+  확인 2026-09-21, 학술). 어떤 모델을 썼는지는 초록에 없고 정량 결과도 제시되지 않았다.
+  "기본 요건 충족"이라는 표현을 그대로 읽는 편이 안전하다.</li>
+<li><strong>성숙도 경고.</strong> 무인 차량이 수집한 현장 정보로 검사 보고서를 만드는 AutoRepo 프레임워크는
+  저자가 2023년 12월 4일 arXiv 프리프린트를 철회했다. 철회 사유는 "현재 연구 방향과 결과에 대한
+  혼동이나 오해를 부를 수 있다"였다 (출처: <a href="https://arxiv.org/abs/2310.07944" target="_blank" rel="noopener">https://arxiv.org/abs/2310.07944</a>, 확인 2026-09-21, 학술).
+  이 한 건을 분야 전체로 일반화할 수는 없지만, 프리프린트를 근거로 삼을 때는 인용 시점의 상태를
+  반드시 확인해야 한다는 점은 분명하다.</li>
+</ul>
+<p><strong>AEC 관점:</strong> 보고서 초안과 "이 층에서 설계와 다른 곳을 찾아 줘" 수준의 검색은 지금도 쓸 만하다.
+반대로 수치 판정과 규정 준수 판단을 맡기기에는 근거 추적이 약하다. 사람이 서명할 문서에는 아직
+초안 생성기로만 쓰는 편이 맞다.</p>
+<hr />
+<h2 id="4-slam센서-퓨전측위">4. SLAM·센서 퓨전·측위</h2>
+<p><strong>연결 지점: S1 ↔ S2.</strong> 캡처와 정합 사이의 경계를 지우는 기술이다. 고정식 스캐너는 찍고 나서
+정합하지만, SLAM 장비는 걸어 다니는 동안 위치를 추정하며 정합을 끝낸다. 대신 누적 오차를 떠안는다.</p>
+<p><strong>결합 방식</strong></p>
+<ul>
+<li><strong>다중 센서 결합.</strong> LiDAR 단독으로는 특징 없는 복도나 터널에서 미끄러지고, IMU 단독으로는 표류하며,
+  GNSS는 실내에서 끊긴다. 서로의 실패 구간이 다르므로 묶어서 쓴다. 상용 장비도 같은 구성을 택한다.
+  Leica BLK ARC는 LiDAR SLAM, 비주얼 SLAM, IMU를 묶은 GrandSLAM 기술로 자율 주행과 캡처를 함께
+  수행한다고 설명한다. 정적 스캔과 이동 스캔을 한 번의 임무에서 함께 얻는다는 서술도 같은 페이지에
+  있다 (출처: <a href="https://leica-geosystems.com/products/laser-scanners/scanners/leica-blk-arc" target="_blank" rel="noopener">https://leica-geosystems.com/products/laser-scanners/scanners/leica-blk-arc</a>,
+  확인 2026-09-21, 벤더). 다만 같은 회사의 Spot 인증 보도자료 본문에는 GrandSLAM 언급이 없다.</li>
+<li><strong>루프 클로저(loop closure).</strong> 같은 장소로 돌아왔음을 인식해 누적 오차를 한꺼번에 바로잡는 보정이다.
+  Scan Context, DBoW2 같은 장소 인식 기법을 붙여 전역 정합 정확도를 끌어올리는 방식이 널리 쓰인다
+  <span class="est">(추정, 검색 결과 요약 기준이며 원문 미확인)</span>.
+  다만 반복 패턴이 많은 건물 내부에서는 거짓 루프 클로저가 생겨 오히려 모델이 뒤틀릴 수 있다 <span class="est">(추정)</span>.</li>
+<li><strong>RTK로 절대 좌표 묶기.</strong> GNSS RTK를 포즈 그래프에 함께 넣으면 상대 정합과 절대 위치를 동시에
+  잡을 수 있다. 실외 이동 매핑에서 5~10cm 수준 매핑 정확도를 보고한 연구가 있으나 원문을 직접
+  확인하지 못했다 <span class="est">(추정)</span>. 벤더가 제시하는 정확도 수치는 이상적 조건에서 나온 값일 가능성을 늘 열어 둔다.</li>
+</ul>
+<figure><div class="fig-box wide"><svg viewBox="0 0 760 334" role="img" aria-label="SLAM 센서 퓨전: LiDAR, IMU, GNSS의 약점이 서로 다르고, 루프 클로저가 누적 오차를 되돌린다">
+  <text class="t-hd" x="20" y="26">센서마다 약한 곳이 다르다</text>
+  <rect x="20" y="42" width="110" height="40" rx="3" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="32" y="67">LiDAR SLAM</text>
+  <rect x="140" y="42" width="250" height="40" rx="3" fill="var(--far-soft)" stroke="var(--far)"></rect>
+  <text class="t-lab" x="152" y="67">특징 없는 복도·터널에서 미끄러짐</text>
+  <rect x="20" y="92" width="110" height="40" rx="3" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="32" y="117">IMU</text>
+  <rect x="140" y="92" width="250" height="40" rx="3" fill="var(--far-soft)" stroke="var(--far)"></rect>
+  <text class="t-lab" x="152" y="117">단독으로는 시간이 갈수록 표류</text>
+  <rect x="20" y="142" width="110" height="40" rx="3" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="32" y="167">GNSS · RTK</text>
+  <rect x="140" y="142" width="250" height="40" rx="3" fill="var(--far-soft)" stroke="var(--far)"></rect>
+  <text class="t-lab" x="152" y="167">실내에서 끊김</text>
+  <text class="t-tick" x="252" y="167">(실외에선 절대 좌표)</text>
+  <line x1="205" y1="186" x2="205" y2="206" stroke="var(--muted)" stroke-width="1.5"></line>
+  <path d="M200 202 L205 212 L210 202 Z" fill="var(--muted)"></path>
+  <rect x="20" y="216" width="370" height="96" rx="4" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1.5"></rect>
+  <text class="t-lab" x="34" y="240">실패 구간이 겹치지 않으므로 묶어서 쓴다</text>
+  <text class="t-tick" x="34" y="262">예: Leica BLK ARC = LiDAR SLAM + 비주얼 SLAM + IMU</text>
+  <text class="t-tick" x="34" y="280">(벤더 설명)</text>
+  <text class="t-tick" x="34" y="300">RTK를 포즈 그래프에 넣으면 절대 위치까지 잡는다</text>
+  <line x1="410" y1="20" x2="410" y2="312" stroke="var(--rule)"></line>
+  <text class="t-hd" x="430" y="26">루프 클로저</text>
+  <path d="M470 220 L470 80 L700 80 L700 220 L478 220" fill="none" stroke="var(--near)" stroke-width="2"></path>
+  <path d="M470 220 L474 80 L712 62 L730 196 L540 246" fill="none" stroke="var(--far)" stroke-width="2" stroke-dasharray="6 4"></path>
+  <circle cx="470" cy="220" r="6" fill="var(--ink)"></circle>
+  <circle cx="540" cy="246" r="4" fill="var(--far)"></circle>
+  <line x1="534" y1="243" x2="478" y2="223" stroke="var(--ink)" stroke-width="1.2" stroke-dasharray="2 3"></line>
+  <path d="M484 219 L474 221 L482 228 Z" fill="var(--ink)"></path>
+  <text class="t-tick" x="424" y="244">출발·복귀</text>
+  <text class="t-tick" x="550" y="262">누적 오차</text>
+  <text class="t-tick" x="500" y="118">같은 장소로 돌아온 것을</text>
+  <text class="t-tick" x="500" y="136">인식하면 오차를 한꺼번에</text>
+  <text class="t-tick" x="500" y="154">되돌린다</text>
+  <line x1="430" y1="278" x2="456" y2="278" stroke="var(--far)" stroke-width="2" stroke-dasharray="6 4"></line>
+  <text class="t-tick" x="462" y="282">보정 전 추정 궤적(표류)</text>
+  <line x1="610" y1="278" x2="636" y2="278" stroke="var(--near)" stroke-width="2"></line>
+  <text class="t-tick" x="642" y="282">보정 후 궤적</text>
+  <text class="t-tick" x="430" y="306">반복 패턴이 많은 실내에서는 거짓 루프 클로저가</text>
+  <text class="t-tick" x="430" y="322">모델을 오히려 뒤틀 수 있다 · 추정</text>
+</svg></div><figcaption><span class="fig-label">그림 2</span><b>센서 퓨전과 루프 클로저.</b> 왼쪽은 LiDAR·IMU·GNSS가 각자 무너지는 구간이 달라서 묶어 쓴다는 뜻이다. 오른쪽은 출발점으로 돌아온 것을 알아채 쌓인 오차를 한 번에 되돌리는 과정을 그렸다. 궤적 모양은 개념도이고, 거짓 루프 클로저 경고는 본문과 같이 추정이다.</figcaption></figure>
+
+<figure class="photo"><div class="fig-box"><img src="img/04-adjacent-tech-gnss-site.jpg" alt="안전모와 주황색 조끼를 입은 측량사가 비 오는 개발 부지의 진흙땅에서 GNSS 수신기를 단 폴을 세우고 컨트롤러를 본다" loading="lazy"></div><figcaption><span class="fig-label">그림 3</span><b>개발 부지에서 GNSS 수신기로 측량하는 모습.</b> 폴 꼭대기의 수신기가 위성 신호로 위치를 잡는다. 하늘이 트인 실외에서는 이렇게 절대 위치를 얻지만, 실내에 들어가면 신호가 끊긴다. 그 구간을 SLAM과 IMU가 메운다.<span class="credit">사진: Cvstr · <a href="https://commons.wikimedia.org/wiki/File:GNSS_surveyor_on_a_wet_development_site.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener">CC BY 4.0</a></span></figcaption></figure>
+
+<p><strong>AEC 관점:</strong> 선택 기준은 정확도 하나만이 아니다. "3mm가 필요한 구간은 고정식, 5cm면 충분한 구간은
+SLAM"으로 현장을 나눠 잡는 판단이 실무의 핵심이다. 그 판단을 하려면 오차가 어디서 생기는지를
+알아야 하고, 그래서 SLAM은 장비 사용자도 원리 수준에서 이해해 둘 가치가 있다.</p>
+<hr />
+<h2 id="5-클라우드대용량-데이터">5. 클라우드·대용량 데이터</h2>
+<p><strong>연결 지점: S4.</strong> 수백 GB짜리 점군이 들어가고 브라우저에서 즉시 열리는 화면이 나온다.
+Reality Capture가 "찍은 사람만 보는 데이터"에서 벗어나는 지점이 정확히 여기다.</p>
+<p><strong>결합 방식</strong></p>
+<ul>
+<li><strong>계층 타일링과 스트리밍.</strong> 전체를 내려받지 않고 화면에 보이는 만큼만 가져오는 구조가 관건이다.
+  Potree는 TU Wien에서 나온 무료 오픈소스 WebGL 점군 렌더러로, PotreeConverter가 만든 다중 해상도
+  옥트리를 써서 대용량 점군을 웹에서 띄운다 (출처: <a href="https://github.com/potree/potree" target="_blank" rel="noopener">https://github.com/potree/potree</a>,
+  확인 2026-09-21, 학술·오픈소스). 뷰어는 처음에 메타데이터와 최저 해상도 루트 노드만 요청하고,
+  카메라가 다가가면 해당 노드를 추가로 받는다.</li>
+<li><strong>표준 기반 스트리밍.</strong> OGC 3D Tiles는 사진측량, 3D 건물, BIM/CAD, 인스턴스 지형지물, 점군 같은
+  대용량 3D 지리공간 콘텐츠의 스트리밍과 렌더링을 위한 커뮤니티 표준이다. 현재 1.1(문서번호 22-025r4)과
+  1.0(18-053r2) 두 판이 공개돼 있다 (출처: <a href="https://www.ogc.org/standards/3dtiles/" target="_blank" rel="noopener">https://www.ogc.org/standards/3dtiles/</a>, 확인 2026-09-21, 표준).
+  Potree가 구현체라면 3D Tiles는 규격이다. 뷰어를 갈아탈 가능성이 있다면 규격 쪽에 데이터를 맞춰 두는
+  편이 안전하다.</li>
+<li><strong>분산 처리와 비용.</strong> 처리를 클라우드로 올리면 워크스테이션에 투자하지 않아도 되지만 저장·전송 비용이
+  새로 생긴다. Cesium ion은 무료 Community 10GB 저장·월 15GB 스트리밍, Commercial 100GB 저장·월 150GB
+  스트리밍(개인 월 149달러, 팀 월 524달러), Premium 500GB 저장·월 500GB 스트리밍(개인 월 499달러,
+  팀 월 874달러)으로 구간이 나뉜다 (출처: <a href="https://cesium.com/platform/cesium-ion/pricing/" target="_blank" rel="noopener">https://cesium.com/platform/cesium-ion/pricing/</a>,
+  확인 2026-09-21, 벤더). 현장 한 곳을 정밀 스캔하면 원본이 수백 GB를 넘기는 일이 흔하다.
+  100GB 구간은 생각보다 금방 찬다.</li>
+<li><strong>온프레미스와의 갈림길.</strong> Bentley는 대용량 데이터를 다루거나 원격으로 협업하거나 고사양 하드웨어 투자를
+  피하고 싶을 때는 클라우드를, 로컬 통제가 중요할 때는 온프레미스 엔진을 쓰라고 안내한다
+  (출처: <a href="https://www.bentley.com/software/itwin-capture-cloud-services/" target="_blank" rel="noopener">https://www.bentley.com/software/itwin-capture-cloud-services/</a>, 확인 2026-09-21, 벤더).
+  발주처 보안 요구가 강한 공공 프로젝트에서는 이 갈림길을 기술이 아니라 계약 조건이 정한다.</li>
+</ul>
+<figure><div class="fig-box wide"><svg viewBox="0 0 760 352" role="img" aria-label="옥트리 기반 점군 스트리밍: 처음엔 루트 노드만, 카메라가 다가가면 그 부분의 세밀한 노드만 추가로 받는다">
+  <text class="t-hd" x="30" y="34">① 처음 연 순간</text>
+  <text class="t-hd" x="290" y="34">② 카메라가 다가가면</text>
+  <text class="t-hd" x="550" y="34">③ 더 다가가면</text>
+  <rect x="30" y="50" width="180" height="180" fill="var(--near-soft)" stroke="var(--near)"></rect>
+  <circle cx="89.7" cy="79.9" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="146.0" cy="66.5" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="126.2" cy="116.9" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="44.0" cy="141.3" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="40.4" cy="128.6" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="46.0" cy="69.6" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="107.0" cy="196.2" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="55.3" cy="92.4" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="141.9" cy="217.0" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="133.3" cy="122.2" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="201.9" cy="62.0" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="181.7" cy="103.8" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="58.8" cy="74.3" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="87.1" cy="194.4" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="65.1" cy="154.0" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="143.9" cy="118.1" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="128.2" cy="64.8" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="44.3" cy="89.4" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="151.0" cy="127.5" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="88.0" cy="154.7" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="111.9" cy="105.6" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="170.6" cy="174.2" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="76.0" cy="152.8" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="124.3" cy="204.5" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="159.5" cy="103.5" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="202.6" cy="74.3" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="105.9" cy="184.2" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="60.1" cy="138.1" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="40.7" cy="168.9" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="165.5" cy="152.6" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="184.6" cy="108.0" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="153.6" cy="156.2" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="133.7" cy="132.5" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="178.5" cy="216.5" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="115.5" cy="168.2" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="44.4" cy="174.7" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="145.3" cy="224.8" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="175.4" cy="103.0" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="100.4" cy="169.0" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="37.9" cy="133.4" r="1.6" fill="var(--ink)"></circle>
+  <rect x="290" y="50" width="180" height="180" fill="var(--surface)" stroke="var(--rule-soft)"></rect>
+  <circle cx="322.9" cy="74.1" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="304.1" cy="186.1" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="316.2" cy="96.6" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="361.2" cy="203.9" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="307.9" cy="131.3" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="388.5" cy="205.9" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="434.9" cy="202.6" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="341.9" cy="125.4" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="355.7" cy="206.1" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="458.7" cy="80.0" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="324.3" cy="93.9" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="334.1" cy="137.4" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="395.3" cy="99.2" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="294.7" cy="126.1" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="357.5" cy="151.4" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="457.9" cy="172.8" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="382.7" cy="160.2" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="410.3" cy="63.3" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="448.7" cy="188.2" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="444.4" cy="191.2" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="361.5" cy="122.6" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="311.8" cy="163.1" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="304.7" cy="65.6" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="329.9" cy="81.9" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="352.5" cy="63.0" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="294.0" cy="80.0" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="311.5" cy="116.5" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="298.4" cy="204.4" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="399.6" cy="79.6" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="337.4" cy="113.8" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="356.6" cy="75.1" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="440.0" cy="224.8" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="374.2" cy="137.2" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="308.8" cy="71.6" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="352.9" cy="99.5" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="436.6" cy="81.8" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="298.0" cy="217.6" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="384.9" cy="79.2" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="387.4" cy="58.7" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="384.8" cy="222.3" r="1.6" fill="var(--muted)"></circle>
+  <rect x="290" y="50" width="90" height="90" fill="var(--near-soft)" stroke="var(--near)"></rect>
+  <circle cx="364.8" cy="111.1" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="315.4" cy="84.1" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="307.7" cy="117.3" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="337.7" cy="117.9" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="321.0" cy="72.3" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="360.5" cy="134.8" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="363.9" cy="120.1" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="361.1" cy="114.7" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="312.6" cy="96.4" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="323.2" cy="56.4" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="296.3" cy="76.9" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="315.3" cy="110.8" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="372.4" cy="90.7" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="370.8" cy="135.0" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="372.3" cy="83.9" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="312.1" cy="72.6" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="310.1" cy="70.8" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="345.2" cy="127.8" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="362.9" cy="93.3" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="347.5" cy="119.6" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="301.0" cy="108.2" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="368.6" cy="118.1" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="355.5" cy="93.2" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="308.6" cy="118.7" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="321.3" cy="119.7" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="373.7" cy="86.5" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="326.9" cy="131.6" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="353.4" cy="67.9" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="304.4" cy="66.4" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="368.2" cy="120.1" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="306.0" cy="121.8" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="374.4" cy="107.9" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="322.7" cy="99.0" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="304.7" cy="55.2" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="373.6" cy="107.3" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="337.2" cy="130.6" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="329.6" cy="125.5" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="361.7" cy="71.3" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="314.7" cy="78.0" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="313.7" cy="102.1" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="315.3" cy="88.4" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="304.7" cy="128.6" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="323.0" cy="91.6" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="341.8" cy="128.2" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="328.5" cy="129.3" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="335.1" cy="97.6" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="336.9" cy="55.5" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="330.1" cy="69.0" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="294.3" cy="119.5" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="308.1" cy="92.8" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="353.5" cy="99.6" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="320.7" cy="96.5" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="339.5" cy="118.3" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="302.7" cy="99.9" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="314.4" cy="76.7" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="357.3" cy="95.6" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="340.1" cy="116.3" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="368.8" cy="90.3" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="344.2" cy="95.5" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="336.0" cy="110.8" r="1.6" fill="var(--ink)"></circle>
+  <rect x="290" y="140" width="90" height="90" fill="none" stroke="var(--rule-soft)" stroke-dasharray="3 3"></rect>
+  <rect x="380" y="50" width="90" height="90" fill="none" stroke="var(--rule-soft)" stroke-dasharray="3 3"></rect>
+  <rect x="380" y="140" width="90" height="90" fill="none" stroke="var(--rule-soft)" stroke-dasharray="3 3"></rect>
+  <path d="M354 114 L376 122 L362 136 Z" fill="var(--ink)"></path>
+  <rect x="550" y="50" width="180" height="180" fill="var(--surface)" stroke="var(--rule-soft)"></rect>
+  <circle cx="631.8" cy="145.7" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="636.2" cy="215.9" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="674.3" cy="204.8" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="716.1" cy="98.6" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="650.2" cy="216.2" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="698.5" cy="77.6" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="574.9" cy="130.0" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="566.5" cy="95.4" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="566.6" cy="169.1" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="688.8" cy="208.3" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="580.6" cy="177.2" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="667.6" cy="78.6" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="705.8" cy="220.4" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="591.8" cy="217.8" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="622.5" cy="137.8" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="724.3" cy="197.2" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="581.8" cy="128.2" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="642.7" cy="112.3" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="587.7" cy="108.8" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="678.2" cy="57.4" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="649.3" cy="129.8" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="557.1" cy="111.0" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="661.3" cy="142.1" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="565.1" cy="223.4" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="689.6" cy="221.1" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="572.0" cy="99.7" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="560.8" cy="188.0" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="600.5" cy="76.3" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="626.6" cy="210.8" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="694.9" cy="98.5" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="579.7" cy="212.1" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="652.1" cy="174.5" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="569.4" cy="63.9" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="672.4" cy="127.2" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="566.5" cy="215.4" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="663.1" cy="191.9" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="568.4" cy="201.3" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="565.5" cy="202.4" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="632.0" cy="112.3" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="649.1" cy="213.4" r="1.6" fill="var(--muted)"></circle>
+  <rect x="550" y="50" width="90" height="90" fill="var(--surface)" stroke="var(--rule-soft)"></rect>
+  <circle cx="576.0" cy="64.6" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="597.2" cy="73.6" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="563.0" cy="67.2" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="558.1" cy="70.5" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="579.6" cy="79.0" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="616.3" cy="77.8" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="595.0" cy="68.6" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="582.5" cy="55.5" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="574.5" cy="55.3" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="614.1" cy="99.2" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="569.5" cy="92.9" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="630.6" cy="62.7" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="621.2" cy="89.4" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="594.6" cy="122.4" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="586.2" cy="95.5" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="610.4" cy="134.6" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="582.1" cy="122.2" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="612.0" cy="106.2" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="587.2" cy="82.5" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="558.5" cy="64.6" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="559.8" cy="114.8" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="575.0" cy="67.4" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="560.9" cy="123.0" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="625.4" cy="109.0" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="577.1" cy="73.9" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="578.0" cy="91.7" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="566.9" cy="90.6" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="575.6" cy="132.9" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="633.8" cy="98.9" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="574.0" cy="133.2" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="579.4" cy="83.2" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="554.1" cy="85.3" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="592.9" cy="95.2" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="570.5" cy="95.4" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="554.4" cy="75.7" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="561.4" cy="86.8" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="557.4" cy="55.8" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="578.9" cy="73.1" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="602.0" cy="97.4" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="615.5" cy="107.9" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="612.7" cy="126.1" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="585.9" cy="80.7" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="634.7" cy="66.3" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="613.4" cy="106.7" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="557.6" cy="122.5" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="627.1" cy="105.4" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="614.2" cy="120.6" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="565.4" cy="96.9" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="595.4" cy="122.5" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="620.0" cy="121.8" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="601.9" cy="127.2" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="610.0" cy="110.9" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="572.9" cy="56.6" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="564.9" cy="83.6" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="562.6" cy="122.5" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="599.8" cy="105.5" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="605.4" cy="109.8" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="594.1" cy="54.3" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="619.4" cy="115.4" r="1.6" fill="var(--muted)"></circle>
+  <circle cx="595.2" cy="97.9" r="1.6" fill="var(--muted)"></circle>
+  <rect x="595" y="95" width="45" height="45" fill="var(--near-soft)" stroke="var(--near)"></rect>
+  <circle cx="623.4" cy="101.4" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="626.3" cy="108.3" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="601.8" cy="108.8" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="626.0" cy="106.6" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="626.4" cy="135.1" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="617.3" cy="113.2" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="616.7" cy="124.3" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="627.4" cy="121.8" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="622.8" cy="101.9" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="604.5" cy="108.4" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="626.5" cy="110.3" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="620.0" cy="99.5" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="601.2" cy="108.9" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="623.9" cy="124.6" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="624.0" cy="109.8" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="618.1" cy="116.2" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="616.3" cy="103.4" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="632.1" cy="106.4" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="635.2" cy="133.6" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="599.6" cy="116.0" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="629.3" cy="134.8" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="615.6" cy="108.9" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="606.8" cy="134.0" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="606.8" cy="120.5" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="604.2" cy="118.4" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="634.3" cy="103.9" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="629.3" cy="117.8" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="631.8" cy="125.0" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="607.6" cy="132.2" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="617.0" cy="99.9" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="599.1" cy="117.2" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="615.7" cy="110.2" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="604.2" cy="111.7" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="610.7" cy="130.1" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="599.1" cy="126.8" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="630.0" cy="103.4" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="633.3" cy="125.4" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="632.4" cy="109.7" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="612.8" cy="113.5" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="636.0" cy="120.8" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="612.3" cy="114.8" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="609.2" cy="100.8" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="602.8" cy="129.9" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="609.6" cy="133.6" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="608.2" cy="108.8" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="617.9" cy="106.0" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="612.8" cy="134.4" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="631.7" cy="129.0" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="622.3" cy="132.8" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="633.8" cy="119.3" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="625.6" cy="100.8" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="626.1" cy="115.7" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="626.8" cy="122.8" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="609.6" cy="100.8" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="633.3" cy="103.7" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="616.5" cy="111.7" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="610.0" cy="126.3" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="635.1" cy="108.6" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="623.3" cy="110.1" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="619.6" cy="113.6" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="605.2" cy="105.0" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="606.7" cy="132.5" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="617.4" cy="107.1" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="632.5" cy="135.9" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="615.6" cy="104.2" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="606.1" cy="102.4" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="611.7" cy="102.4" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="607.8" cy="108.6" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="620.1" cy="131.8" r="1.6" fill="var(--ink)"></circle>
+  <circle cx="626.7" cy="114.3" r="1.6" fill="var(--ink)"></circle>
+  <rect x="550" y="50" width="90" height="90" fill="none" stroke="var(--rule-soft)" stroke-dasharray="3 3"></rect>
+  <rect x="550" y="50" width="45" height="45" fill="none" stroke="var(--rule-soft)" stroke-dasharray="3 3"></rect>
+  <rect x="550" y="140" width="90" height="90" fill="none" stroke="var(--rule-soft)" stroke-dasharray="3 3"></rect>
+  <rect x="550" y="95" width="45" height="45" fill="none" stroke="var(--rule-soft)" stroke-dasharray="3 3"></rect>
+  <rect x="640" y="50" width="90" height="90" fill="none" stroke="var(--rule-soft)" stroke-dasharray="3 3"></rect>
+  <rect x="595" y="50" width="45" height="45" fill="none" stroke="var(--rule-soft)" stroke-dasharray="3 3"></rect>
+  <rect x="640" y="140" width="90" height="90" fill="none" stroke="var(--rule-soft)" stroke-dasharray="3 3"></rect>
+  <rect x="595" y="95" width="45" height="45" fill="none" stroke="var(--rule-soft)" stroke-dasharray="3 3"></rect>
+  <path d="M642 142 L664 150 L650 164 Z" fill="var(--ink)"></path>
+  <line x1="222" y1="140" x2="274" y2="140" stroke="var(--muted)" stroke-width="1.5"></line>
+  <path d="M268 135 L278 140 L268 145 Z" fill="var(--muted)"></path>
+  <line x1="482" y1="140" x2="534" y2="140" stroke="var(--muted)" stroke-width="1.5"></line>
+  <path d="M528 135 L538 140 L528 145 Z" fill="var(--muted)"></path>
+  <text class="t-tick" x="30" y="256">메타데이터와 최저 해상도</text>
+  <text class="t-tick" x="30" y="274">루트 노드만 받는다</text>
+  <text class="t-tick" x="290" y="256">카메라가 본 쪽의</text>
+  <text class="t-tick" x="290" y="274">자식 노드만 추가로 받는다</text>
+  <text class="t-tick" x="550" y="256">그 안의 더 깊은 노드를 받는다.</text>
+  <text class="t-tick" x="550" y="274">나머지는 받지 않는다</text>
+  <rect x="30" y="296" width="14" height="14" fill="var(--near-soft)" stroke="var(--near)"></rect>
+  <text class="t-tick" x="52" y="308">이번에 받은 노드</text>
+  <rect x="200" y="296" width="14" height="14" fill="var(--surface)" stroke="var(--rule-soft)"></rect>
+  <text class="t-tick" x="222" y="308">이미 받았거나 받지 않은 노드</text>
+  <text class="t-tick" x="30" y="336">옥트리를 평면에 눌러 그렸다(실제로는 한 노드가 자식 8개로 나뉜다). Potree는 구현체, 3D Tiles는 규격이다</text>
+</svg></div><figcaption><span class="fig-label">그림 4</span><b>옥트리로 점군을 나눠 받는 방식.</b> 뷰어는 처음에 메타데이터와 가장 성긴 루트 노드만 받고, 카메라가 다가간 곳의 자식 노드만 더 받는다. 수백 GB 점군이 브라우저에서 바로 열리는 까닭이 여기 있다.</figcaption></figure>
+
+<p><strong>AEC 관점:</strong> 스캔 원본을 몇 년 보관할지부터 정해야 한다. 준공 후 하자 분쟁이 나면 그때 필요한 것은
+가공된 모델이 아니라 원본이다. 반면 원본을 다 들고 있으면 비용이 계속 나간다. 보관 정책이 곧 비용 설계다.</p>
+<hr />
+<h2 id="6-xr-arvr">6. XR — AR·VR</h2>
+<p><strong>연결 지점: S4.</strong> 점군이나 BIM 모델이 들어가고 현장에 겹쳐 보이는 화면이 나온다.
+5절이 "화면에 띄우기"라면 이쪽은 "실제 공간에 맞춰 띄우기"다. 그래서 공간 앵커가 추가로 필요하다.</p>
+<p><strong>결합 방식</strong></p>
+<ul>
+<li><strong>공간 앵커(spatial anchor).</strong> 가상 객체에 현실 세계의 위치와 방향을 주는 월드 고정 기준계다.
+  Meta Horizon OS는 생성·저장·재탐색·공유로 이어지는 앵커 생애주기를 지원한다.
+  저장은 기기 로컬 저장소와 Meta 서버 저장소를 추상화한 계층 위에서 이루어지며, 공유 앵커를 쓰면
+  같은 공간에 있는 여러 사용자가 동일한 정렬을 유지한다
+  (출처: <a href="https://developers.meta.com/horizon/documentation/unity/unity-spatial-anchors-overview/" target="_blank" rel="noopener">https://developers.meta.com/horizon/documentation/unity/unity-spatial-anchors-overview/</a>,
+  확인 2026-09-21, 벤더). 앱이 소유하는 Spatial Anchor와 시스템이 소유하는 Scene Anchor가 구분된다는
+  점도 실무에서 걸린다. 가구·벽 정보는 앱이 고칠 수 없다.</li>
+<li><strong>헤드셋 쪽 동향.</strong> visionOS 26은 위젯이 사용자의 공간에 자리 잡고 헤드셋을 다시 착용할 때마다
+  같은 자리에 나타나게 했고, 기기 공유 풀 관리와 인가된 사람만 기밀 자료를 볼 수 있게 하는
+  Protected Content API 같은 기업용 기능을 함께 내놨다
+  (출처: <a href="https://www.apple.com/newsroom/2025/06/visionos-26-introduces-powerful-new-spatial-experiences-for-apple-vision-pro/" target="_blank" rel="noopener">https://www.apple.com/newsroom/2025/06/visionos-26-introduces-powerful-new-spatial-experiences-for-apple-vision-pro/</a>,
+  확인 2026-09-21, 벤더). 다만 이 발표문에 영속 공간 앵커가 명시돼 있지는 않다.</li>
+<li><strong>VR 리뷰.</strong> 현장에 가지 않고 스캔된 공간을 걸어 보는 쪽은 앵커 문제가 없어 진입이 훨씬 쉽다.
+  설계 검토, 발주처 설명, 안전 교육이 먼저 자리 잡은 이유다.</li>
+</ul>
+<figure class="photo"><div class="fig-box"><img src="img/04-adjacent-tech-hololens-scan.jpg" alt="HoloLens를 쓴 발표자 뒤 화면에, 헤드셋이 방을 훑으며 만든 흰색 삼각형 메시가 실내 영상 위에 겹쳐 보인다" loading="lazy"></div><figcaption><span class="fig-label">그림 5</span><b>HoloLens(1세대)가 방을 스캔하는 장면.</b> 뒤쪽 화면은 착용자의 시야로, 헤드셋이 주변을 훑으며 만든 공간 메시가 실제 방 위에 겹쳐 있다. 가상 객체를 현실에 고정하려면 기기가 먼저 이렇게 공간을 파악해야 한다. 사진에 BIM 중첩이나 공간 앵커 자체가 찍힌 것은 아니다.<span class="credit">사진: Kai Kowalewski · <a href="https://commons.wikimedia.org/wiki/File:MicrosoftHoloLensRoomScan.JPG" target="_blank" rel="noopener">Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></span></figcaption></figure>
+
+<p><strong>AEC 관점:</strong> AR 현장 중첩의 병목은 헤드셋 성능이 아니라 정렬 정확도와 장비 운용이다. 수 센티미터
+어긋난 중첩은 오히려 오판을 부른다. 먼지·소음·안전모가 있는 현장에서 헤드셋을 쓸 수 있느냐도 별개 문제다.
+당분간은 태블릿 AR이 현실적인 선택지로 남을 공산이 크다 <span class="est">(추정)</span>.</p>
+<hr />
+<h2 id="7-로보틱스">7. 로보틱스</h2>
+<p><strong>연결 지점: S1 → S5.</strong> 사람이 들고 다니던 스캐너를 로봇이 대신 들고, 그 결과 일회성 캡처가
+정기 캡처로 바뀐다. 5단계 순환을 실제로 돌게 만드는 장치다.</p>
+<figure class="photo"><div class="fig-box"><img src="img/04-adjacent-tech-spot.jpg" alt="노란색 사족보행 로봇 Boston Dynamics Spot이 숲길에 서 있다. 등에 작은 장비가 실려 있다" loading="lazy"></div><figcaption><span class="fig-label">그림 6</span><b>Boston Dynamics Spot.</b> 본문의 Trimble X7과 Leica BLK ARC가 얹히는 플랫폼이다. 이 사진의 로봇에는 레이저 스캐너가 달려 있지 않고, 등에 실린 장비가 무엇인지도 출처에 나오지 않는다.<span class="credit">사진: Jonte · <a href="https://commons.wikimedia.org/wiki/File:Spot_by_Boston_Dynamics.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></span></figcaption></figure>
+
+<p><strong>결합 방식</strong></p>
+<ul>
+<li><strong>스캐너를 얹은 사족보행 로봇.</strong> Trimble은 2021년 10월 19일 X7 3D 레이저 스캐너와 FieldLink
+  소프트웨어를 Boston Dynamics Spot에 완전 통합한 솔루션을 발표했다. FieldLink에서 웨이포인트 경로를
+  미리 지정하면 Spot이 그 경로를 따라가며 스캔하고, 수집 임무는 정기적으로 반복 실행하도록 예약할 수
+  있다. 도킹 스테이션은 기가비트 이더넷으로 사무실까지 데이터를 계속 넘긴다
+  (출처: <a href="https://news.trimble.com/2021-10-19-Trimble-Releases-Turnkey-Autonomous-Robotic-Scanning-Solution" target="_blank" rel="noopener">https://news.trimble.com/2021-10-19-Trimble-Releases-Turnkey-Autonomous-Robotic-Scanning-Solution</a>,
+  확인 2026-09-21, 벤더). 널리 인용되는 "X7 2mm 정확도" 수치는 이 보도자료 본문에 없다.
+  다른 제품 자료에서 옮겨 온 것으로 보이므로 이 문서에서는 쓰지 않는다.</li>
+<li><strong>인증된 페이로드.</strong> Leica Geosystems는 2024년 9월 24일 BLK ARC를 Spot용 첫 인증 리얼리티 캡처
+  장비로 발표했다. Spot 앱에서 레이저 스캐닝이 포함된 Autowalk를 시작하면 사람 개입 없이 실행된다.
+  용도로는 플랜트·창고·폐쇄 구조물의 현황 기록, 자산 관리, BIM 모델링, 화재 조사를 든다
+  (출처: <a href="https://leica-geosystems.com/about-us/news-room/news-overview/2024/09/leica-blk-arc-now-the-first-certified-reality-capture-device-available-for-boston-dynamics-spot" target="_blank" rel="noopener">https://leica-geosystems.com/about-us/news-room/news-overview/2024/09/leica-blk-arc-now-the-first-certified-reality-capture-device-available-for-boston-dynamics-spot</a>,
+  확인 2026-09-21, 벤더).</li>
+<li><strong>무엇이 달라지는가.</strong> 로봇이 바꾸는 것은 정확도가 아니라 <strong>빈도</strong>다. 사람이 하면 월 1회인 스캔이
+  로봇이 하면 주 1회 또는 야간 매일이 된다. 빈도가 올라가면 2절의 변화 탐지와 1절의 트윈 갱신이
+  비로소 의미가 생긴다. 로보틱스는 단독으로 내는 가치보다 다른 기술을 돌아가게 하는 가치가 크다.</li>
+</ul>
+<p><strong>AEC 관점:</strong> 시공 중 현장은 바닥이 매일 바뀌고 자재가 통로를 막는다. 경로가 고정된 자율 반복 캡처가
+가장 먼저 자리 잡은 곳이 시공 현장이 아니라 플랜트·창고·데이터센터인 이유가 여기 있다.
+두 벤더가 공통으로 드는 용례도 그쪽이다.</p>
+<hr />
+<h2 id="8-iot센서">8. IoT·센서</h2>
+<p><strong>연결 지점: S5.</strong> 공간 데이터가 이미 있다는 전제 위에 시간 데이터를 얹는다. Reality Capture는
+"어느 시점의 모양"을 준다. IoT 센서는 "그 사이에 무슨 일이 있었는가"를 준다. 둘을 합쳐야 원인이 보인다.</p>
+<p><strong>결합 방식</strong></p>
+<ul>
+<li><strong>점군·BIM을 센서의 좌표 체계로 쓰기.</strong> 진동·온습도·변형률 센서가 뱉는 것은 시계열 숫자뿐이다.
+  숫자에 "3층 동측 보 중앙"이라는 위치가 붙어야 판단이 된다. 실측 모델이 그 위치 체계를 제공한다.
+  거꾸로 센서가 이상을 알리면 그 지점을 다시 스캔해 형상 변화를 확인하는 순서도 가능하다.</li>
+<li><strong>구조물 건전성 모니터링(SHM).</strong> 드론 사진측량·레이저 스캐닝으로 만든 3D 모델에 진동·온도·응력
+  센서 데이터를 결합해 교량 디지털 트윈을 구성하는 접근이 연구·시범 단계에서 다수 보고돼 있다.
+  다만 이 문서 작성 시점에 해당 원문에 접근할 수 없어 개별 수치를 확인하지 못했다 <span class="est">(추정,
+  검색 결과 요약 기준)</span>.</li>
+<li><strong>비용 구조가 다르다.</strong> 스캔은 1회 비용이 크고 이후는 싸다. 센서는 설치는 싸지만 통신·전원·교체 비용이
+  계속 든다. 두 기술을 같은 예산 항목으로 묶으면 어느 한쪽이 먼저 잘려 나간다 <span class="est">(추정)</span>.</li>
+</ul>
+<figure class="photo"><div class="fig-box"><img src="img/04-adjacent-tech-bridge-sensor.jpg" alt="리벳이 박힌 흰색 강교 부재에 녹색 기판의 변형률 센서가 붙어 있고, 케이블로 안테나 달린 무선 송신기와 이어져 있다" loading="lazy"></div><figcaption><span class="fig-label">그림 7</span><b>교량 부재에 붙인 무선 변형률 센서.</b> Gold Star Memorial Bridge에 설치된 Resensys SenSpot이다. 센서가 내보내는 것은 시계열 숫자뿐이어서, 이것이 "어느 부재의 어느 지점"인지는 실측 모델이 알려 줘야 한다.<span class="credit">사진: Mehkalan · <a href="https://commons.wikimedia.org/wiki/File:Resensys-SenSpot-Gold-Star-Bridge.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></span></figcaption></figure>
+
+<p><strong>AEC 관점:</strong> 신축 현장보다 유지관리 자산에서 쓸모가 크다. 교량·터널·댐처럼 접근이 어렵고 사고 비용이
+큰 대상이 1순위다. 국내 시설물안전법 체계의 정기점검 업무와 접점이 크지만, 제도가 요구하는 산출물
+형식과 트윈 데이터 형식이 아직 맞지 않는다 <span class="est">(추정, 제도 원문 미확인)</span>.</p>
+<hr />
+<h2 id="9-지리공간gis좌표계">9. 지리공간(GIS)·좌표계</h2>
+<p><strong>연결 지점: S2 → S3.</strong> 이 절은 화려하지 않지만 빠지면 나머지가 전부 어긋난다. 정합된 점군이
+"지구 위 어디인가"라는 답을 얻는 단계이고, 여기서 틀리면 1절의 BIM 연계도 5절의 도시 규모 통합도 무너진다.</p>
+<p><strong>결합 방식</strong></p>
+<ul>
+<li><strong>좌표계 변환.</strong> 지상 레이저 스캐닝 점군을 지심 좌표계로 옮길 때는 원점 3성분, 축척 1개, 회전각
+  3개의 7 파라미터 헬머트 변환을 쓰고, 기준점 여러 개를 두고 최소제곱으로 파라미터를 푼다 <span class="est">(추정,
+  검색 결과 요약 기준이며 원문 미확인)</span>. 실무에서 사고가 나는 지점은 수평 좌표계보다 <strong>수직 기준면</strong>이다.
+  타원체고와 표고를 섞으면 수십 미터가 어긋난다.</li>
+<li><strong>IFC 안의 좌표계.</strong> IFC는 IfcProjectedCRS로 투영 좌표계를, IfcMapConversion으로 모델 좌표에서
+  지도 좌표로 가는 변환을 담는다. Esri는 IFC 모델이 제대로 지리 참조되려면 IFCSite, IFCProjectedCRS,
+  IFCMapConversion 세 엔티티가 모델 안에 있어야 하며, Revit에서 좌표계의 EPSG 코드를 입력하고
+  Project Base Point를 쓰면 이 엔티티들이 제대로 내보내진다고 안내한다
+  (출처: <a href="https://doc.arcgis.com/en/geobim/11.2/get-started/georeferencing-workflows.htm" target="_blank" rel="noopener">https://doc.arcgis.com/en/geobim/11.2/get-started/georeferencing-workflows.htm</a>,
+  확인 2026-09-21, 벤더). 그런데 이 표현으로도 충분치 않다는 지적이 있다. Jaud, Clemen,
+  Muhič, Borrmann(2022)은 IFC의 지리 참조 방식이 인프라·건축 산업 요구를 충족하지 못한다고 보고,
+  지리 좌표계를 지원하는 엔티티와 BIM 형상의 강체 변환을 담는 엔티티 두 개를 스키마에 추가할 것을
+  제안했다 (출처: <a href="https://isprs-annals.copernicus.org/articles/X-4-W2-2022/145/2022/" target="_blank" rel="noopener">https://isprs-annals.copernicus.org/articles/X-4-W2-2022/145/2022/</a>,
+  확인 2026-09-21, 학술).</li>
+<li><strong>도시 규모 통합.</strong> 프로젝트마다 다른 로컬 좌표를 쓰면 개별 모델은 멀쩡한데 모아 놓으면 겹치지
+  않는다. EPSG 코드로 좌표계를 명시하는 습관이 도시 규모 통합의 최소 조건이다.</li>
+</ul>
+<figure><div class="fig-box wide"><svg viewBox="0 0 760 372" role="img" aria-label="지리 참조 사슬: 스캔 좌표에서 헬머트 변환을 거쳐 국가 좌표계와 IFC로 가는 경로, 그리고 타원체고와 표고를 섞는 함정">
+  <text class="t-hd" x="20" y="26">수평: 스캔 좌표가 지도 좌표를 얻는 길</text>
+  <rect x="20" y="42" width="190" height="72" rx="4" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="34" y="68">정합된 점군</text>
+  <text class="t-tick" x="34" y="88">하나의 좌표계로 묶였지만</text>
+  <text class="t-tick" x="34" y="104">지구 위 어디인지는 모른다</text>
+  <line x1="210" y1="78" x2="262" y2="78" stroke="var(--muted)" stroke-width="1.5"></line>
+  <path d="M256 73 L266 78 L256 83 Z" fill="var(--muted)"></path>
+  <rect x="268" y="42" width="230" height="72" rx="4" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1.5"></rect>
+  <text class="t-lab" x="282" y="68">7 파라미터 헬머트 변환</text>
+  <text class="t-tick" x="282" y="88">이동 3 · 축척 1 · 회전 3</text>
+  <text class="t-tick" x="282" y="104">기준점 여러 개로 최소제곱 풀이</text>
+  <line x1="498" y1="78" x2="550" y2="78" stroke="var(--muted)" stroke-width="1.5"></line>
+  <path d="M544 73 L554 78 L544 83 Z" fill="var(--muted)"></path>
+  <rect x="556" y="42" width="184" height="72" rx="4" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="570" y="68">지도 좌표계</text>
+  <text class="t-tick" x="570" y="88">EPSG 코드로 명시</text>
+  <text class="t-tick" x="570" y="104">국내: TM · KGD2002/2012</text>
+  <line x1="648" y1="114" x2="648" y2="134" stroke="var(--muted)" stroke-width="1.5"></line>
+  <path d="M643 128 L648 138 L653 128 Z" fill="var(--muted)"></path>
+  <rect x="268" y="140" width="472" height="56" rx="4" fill="var(--sunk)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="282" y="164">IFC 안에서는 IfcSite · IfcProjectedCRS · IfcMapConversion</text>
+  <text class="t-tick" x="282" y="184">셋이 다 있어야 지리 참조된다(Esri). 부족하다는 학계 지적도 있다</text>
+  <line x1="20" y1="214" x2="740" y2="214" stroke="var(--rule)"></line>
+  <text class="t-hd" x="20" y="242">수직: 사고가 실제로 나는 곳</text>
+  <path d="M30 284 C 110 272, 170 296, 250 280 S 360 270, 400 282" fill="none" stroke="var(--ink)" stroke-width="2"></path>
+  <text class="t-tick" x="300" y="266">지표</text>
+  <circle cx="190" cy="286" r="5" fill="var(--ink)"></circle>
+  <text class="t-lab" x="200" y="278">P</text>
+  <line x1="30" y1="318" x2="400" y2="318" stroke="var(--near)" stroke-width="1.5"></line>
+  <text class="t-tick" x="300" y="312">표고 기준면</text>
+  <path d="M30 352 C 150 344, 280 344, 400 352" fill="none" stroke="var(--far)" stroke-width="1.5" stroke-dasharray="6 4"></path>
+  <text class="t-tick" x="300" y="338">타원체</text>
+  <line x1="160" y1="318" x2="160" y2="294" stroke="var(--near)" stroke-width="1.5"></line>
+  <path d="M155 299 L160 289 L165 299 Z" fill="var(--near)"></path>
+  <text class="t-tick" x="104" y="310">표고 H</text>
+  <line x1="220" y1="347" x2="220" y2="294" stroke="var(--far)" stroke-width="1.5"></line>
+  <path d="M215 299 L220 289 L225 299 Z" fill="var(--far)"></path>
+  <text class="t-tick" x="228" y="334">타원체고 h</text>
+  <rect x="440" y="230" width="300" height="122" rx="4" fill="var(--far-soft)" stroke="var(--far)"></rect>
+  <text class="t-lab" x="454" y="256">같은 점 P의 높이가 둘이다</text>
+  <text class="t-tick" x="454" y="280">기준면이 다른 두 높이를 섞으면</text>
+  <text class="t-tick" x="454" y="298">수십 미터가 어긋난다</text>
+  <text class="t-tick" x="454" y="322">발주 사양에 좌표계와 수직 기준면을</text>
+  <text class="t-tick" x="454" y="340">함께 적어 두어야 한다</text>
+</svg></div><figcaption><span class="fig-label">그림 8</span><b>지리 참조의 두 축.</b> 위는 정합된 점군이 헬머트 변환을 거쳐 지도 좌표계와 IFC 엔티티로 가는 길이다(헬머트 변환 설명은 본문과 같이 추정). 아래는 같은 점의 높이가 기준면에 따라 둘로 갈린다는 뜻이다. 두 기준면의 간격과 위아래 관계는 개념도로만 그렸다.</figcaption></figure>
+
+<p><strong>AEC 관점:</strong> 국내는 중부원점 기반 TM 좌표계와 KGD2002/KGD2012 계열 기준계를 쓰고 사업마다 적용이
+갈린다. 스캔 발주 사양에 좌표계와 수직 기준면을 명시하지 않으면 납품 후 통합 단계에서 반드시 문제가
+터진다 <span class="est">(추정, 국내 기준 원문 미확인)</span>. 이 절은 기술 학습보다 <strong>발주 문서 작성 역량</strong>에 가깝다.</p>
+<hr />
+<h2 id="10-표준상호운용">10. 표준·상호운용</h2>
+<p><strong>연결 지점: 전 단계.</strong> 표준은 파이프라인의 한 지점이 아니라 단계 사이의 이음매에 붙는다.
+S2→S3의 이음매에 IFC가, S4의 이음매에 3D Tiles가, 여러 도구 사이 장면 교환에 USD가 놓인다.</p>
+<p><strong>결합 방식</strong></p>
+<ul>
+<li><strong>OGC — 스트리밍 규격.</strong> 3D Tiles가 사진측량·건물·BIM/CAD·점군을 한 규격 안에서 다룬다는 점은
+  5절에서 설명했다 (출처: <a href="https://www.ogc.org/standards/3dtiles/" target="_blank" rel="noopener">https://www.ogc.org/standards/3dtiles/</a>, 확인 2026-09-21, 표준).
+  뷰어 종속을 피하는 가장 값싼 방법이 규격 준수다.</li>
+<li><strong>buildingSMART — 객체·인수인계 규격.</strong> IFC는 객체 모델의 공통 언어이고, COBie는 준공 시점에
+  운영 정보를 넘기는 규격이다. COBie는 스프레드시트 외에 STEP Part 21(IFC)과 ifcXML로도 전달되고,
+  NBIMS-US는 표준 승인, BS 1192-4:2014는 실무 지침, GSA P-100은 납품 요건이라는 서로 다른 방식으로 채택했다
+  (출처: <a href="https://en.wikipedia.org/wiki/COBie" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/COBie</a>, 확인 2026-09-21, 제3자).
+  buildingSMART International이 ISO 16739 기반 규격으로 미국 사양을 대체하는 작업을 2020년 이후
+  진행 중이라는 서술도 같은 출처에 있다.</li>
+<li><strong>USD — 장면 교환의 후발 주자.</strong> Alliance for OpenUSD는 2026년 3월 25일 Core Specification 1.0
+  비준 이후의 진척과 신규 회원 7곳(Aras, Booz Allen Hamilton, C-Infinity, Mobiltech, Qualcomm
+  Technologies, SGDL Innovation, XGRIDS) 합류를 발표했다. 적용 산업으로 디지털 트윈과 피지컬 AI,
+  도시 규모 3D 데이터셋과 공간 계획, XR, 에너지·인프라를 함께 든다
+  (출처: <a href="https://aousd.org/news/alliance-for-openusd-announces-new-member-milestone-industrial-momentum-and-core-specification-progress/" target="_blank" rel="noopener">https://aousd.org/news/alliance-for-openusd-announces-new-member-milestone-industrial-momentum-and-core-specification-progress/</a>,
+  확인 2026-09-21, 표준·컨소시엄). 신규 회원 중 Mobiltech와 XGRIDS가 공간 스캐닝 쪽 회사라는 점은
+  USD가 Reality Capture 진영으로 넘어오고 있다는 신호로 읽힌다 <span class="est">(추정)</span>.</li>
+<li><strong>겹침을 어떻게 볼 것인가.</strong> IFC, 3D Tiles, USD는 서로 경쟁하는 관계가 아니라 맡은 층위가 다르다. IFC는 의미를,
+  3D Tiles는 전송을, USD는 장면 조립을 맡는다. 어느 하나가 나머지를 대체한다는 서술을 만나면
+  누가 쓴 글인지부터 보는 편이 좋다.</li>
+</ul>
+<figure><div class="fig-box wide"><svg viewBox="0 0 760 340" role="img" aria-label="IFC, COBie, 3D Tiles, USD가 파이프라인 S1에서 S5의 어느 이음매에 놓이는지 보여주는 층위도">
+  <rect x="160" y="26" width="112" height="22" rx="2" fill="var(--sunk)"></rect>
+  <rect x="276" y="26" width="112" height="22" rx="2" fill="var(--sunk)"></rect>
+  <rect x="392" y="26" width="112" height="22" rx="2" fill="var(--sunk)"></rect>
+  <rect x="508" y="26" width="112" height="22" rx="2" fill="var(--sunk)"></rect>
+  <rect x="624" y="26" width="112" height="22" rx="2" fill="var(--sunk)"></rect>
+  <text class="t-tick" x="216" y="41" text-anchor="middle">S1 캡처</text>
+  <text class="t-tick" x="332" y="41" text-anchor="middle">S2 정합·처리</text>
+  <text class="t-tick" x="448" y="41" text-anchor="middle">S3 의미화</text>
+  <text class="t-tick" x="564" y="41" text-anchor="middle">S4 배포·활용</text>
+  <text class="t-tick" x="680" y="41" text-anchor="middle">S5 운영·갱신</text>
+  <line x1="274" y1="54" x2="274" y2="290" stroke="var(--rule-soft)"></line>
+  <line x1="390" y1="54" x2="390" y2="290" stroke="var(--rule-soft)"></line>
+  <line x1="506" y1="54" x2="506" y2="290" stroke="var(--rule-soft)"></line>
+  <line x1="622" y1="54" x2="622" y2="290" stroke="var(--rule-soft)"></line>
+  <text class="t-hd" x="20" y="82">USD</text>
+  <text class="t-tick" x="20" y="100">장면 조립 · AOUSD</text>
+  <rect x="160" y="66" width="576" height="40" rx="3" fill="var(--sunk)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="448" y="91" text-anchor="middle">여러 도구 사이 장면 교환 · Core Spec 1.0 비준(2026.3)</text>
+  <text class="t-hd" x="20" y="140">3D Tiles</text>
+  <text class="t-tick" x="20" y="158">전송 · OGC</text>
+  <rect x="508" y="124" width="112" height="40" rx="3" fill="var(--far-soft)" stroke="var(--far)"></rect>
+  <text class="t-lab" x="564" y="149" text-anchor="middle">스트리밍</text>
+  <text class="t-tick" x="500" y="149" text-anchor="end">점군·사진측량·BIM을 한 규격으로</text>
+  <text class="t-hd" x="20" y="198">IFC</text>
+  <text class="t-tick" x="20" y="216">의미 · buildingSMART</text>
+  <rect x="306" y="182" width="168" height="40" rx="3" fill="var(--near-soft)" stroke="var(--near)"></rect>
+  <text class="t-lab" x="390" y="207" text-anchor="middle">점군 → 객체 모델</text>
+  <text class="t-hd" x="20" y="256">COBie</text>
+  <text class="t-tick" x="20" y="274">인수인계 · buildingSMART</text>
+  <rect x="448" y="240" width="288" height="40" rx="3" fill="var(--near-soft)" stroke="var(--near)" stroke-dasharray="5 3"></rect>
+  <text class="t-lab" x="592" y="265" text-anchor="middle">준공 시점에 운영 정보 넘기기</text>
+  <text class="t-tick" x="160" y="312">COBie 전달 형식: 스프레드시트 · STEP Part 21(IFC) · ifcXML</text>
+  <text class="t-tick" x="160" y="330">셋은 경쟁 관계가 아니라 층위가 다르다: 의미(IFC) · 전송(3D Tiles) · 장면 조립(USD)</text>
+</svg></div><figcaption><span class="fig-label">그림 9</span><b>표준 넷이 놓이는 층위.</b> IFC는 S2→S3 이음매의 의미를, 3D Tiles는 S4의 전송을, USD는 도구 사이의 장면 조립을 맡는다. COBie 막대를 S3~S5에 걸쳐 그린 것은 "준공 시점에 운영 정보를 넘긴다"는 본문을 작성자가 배치한 것이다<span class="est">(추정)</span>.</figcaption></figure>
+
+<p><strong>AEC 관점:</strong> 표준은 배우는 데 시간이 걸리고 당장 눈에 보이는 성과가 없다. 그래서 늘 뒤로 밀린다.
+그러나 납품 데이터가 5년 뒤에도 열려야 하는 공공 발주에서는 표준 준수가 곧 계약 조건이다.
+기술 선택이 아니라 사업 조건으로 접근해야 한다.</p>
+<hr />
+<h2 id="11-조합-난이도-대비-가치">11. 조합 난이도 대비 가치</h2>
+<p>아래 세 열(성숙도·진입 난이도·기대 가치)은 출처로 뒷받침되는 수치가 아니라 <strong>작성자 판단<span class="est">(추정)</span></strong>이다.
+1~10절의 근거 위에서 매겼고, 기준은 다음과 같다.</p>
+<ul>
+<li><strong>성숙도</strong>: 현장 납품 사례가 있는가, 아니면 논문·시범 단계인가</li>
+<li><strong>진입 난이도</strong>: 한 사람이 몇 달 안에 쓸 만한 수준에 닿을 수 있는가. 자본 투자도 포함한다</li>
+<li><strong>기대 가치</strong>: 건설·AEC 실무에서 지금 무엇이 달라지는가</li>
+</ul>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>기술</th>
+<th>연결 지점</th>
+<th>성숙도</th>
+<th>진입 난이도</th>
+<th>기대 가치</th>
+<th>판단 근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>표준·상호운용</td>
+<td>단계 사이 이음매 전체</td>
+<td>높음</td>
+<td>낮음</td>
+<td>높음</td>
+<td>규격 문서 읽기로 시작, 공공 발주 요건</td>
+</tr>
+<tr>
+<td>클라우드·대용량</td>
+<td>S4 배포</td>
+<td>높음</td>
+<td>낮음~중</td>
+<td>높음</td>
+<td>상용 서비스 성숙, 비용 설계가 관건</td>
+</tr>
+<tr>
+<td>지리공간·좌표계</td>
+<td>S2→S3</td>
+<td>매우 높음</td>
+<td>중</td>
+<td>높음</td>
+<td>측량 기본기, 빠뜨리면 전부 어긋남</td>
+</tr>
+<tr>
+<td>BIM·디지털 트윈</td>
+<td>S3→S5</td>
+<td>높음</td>
+<td>중</td>
+<td>매우 높음</td>
+<td>Reality Capture의 출구, 이미 발주 요건</td>
+</tr>
+<tr>
+<td>SLAM·센서 퓨전</td>
+<td>S1↔S2</td>
+<td>높음</td>
+<td>높음</td>
+<td>중~높음</td>
+<td>장비 선택·정확도 판단의 근거가 됨</td>
+</tr>
+<tr>
+<td>컴퓨터 비전·딥러닝</td>
+<td>S2→S3</td>
+<td>중~높음</td>
+<td>높음</td>
+<td>높음</td>
+<td>자동화의 실제 엔진, 학습 데이터가 병목</td>
+</tr>
+<tr>
+<td>IoT·센서</td>
+<td>S5 운영</td>
+<td>중~높음</td>
+<td>중</td>
+<td>중</td>
+<td>유지관리 자산에 한정, 운영비 부담</td>
+</tr>
+<tr>
+<td>XR</td>
+<td>S4 배포</td>
+<td>중</td>
+<td>중</td>
+<td>중</td>
+<td>VR 리뷰는 지금, AR 정렬 정확도는 아직</td>
+</tr>
+<tr>
+<td>로보틱스</td>
+<td>S1→S5</td>
+<td>중</td>
+<td>높음(자본)</td>
+<td>중~높음</td>
+<td>반복 캡처 빈도를 바꾸나 적용 시설 제한</td>
+</tr>
+<tr>
+<td>생성형 AI(LLM·VLM)</td>
+<td>S4 배포</td>
+<td>낮음~중</td>
+<td>낮음</td>
+<td>중(변동 큼)</td>
+<td>초안 생성은 즉시, 판정 위임은 시기상조</td>
+</tr>
+</tbody>
+</table></div>
+<figure><div class="fig-box wide"><svg viewBox="0 0 760 412" role="img" aria-label="연계 기술의 성숙도 대 진입 난이도 산점도. 원 크기는 기대 가치">
+        <line x1="90" y1="30" x2="90" y2="340" stroke="var(--rule)" stroke-width="1"></line>
+        <line x1="90" y1="340" x2="716" y2="340" stroke="var(--rule)" stroke-width="1"></line>
+        <line x1="90" y1="211.4" x2="716" y2="211.4" stroke="var(--rule-soft)" stroke-width="1" stroke-dasharray="3 4"></line>
+        <line x1="395" y1="30" x2="395" y2="340" stroke="var(--rule-soft)" stroke-width="1" stroke-dasharray="3 4"></line>
+        <text class="t-tick" x="82" y="86" text-anchor="end">매우 높음</text>
+        <text class="t-tick" x="82" y="172" text-anchor="end">높음</text>
+        <text class="t-tick" x="82" y="258" text-anchor="end">중</text>
+        <text class="t-tick" x="82" y="301" text-anchor="end">낮음~중</text>
+        <text class="t-lab" x="16" y="190" transform="rotate(-90 16 190)" text-anchor="middle">성숙도 →</text>
+        <text class="t-tick" x="191.7" y="358" text-anchor="middle">낮음</text>
+        <text class="t-tick" x="293.3" y="358" text-anchor="middle">낮음~중</text>
+        <text class="t-tick" x="395" y="358" text-anchor="middle">중</text>
+        <text class="t-tick" x="598.3" y="358" text-anchor="middle">높음</text>
+        <text class="t-lab" x="403" y="378" text-anchor="middle">진입 난이도 →</text>
+        <text class="t-tick" x="100" y="46" fill="var(--near)">지금 손대면 손해 볼 일이 적은 영역</text>
+        <text class="t-tick" x="706" y="330" text-anchor="end" fill="var(--far)">투자가 크거나 아직 이른 영역</text>
+        <circle cx="395" cy="82.9" r="15.6" fill="var(--near)" opacity="0.28" stroke="var(--near)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="416" y="87">지리공간 · 좌표계</text>
+        <circle cx="191.7" cy="168.6" r="15.6" fill="var(--near)" opacity="0.28" stroke="var(--near)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="191.7" y="143" text-anchor="middle">표준 · 상호운용</text>
+        <circle cx="293.3" cy="168.6" r="15.6" fill="var(--near)" opacity="0.28" stroke="var(--near)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="293.3" y="200" text-anchor="middle">클라우드 · 대용량</text>
+        <circle cx="395" cy="168.6" r="18" fill="var(--near)" opacity="0.28" stroke="var(--near)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="395" y="140" text-anchor="middle">BIM · 디지털 트윈</text>
+        <circle cx="598.3" cy="168.6" r="14.4" fill="var(--near)" opacity="0.28" stroke="var(--near)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="598.3" y="143" text-anchor="middle">SLAM · 센서 퓨전</text>
+        <circle cx="598.3" cy="211.4" r="15.6" fill="var(--near)" opacity="0.28" stroke="var(--near)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="618" y="215">컴퓨터 비전 · 딥러닝</text>
+        <circle cx="395" cy="211.4" r="13.2" fill="var(--near)" opacity="0.28" stroke="var(--near)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="413" y="215">IoT · 센서</text>
+        <circle cx="395" cy="254.3" r="13.2" fill="var(--near)" opacity="0.28" stroke="var(--near)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="413" y="258">XR</text>
+        <circle cx="598.3" cy="254.3" r="14.4" fill="var(--near)" opacity="0.28" stroke="var(--near)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="618" y="258">로보틱스</text>
+        <circle cx="191.7" cy="297.1" r="13.2" fill="var(--far)" opacity="0.28" stroke="var(--far)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="211" y="301">생성형 AI</text>
+        <g>
+          <text class="t-tick" x="90" y="398">원 크기 = 기대 가치</text>
+          <circle cx="238" cy="393" r="6.6" fill="none" stroke="var(--muted)" stroke-width="1"></circle>
+          <text class="t-tick" x="250" y="397">중</text>
+          <circle cx="292" cy="393" r="8.6" fill="none" stroke="var(--muted)" stroke-width="1"></circle>
+          <text class="t-tick" x="306" y="397">높음</text>
+          <circle cx="360" cy="393" r="10" fill="none" stroke="var(--muted)" stroke-width="1"></circle>
+          <text class="t-tick" x="374" y="397">매우 높음</text>
+        </g>
+      </svg></div><figcaption><span class="fig-label">그림 10</span><b>성숙도·진입 난이도·기대 가치를 한 장에.</b> 위 표를 산점도로 옮겼다. 세 값 모두 출처가 있는 수치가 아니라 작성자 판단이다<span class="est">(추정)</span>.</figcaption></figure>
+
+<p><strong>읽는 법.</strong> 표는 위쪽일수록 "지금 손대면 손해 볼 일이 적은 것"이다.
+표준·좌표계·클라우드 세 가지는 유행을 타지 않는다. 십 년 뒤에도 IFC와 좌표계 지식은 제값을 한다.
+반대로 맨 아래 생성형 AI는 진입은 가장 쉽지만 기대 가치의 편차는 가장 크다. 배우기 쉽다는 이유로
+우선순위를 올리면 판단을 그르친다.</p>
+<p><strong>조합의 관점.</strong> 표의 항목은 서로 독립적이지 않다. 로보틱스는 단독으로는 가치가 크지 않지만 반복 캡처
+빈도를 올려 2절 변화 탐지와 1절 트윈 갱신을 작동시킨다. 컴퓨터 비전은 BIM 연계가 없으면 라벨만
+남는다. 한 가지를 고를 때는 그것이 어느 조합의 부품인지를 함께 봐야 한다.
+이 관점이 핵심 연구 질문 5(학습 로드맵)로 이어진다.</p>
+<hr />
+<h2 id="12-이-문서가-답하지-못한-것">12. 이 문서가 답하지 못한 것</h2>
+<ul>
+<li>8절 SHM 사례의 정량 결과는 원문에 접근할 수 없어 확인하지 못했다. 다음 개정에서 개방 접근 논문으로 보강한다.</li>
+<li>9절의 국내 좌표계 서술과 8절의 시설물 점검 제도 서술은 국내 기준 원문을 확인하지 않았으므로 <span class="est">(추정)</span>이다.</li>
+<li>2절 변화 탐지 연구는 검색 요약 수준에서만 다뤘다. 개별 논문 검증이 필요하다.</li>
+<li>성숙도·난이도·가치 평가는 작성자 판단이며 조직 상황에 따라 순서가 바뀔 수 있다.</li>
+</ul>
+<hr />
+<h2 id="용어-후보">용어 후보</h2>
+<p><code>docs/00-glossary.md</code> 에 올릴 후보를 모았다. 정의는 한 줄 초안이며 용어집 담당이 다듬는다.</p>
+<ul>
+<li>Scan-to-BIM — 점군에서 바닥·벽·개구부 같은 건축 객체를 인식해 BIM 모델로 변환하는 작업 — <a href="https://www.opendesign.com/products/scan-to-bim" target="_blank" rel="noopener">https://www.opendesign.com/products/scan-to-bim</a></li>
+<li>IFC (Industry Foundation Classes) — 건축·인프라 객체 모델을 도구에 종속되지 않게 주고받기 위한 개방 규격 — <a href="https://isprs-annals.copernicus.org/articles/X-4-W2-2022/145/2022/" target="_blank" rel="noopener">https://isprs-annals.copernicus.org/articles/X-4-W2-2022/145/2022/</a> (용어집 담당이 buildingSMART 원문으로 보강 권장)</li>
+<li>COBie — 준공 시점에 장비 목록·보증·예방정비 정보를 발주처에 넘기기 위한 자산 정보 규격 — <a href="https://en.wikipedia.org/wiki/COBie" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/COBie</a></li>
+<li>3D Tiles — 대용량 3D 지리공간 데이터를 계층 타일로 나눠 스트리밍하는 OGC 커뮤니티 표준 — <a href="https://www.ogc.org/standards/3dtiles/" target="_blank" rel="noopener">https://www.ogc.org/standards/3dtiles/</a></li>
+<li>옥트리 LOD (octree level of detail) — 공간을 8분할로 재귀 분할해 거리에 따라 다른 해상도를 내보내는 자료구조 — <a href="https://github.com/potree/potree" target="_blank" rel="noopener">https://github.com/potree/potree</a></li>
+<li>Potree — TU Wien에서 나온 무료 오픈소스 WebGL 점군 뷰어 — <a href="https://github.com/potree/potree" target="_blank" rel="noopener">https://github.com/potree/potree</a></li>
+<li>의미분할 (semantic segmentation) — 점 하나하나에 벽·바닥·배관 같은 범주 이름을 붙이는 작업 — <a href="https://arxiv.org/abs/1911.11236" target="_blank" rel="noopener">https://arxiv.org/abs/1911.11236</a></li>
+<li>RandLA-Net — 랜덤 샘플링으로 한 번에 100만 점을 처리하는 대규모 점군 의미분할 신경망 — <a href="https://arxiv.org/abs/1911.11236" target="_blank" rel="noopener">https://arxiv.org/abs/1911.11236</a></li>
+<li>점군 정합 (point cloud registration) — 서로 다른 위치에서 얻은 점군을 하나의 좌표계로 겹쳐 맞추는 작업 — (용어집 담당이 별도 출처 확인 필요)</li>
+<li>ICP (Iterative Closest Point) — 가장 가까운 점 대응을 반복해 두 점군의 변환을 찾는 고전 정합 알고리즘 — (용어집 담당이 별도 출처 확인 필요)</li>
+<li>루프 클로저 (loop closure) — 이전에 지난 장소를 다시 인식해 SLAM의 누적 오차를 보정하는 절차 — (용어집 담당이 별도 출처 확인 필요)</li>
+<li>GrandSLAM — LiDAR SLAM·비주얼 SLAM·IMU를 묶은 Leica BLK ARC의 자율 주행·캡처 기술 — <a href="https://leica-geosystems.com/products/laser-scanners/scanners/leica-blk-arc" target="_blank" rel="noopener">https://leica-geosystems.com/products/laser-scanners/scanners/leica-blk-arc</a></li>
+<li>공간 앵커 (spatial anchor) — 가상 객체에 현실 세계의 위치·방향을 부여하는 월드 고정 기준계 — <a href="https://developers.meta.com/horizon/documentation/unity/unity-spatial-anchors-overview/" target="_blank" rel="noopener">https://developers.meta.com/horizon/documentation/unity/unity-spatial-anchors-overview/</a></li>
+<li>Autowalk — Boston Dynamics Spot이 미리 지정한 경로를 사람 개입 없이 반복 주행하는 기능 — <a href="https://leica-geosystems.com/about-us/news-room/news-overview/2024/09/leica-blk-arc-now-the-first-certified-reality-capture-device-available-for-boston-dynamics-spot" target="_blank" rel="noopener">https://leica-geosystems.com/about-us/news-room/news-overview/2024/09/leica-blk-arc-now-the-first-certified-reality-capture-device-available-for-boston-dynamics-spot</a></li>
+<li>IfcMapConversion — 모델 로컬 좌표를 지도 좌표로 옮기는 변환을 담는 IFC 엔티티 — <a href="https://doc.arcgis.com/en/geobim/11.2/get-started/georeferencing-workflows.htm" target="_blank" rel="noopener">https://doc.arcgis.com/en/geobim/11.2/get-started/georeferencing-workflows.htm</a></li>
+<li>IfcProjectedCRS — 모델이 사용하는 투영 좌표계를 EPSG 코드 등으로 명시하는 IFC 엔티티 — <a href="https://doc.arcgis.com/en/geobim/11.2/get-started/georeferencing-workflows.htm" target="_blank" rel="noopener">https://doc.arcgis.com/en/geobim/11.2/get-started/georeferencing-workflows.htm</a></li>
+<li>헬머트 7 파라미터 변환 — 원점 3, 축척 1, 회전 3으로 두 좌표계를 잇는 상사 변환 — (용어집 담당이 별도 출처 확인 필요)</li>
+<li>OpenUSD — 여러 도구 사이에서 대규모 3D 장면을 조립·교환하기 위한 개방 규격 — <a href="https://aousd.org/news/alliance-for-openusd-announces-new-member-milestone-industrial-momentum-and-core-specification-progress/" target="_blank" rel="noopener">https://aousd.org/news/alliance-for-openusd-announces-new-member-milestone-industrial-momentum-and-core-specification-progress/</a></li>
+<li>3D VLM (3D Vision-Language Model) — 3D 임베딩을 이미지·텍스트와 정렬해 자연어로 3D를 질의하게 하는 모델 — <a href="https://arxiv.org/abs/2609.05583" target="_blank" rel="noopener">https://arxiv.org/abs/2609.05583</a></li>
+<li>Set-of-Mark 프롬프팅 — 이미지의 관심 영역에 표시를 얹어 멀티모달 LLM의 분석 정확도를 높이는 기법 — <a href="http://www.iaarc.org/publications/2024_proceedings_of_the_41st_isarc_lille_france/automated_inspection_report_generation_using_multimodal_large_language_models_and_set-of-mark_prompting.html" target="_blank" rel="noopener">http://www.iaarc.org/publications/2024_proceedings_of_the_41st_isarc_lille_france/automated_inspection_report_generation_using_multimodal_large_language_models_and_set-of-mark_prompting.html</a></li>
+</ul>
+<div class="pager"><a href="03-use-cases.html">← 03 · 현재의 쓰임새</a><a href="05-learning-roadmap.html">05 · 학습 로드맵 →</a></div>
+<footer class="foot">이 페이지는 <a href="https://github.com/o-Fireheart-o/Reality_Capture_Research/blob/master/docs/04-adjacent-tech.md" target="_blank" rel="noopener">docs/04-adjacent-tech.md</a>에서 자동으로 만들었습니다. 내용이 다르면 원문이 기준입니다.</footer>
+</div>
+</main>
+</div>
+<script>
+(function(){
+  var b=document.getElementById('navToggle'), l=document.getElementById('navList');
+  function set(o){l.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');b.textContent=o?'목차 닫기':'목차 열기';}
+  b.addEventListener('click',function(){set(!l.classList.contains('open'));});
+  l.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});
+})();
+</script>
+</body>
+</html>

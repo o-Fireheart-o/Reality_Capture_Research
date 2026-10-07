@@ -34,6 +34,9 @@ jobs:
             cat site/index.html
             printf '\n</html>\n'
           } > _site/index.html
+          # 문서별 페이지(tools/build_pages.py 산출물)는 그대로 복사한다
+          cp -r site/pages _site/pages
+          rm -f _site/pages/figures/*.json
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

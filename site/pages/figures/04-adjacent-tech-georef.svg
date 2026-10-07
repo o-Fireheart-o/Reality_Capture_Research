@@ -1,0 +1,46 @@
+<svg viewBox="0 0 760 372" role="img" aria-label="지리 참조 사슬: 스캔 좌표에서 헬머트 변환을 거쳐 국가 좌표계와 IFC로 가는 경로, 그리고 타원체고와 표고를 섞는 함정">
+  <text class="t-hd" x="20" y="26">수평: 스캔 좌표가 지도 좌표를 얻는 길</text>
+  <rect x="20" y="42" width="190" height="72" rx="4" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="34" y="68">정합된 점군</text>
+  <text class="t-tick" x="34" y="88">하나의 좌표계로 묶였지만</text>
+  <text class="t-tick" x="34" y="104">지구 위 어디인지는 모른다</text>
+  <line x1="210" y1="78" x2="262" y2="78" stroke="var(--muted)" stroke-width="1.5"></line>
+  <path d="M256 73 L266 78 L256 83 Z" fill="var(--muted)"></path>
+  <rect x="268" y="42" width="230" height="72" rx="4" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1.5"></rect>
+  <text class="t-lab" x="282" y="68">7 파라미터 헬머트 변환</text>
+  <text class="t-tick" x="282" y="88">이동 3 · 축척 1 · 회전 3</text>
+  <text class="t-tick" x="282" y="104">기준점 여러 개로 최소제곱 풀이</text>
+  <line x1="498" y1="78" x2="550" y2="78" stroke="var(--muted)" stroke-width="1.5"></line>
+  <path d="M544 73 L554 78 L544 83 Z" fill="var(--muted)"></path>
+  <rect x="556" y="42" width="184" height="72" rx="4" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="570" y="68">지도 좌표계</text>
+  <text class="t-tick" x="570" y="88">EPSG 코드로 명시</text>
+  <text class="t-tick" x="570" y="104">국내: TM · KGD2002/2012</text>
+  <line x1="648" y1="114" x2="648" y2="134" stroke="var(--muted)" stroke-width="1.5"></line>
+  <path d="M643 128 L648 138 L653 128 Z" fill="var(--muted)"></path>
+  <rect x="268" y="140" width="472" height="56" rx="4" fill="var(--sunk)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="282" y="164">IFC 안에서는 IfcSite · IfcProjectedCRS · IfcMapConversion</text>
+  <text class="t-tick" x="282" y="184">셋이 다 있어야 지리 참조된다(Esri). 부족하다는 학계 지적도 있다</text>
+  <line x1="20" y1="214" x2="740" y2="214" stroke="var(--rule)"></line>
+  <text class="t-hd" x="20" y="242">수직: 사고가 실제로 나는 곳</text>
+  <path d="M30 284 C 110 272, 170 296, 250 280 S 360 270, 400 282" fill="none" stroke="var(--ink)" stroke-width="2"></path>
+  <text class="t-tick" x="300" y="266">지표</text>
+  <circle cx="190" cy="286" r="5" fill="var(--ink)"></circle>
+  <text class="t-lab" x="200" y="278">P</text>
+  <line x1="30" y1="318" x2="400" y2="318" stroke="var(--near)" stroke-width="1.5"></line>
+  <text class="t-tick" x="300" y="312">표고 기준면</text>
+  <path d="M30 352 C 150 344, 280 344, 400 352" fill="none" stroke="var(--far)" stroke-width="1.5" stroke-dasharray="6 4"></path>
+  <text class="t-tick" x="300" y="338">타원체</text>
+  <line x1="160" y1="318" x2="160" y2="294" stroke="var(--near)" stroke-width="1.5"></line>
+  <path d="M155 299 L160 289 L165 299 Z" fill="var(--near)"></path>
+  <text class="t-tick" x="104" y="310">표고 H</text>
+  <line x1="220" y1="347" x2="220" y2="294" stroke="var(--far)" stroke-width="1.5"></line>
+  <path d="M215 299 L220 289 L225 299 Z" fill="var(--far)"></path>
+  <text class="t-tick" x="228" y="334">타원체고 h</text>
+  <rect x="440" y="230" width="300" height="122" rx="4" fill="var(--far-soft)" stroke="var(--far)"></rect>
+  <text class="t-lab" x="454" y="256">같은 점 P의 높이가 둘이다</text>
+  <text class="t-tick" x="454" y="280">기준면이 다른 두 높이를 섞으면</text>
+  <text class="t-tick" x="454" y="298">수십 미터가 어긋난다</text>
+  <text class="t-tick" x="454" y="322">발주 사양에 좌표계와 수직 기준면을</text>
+  <text class="t-tick" x="454" y="340">함께 적어 두어야 한다</text>
+</svg>

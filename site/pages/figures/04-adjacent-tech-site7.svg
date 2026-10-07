@@ -1,0 +1,61 @@
+<svg viewBox="0 0 760 412" role="img" aria-label="연계 기술의 성숙도 대 진입 난이도 산점도. 원 크기는 기대 가치">
+        <line x1="90" y1="30" x2="90" y2="340" stroke="var(--rule)" stroke-width="1"></line>
+        <line x1="90" y1="340" x2="716" y2="340" stroke="var(--rule)" stroke-width="1"></line>
+        <line x1="90" y1="211.4" x2="716" y2="211.4" stroke="var(--rule-soft)" stroke-width="1" stroke-dasharray="3 4"></line>
+        <line x1="395" y1="30" x2="395" y2="340" stroke="var(--rule-soft)" stroke-width="1" stroke-dasharray="3 4"></line>
+
+        <text class="t-tick" x="82" y="86" text-anchor="end">매우 높음</text>
+        <text class="t-tick" x="82" y="172" text-anchor="end">높음</text>
+        <text class="t-tick" x="82" y="258" text-anchor="end">중</text>
+        <text class="t-tick" x="82" y="301" text-anchor="end">낮음~중</text>
+        <text class="t-lab" x="16" y="190" transform="rotate(-90 16 190)" text-anchor="middle">성숙도 →</text>
+
+        <text class="t-tick" x="191.7" y="358" text-anchor="middle">낮음</text>
+        <text class="t-tick" x="293.3" y="358" text-anchor="middle">낮음~중</text>
+        <text class="t-tick" x="395" y="358" text-anchor="middle">중</text>
+        <text class="t-tick" x="598.3" y="358" text-anchor="middle">높음</text>
+        <text class="t-lab" x="403" y="378" text-anchor="middle">진입 난이도 →</text>
+
+        <text class="t-tick" x="100" y="46" fill="var(--near)">지금 손대면 손해 볼 일이 적은 영역</text>
+        <text class="t-tick" x="706" y="330" text-anchor="end" fill="var(--far)">투자가 크거나 아직 이른 영역</text>
+
+        <circle cx="395" cy="82.9" r="15.6" fill="var(--near)" opacity="0.28" stroke="var(--near)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="416" y="87">지리공간 · 좌표계</text>
+
+        <circle cx="191.7" cy="168.6" r="15.6" fill="var(--near)" opacity="0.28" stroke="var(--near)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="191.7" y="143" text-anchor="middle">표준 · 상호운용</text>
+
+        <circle cx="293.3" cy="168.6" r="15.6" fill="var(--near)" opacity="0.28" stroke="var(--near)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="293.3" y="200" text-anchor="middle">클라우드 · 대용량</text>
+
+        <circle cx="395" cy="168.6" r="18" fill="var(--near)" opacity="0.28" stroke="var(--near)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="395" y="140" text-anchor="middle">BIM · 디지털 트윈</text>
+
+        <circle cx="598.3" cy="168.6" r="14.4" fill="var(--near)" opacity="0.28" stroke="var(--near)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="598.3" y="143" text-anchor="middle">SLAM · 센서 퓨전</text>
+
+        <circle cx="598.3" cy="211.4" r="15.6" fill="var(--near)" opacity="0.28" stroke="var(--near)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="618" y="215">컴퓨터 비전 · 딥러닝</text>
+
+        <circle cx="395" cy="211.4" r="13.2" fill="var(--near)" opacity="0.28" stroke="var(--near)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="413" y="215">IoT · 센서</text>
+
+        <circle cx="395" cy="254.3" r="13.2" fill="var(--near)" opacity="0.28" stroke="var(--near)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="413" y="258">XR</text>
+
+        <circle cx="598.3" cy="254.3" r="14.4" fill="var(--near)" opacity="0.28" stroke="var(--near)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="618" y="258">로보틱스</text>
+
+        <circle cx="191.7" cy="297.1" r="13.2" fill="var(--far)" opacity="0.28" stroke="var(--far)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="211" y="301">생성형 AI</text>
+
+        <g>
+          <text class="t-tick" x="90" y="398">원 크기 = 기대 가치</text>
+          <circle cx="238" cy="393" r="6.6" fill="none" stroke="var(--muted)" stroke-width="1"></circle>
+          <text class="t-tick" x="250" y="397">중</text>
+          <circle cx="292" cy="393" r="8.6" fill="none" stroke="var(--muted)" stroke-width="1"></circle>
+          <text class="t-tick" x="306" y="397">높음</text>
+          <circle cx="360" cy="393" r="10" fill="none" stroke="var(--muted)" stroke-width="1"></circle>
+          <text class="t-tick" x="374" y="397">매우 높음</text>
+        </g>
+      </svg>

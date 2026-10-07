@@ -1,8 +1,3 @@
-<title>Reality Capture 지형도</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Song+Myung&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<style>
 :root{
   --paper:#F1F4F0; --surface:#FAFCF8; --sunk:#E6EBE3;
   --ink:#151C19; --muted:#5B6862; --faint:#8A9791;
@@ -231,57 +226,37 @@ details.more[open] summary::before{content:"− "; }
 .foot{padding-block:44px 0; font-size:13px; color:var(--faint); line-height:1.75}
 .foot a{color:var(--muted)}
 @media (prefers-reduced-motion:reduce){*{animation:none !important; transition:none !important}}
-</style>
 
-<div class="wrap">
-<nav class="nav" aria-label="목차">
-  <div class="nav-brand">리서치 노트 · 2026</div>
-  <div class="nav-title">Reality Capture 지형도</div>
-  <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navList">목차 열기</button>
-  <ul class="nav-list" id="navList">
-    <li><a href="#summary"><span class="n">00</span><span>다섯 질문 요약</span></a></li>
-    <li><a href="#pipeline"><span class="n">—</span><span>S1–S5 파이프라인</span></a></li>
-    <li><a href="#tools"><span class="n">01</span><span>도구 지형도</span></a></li>
-    <li><a href="#tools-map" class="nav-sub">취득 방식 8종 지도</a></li>
-    <li><a href="#tools-precision" class="nav-sub">정밀도 비교</a></li>
-    <li><a href="#colmap" class="nav-sub">심층 · COLMAP</a></li>
-    <li><a href="#history"><span class="n">02</span><span>역사와 진행 방향</span></a></li>
-    <li><a href="#history-chain" class="nav-sub">병목 → 돌파 사슬</a></li>
-    <li><a href="#history-timeline" class="nav-sub">연표</a></li>
-    <li><a href="#usecases"><span class="n">03</span><span>현재의 쓰임새</span></a></li>
-    <li><a href="#usecases-limits" class="nav-sub">한계와 실패 요인</a></li>
-    <li><a href="#adjacent"><span class="n">04</span><span>연계 기술 지도</span></a></li>
-    <li><a href="#adjacent-value" class="nav-sub">난이도 대비 가치</a></li>
-    <li><a href="#roadmap"><span class="n">05</span><span>학습 로드맵</span></a></li>
-    <li><a href="#roadmap-t" class="nav-sub">T자형 조합</a></li>
-    <li><a href="#glossary"><span class="n">부록</span><span>용어집</span></a></li>
-    <li><a href="#method"><span class="n">부록</span><span>출처 원칙</span></a></li>
-    <li><a href="https://o-fireheart-o.github.io/Reality_Capture_Research/pages/01-tools.html"><span class="n">전문</span><span>문서별 페이지 · 그림 포함</span></a></li>
-    <li><a href="https://o-fireheart-o.github.io/Reality_Capture_Research/pages/00-glossary.html" class="nav-sub">용어집</a></li>
-    <li><a href="https://o-fireheart-o.github.io/Reality_Capture_Research/pages/01-tools.html" class="nav-sub">도구 지형도</a></li>
-    <li><a href="https://o-fireheart-o.github.io/Reality_Capture_Research/pages/01-tools/colmap.html" class="nav-sub">COLMAP</a></li>
-    <li><a href="https://o-fireheart-o.github.io/Reality_Capture_Research/pages/02-history.html" class="nav-sub">역사와 진행 방향</a></li>
-    <li><a href="https://o-fireheart-o.github.io/Reality_Capture_Research/pages/03-use-cases.html" class="nav-sub">현재의 쓰임새</a></li>
-    <li><a href="https://o-fireheart-o.github.io/Reality_Capture_Research/pages/04-adjacent-tech.html" class="nav-sub">연계 기술 지도</a></li>
-    <li><a href="https://o-fireheart-o.github.io/Reality_Capture_Research/pages/05-learning-roadmap.html" class="nav-sub">학습 로드맵</a></li>
-  </ul>
-  <div class="nav-foot">
-    작성일 2026-09-21<br>최종수정일 2026-10-07<br>
-    원본 마크다운은 저장소 <span style="font-family:var(--mono)">docs/</span>에 있습니다.
-  </div>
-</nav>
-
-<main class="main">
-<div class="col">
-
-<header class="mast">
-  <div class="eyebrow">Reality Capture 심층 리서치 · 2026</div>
-  <h1>현실을 숫자로<br>바꾸는 기술의 지형도</h1>
-  <p class="lede">사진측량에서 라이다, SLAM, 가우시안 스플래팅까지. 다섯 개의 연구 질문에 답하기 위해 쓴 문서 일곱 편을 한 장으로 묶었습니다. <b>전 산업을 훑되 건설·AEC를 주 렌즈로 삼습니다.</b></p>
-  <div class="meta-row">
-    <span>작성일 2026-09-21</span>
-    <span>최종수정일 2026-10-07</span>
-    <span>원문 7편 · 약 2,100행 · <a href="https://o-fireheart-o.github.io/Reality_Capture_Research/pages/01-tools.html">문서 전문 보기 →</a></span>
-    <span>출처 확인일 2026-09-21 · COLMAP 절 2026-10-07</span>
-  </div>
-</header>
+/* ---------- document pages (built from docs/*.md) ---------- */
+html{color-scheme:light}
+.doc h1{font-family:var(--display); font-size:clamp(30px,6vw,46px); line-height:1.15; letter-spacing:-.01em}
+.doc h2{margin-top:56px; padding-top:22px; border-top:1px solid var(--rule)}
+.doc h2:first-of-type{border-top:0}
+.doc h3{margin-top:34px}
+.doc h2,.doc h3,.doc h4{scroll-margin-top:72px}
+.doc blockquote{margin:18px 0; padding:12px 16px; background:var(--sunk); border-left:2px solid var(--near); border-radius:0 3px 3px 0; color:var(--muted); font-size:15px}
+.doc blockquote p{margin:6px 0}
+.doc code{font-family:var(--mono); font-size:.88em; background:var(--sunk); padding:1px 5px; border-radius:2px}
+.doc pre{background:var(--sunk); border:1px solid var(--rule); border-radius:3px; padding:14px 16px; overflow-x:auto; font-size:13px; line-height:1.6}
+.doc pre code{background:none; padding:0}
+.doc table{min-width:0}
+.doc hr{margin:40px 0}
+.doc a{word-break:break-all}
+.doc p a, .doc li a{word-break:normal; overflow-wrap:anywhere}
+.doc .est{font-family:var(--mono); font-size:.82em; color:var(--far)}
+.doc-meta{display:flex; flex-wrap:wrap; gap:6px 20px; margin-top:16px; font-family:var(--mono); font-size:11.5px; color:var(--faint)}
+.photo img{display:block; width:100%; height:auto; border-radius:2px}
+.photo .fig-box{padding:10px}
+.credit{display:block; margin-top:4px; font-size:11.5px; color:var(--faint)}
+.credit a{color:var(--faint)}
+.toc-title{font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--faint); margin:18px 0 4px}
+.nav-list a.cur{color:var(--ink); font-weight:600}
+.pager{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; margin-top:56px; padding-top:20px; border-top:1px solid var(--rule); font-size:14px}
+.pager a{text-decoration:none}
+.doc hr{display:none}
+.doc .tbl-wrap table{min-width:520px}
+.doc svg text{font-family:var(--body)}
+.doc svg .t-tick{font-size:11.5px}
+.doc svg .t-lab{font-size:12.5px}
+.doc svg .t-hd{font-size:13.5px; font-weight:600}
+.nav-list a.pg{display:block}

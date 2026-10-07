@@ -1,0 +1,153 @@
+<svg viewBox="0 0 760 442" role="img" aria-label="Reality Capture 주요 사건을 실제 연도 간격대로 놓은 연표. 1850년부터 1990년까지 140년보다 1990년 이후 35년에 사건이 더 많이 몰려 있다">
+  <line x1="30" y1="82" x2="730" y2="82" stroke="var(--rule)" stroke-width="1.5"></line>
+  <line x1="30.0" y1="79" x2="30.0" y2="85" stroke="var(--rule)" stroke-width="1"></line>
+  <text class="t-tick" x="30.0" y="97" text-anchor="middle">1850</text>
+  <line x1="130.0" y1="79" x2="130.0" y2="85" stroke="var(--rule)" stroke-width="1"></line>
+  <text class="t-tick" x="130.0" y="97" text-anchor="middle">1875</text>
+  <line x1="230.0" y1="79" x2="230.0" y2="85" stroke="var(--rule)" stroke-width="1"></line>
+  <text class="t-tick" x="230.0" y="97" text-anchor="middle">1900</text>
+  <line x1="330.0" y1="79" x2="330.0" y2="85" stroke="var(--rule)" stroke-width="1"></line>
+  <text class="t-tick" x="330.0" y="97" text-anchor="middle">1925</text>
+  <line x1="430.0" y1="79" x2="430.0" y2="85" stroke="var(--rule)" stroke-width="1"></line>
+  <text class="t-tick" x="430.0" y="97" text-anchor="middle">1950</text>
+  <line x1="530.0" y1="79" x2="530.0" y2="85" stroke="var(--rule)" stroke-width="1"></line>
+  <text class="t-tick" x="530.0" y="97" text-anchor="middle">1975</text>
+  <line x1="630.0" y1="79" x2="630.0" y2="85" stroke="var(--rule)" stroke-width="1"></line>
+  <text class="t-tick" x="630.0" y="97" text-anchor="middle">2000</text>
+  <line x1="730.0" y1="79" x2="730.0" y2="85" stroke="var(--rule)" stroke-width="1"></line>
+  <text class="t-tick" x="730.0" y="97" text-anchor="middle">2025</text>
+  <line x1="48.0" y1="78" x2="48.0" y2="75" stroke="var(--near)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="48.0" y="72" text-anchor="middle" style="fill:var(--near)">1850s 로쉐다</text>
+  <line x1="98.0" y1="78" x2="98.0" y2="75" stroke="var(--near)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="94.0" y="72" text-anchor="start" style="fill:var(--near)">1867 용어 등장</text>
+  <line x1="284.0" y1="78" x2="284.0" y2="75" stroke="var(--near)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="284.0" y="72" text-anchor="middle" style="fill:var(--near)">1912–15 항공사진·사진 지도</text>
+  <line x1="482.0" y1="78" x2="482.0" y2="75" stroke="var(--near)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="478.0" y="72" text-anchor="start" style="fill:var(--near)">1963 AP-1</text>
+  <line x1="458.0" y1="78" x2="458.0" y2="56" stroke="var(--near)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="458.0" y="53" text-anchor="middle" style="fill:var(--near)">1957 해석적 도화기</text>
+  <line x1="474.0" y1="86" x2="474.0" y2="103" stroke="var(--far)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="478.0" y="114" text-anchor="end" style="fill:var(--far)">1960–62 레이저·라이다</text>
+  <line x1="502.0" y1="86" x2="502.0" y2="122" stroke="var(--far)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="506.0" y="133" text-anchor="end" style="fill:var(--far)">1968 수심 라이다</text>
+  <line x1="514.0" y1="86" x2="514.0" y2="141" stroke="var(--far)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="514.0" y="152" text-anchor="middle" style="fill:var(--far)">1971 아폴로 15호</text>
+  <line x1="570.0" y1="86" x2="570.0" y2="103" stroke="var(--far)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="570.0" y="114" text-anchor="middle" style="fill:var(--far)">1985 GPS 항공 위치</text>
+  <text class="t-hd" x="30" y="23">① 1850–2025 전체</text>
+  <text class="t-tick" x="730" y="23" text-anchor="end">축척 1배</text>
+  <line x1="30.0" y1="82" x2="66.0" y2="82" stroke="var(--near)" stroke-width="5"></line>
+  <circle cx="98.0" cy="82" r="3.5" fill="var(--near)"></circle>
+  <line x1="278.0" y1="82" x2="290.0" y2="82" stroke="var(--near)" stroke-width="5"></line>
+  <circle cx="482.0" cy="82" r="3.5" fill="var(--near)"></circle>
+  <circle cx="458.0" cy="82" r="3.5" fill="var(--near)"></circle>
+  <line x1="470.0" y1="82" x2="478.0" y2="82" stroke="var(--far)" stroke-width="5"></line>
+  <circle cx="502.0" cy="82" r="3.5" fill="var(--far)"></circle>
+  <circle cx="514.0" cy="82" r="3.5" fill="var(--far)"></circle>
+  <circle cx="570.0" cy="82" r="3.5" fill="var(--far)"></circle>
+  <line x1="590.0" y1="82" x2="602.0" y2="82" stroke="var(--near)" stroke-width="5"></line>
+  <circle cx="602.0" cy="82" r="3.5" fill="var(--far)"></circle>
+  <circle cx="622.0" cy="82" r="3.5" fill="var(--far)"></circle>
+  <circle cx="634.0" cy="82" r="3.5" fill="var(--far)"></circle>
+  <circle cx="670.0" cy="82" r="3.5" fill="var(--far)"></circle>
+  <circle cx="674.0" cy="82" r="3.5" fill="var(--far)"></circle>
+  <circle cx="686.0" cy="82" r="3.5" fill="var(--far)"></circle>
+  <circle cx="710.0" cy="82" r="3.5" fill="var(--far)"></circle>
+  <circle cx="626.0" cy="82" r="3.5" fill="var(--near)"></circle>
+  <circle cx="630.0" cy="82" r="3.5" fill="var(--near)"></circle>
+  <circle cx="642.0" cy="82" r="3.5" fill="var(--near)"></circle>
+  <circle cx="654.0" cy="82" r="3.5" fill="var(--near)"></circle>
+  <circle cx="658.0" cy="82" r="3.5" fill="var(--near)"></circle>
+  <circle cx="674.0" cy="82" r="3.5" fill="var(--near)"></circle>
+  <circle cx="682.0" cy="82" r="3.5" fill="var(--near)"></circle>
+  <circle cx="690.0" cy="82" r="3.5" fill="var(--near)"></circle>
+  <circle cx="694.0" cy="82" r="3.5" fill="var(--near)"></circle>
+  <circle cx="710.0" cy="82" r="3.5" fill="var(--near)"></circle>
+  <circle cx="722.0" cy="82" r="3.5" fill="var(--near)"></circle>
+  <line x1="726.0" y1="82" x2="730.0" y2="82" stroke="var(--near)" stroke-width="5"></line>
+  <path d="M590.0 164 L590.0 170 L730 170 L730 164" fill="none" stroke="var(--muted)" stroke-width="1"></path>
+  <text class="t-tick" x="730" y="186" text-anchor="end">1990–2025 확대 ↓</text>
+  <line x1="30" y1="332" x2="730" y2="332" stroke="var(--rule)" stroke-width="1.5"></line>
+  <line x1="30.0" y1="329" x2="30.0" y2="335" stroke="var(--rule)" stroke-width="1"></line>
+  <text class="t-tick" x="30.0" y="347" text-anchor="middle">1990</text>
+  <line x1="130.0" y1="329" x2="130.0" y2="335" stroke="var(--rule)" stroke-width="1"></line>
+  <text class="t-tick" x="130.0" y="347" text-anchor="middle">1995</text>
+  <line x1="230.0" y1="329" x2="230.0" y2="335" stroke="var(--rule)" stroke-width="1"></line>
+  <text class="t-tick" x="230.0" y="347" text-anchor="middle">2000</text>
+  <line x1="330.0" y1="329" x2="330.0" y2="335" stroke="var(--rule)" stroke-width="1"></line>
+  <text class="t-tick" x="330.0" y="347" text-anchor="middle">2005</text>
+  <line x1="430.0" y1="329" x2="430.0" y2="335" stroke="var(--rule)" stroke-width="1"></line>
+  <text class="t-tick" x="430.0" y="347" text-anchor="middle">2010</text>
+  <line x1="530.0" y1="329" x2="530.0" y2="335" stroke="var(--rule)" stroke-width="1"></line>
+  <text class="t-tick" x="530.0" y="347" text-anchor="middle">2015</text>
+  <line x1="630.0" y1="329" x2="630.0" y2="335" stroke="var(--rule)" stroke-width="1"></line>
+  <text class="t-tick" x="630.0" y="347" text-anchor="middle">2020</text>
+  <line x1="730.0" y1="329" x2="730.0" y2="335" stroke="var(--rule)" stroke-width="1"></line>
+  <text class="t-tick" x="730.0" y="347" text-anchor="middle">2025</text>
+  <line x1="60.0" y1="328" x2="60.0" y2="306" stroke="var(--near)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="56.0" y="303" text-anchor="start" style="fill:var(--near)">1990s 초 디지털 워크스테이션</text>
+  <line x1="210.0" y1="328" x2="210.0" y2="325" stroke="var(--near)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="214.0" y="322" text-anchor="end" style="fill:var(--near)">1999 번들조정 재정식화</text>
+  <line x1="230.0" y1="328" x2="230.0" y2="306" stroke="var(--near)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="226.0" y="303" text-anchor="start" style="fill:var(--near)">2000 ADS40·DMC</text>
+  <line x1="290.0" y1="328" x2="290.0" y2="325" stroke="var(--near)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="290.0" y="322" text-anchor="middle" style="fill:var(--near)">2003 단안 SLAM</text>
+  <line x1="350.0" y1="328" x2="350.0" y2="287" stroke="var(--near)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="350.0" y="284" text-anchor="middle" style="fill:var(--near)">2006 Photo Tourism</text>
+  <line x1="370.0" y1="328" x2="370.0" y2="325" stroke="var(--near)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="366.0" y="322" text-anchor="start" style="fill:var(--near)">2007 PTAM</text>
+  <line x1="450.0" y1="328" x2="450.0" y2="306" stroke="var(--near)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="450.0" y="303" text-anchor="middle" style="fill:var(--near)">2011 Pix4D</text>
+  <line x1="490.0" y1="328" x2="490.0" y2="268" stroke="var(--near)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="490.0" y="265" text-anchor="middle" style="fill:var(--near)">2013 DJI 팬텀</text>
+  <line x1="530.0" y1="328" x2="530.0" y2="287" stroke="var(--near)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="526.0" y="284" text-anchor="start" style="fill:var(--near)">2015 ORB-SLAM·큐픽스</text>
+  <line x1="550.0" y1="328" x2="550.0" y2="306" stroke="var(--near)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="546.0" y="303" text-anchor="start" style="fill:var(--near)">2016 COLMAP·Part 107</text>
+  <line x1="630.0" y1="328" x2="630.0" y2="325" stroke="var(--near)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="630.0" y="322" text-anchor="middle" style="fill:var(--near)">2020 NeRF</text>
+  <line x1="690.0" y1="328" x2="690.0" y2="268" stroke="var(--near)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="694.0" y="265" text-anchor="end" style="fill:var(--near)">2023 3DGS</text>
+  <line x1="720.0" y1="328" x2="720.0" y2="249" stroke="var(--near)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="724.0" y="246" text-anchor="end" style="fill:var(--near)">2024–25 기초모델·스플랫</text>
+  <line x1="90.0" y1="336" x2="90.0" y2="353" stroke="var(--far)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="90.0" y="364" text-anchor="middle" style="fill:var(--far)">1993 Cyra 설립</text>
+  <line x1="190.0" y1="336" x2="190.0" y2="353" stroke="var(--far)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="190.0" y="364" text-anchor="middle" style="fill:var(--far)">1998 Cyrax 2400</text>
+  <line x1="250.0" y1="336" x2="250.0" y2="372" stroke="var(--far)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="250.0" y="383" text-anchor="middle" style="fill:var(--far)">2001 라이카 인수</text>
+  <line x1="430.0" y1="336" x2="430.0" y2="353" stroke="var(--far)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="434.0" y="364" text-anchor="end" style="fill:var(--far)">2010 Kinect</text>
+  <line x1="450.0" y1="336" x2="450.0" y2="372" stroke="var(--far)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="450.0" y="383" text-anchor="middle" style="fill:var(--far)">2011 KinectFusion·매터포트</text>
+  <line x1="510.0" y1="336" x2="510.0" y2="353" stroke="var(--far)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="510.0" y="364" text-anchor="middle" style="fill:var(--far)">2014 LOAM·Pro1</text>
+  <line x1="630.0" y1="336" x2="630.0" y2="353" stroke="var(--far)" stroke-width="0.8" opacity=".55"></line>
+  <text class="t-tick" x="630.0" y="364" text-anchor="middle" style="fill:var(--far)">2020 아이패드 라이다</text>
+  <text class="t-hd" x="30" y="216">② 1990–2025 확대</text>
+  <text class="t-tick" x="730" y="216" text-anchor="end">축척 5배</text>
+  <line x1="30.0" y1="332" x2="90.0" y2="332" stroke="var(--near)" stroke-width="5"></line>
+  <circle cx="210.0" cy="332" r="3.5" fill="var(--near)"></circle>
+  <circle cx="230.0" cy="332" r="3.5" fill="var(--near)"></circle>
+  <circle cx="290.0" cy="332" r="3.5" fill="var(--near)"></circle>
+  <circle cx="350.0" cy="332" r="3.5" fill="var(--near)"></circle>
+  <circle cx="370.0" cy="332" r="3.5" fill="var(--near)"></circle>
+  <circle cx="450.0" cy="332" r="3.5" fill="var(--near)"></circle>
+  <circle cx="490.0" cy="332" r="3.5" fill="var(--near)"></circle>
+  <circle cx="530.0" cy="332" r="3.5" fill="var(--near)"></circle>
+  <circle cx="550.0" cy="332" r="3.5" fill="var(--near)"></circle>
+  <circle cx="630.0" cy="332" r="3.5" fill="var(--near)"></circle>
+  <circle cx="690.0" cy="332" r="3.5" fill="var(--near)"></circle>
+  <line x1="710.0" y1="332" x2="730.0" y2="332" stroke="var(--near)" stroke-width="5"></line>
+  <circle cx="90.0" cy="332" r="3.5" fill="var(--far)"></circle>
+  <circle cx="190.0" cy="332" r="3.5" fill="var(--far)"></circle>
+  <circle cx="250.0" cy="332" r="3.5" fill="var(--far)"></circle>
+  <circle cx="430.0" cy="332" r="3.5" fill="var(--far)"></circle>
+  <circle cx="450.0" cy="332" r="3.5" fill="var(--far)"></circle>
+  <circle cx="510.0" cy="332" r="3.5" fill="var(--far)"></circle>
+  <circle cx="630.0" cy="332" r="3.5" fill="var(--far)"></circle>
+  <circle cx="36" cy="430" r="4" fill="var(--near)"></circle>
+  <text class="t-tick" x="46" y="434">사진·영상 계열(축 위)</text>
+  <circle cx="206" cy="430" r="4" fill="var(--far)"></circle>
+  <text class="t-tick" x="216" y="434">레이저·깊이 센서 계열(축 아래)</text>
+</svg>

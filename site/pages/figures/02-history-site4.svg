@@ -1,0 +1,56 @@
+<svg viewBox="0 0 760 172" role="img" aria-label="시대별 병목과 돌파의 사슬. 다섯 시대가 순서대로 이어지며 각 돌파가 다음 병목을 만든다">
+        <defs>
+          <marker id="ar3" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0 L8 4 L0 8 z" fill="var(--rule)"></path>
+          </marker>
+        </defs>
+        <text class="t-tick" x="4" y="16" fill="var(--far)">병목 ↑</text>
+        <text class="t-tick" x="4" y="166" fill="var(--near)">돌파 ↓</text>
+
+        <line x1="80" y1="88" x2="680" y2="88" stroke="var(--rule)" stroke-width="1"></line>
+        <line x1="92" y1="88" x2="216" y2="88" stroke="var(--rule)" stroke-width="1.5" marker-end="url(#ar3)"></line>
+        <line x1="242" y1="88" x2="366" y2="88" stroke="var(--rule)" stroke-width="1.5" marker-end="url(#ar3)"></line>
+        <line x1="392" y1="88" x2="516" y2="88" stroke="var(--rule)" stroke-width="1.5" marker-end="url(#ar3)"></line>
+        <line x1="542" y1="88" x2="666" y2="88" stroke="var(--rule)" stroke-width="1.5" marker-end="url(#ar3)"></line>
+
+        <g>
+          <text class="t-tick" x="80" y="26" text-anchor="middle">1850s–1970s</text>
+          <text x="80" y="52" font-size="11" text-anchor="middle" fill="var(--far)">광선다발을</text>
+          <text x="80" y="66" font-size="11" text-anchor="middle" fill="var(--far)">기계로 재현해야</text>
+          <circle cx="80" cy="88" r="8" fill="var(--paper)" stroke="var(--near)" stroke-width="2"></circle>
+          <text x="80" y="112" font-size="11" text-anchor="middle" fill="var(--near)">해석적 도화기</text>
+          <text class="t-tick" x="80" y="128" text-anchor="middle">1957 · 1963</text>
+        </g>
+        <g>
+          <text class="t-tick" x="230" y="26" text-anchor="middle">1960s–1990s</text>
+          <text x="230" y="52" font-size="11" text-anchor="middle" fill="var(--far)">사진은 밝기지</text>
+          <text x="230" y="66" font-size="11" text-anchor="middle" fill="var(--far)">거리가 아니다</text>
+          <circle cx="230" cy="88" r="8" fill="var(--paper)" stroke="var(--near)" stroke-width="2"></circle>
+          <text x="230" y="112" font-size="11" text-anchor="middle" fill="var(--near)">레이저 측거 + GPS</text>
+          <text class="t-tick" x="230" y="128" text-anchor="middle">1960 · 1985</text>
+        </g>
+        <g>
+          <text class="t-tick" x="380" y="26" text-anchor="middle">1990s–2000s</text>
+          <text x="380" y="52" font-size="11" text-anchor="middle" fill="var(--far)">구조물을 통째로</text>
+          <text x="380" y="66" font-size="11" text-anchor="middle" fill="var(--far)">기록할 수 없다</text>
+          <circle cx="380" cy="88" r="8" fill="var(--paper)" stroke="var(--near)" stroke-width="2"></circle>
+          <text x="380" y="112" font-size="11" text-anchor="middle" fill="var(--near)">Cyrax 2400 + 번들조정</text>
+          <text class="t-tick" x="380" y="128" text-anchor="middle">1998 · 1999</text>
+        </g>
+        <g>
+          <text class="t-tick" x="530" y="26" text-anchor="middle">2000s–2010s</text>
+          <text x="530" y="52" font-size="11" text-anchor="middle" fill="var(--far)">장비가 비싸서</text>
+          <text x="530" y="66" font-size="11" text-anchor="middle" fill="var(--far)">캡처가 특별한 일</text>
+          <circle cx="530" cy="88" r="8" fill="var(--paper)" stroke="var(--near)" stroke-width="2"></circle>
+          <text x="530" y="112" font-size="11" text-anchor="middle" fill="var(--near)">오픈소스 · SLAM · 드론</text>
+          <text class="t-tick" x="530" y="128" text-anchor="middle">2006 · 2013</text>
+        </g>
+        <g>
+          <text class="t-tick" x="680" y="26" text-anchor="middle">2020s</text>
+          <text x="680" y="52" font-size="11" text-anchor="middle" fill="var(--far)">점 덩어리를</text>
+          <text x="680" y="66" font-size="11" text-anchor="middle" fill="var(--far)">사람이 읽어야</text>
+          <circle cx="680" cy="88" r="8" fill="var(--near)" stroke="var(--near)" stroke-width="2"></circle>
+          <text x="680" y="112" font-size="11" text-anchor="middle" fill="var(--near)">기하·외형 분업 + 기초모델</text>
+          <text class="t-tick" x="680" y="128" text-anchor="middle">진행 중</text>
+        </g>
+      </svg>

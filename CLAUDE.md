@@ -36,6 +36,10 @@ docs/05-learning-roadmap.md  질문 5
 - 원문 PDF·이미지 등 첨부 자료는 `sources/` 에 둔다. 웹 링크만 있으면 별도 파일을 만들지 않는다.
 - `site/index.html`은 여섯 문서를 한 장으로 묶은 웹 요약본이다. `site/_0*.html` 조각을 이어 붙여 만들고
   (`cat site/_0*.html > site/index.html`), 용어집 조각 `_07`은 `00-glossary.md`에서 `python tools/gen_glossary.py docs/00-glossary.md site/_07-glossary.html`로 생성한다. 원문과 다르면 원문이 기준이다.
+- `site/pages/`는 문서별 HTML 페이지다. `python tools/build_pages.py`로 `docs/`를 그대로 옮겨 만들며 원문은 고치지 않는다.
+  그림은 `site/pages/figures/<slug>.json` 매니페스트로 끼워 넣는다. 도식은 같은 폴더의 SVG(색은 CSS 변수만), 사진은 `site/pages/img/`.
+  사진은 `python tools/commons.py get "File:..." <이름>`으로 Wikimedia Commons의 자유 라이선스 사진만 받고, 출처는 같은 이름의 `.json`에 남는다.
+  (발표용 사진은 `sources/`가 아니라 `site/pages/img/`에 둔다. Pages 배포가 `site/`만 보기 때문이다.)
   공개 주소(GitHub Pages, master push 시 자동 배포): https://o-fireheart-o.github.io/Reality_Capture_Research/
   Claude 아티팩트(비공개): https://claude.ai/artifact/LMe3sYRx6MyJb9ovYFnKaT
 

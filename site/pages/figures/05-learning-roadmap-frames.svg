@@ -1,0 +1,37 @@
+<svg viewBox="0 0 760 352" role="img" aria-label="스캔 월드 좌표에서 프로젝트 좌표, 측량 기준계, BIM 내부 좌표로 이어지는 좌표계 사슬과, 강체변환과 유사변환의 차이">
+  <text class="t-hd" x="16" y="22">데이터가 거쳐 가는 네 좌표계</text>
+  <rect x="16" y="40" width="160" height="56" rx="3" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="96" y="73" text-anchor="middle">스캔 월드 좌표</text>
+  <rect x="205" y="40" width="160" height="56" rx="3" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="285" y="73" text-anchor="middle">프로젝트 좌표</text>
+  <rect x="394" y="40" width="160" height="56" rx="3" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="474" y="66" text-anchor="middle">측량 기준계</text>
+  <text class="t-tick" x="474" y="84" text-anchor="middle">예: KGD2002</text>
+  <rect x="583" y="40" width="160" height="56" rx="3" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="663" y="73" text-anchor="middle">BIM 내부 좌표</text>
+  <line x1="176" y1="68" x2="197" y2="68" stroke="var(--ink)" stroke-width="1.2"></line>
+  <path d="M195 64 L203 68 L195 72 Z" fill="var(--ink)"></path>
+  <line x1="365" y1="68" x2="386" y2="68" stroke="var(--ink)" stroke-width="1.2"></line>
+  <path d="M384 64 L392 68 L384 72 Z" fill="var(--ink)"></path>
+  <line x1="554" y1="68" x2="575" y2="68" stroke="var(--ink)" stroke-width="1.2"></line>
+  <path d="M573 64 L581 68 L573 72 Z" fill="var(--ink)"></path>
+  <text class="t-tick" x="16" y="118">화살표마다 서로 다른 변환이 끼어든다. 한 곳에서 변환 종류를 잘못 고르면 오차가 끝까지 따라간다</text>
+  <line x1="16" y1="136" x2="744" y2="136" stroke="var(--rule)"></line>
+  <text class="t-hd" x="16" y="160">강체변환 (SE(3))</text>
+  <text class="t-ink" x="16" y="182" font-size="13">x′ = R · x + t</text>
+  <text class="t-tick" x="16" y="200">회전 + 이동. 크기는 그대로다</text>
+  <rect x="70" y="230" width="60" height="60" fill="none" stroke="var(--muted)" stroke-dasharray="4 3"></rect>
+  <rect x="210" y="226" width="60" height="60" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1.5" transform="rotate(20 240 256)"></rect>
+  <path d="M136 260 Q 168 236 196 252" fill="none" stroke="var(--muted)"></path>
+  <path d="M190 246 L199 254 L188 256 Z" fill="var(--muted)"></path>
+  <line x1="372" y1="148" x2="372" y2="304" stroke="var(--rule)"></line>
+  <text class="t-hd" x="392" y="160">유사변환 (7-parameter Helmert)</text>
+  <text class="t-ink" x="392" y="182" font-size="13">x′ = s · R · x + t</text>
+  <text class="t-tick" x="392" y="200">회전 + 이동 + 축척 s. 크기까지 바뀐다</text>
+  <rect x="440" y="240" width="44" height="44" fill="none" stroke="var(--muted)" stroke-dasharray="4 3"></rect>
+  <rect x="584" y="218" width="72" height="72" fill="var(--far-soft)" stroke="var(--far)" stroke-width="1.5" transform="rotate(20 620 254)"></rect>
+  <path d="M490 260 Q 525 236 560 252" fill="none" stroke="var(--muted)"></path>
+  <path d="M554 246 L563 254 L552 256 Z" fill="var(--muted)"></path>
+  <rect x="16" y="312" width="728" height="34" rx="3" fill="var(--sunk)"></rect>
+  <text class="t-tick" x="28" y="333">현장에서 반복되는 사고: 축척이 섞인 유사변환을 강체변환으로 착각한다. 회전을 오일러각으로 다루다 짐벌락을 만난다</text>
+</svg>

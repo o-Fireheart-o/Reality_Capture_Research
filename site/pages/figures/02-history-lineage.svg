@@ -1,0 +1,59 @@
+<svg viewBox="0 0 760 288" role="img" aria-label="사진측량 도구의 계보. 아날로그 도화기에서 해석적 도화기, 디지털 워크스테이션, SfM/MVS, 순전파 신경망으로 오면서 사람과 기계 장치가 하던 일을 컴퓨터가 차례로 넘겨받았다">
+  <text class="t-hd" x="155" y="26" text-anchor="middle">아날로그 도화기</text>
+  <text class="t-tick" x="155" y="44" text-anchor="middle">20세기 중반까지 · 1장</text>
+  <text class="t-hd" x="287" y="26" text-anchor="middle">해석적 도화기</text>
+  <text class="t-tick" x="287" y="44" text-anchor="middle">1957 · 1963 · 1장</text>
+  <text class="t-hd" x="419" y="26" text-anchor="middle">디지털 워크스테이션</text>
+  <text class="t-tick" x="419" y="44" text-anchor="middle">1990년대 초 · 2장</text>
+  <text class="t-hd" x="551" y="26" text-anchor="middle">SfM/MVS</text>
+  <text class="t-tick" x="551" y="44" text-anchor="middle">2006~2016 · 4장</text>
+  <text class="t-hd" x="683" y="26" text-anchor="middle">순전파 신경망</text>
+  <text class="t-tick" x="683" y="44" text-anchor="middle">2024~2025 · 5장</text>
+  <text class="t-lab" x="6" y="96">입력</text>
+  <text class="t-lab" x="6" y="160">대응점 찾기</text>
+  <text class="t-lab" x="6" y="224">기하 계산</text>
+  <rect x="92" y="64" width="126" height="56" rx="3" fill="var(--sunk)" stroke="var(--rule)" stroke-width="1"></rect>
+  <text class="t-lab" x="155" y="96" text-anchor="middle">필름 원판</text>
+  <rect x="224" y="64" width="126" height="56" rx="3" fill="var(--sunk)" stroke="var(--rule)" stroke-width="1"></rect>
+  <text class="t-lab" x="287" y="96" text-anchor="middle">필름 원판</text>
+  <rect x="356" y="64" width="126" height="56" rx="3" fill="var(--sunk)" stroke="var(--rule)" stroke-width="1"></rect>
+  <text class="t-lab" x="419" y="88" text-anchor="middle">필름을 스캔한</text>
+  <text class="t-lab" x="419" y="104" text-anchor="middle">화소 배열</text>
+  <rect x="488" y="64" width="126" height="56" rx="3" fill="var(--sunk)" stroke="var(--rule)" stroke-width="1"></rect>
+  <text class="t-lab" x="551" y="88" text-anchor="middle">순서 없는</text>
+  <text class="t-lab" x="551" y="104" text-anchor="middle">사진 더미</text>
+  <rect x="620" y="64" width="126" height="56" rx="3" fill="var(--sunk)" stroke="var(--rule)" stroke-width="1"></rect>
+  <text class="t-lab" x="683" y="96" text-anchor="middle">여러 장의 사진</text>
+  <rect x="92" y="128" width="126" height="56" rx="3" fill="var(--far-soft)" stroke="var(--far)" stroke-width="1"></rect>
+  <text class="t-lab" x="155" y="152" text-anchor="middle">사람이 눈으로</text>
+  <text class="t-lab" x="155" y="168" text-anchor="middle">입체 관찰</text>
+  <rect x="224" y="128" width="126" height="56" rx="3" fill="var(--far-soft)" stroke="var(--far)" stroke-width="1"></rect>
+  <text class="t-lab" x="287" y="152" text-anchor="middle">사람이 눈으로</text>
+  <text class="t-lab" x="287" y="168" text-anchor="middle">입체 관찰</text>
+  <rect x="356" y="128" width="126" height="56" rx="3" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1"></rect>
+  <text class="t-lab" x="419" y="152" text-anchor="middle">상관계산으로</text>
+  <text class="t-lab" x="419" y="168" text-anchor="middle">자동 탐색</text>
+  <rect x="488" y="128" width="126" height="56" rx="3" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1"></rect>
+  <text class="t-lab" x="551" y="152" text-anchor="middle">특징점</text>
+  <text class="t-lab" x="551" y="168" text-anchor="middle">자동 매칭</text>
+  <rect x="92" y="192" width="126" height="56" rx="3" fill="var(--far-soft)" stroke="var(--far)" stroke-width="1"></rect>
+  <text class="t-lab" x="155" y="216" text-anchor="middle">기계 링키지가</text>
+  <text class="t-lab" x="155" y="232" text-anchor="middle">광선다발 재현</text>
+  <rect x="224" y="192" width="126" height="56" rx="3" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1"></rect>
+  <text class="t-lab" x="287" y="216" text-anchor="middle">컴퓨터가</text>
+  <text class="t-lab" x="287" y="232" text-anchor="middle">좌표 변환·보정</text>
+  <rect x="356" y="192" width="126" height="56" rx="3" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1"></rect>
+  <text class="t-lab" x="419" y="216" text-anchor="middle">컴퓨터</text>
+  <text class="t-lab" x="419" y="232" text-anchor="middle">Unix·VAX → PC</text>
+  <rect x="488" y="192" width="126" height="56" rx="3" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1"></rect>
+  <text class="t-lab" x="551" y="216" text-anchor="middle">번들조정</text>
+  <text class="t-lab" x="551" y="232" text-anchor="middle">자동 정합</text>
+  <rect x="620" y="128" width="126" height="120" rx="3" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1"></rect>
+  <text class="t-lab" x="683" y="176" text-anchor="middle">신경망 한 번의</text>
+  <text class="t-lab" x="683" y="192" text-anchor="middle">순전파로 자세와</text>
+  <text class="t-lab" x="683" y="208" text-anchor="middle">조밀 점군까지</text>
+  <rect x="92" y="264" width="12" height="12" rx="2" fill="var(--far-soft)" stroke="var(--far)" stroke-width="1"></rect>
+  <text class="t-tick" x="110" y="274">사람 또는 기계 장치가 하는 일</text>
+  <rect x="322" y="264" width="12" height="12" rx="2" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1"></rect>
+  <text class="t-tick" x="340" y="274">컴퓨터가 하는 일</text>
+</svg>

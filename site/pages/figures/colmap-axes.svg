@@ -1,0 +1,28 @@
+<svg viewBox="0 0 760 260" role="img" aria-label="COLMAP 카메라 좌표계와 자세 저장 규약">
+  <text class="t-hd" x="20" y="26">카메라 좌표계</text>
+  <rect x="70" y="84" width="80" height="56" rx="4" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.2"></rect>
+  <path d="M150 98 L184 84 L184 140 L150 126 Z" fill="var(--sunk)" stroke="var(--ink)" stroke-width="1.2"></path>
+  <circle cx="110" cy="112" r="4" fill="var(--ink)"></circle>
+  <line x1="110" y1="112" x2="250" y2="112" stroke="var(--ink)" stroke-width="2"></line>
+  <path d="M242 107 L254 112 L242 117 Z" fill="var(--ink)"></path>
+  <text class="t-lab" x="260" y="116">Z 앞</text>
+  <text class="t-tick" x="260" y="132">(시선 방향)</text>
+  <line x1="110" y1="112" x2="110" y2="206" stroke="var(--far)" stroke-width="2"></line>
+  <path d="M105 198 L110 210 L115 198 Z" fill="var(--far)"></path>
+  <text class="t-lab" x="120" y="208">Y 아래</text>
+  <line x1="110" y1="112" x2="62" y2="64" stroke="var(--near)" stroke-width="2"></line>
+  <path d="M60 74 L57 59 L71 64 Z" fill="var(--near)"></path>
+  <text class="t-lab" x="20" y="54">X 오른쪽</text>
+  <text class="t-tick" x="20" y="240">사진을 볼 때 X는 오른쪽, Y는 아래, Z는 카메라가 보는 쪽</text>
+  <line x1="372" y1="20" x2="372" y2="240" stroke="var(--rule)"></line>
+  <text class="t-hd" x="400" y="26">images 파일에 저장된 자세</text>
+  <rect x="400" y="44" width="340" height="56" rx="3" fill="var(--sunk)"></rect>
+  <text class="t-ink" x="414" y="68" font-size="13">X카메라 = R · X월드 + t</text>
+  <text class="t-tick" x="414" y="88">R: 쿼터니언 QW QX QY QZ, t: TX TY TZ (월드→카메라)</text>
+  <rect x="400" y="112" width="340" height="56" rx="3" fill="var(--near-soft)" stroke="var(--near)"></rect>
+  <text class="t-ink" x="414" y="136" font-size="13">카메라 중심 C = −Rᵀ · t</text>
+  <text class="t-tick" x="414" y="156">t 자체는 카메라 위치가 아니다. 흔한 실수다</text>
+  <rect x="400" y="180" width="340" height="48" rx="3" fill="var(--far-soft)" stroke="var(--far)"></rect>
+  <text class="t-tick" x="414" y="200">단위는 미터가 아니다(임의 축척). 실제 좌표는</text>
+  <text class="t-tick" x="414" y="216">model_aligner와 좌표 아는 사진 3장 이상으로 맞춘다</text>
+</svg>

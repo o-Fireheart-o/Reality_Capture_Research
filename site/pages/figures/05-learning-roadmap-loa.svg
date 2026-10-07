@@ -1,0 +1,44 @@
+<svg viewBox="0 0 760 318" role="img" aria-label="USIBD LOA 등급을 로그 눈금 위에 그린 도식과, LOA 허용오차가 점군과 BIM 요소 사이에 적용된다는 설명">
+  <text class="t-hd" x="16" y="22">USIBD LOA 다섯 단계 (로그 눈금)</text>
+  <path d="M150 64 V58 H640 V64" fill="none" stroke="var(--muted)"></path>
+  <text class="t-tick" x="395" y="50" text-anchor="middle">LOA 20 · 30 · 40은 이 사이 (이 문서에는 값이 없다)</text>
+  <line x1="110" y1="110" x2="680" y2="110" stroke="var(--ink)" stroke-width="1.2"></line>
+  <line x1="110" y1="104" x2="110" y2="116" stroke="var(--ink)"></line>
+  <text class="t-tick" x="110" y="132" text-anchor="middle">1 mm</text>
+  <line x1="211" y1="106" x2="211" y2="114" stroke="var(--muted)"></line>
+  <text class="t-tick" x="211" y="132" text-anchor="middle">2</text>
+  <line x1="344" y1="106" x2="344" y2="114" stroke="var(--muted)"></line>
+  <text class="t-tick" x="344" y="132" text-anchor="middle">5</text>
+  <line x1="445" y1="104" x2="445" y2="116" stroke="var(--ink)"></line>
+  <text class="t-tick" x="445" y="132" text-anchor="middle">10 mm</text>
+  <line x1="546" y1="106" x2="546" y2="114" stroke="var(--muted)"></line>
+  <text class="t-tick" x="546" y="132" text-anchor="middle">20</text>
+  <line x1="680" y1="104" x2="680" y2="116" stroke="var(--ink)"></line>
+  <text class="t-tick" x="680" y="132" text-anchor="middle">50 mm</text>
+  <circle cx="110" cy="110" r="7" fill="var(--near)"></circle>
+  <text class="t-lab" x="110" y="82" text-anchor="middle">LOA 50</text>
+  <text class="t-tick" x="110" y="97" text-anchor="middle">약 1 mm</text>
+  <circle cx="680" cy="110" r="7" fill="var(--far)"></circle>
+  <text class="t-lab" x="680" y="82" text-anchor="middle">LOA 10</text>
+  <text class="t-tick" x="680" y="97" text-anchor="middle">약 50 mm</text>
+  <text class="t-tick" x="110" y="156">← 더 엄격 (허용오차 작음)</text>
+  <text class="t-tick" x="680" y="156" text-anchor="end">더 느슨 (허용오차 큼) →</text>
+  <line x1="16" y1="176" x2="744" y2="176" stroke="var(--rule)"></line>
+  <text class="t-hd" x="16" y="200">허용오차가 적용되는 구간</text>
+  <rect x="40" y="218" width="160" height="40" rx="3" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="120" y="243" text-anchor="middle">실제 건물</text>
+  <rect x="300" y="218" width="160" height="40" rx="3" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="380" y="243" text-anchor="middle">점군</text>
+  <rect x="560" y="218" width="160" height="40" rx="3" fill="var(--surface)" stroke="var(--rule)"></rect>
+  <text class="t-lab" x="640" y="243" text-anchor="middle">BIM 요소</text>
+  <line x1="200" y1="238" x2="292" y2="238" stroke="var(--muted)" stroke-dasharray="4 3"></line>
+  <path d="M290 234 L298 238 L290 242 Z" fill="var(--muted)"></path>
+  <line x1="460" y1="238" x2="552" y2="238" stroke="var(--near)" stroke-width="2"></line>
+  <path d="M550 234 L558 238 L550 242 Z" fill="var(--near)"></path>
+  <rect x="170" y="272" width="160" height="40" rx="3" fill="var(--far-soft)" stroke="var(--far)" stroke-dasharray="4 3"></rect>
+  <text class="t-tick" x="250" y="288" text-anchor="middle">점군 자체의 정확도</text>
+  <text class="t-tick" x="250" y="304" text-anchor="middle">별개 문제로 남는다</text>
+  <rect x="430" y="272" width="160" height="40" rx="3" fill="var(--near-soft)" stroke="var(--near)"></rect>
+  <text class="t-tick" x="510" y="288" text-anchor="middle">LOA 허용오차는</text>
+  <text class="t-tick" x="510" y="304" text-anchor="middle">여기에 적용된다</text>
+</svg>

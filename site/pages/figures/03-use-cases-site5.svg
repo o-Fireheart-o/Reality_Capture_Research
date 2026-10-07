@@ -1,0 +1,39 @@
+<svg viewBox="0 0 760 256" role="img" aria-label="Reality Capture 쓰임새 세 갈래 도식: 기록, 대조, 입력">
+        <rect x="290" y="12" width="180" height="34" rx="3" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1"></rect>
+        <text class="t-hd" x="380" y="34" text-anchor="middle">취득한 3차원 데이터</text>
+
+        <path d="M380 46 L380 62 L150 62 L150 78" fill="none" stroke="var(--rule)" stroke-width="1.2"></path>
+        <path d="M380 46 L380 78" fill="none" stroke="var(--rule)" stroke-width="1.2"></path>
+        <path d="M380 46 L380 62 L610 62 L610 78" fill="none" stroke="var(--rule)" stroke-width="1.2"></path>
+
+        <g>
+          <rect x="34" y="78" width="232" height="44" rx="3" fill="var(--surface)" stroke="var(--near)" stroke-width="1.4"></rect>
+          <text x="150" y="98" font-size="14" font-weight="600" text-anchor="middle" fill="var(--ink)" font-family="var(--body)">기록</text>
+          <text class="t-tick" x="150" y="113" text-anchor="middle">덮이기 전에 찍어 둔다</text>
+          <text class="t-lab" x="46" y="145">· 360 워크 · event walk</text>
+          <text class="t-lab" x="46" y="162">· 문화재 스캔</text>
+          <text class="t-lab" x="46" y="179">· 재난 직후 항공 촬영</text>
+          <text class="t-tick" x="46" y="206" fill="var(--far)">판단 기준</text>
+          <text class="t-lab" x="46" y="222">정확도보다 빠뜨린 데가 없느냐</text>
+        </g>
+        <g>
+          <rect x="278" y="78" width="204" height="44" rx="3" fill="var(--surface)" stroke="var(--near)" stroke-width="1.4"></rect>
+          <text x="380" y="98" font-size="14" font-weight="600" text-anchor="middle" fill="var(--ink)" font-family="var(--body)">대조</text>
+          <text class="t-tick" x="380" y="113" text-anchor="middle">설계·이전 회차와 맞춰 본다</text>
+          <text class="t-lab" x="290" y="145">· scan-vs-BIM · 진행률</text>
+          <text class="t-lab" x="290" y="162">· 배관 간섭 검토</text>
+          <text class="t-lab" x="290" y="179">· PC 부재 검수</text>
+          <text class="t-tick" x="290" y="206" fill="var(--far)">산출물</text>
+          <text class="t-lab" x="290" y="222">언제나 편차 목록 — 돈이 오간다</text>
+        </g>
+        <g>
+          <rect x="494" y="78" width="232" height="44" rx="3" fill="var(--surface)" stroke="var(--near)" stroke-width="1.4"></rect>
+          <text x="610" y="98" font-size="14" font-weight="600" text-anchor="middle" fill="var(--ink)" font-family="var(--body)">입력</text>
+          <text class="t-tick" x="610" y="113" text-anchor="middle">다른 시스템에 먹인다</text>
+          <text class="t-lab" x="506" y="145">· 창고 시뮬레이션</text>
+          <text class="t-lab" x="506" y="162">· 자율주행 HD맵</text>
+          <text class="t-lab" x="506" y="179">· LED 월 배경 플레이트</text>
+          <text class="t-tick" x="506" y="206" fill="var(--far)">위치</text>
+          <text class="t-lab" x="506" y="222">최종 산출물이 아니라 원재료</text>
+        </g>
+      </svg>
