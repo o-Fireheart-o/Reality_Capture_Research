@@ -1,7 +1,7 @@
 # Reality Capture의 역사와 현재 진행 방향
 
 작성일: 2026-09-21
-최종수정일: 2026-09-21
+최종수정일: 2026-10-07
 
 담당 질문: 핵심 연구 질문 2 — Reality Capture는 어떤 역사를 가지고 있으며 현재 어떻게 발전해 가고 있는가.
 
@@ -33,7 +33,7 @@ Reality Capture의 역사를 센서 출시 연표로 적으면 아무것도 설�
 
 사진이 발명되자마자 이걸로 지도를 만들 수 있지 않을까 하는 생각이 따라 나왔다. 프랑스 육군 공병 장교 에메 로쉐다(Aimé Laussedat, 1819~1907)가 1850년대부터 사진으로 지형을 측량하는 방법을 실험했고, 자신의 기법을 métrophotographie(계측사진법)라 불렀다 ([학술] https://onlinelibrary.wiley.com/doi/10.1111/phor.12277). 같은 발상이 독일에서도 거의 독립적으로 자라났다. 건축가 알브레히트 마이덴바우어(Albrecht Meydenbauer)는 1867년 글에서 Photogrammetrie라는 단어를 썼고, 오늘날 쓰는 photogrammetry라는 용어가 여기서 나왔다 ([제3자] https://en.wikipedia.org/wiki/Photogrammetry).
 
-누가 아버지인가를 두고 문헌의 입장이 갈린다. 기법을 먼저 실용화한 쪽은 로쉐다이고 이름을 붙인 쪽은 마이덴바우어다. 용어의 최초 등장을 추적한 연구는 1867년의 해당 문헌이 익명으로 나왔고 마이덴바우어의 저작으로 확정된 시점은 1892년이라고 정리한다 ([학술] https://www.isprs.org/society/history/grimm-the-origin-of-the-term-photogrammetry.pdf). 둘 중 하나를 고르기보다, 프랑스와 독일에서 10년 남짓 간격을 두고 같은 문제의식이 따로 자랐다고 읽는 편이 정확하다.
+누구를 사진측량의 아버지로 볼지는 문헌마다 입장이 갈린다. 기법을 먼저 실용화한 쪽은 로쉐다이고 이름을 붙인 쪽은 마이덴바우어다. 용어의 최초 등장을 추적한 연구는 1867년 문헌은 익명으로 나왔고 마이덴바우어의 저작으로 확정된 때는 1892년이라고 정리한다 ([학술] https://www.isprs.org/society/history/grimm-the-origin-of-the-term-photogrammetry.pdf). 둘 중 하나를 고르기보다, 프랑스와 독일에서 10년 남짓 간격을 두고 같은 문제의식이 따로 자랐다고 읽는 편이 정확하다.
 
 ### 항공사진측량: 전쟁이 만든 수요
 
@@ -56,23 +56,23 @@ Reality Capture의 역사를 센서 출시 연표로 적으면 아무것도 설�
 
 여기서부터 두 갈래가 한동안 나란히 흐른다. 사진측량의 디지털화와 레이저 거리측정의 발달은 시기가 겹치므로, 아래 두 장은 연대순이 아니라 갈래별로 읽는 편이 낫다.
 
-해석적 도화기가 계산을 풀어주자 다음 한계가 드러났다. 사진은 결국 밝기의 기록이지 거리의 기록이 아니다. 어두운 곳, 무늬 없는 벽, 물속은 사진으로 좌표를 뽑기 어렵다. 거리를 직접 재는 수단이 필요했다.
+해석적 도화기로 계산 문제가 풀리자 다음 한계가 드러났다. 사진은 결국 밝기의 기록이지 거리의 기록이 아니다. 어두운 곳, 무늬 없는 벽, 물속은 사진으로 좌표를 뽑기 어렵다. 거리를 직접 재는 수단이 필요했다.
 
 ### 레이저 거리측정의 등장
 
 1960년 시어도어 메이먼이 최초의 레이저를 시연했고, 이듬해 휴즈가 최초의 라이다 시제품을 만들었으며 1962년에는 상용 제품 Hughes Mark II Colidar가 나왔다 ([제3자] https://toddneff.com/books/lidarhistory/extras/lidarhistory-timeline/). 초기 응용처는 측량이 아니라 국방과 대기과학이었다. 1963년 SRI가 만든 Mark I 라이다는 구름과 스모그 층을 관측했다.
 
-지형을 재는 쪽으로는 물에서 먼저 시작했다. 조지 히크먼이 1968년 온타리오호 상공에서 최초의 수심측량 라이다를 비행시켰고, 1973년 NASA 월롭스가 수심 측정과 형광 관측을 겸하는 라이다를 DC-4에 실어 날렸다 ([제3자] https://toddneff.com/books/lidarhistory/extras/lidarhistory-timeline/). 우주에서도 같은 원리가 쓰였다. 1971년 아폴로 15호에 RCA가 만든 달 고도계가 실렸는데, 이것이 우주에 올라간 최초의 라이다다 ([제3자] https://lidarnews.com/apollo-15-space-lidar/, [제3자] https://www.optica-opn.org/home/articles/volume_20/issue_6/features/lidar_in_space_from_apollo_to_the_21st_century/).
+지형을 재는 일은 물에서 먼저 시작됐다. 조지 히크먼이 1968년 온타리오호 상공에서 최초의 수심측량 라이다를 비행시켰고, 1973년 NASA 월롭스가 수심 측정과 형광 관측을 겸하는 라이다를 DC-4에 실어 날렸다 ([제3자] https://toddneff.com/books/lidarhistory/extras/lidarhistory-timeline/). 우주에서도 같은 원리가 쓰였다. 1971년 아폴로 15호에 RCA가 만든 달 고도계가 실렸는데, 이것이 우주에 올라간 최초의 라이다다 ([제3자] https://lidarnews.com/apollo-15-space-lidar/, [제3자] https://www.optica-opn.org/home/articles/volume_20/issue_6/features/lidar_in_space_from_apollo_to_the_21st_century/).
 
-항공 라이다가 지형도 제작에 쓰이려면 한 가지가 더 필요했다. 거리를 아무리 정확히 재도 비행기 자체의 위치와 자세를 모르면 점의 절대 좌표가 나오지 않는다. 1985년 빌 크래빌이 이끈 NASA 월롭스 팀이 GPS로 비행 중인 항공기의 위치를 결정하는 방법을 개척했고, 이것이 항공 라이다 지형측량의 문을 열었다 ([제3자] https://toddneff.com/books/lidarhistory/extras/lidarhistory-timeline/).
+항공 라이다가 지형도 제작에 쓰이려면 한 가지가 더 필요했다. 거리를 아무리 정확히 재도 비행기 자체의 위치와 자세를 모르면 점의 절대 좌표가 나오지 않는다. 1985년 빌 크래빌이 이끈 NASA 월롭스 팀이 GPS로 비행 중인 항공기의 위치를 결정하는 방법을 개척했고, 이 덕분에 항공 라이다 지형측량이 가능해졌다 ([제3자] https://toddneff.com/books/lidarhistory/extras/lidarhistory-timeline/).
 
 ### 지상 스캐너의 씨앗
 
-지상 장비 쪽에서는 1981년 사이먼 랍과 그레고리 프레이저가 세운 Res-Tec이 뒤에 FARO가 된다 ([제3자] https://toddneff.com/books/lidarhistory/extras/lidarhistory-timeline/). 이 시기 지상 장비는 아직 기계식 좌표측정기(CMM) 계열에 가까웠다 (추정). 삼각대에 올려 건물 하나를 통째로 스캔하는 물건은 1990년대 후반에야 나온다.
+지상 장비 쪽에서는 1981년 사이먼 랍과 그레고리 프레이저가 세운 Res-Tec이 나중에 FARO가 된다 ([제3자] https://toddneff.com/books/lidarhistory/extras/lidarhistory-timeline/). 이 시기 지상 장비는 아직 기계식 좌표측정기(CMM) 계열에 가까웠다 (추정). 삼각대에 올려 건물 하나를 통째로 스캔하는 물건은 1990년대 후반에야 나온다.
 
 ### 사진측량의 디지털 전환
 
-같은 시기 사진측량 쪽에서는 사진을 화소 배열로 다루는 작업이 시작됐다. 해석적 도화기는 계산은 컴퓨터로 하되 여전히 필름 원판을 사람이 눈으로 보며 점을 찍는 장비였다. 필름을 스캔해 화소로 만들면 상관계산으로 대응점을 자동으로 찾을 수 있다. 1990년대 초 소프트카피 방식의 디지털 사진측량 워크스테이션(DPW)이 이 전환을 현실화했고, 1990년대 대부분 기간 동안 고가의 Unix·VAX 장비에서 돌다가 후반에 PC/Windows 기반으로 옮겨가며 값이 내려갔다 ([학술] https://www.sciencedirect.com/science/article/pii/S1195103624002556).
+같은 시기 사진측량 쪽에서는 사진을 화소 배열로 다루는 작업이 시작됐다. 해석적 도화기는 계산은 컴퓨터로 하되 여전히 필름 원판을 사람이 눈으로 보며 점을 찍는 장비였다. 필름을 스캔해 화소로 만들면 상관계산으로 대응점을 자동으로 찾을 수 있다. 1990년대 초 소프트카피 방식의 디지털 사진측량 워크스테이션(DPW)이 이 전환을 현실로 만들었고, 1990년대 대부분은 고가의 Unix·VAX 장비에서 돌다가 후반에 PC/Windows 기반으로 옮겨가며 값이 내려갔다 ([학술] https://www.sciencedirect.com/science/article/pii/S1195103624002556).
 
 > **병목:** 사진은 밝기의 기록이라 거리를 직접 주지 못했고, 사람이 눈으로 대응점을 찍어야 했다.
 > **돌파:** 레이저 거리측정이 거리를 직접 재는 길을 열었고(1960년대~), GPS가 항공 플랫폼의 절대 위치를 붙였으며(1985년), 디지털 워크스테이션이 대응점 탐색을 자동화하기 시작했다(1990년대 초).
@@ -83,7 +83,7 @@ Reality Capture의 역사를 센서 출시 연표로 적으면 아무것도 설�
 
 ### Cyrax: 현장에 들어온 첫 3D 스캐너
 
-벤 카시라(Ben Kacyra)가 1993년 Cyra Technologies를 세웠다 ([제3자] https://toddneff.com/books/lidarhistory/extras/lidarhistory-timeline/). MIT, 로스앨러모스 국립연구소와의 협력과 셰브론의 투자를 받아, 수백만 개의 측량점을 밀리미터 단위 간격과 정확도로 기록하는 장거리 스캐너를 만들어냈다 ([제3자] https://en.wikipedia.org/wiki/CyArk).
+벤 카시라(Ben Kacyra)가 1993년 Cyra Technologies를 세웠다 ([제3자] https://toddneff.com/books/lidarhistory/extras/lidarhistory-timeline/). MIT, 로스앨러모스 국립연구소와 협력하고 셰브론의 투자를 받아 수백만 개의 측량점을 밀리미터 단위 간격과 정확도로 기록하는 장거리 스캐너를 만들어냈다 ([제3자] https://en.wikipedia.org/wiki/CyArk).
 
 1998년에 나온 Cyrax 2400은 삼각대에 올리는 최초의 상용 3D 스캐너로 꼽힌다 ([제3자] https://toddneff.com/books/lidarhistory/extras/lidarhistory-timeline/). 사양을 보면 이 물건이 얼마나 초기 단계였는지가 드러난다. 전원부까지 포함해 무게 약 51 kg, 초당 평균 800점(최대 2,000점), 1회 스캔 시야각 40도×40도, 가격은 18만 달러를 넘었다 ([제3자] https://www.xyht.com/energyutilities/the-early-days-of-3d-scanning-part-6/). 그런데도 정유·발전 플랜트 개보수 현장에서 쓸모가 분명했다. 도면과 실제가 다른 노후 설비에서 실측 형상을 통째로 받아올 수단이 달리 없었기 때문이다 (추정).
 
@@ -91,13 +91,13 @@ Reality Capture의 역사를 센서 출시 연표로 적으면 아무것도 설�
 
 ### 항공 쪽의 필름 은퇴
 
-2000년 7월, LH Systems의 ADS-40과 Z/I Imaging의 DMC가 나란히 발표되면서 항공 필름 카메라를 대체하는 경주가 시작됐다 ([학술] https://www.isprs.org/proceedings/xxxv/congress/comm3/papers/370.pdf). ADS40은 2000년 암스테르담 ISPRS 총회에서 공개된 뒤 2001년 여름 첫 인도가 이뤄졌고, 23×23 cm 필름 카메라에 필적하는 해상도와 커버리지를 낸 첫 항공 디지털 센서로 평가된다 ([학술] https://phowo.ifp.uni-stuttgart.de/publications/phowo01/Fricker.pdf).
+2000년 7월, LH Systems의 ADS-40과 Z/I Imaging의 DMC가 나란히 발표되면서 항공 필름 카메라를 대체하는 경쟁이 시작됐다 ([학술] https://www.isprs.org/proceedings/xxxv/congress/comm3/papers/370.pdf). ADS40은 2000년 암스테르담 ISPRS 총회에서 공개된 뒤 2001년 여름 처음 인도됐고, 23×23 cm 필름 카메라에 필적하는 해상도와 커버리지를 낸 첫 항공 디지털 센서로 평가된다 ([학술] https://phowo.ifp.uni-stuttgart.de/publications/phowo01/Fricker.pdf).
 
 ### 번들조정의 산업화
 
 같은 시기 컴퓨터비전 쪽에서는 사진측량이 100년 가까이 다듬어온 번들조정(bundle adjustment)을 자기 언어로 다시 정리했다. 1999년 트릭스(Triggs), 맥로클런, 하틀리, 피츠기번의 「Bundle Adjustment — A Modern Synthesis」가 그 작업이다. 사진측량의 번들조정 이론과 방법을 컴퓨터비전 쪽 구현자를 위해 정리한 서베이로, 희소 뉴턴법과 게이지 불변성, 로버스트 비용함수까지 다뤘다 ([학술] https://link.springer.com/chapter/10.1007/3-540-44480-7_21).
 
-이 문서가 중요한 이유는 새 알고리즘을 발명해서가 아니라, 두 학문 공동체의 어휘를 번역해줬기 때문이다. 이후 등장하는 오픈소스 SfM 도구 대부분이 이 서베이의 정식화를 따른다 (추정).
+이 논문이 중요한 이유는 새 알고리즘을 발명해서가 아니라, 두 학문 공동체의 어휘를 번역해줬기 때문이다. 이후 등장하는 오픈소스 SfM 도구 대부분이 이 서베이의 정식화를 따른다 (추정).
 
 > **병목:** 측량 장비는 한 점씩 재고 사진측량은 사람이 개입해야 해서, 복잡한 기존 구조물을 통째로 기록할 방법이 없었다.
 > **돌파:** 삼각대형 상용 스캐너(Cyrax 2400, 1998년)가 면 단위 기록을 열었고, 번들조정의 재정식화(1999년)가 대규모 자동 정합의 수학적 토대를 공용화했다.
@@ -106,7 +106,7 @@ Reality Capture의 역사를 센서 출시 연표로 적으면 아무것도 설�
 
 ## 4. 2000~2010년대 — 오픈소스, SLAM, 그리고 값싼 센서
 
-스캐너는 비쌌다. 1대에 수억 원대 장비와 전담 기술자가 필요한 작업은 확산에 한계가 있다. 2000년대 중반부터 이 벽을 세 방향에서 동시에 허물었다. 소프트웨어를 공짜로 만들고, 장비가 움직이면서 스스로 위치를 알게 하고, 센서 값을 소비자 가격대로 끌어내렸다.
+스캐너는 비쌌다. 대당 수억 원대인 장비와 전담 기술자가 필요한 작업은 확산에 한계가 있다. 2000년대 중반부터 이 벽을 세 방향에서 동시에 허물었다. 소프트웨어를 공짜로 만들고, 장비가 움직이면서 스스로 위치를 알게 하고, 센서 값을 소비자 가격대로 끌어내렸다.
 
 ### SfM/MVS의 오픈소스화
 
@@ -118,17 +118,17 @@ Reality Capture의 역사를 센서 출시 연표로 적으면 아무것도 설�
 
 ### SLAM의 성숙
 
-고정된 삼각대 대신 움직이는 장비로 기록하려면 지금 내가 어디 있는지를 실시간으로 풀어야 한다. 앤드루 데이비슨이 ICCV 2003에서 단안 카메라 실시간 SLAM을 발표했고, 확장판이 2007년 IEEE PAMI에 MonoSLAM으로 실렸다. 로보틱스의 SLAM 방법론을 제어되지 않는 단일 카메라라는 순수 영상 영역에 처음으로 성공시킨 작업이며, 일반 PC와 카메라로 30 Hz 동작을 달성했다 ([학술] https://www.doc.ic.ac.uk/~ajd/Publications/davison_etal_pami2007.pdf).
+고정된 삼각대 대신 움직이는 장비로 기록하려면 지금 내가 어디 있는지를 실시간으로 풀어야 한다. 앤드루 데이비슨이 ICCV 2003에서 단안 카메라 실시간 SLAM을 발표했고, 확장판이 2007년 IEEE PAMI에 MonoSLAM으로 실렸다. 로보틱스의 SLAM 방법론을 제어되지 않는 단일 카메라라는 순수 영상 영역에 처음으로 성공적으로 적용한 작업이며, 일반 PC와 카메라로 30 Hz 동작을 달성했다 ([학술] https://www.doc.ic.ac.uk/~ajd/Publications/davison_etal_pami2007.pdf).
 
-같은 2007년 클라인과 머레이의 PTAM은 추적과 매핑을 별도 스레드로 쪼개고 번들조정을 SLAM에 처음 끌어들였다. 2015년 무르아르탈 등의 ORB-SLAM은 PTAM 구조에 루프 폐쇄 검출을 더해 누적 오차를 크게 줄였다 ([학술] https://www.mdpi.com/2072-4292/14/13/3010). 라이다 쪽에서는 2014년 장지와 산지브 싱의 LOAM이 모서리와 평면 특징으로 실시간 라이다 오도메트리를 성립시켰고, 오늘날 휴대형·배낭형 스캐너 대부분이 이 계열의 후손이다 ([학술] https://www.ri.cmu.edu/pub_files/2014/7/Ji_LidarMapping_RSS2014_v8.pdf, 후손이라는 계보 판단은 추정).
+같은 2007년 클라인과 머레이의 PTAM은 추적과 매핑을 별도 스레드로 쪼개고 번들조정을 SLAM에 처음 끌어들였다. 2015년 무르아르탈 등의 ORB-SLAM은 PTAM 구조에 루프 폐쇄 검출을 더해 누적 오차를 크게 줄였다 ([학술] https://www.mdpi.com/2072-4292/14/13/3010). 라이다 쪽에서는 2014년 장지와 산지브 싱의 LOAM이 모서리와 평면 특징으로 실시간 라이다 오도메트리를 구현했고, 오늘날 휴대형·배낭형 스캐너 대부분이 이 계열의 후손이다 ([학술] https://www.ri.cmu.edu/pub_files/2014/7/Ji_LidarMapping_RSS2014_v8.pdf, 후손이라는 계보 판단은 추정).
 
 ### 소비자 깊이 센서
 
-2010년 마이크로소프트가 PrimeSense와 함께 내놓은 Kinect는 적외선 구조광으로 VGA 해상도 깊이 영상을 30 Hz로 뿌렸다 ([학술] https://ar5iv.labs.arxiv.org/html/1505.05459). 목적은 게임 입력이었지만 연구자들이 곧바로 범용 3D 캡처 장비로 끌어다 썼다. 2011년 KinectFusion은 움직이는 Kinect의 깊이 스트림을 실시간으로 융합해 실내 공간을 수 초 만에 3D 모델로 만들어 보였다 ([학술] https://www.microsoft.com/en-us/research/publication/kinectfusion-real-time-dynamic-3d-surface-reconstruction-and-interaction-2/).
+2010년 마이크로소프트가 PrimeSense와 함께 내놓은 Kinect는 적외선 구조광으로 VGA 해상도 깊이 영상을 30 Hz로 내보냈다 ([학술] https://ar5iv.labs.arxiv.org/html/1505.05459). 목적은 게임 입력이었지만 연구자들이 곧바로 범용 3D 캡처 장비로 끌어다 썼다. 2011년 KinectFusion은 움직이는 Kinect의 깊이 스트림을 실시간으로 융합해 실내 공간을 수 초 만에 3D 모델로 만들어 보였다 ([학술] https://www.microsoft.com/en-us/research/publication/kinectfusion-real-time-dynamic-3d-surface-reconstruction-and-interaction-2/).
 
 ### 드론과 서비스형 캡처
 
-2013년 1월 7일 출시된 DJI 팬텀은 629달러에 GPS 위치 유지와 자동 귀환을 갖춘 기체였고, 항공 촬영의 진입 장벽을 소비자 수준으로 낮췄다 ([제3자] https://en.wikipedia.org/wiki/DJI_Phantom, [제3자] https://spectrum.ieee.org/the-consumer-electronics-hall-of-fame-dji-phantom-drone). 소프트웨어 쪽에서는 2011년 EPFL 컴퓨터비전연구소에서 분사한 Pix4D가 드론 사진측량 상용 소프트웨어의 표준 자리를 잡았다 ([벤더] https://www.pix4d.com/blog/pix4d-anniversary, [제3자] https://en.wikipedia.org/wiki/Pix4D). 미국에서는 2016년 8월 29일 FAA Part 107이 발효되면서 건별 면제 절차 없이 상업 비행이 가능해졌고, 이것이 측량·건설 쪽 드론 도입을 실질적으로 열었다 ([제3자] https://www.faa.gov/newsroom/small-unmanned-aircraft-systems-uas-regulations-part-107, [제3자] https://www.commercialuavnews.com/ten-years-of-part-107-the-regulation-that-created-the-u-s-drone-industry).
+2013년 1월 7일 출시된 DJI 팬텀은 629달러에 GPS 위치 유지와 자동 귀환을 갖춘 기체였고, 항공 촬영의 진입 장벽을 소비자 수준으로 낮췄다 ([제3자] https://en.wikipedia.org/wiki/DJI_Phantom, [제3자] https://spectrum.ieee.org/the-consumer-electronics-hall-of-fame-dji-phantom-drone). 소프트웨어 쪽에서는 2011년 EPFL 컴퓨터비전연구소에서 분사한 Pix4D가 드론 사진측량 상용 소프트웨어의 표준 자리를 잡았다 ([벤더] https://www.pix4d.com/blog/pix4d-anniversary, [제3자] https://en.wikipedia.org/wiki/Pix4D). 미국에서는 2016년 8월 29일 FAA Part 107이 발효되면서 건별 면제 절차 없이 상업 비행이 가능해졌고, 이를 계기로 측량·건설 쪽 드론 도입이 실질적으로 시작됐다 ([제3자] https://www.faa.gov/newsroom/small-unmanned-aircraft-systems-uas-regulations-part-107, [제3자] https://www.commercialuavnews.com/ten-years-of-part-107-the-regulation-that-created-the-u-s-drone-industry).
 
 장비를 파는 대신 캡처 자체를 서비스로 파는 모델도 이때 자리 잡았다. 매터포트는 2011년 설립됐고 ([벤더] https://matterport.com/news/matterport-celebrates-10-years-innovation-growth-and-industry-firsts), PrimeSense 칩 기반 시제품에서 출발해 2014년 Pro1 카메라와 웹 플레이어, 클라우드 서비스를 묶은 플랫폼을 내놓았다 ([제3자] https://en.wikipedia.org/wiki/Matterport). 한국에서는 2015년 설립된 큐픽스가 안전모나 드론에 붙인 360도 카메라로 건설 현장을 찍어 올리면 자동으로 가상 공간을 만들어주는 방식을 들고 나왔다 ([제3자] https://www.dnews.co.kr/uhtml/view.jsp?idxno=202208082356165620749). 큐픽스는 현재 자사 플랫폼을 360도 영상을 4D 디지털 트윈으로 바꾸는 건설·시설관리용 공간 지능 플랫폼으로 소개하며, ENR Top 30 종합건설사의 70%가 쓴다고 주장한다 ([벤더] https://www.cupix.com/).
 
@@ -151,9 +151,9 @@ Reality Capture의 역사를 센서 출시 연표로 적으면 아무것도 설�
 
 2020년 밀든홀 등의 NeRF는 장면을 신경망이 표현하는 방사휘도장(radiance field)으로 두고, 카메라 자세를 아는 사진 몇 장만으로 새로운 시점의 영상을 만들어냈다 ([학술] https://arxiv.org/abs/2003.08934 — Mildenhall 외, ECCV 2020 oral, arXiv:2003.08934). 사실감은 뛰어났지만 학습과 렌더링 비용이 커서 현장에 바로 쓰기는 어려웠다.
 
-2023년 케를 등의 3D Gaussian Splatting이 그 비용 문제를 정면으로 풀었다. 장면을 3차원 가우시안들의 집합으로 표현해 빈 공간 계산을 피하고, 1080p 해상도에서 30 fps 이상의 실시간 신규 시점 렌더링을 달성했다 ([학술] https://arxiv.org/abs/2308.04079 — Kerbl 외, ACM Transactions on Graphics 42(4), 2023년 7월, arXiv:2308.04079). 발표 후 2~3년 사이 파생 연구가 폭증해 별도의 서베이 논문이 나올 정도가 됐다 ([학술] https://arxiv.org/abs/2401.03890).
+2023년 케를 등의 3D Gaussian Splatting이 그 비용 문제를 정면으로 풀었다. 장면을 3차원 가우시안 집합으로 표현해 빈 공간 계산을 피하고, 1080p 해상도에서 30 fps 이상의 실시간 신규 시점 렌더링을 달성했다 ([학술] https://arxiv.org/abs/2308.04079 — Kerbl 외, ACM Transactions on Graphics 42(4), 2023년 7월, arXiv:2308.04079). 발표 후 2~3년 사이 파생 연구가 폭증해 별도의 서베이 논문이 나올 정도가 됐다 ([학술] https://arxiv.org/abs/2401.03890).
 
-건설 쪽 도입은 예상과 다른 자리에서 일어났다. 2025년 12월 AEC Magazine 분석에 따르면 가우시안 스플랫은 측량 도구가 아니라 현장 변화를 빠르게 기록하는 수단으로 먼저 자리 잡았다. 사전 계획 없이 휴대폰이나 드론 영상만으로 훨씬 자주 기록한다는 점이 이 기술의 쓸모다. 오토데스크(ReCap, Civil 3D), 벤틀리(iTwin Capture), Pix4D, ESRI ArcGIS Reality가 각자 지원을 붙이는 중이다. 같은 기사는 벤더가 측량 등급 정확도를 내세울 때 실제로는 라이다나 SLAM이 기하를 담당하는 혼합 워크플로라고 짚는다. 스플랫은 그 정확도를 물려받을 뿐 스스로 만들어내지 않는다는 지적이다 ([제3자] https://aecmag.com/technology/introducing-gaussian-splats-for-aec/). 외형 재현과 기하 정확도는 별개의 문제라는 뜻이다.
+건설 쪽 도입은 예상과 다른 자리에서 일어났다. 2025년 12월 AEC Magazine 분석에 따르면 가우시안 스플랫은 측량 도구가 아니라 현장 변화를 빠르게 기록하는 수단으로 먼저 자리 잡았다. 사전 계획 없이 휴대폰이나 드론 영상만으로 훨씬 자주 기록한다는 점이 이 기술의 쓸모다. 오토데스크(ReCap, Civil 3D), 벤틀리(iTwin Capture), Pix4D, ESRI ArcGIS Reality가 각자 지원을 붙이는 중이다. 같은 기사는 벤더가 측량 등급 정확도를 내세울 때 실제로는 라이다나 SLAM이 기하를 담당하는 혼합 워크플로라고 짚는다. 스플랫은 그 정확도를 물려받을 뿐 스스로 만들어내지 않는다는 지적이다 ([제3자] https://aecmag.com/technology/introducing-gaussian-splats-for-aec/). 외형 재현과 기하 정확도는 별개의 문제다.
 
 ### 자동 해석과 3D 기초모델
 
@@ -165,10 +165,10 @@ Reality Capture의 역사를 센서 출시 연표로 적으면 아무것도 설�
 
 ### SLAM 스캐너의 현장 정착
 
-이동식 SLAM 스캐너는 2020년대 들어 현장 장비로 자리 잡았다 (추정). NavVis VLX와 Leica BLK2GO를 토털스테이션과 Z+F Imager 5016 정적 스캐너를 기준으로 평가한 2024년 연구는 실내에서 5 mm 수준, 실외에서는 10 mm 이상으로 정확도가 떨어진다고 보고했다 ([학술] https://www.mdpi.com/2072-4292/16/17/3256 — Gharineiat 외, Remote Sensing 16(17):3256, 2024, 수치는 초록 기준). NavVis VLX 2세대와 3세대의 실내 기하 정확도를 다룬 2025년 ISPRS 보고도 이어졌다 ([학술] https://isprs-archives.copernicus.org/articles/XLVIII-1-W6-2025/107/2025/isprs-archives-XLVIII-1-W6-2025-107-2025.pdf). 벤더가 내세우는 상대 정확도 수치와 제3자 검증 수치는 대체로 같은 자릿수에 있다. 다만 실외 조건에서 둘이 벌어지고, 장비를 고를 때 실무가 기대야 할 근거도 여기다.
+이동식 SLAM 스캐너는 2020년대 들어 현장 장비로 자리 잡았다 (추정). NavVis VLX와 Leica BLK2GO를 토털스테이션과 Z+F Imager 5016 정적 스캐너를 기준으로 평가한 2024년 연구는 실내에서 5 mm 수준, 실외에서는 10 mm 이상으로 정확도가 떨어진다고 보고했다 ([학술] https://www.mdpi.com/2072-4292/16/17/3256 — Gharineiat 외, Remote Sensing 16(17):3256, 2024, 수치는 초록 기준). NavVis VLX 2세대와 3세대의 실내 기하 정확도를 다룬 2025년 ISPRS 보고도 이어졌다 ([학술] https://isprs-archives.copernicus.org/articles/XLVIII-1-W6-2025/107/2025/isprs-archives-XLVIII-1-W6-2025-107-2025.pdf). 벤더가 내세우는 상대 정확도 수치와 제3자 검증 수치는 대체로 같은 자릿수에 있다. 다만 실외 조건에서는 둘이 벌어지며, 장비를 고를 때 실무에서 기대야 할 근거도 여기에 있다.
 
 > **병목:** 기록은 쉬워졌는데 결과물이 사람 손을 거쳐야만 의미를 갖는 점 덩어리로 남았고, 사실감과 기하 정확도를 동시에 얻기 어려웠다.
-> **돌파(진행 중):** 신경 렌더링이 사실감 쪽을, 라이다와 SLAM이 기하 쪽을 맡는 혼합 구조가 자리 잡는 중이고, 기초모델이 해석 단계를 자동화하려 시도하고 있다.
+> **돌파(진행 중):** 신경 렌더링이 사실감 쪽을, 라이다와 SLAM이 기하 쪽을 맡는 혼합 구조가 자리 잡는 중이고, 기초모델이 해석 단계의 자동화를 시도하고 있다.
 
 ---
 

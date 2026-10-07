@@ -20,7 +20,7 @@ Reality Capture 문서 묶음에서 쓰는 용어를 한곳에 모았다. 각 �
 취득·처리·활용을 잇는 파이프라인 전체를 가리킨다. → 범위 정의는 [01-tools.md](01-tools.md) 0절
 
 **점군(Point Cloud)**
-3차원 좌표를 가진 점들의 집합으로 공간을 표현한 데이터. Reality Capture의 가장 기본적인 산출물이다.
+3차원 좌표를 지닌 점의 집합으로 공간을 표현한 데이터. Reality Capture의 가장 기본적인 산출물이다.
 https://www.mdpi.com/2072-4292/16/17/3256
 
 **디지털 트윈(Digital Twin)**
@@ -40,13 +40,13 @@ https://colmap.github.io/
 https://toddneff.com/books/lidarhistory/extras/lidarhistory-timeline/
 
 **TLS(Terrestrial Laser Scanning, 지상 레이저 스캐닝)**
-삼각대에 고정한 스캐너가 제자리에서 회전하며 취득하는 지상 라이다. 정밀도가 높은 대신 이동마다
-거치와 정합이 필요하다.
+삼각대에 고정한 스캐너가 제자리에서 회전하며 취득하는 지상 라이다. 정밀도가 높은 대신 자리를 옮길 때마다
+거치와 정합을 다시 해야 한다.
 https://leica-geosystems.com/-/media/files/leicageosystems/products/datasheets/leica-rtc360-ds.ashx
 
 **SLAM(Simultaneous Localization and Mapping)**
-센서 자신의 위치와 주변 지도를 동시에 추정하는 기법. 모바일·핸드헬드 스캐너가 걸어 다니며
-취득할 수 있게 하는 핵심 기술이다.
+센서 자신의 위치와 주변 지도를 동시에 추정하는 기법. 모바일·핸드헬드 스캐너를 들고 걸어 다니며
+취득할 수 있게 해 주는 핵심 기술이다.
 https://knowledge.navvis.com/docs/navvis-vlx-3-specifications
 
 **ToF(Time-of-Flight)**
@@ -54,7 +54,7 @@ https://knowledge.navvis.com/docs/navvis-vlx-3-specifications
 https://pmc.ncbi.nlm.nih.gov/articles/PMC8593014/
 
 **구조광(Structured Light)**
-알려진 패턴을 대상에 투사하고 그 패턴이 일그러진 모양을 관측해 형상을 계산하는 방식.
+미리 정한 패턴을 대상에 투사하고 그 패턴이 일그러진 모양을 관측해 형상을 계산하는 방식.
 https://www.artec3d.com/portable-3d-scanners/artec-leo
 
 **MMS(Mobile Mapping System, 이동형측량시스템)**
@@ -74,7 +74,7 @@ https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-25-015.pdf
 https://colmap.github.io/
 
 **MVS(Multi-View Stereo)**
-자세가 이미 알려진 다시점 영상에서 조밀한 점군이나 메시를 생성하는 후속 단계.
+자세를 이미 아는 다시점 영상에서 조밀한 점군이나 메시를 생성하는 후속 단계.
 https://colmap.github.io/
 
 **전역 SfM(Global SfM)**
@@ -138,7 +138,7 @@ https://arxiv.org/abs/1911.11236
 https://arxiv.org/abs/2003.08934 (원 논문) · https://dl.acm.org/doi/abs/10.1007/978-3-030-58452-8_24
 
 **3DGS(3D Gaussian Splatting)**
-장면을 수백만 개의 3차원 가우시안으로 명시적으로 표현해 실시간 렌더링을 달성한 방사휘도장 기법. 2023년 발표.
+장면을 수백만 개의 3차원 가우시안으로 명시적으로 표현해 실시간 렌더링을 가능하게 한 방사휘도장 기법. 2023년 발표.
 https://arxiv.org/abs/2308.04079 (원 논문) · https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/
 
 **신규 시점 합성(Novel View Synthesis)**
@@ -166,7 +166,7 @@ ASPRS가 정한 라이다 점군 바이너리 표준 포맷과 그 무손실 압
 https://www.loc.gov/preservation/digital/formats/fdd/fdd000418.shtml
 
 **COPC(Cloud Optimized Point Cloud)**
-단일 파일 안에서 옥트리로 공간 정렬해 HTTP 부분 읽기를 가능하게 만든 점군 포맷.
+단일 파일 안을 옥트리로 공간 정렬해 HTTP로 필요한 부분만 읽어 올 수 있게 한 점군 포맷.
 https://lidarnews.com/cloud-optimized-point-clouds-copc/
 
 **3D Tiles**
@@ -178,7 +178,7 @@ https://www.ogc.org/standards/3dtiles/
 https://www.ogc.org/announcement/new-version-of-3d-streaming-community-standard-i3s-adopted-and-published-by-ogc/
 
 **옥트리 LOD(Octree Level of Detail)**
-공간을 8분할로 재귀 분할해 보는 거리에 따라 다른 해상도를 내보내는 자료구조.
+공간을 재귀적으로 8등분해 보는 거리에 따라 다른 해상도를 내보내는 자료구조.
 https://github.com/potree/potree
 
 **Potree**
@@ -223,7 +223,7 @@ https://www.iso.org/standard/68078.html
 https://isprs-annals.copernicus.org/articles/X-4-W2-2022/145/2022/
 
 **IfcProjectedCRS**
-모델이 사용하는 투영 좌표계를 EPSG 코드 등으로 명시하는 IFC 엔티티.
+모델이 쓰는 투영 좌표계를 EPSG 코드 등으로 명시하는 IFC 엔티티.
 https://isprs-annals.copernicus.org/articles/X-4-W2-2022/145/2022/
 
 ---

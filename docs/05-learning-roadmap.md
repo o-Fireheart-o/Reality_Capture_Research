@@ -1,7 +1,7 @@
 # 05. 학습 로드맵 — 무엇을 더 배워야 발전할 수 있는가
 
 작성일: 2026-09-21
-최종수정일: 2026-09-21
+최종수정일: 2026-10-07
 
 > **담당 질문(핵심 연구 질문 5)**: 한 가지 기술만으로는 발전하기 어려운 시대에, 무엇을 더 배워야 발전할 수 있는가
 >
@@ -23,13 +23,13 @@
 
 ### 1.1 채용이 요구하는 능력의 폭이 이미 넓다
 
-Reality Capture 직무 공고를 읽어 보면 장비 운용 하나만 요구하는 자리는 드물다. Amazon의 Reality Capture BIM Engineer 공고는 Autodesk 계열(Civil 3D, Revit, Navisworks, ReCap, BIM 360) 경험과 점군 처리·모델링 경험을 함께 요구한다([amazon.jobs 공고 2503498](https://www.amazon.jobs/en/jobs/2503498/reality-capture-bim-engineer), 확인 2026-09-21 — 채용 공고이므로 1차 자료). Los Alamos National Laboratory의 Reality Capture Specialist 공고는 현장 스캐닝, 점군 정합과 품질관리, scan-to-BIM을 한 사람이 독립적으로 수행할 것을 명시한다([lanl.jobs](https://lanl.jobs/search/jobdetails/reality-capture-specialist-lidar-registration-and-bim-modeling/e9dcedcb-c944-4c60-b67c-4bf854943fbf), 확인 2026-09-21).
+Reality Capture 직무 공고를 읽어 보면 장비 운용 하나만 요구하는 자리는 드물다. Amazon의 Reality Capture BIM Engineer 공고는 Autodesk 계열(Civil 3D, Revit, Navisworks, ReCap, BIM 360) 경험과 점군 처리·모델링 경험을 함께 요구한다([amazon.jobs 공고 2503498](https://www.amazon.jobs/en/jobs/2503498/reality-capture-bim-engineer), 확인 2026-09-21 — 채용 공고이므로 1차 자료). Los Alamos National Laboratory의 Reality Capture Specialist 공고는 현장 스캐닝, 점군 정합과 품질관리, scan-to-BIM을 한 사람이 독립적으로 수행해야 한다고 명시한다([lanl.jobs](https://lanl.jobs/search/jobdetails/reality-capture-specialist-lidar-registration-and-bim-modeling/e9dcedcb-c944-4c60-b67c-4bf854943fbf), 확인 2026-09-21).
 
 이런 공고에서 반복되는 항목이 하나 있다. 좌표계와 단위, 측량 기준점을 이해하고 있느냐다. 장비를 잘 다루는 사람이 아니라 측량 기준계와 BIM 좌표계 사이에서 데이터를 잃지 않고 옮길 줄 아는 사람을 찾는다.
 
 ### 1.2 "자동화되니까 안 배워도 된다"는 아직 사실이 아니다
 
-scan-to-BIM 자동화 연구는 오래 쌓였지만, 리뷰 계열 연구가 내놓는 결론은 여전히 비슷하다. 딥러닝 기반 분할이 벽·바닥·천장 같은 주요 부재까지는 처리해도 나머지 객체는 사람이 모델링해야 하고, 가려진(occluded) 영역은 복원이 어렵다. 학습에 필요한 라벨링 점군을 구하는 비용도 병목이다. 합성 데이터로 메우려 하면 도메인 갭 탓에 정확도가 떨어진다([Harnessing Indoor 3D Point Cloud Reconstruction for Automated Scan-to-BIM Workflows: A Systematic Review, Springer](https://link.springer.com/chapter/10.1007/978-981-92-2743-3_40), 확인 2026-09-21 — 학술 리뷰; [DawNet, Automation in Construction](https://www.sciencedirect.com/science/article/abs/pii/S0926580524002097), 확인 2026-09-21 — 학술 논문).
+scan-to-BIM 자동화 연구는 오래 쌓였지만 리뷰 계열 연구가 내놓는 결론은 여전히 비슷하다. 딥러닝 기반 분할이 벽·바닥·천장 같은 주요 부재까지는 처리해도 나머지 객체는 사람이 모델링해야 하고, 가려진(occluded) 영역은 복원이 어렵다. 학습에 필요한 라벨링 점군을 구하는 비용도 병목이다. 합성 데이터로 메우려 하면 도메인 갭 탓에 정확도가 떨어진다([Harnessing Indoor 3D Point Cloud Reconstruction for Automated Scan-to-BIM Workflows: A Systematic Review, Springer](https://link.springer.com/chapter/10.1007/978-981-92-2743-3_40), 확인 2026-09-21 — 학술 리뷰; [DawNet, Automation in Construction](https://www.sciencedirect.com/science/article/abs/pii/S0926580524002097), 확인 2026-09-21 — 학술 논문).
 
 당분간 값이 붙는 자리는 자동화 결과를 판단하고 고치는 사람 쪽이다. 판단하려면 원리를 알아야 한다.
 
@@ -37,9 +37,9 @@ scan-to-BIM 자동화 연구는 오래 쌓였지만, 리뷰 계열 연구가 내
 
 3D Gaussian Splatting은 2023년 논문 발표 이후 급속히 퍼졌다([graphdeco-inria/gaussian-splatting, ACM TOG 42(4), 2023](https://github.com/graphdeco-inria/gaussian-splatting), 확인 2026-09-21 — 저자 공개 구현). 그런데 건물을 대상으로 공간 정확도를 측정한 ISPRS 연구를 보면 3DGS의 정확도는 입력 영상 수와 초기 점군 품질, 학습 반복 횟수 같은 조건에 크게 좌우된다. 같은 연구에서 영상 기반 초기화(COLMAP, Pix4D)가 휴대폰 LiDAR 초기화보다 공간 지표에서 나았다([McNally 외, A Comprehensive Evaluation of the Spatial Accuracy of Building Gaussian Splatting, ISPRS Annals XI-M-1-2026](https://isprs-annals.copernicus.org/articles/XI-M-1-2026/31/2026/isprs-annals-XI-M-1-2026-31-2026.html), 확인 2026-09-21 — 학술 논문).
 
-콘크리트 부재를 대상으로 3DGS와 레이저 스캐닝을 비교한 연구도 비슷하다. 전체 형상은 비슷하게 나왔지만 평면 노이즈가 커서, 레이저 스캔 점군에서는 보이던 처짐과 휨 세부가 3DGS 점군에서 사라졌다([Comparing 3D Gaussian Splatting and Laser Scanning for Assessing the Condition of Structural Concrete Elements for Circular Reuse, Springer](https://link.springer.com/chapter/10.1007/978-981-95-8489-5_53), 확인 2026-09-21 — 학술 논문).
+콘크리트 부재를 대상으로 3DGS와 레이저 스캐닝을 비교한 연구도 비슷하다. 전체 형상은 비슷하게 나왔지만 평면 노이즈가 커서 레이저 스캔 점군에서는 보이던 처짐과 휨 세부가 3DGS 점군에서 사라졌다([Comparing 3D Gaussian Splatting and Laser Scanning for Assessing the Condition of Structural Concrete Elements for Circular Reuse, Springer](https://link.springer.com/chapter/10.1007/978-981-95-8489-5_53), 확인 2026-09-21 — 학술 논문).
 
-여기서 실무자가 답해야 할 질문이 생긴다. 어느 용도에 어느 센서를 쓸 것인가. 이 판단은 기하학·측량 오차론·품질 규격을 모두 알아야 가능하다. 도구 사용법만으로는 닿지 않는다.
+여기서 실무자가 답해야 할 질문이 생긴다. 어느 용도에 어느 센서를 쓸 것인가. 이 판단을 내리려면 기하학·측량 오차론·품질 규격을 모두 알아야 한다. 도구 사용법만 알아서는 답이 나오지 않는다.
 
 ---
 
@@ -49,7 +49,7 @@ scan-to-BIM 자동화 연구는 오래 쌓였지만, 리뷰 계열 연구가 내
 
 ### 2.1 선형대수와 3D 기하 — 좌표변환, 회전 표현
 
-**왜**: Reality Capture의 오류는 결국 좌표계 문제로 환원된다. 스캔 월드 좌표, 프로젝트 좌표, 측량 기준계, BIM 내부 좌표가 서로 다른 변환 관계를 갖는다. 회전을 오일러각으로 다루다 짐벌락을 만나거나, 스케일이 섞인 유사변환을 강체변환으로 착각하는 사고가 현장에서 반복된다.
+**왜**: Reality Capture의 오류는 결국 좌표계 문제로 환원된다. 스캔 월드 좌표, 프로젝트 좌표, 측량 기준계, BIM 내부 좌표 사이에는 저마다 다른 변환 관계가 있다. 회전을 오일러각으로 다루다 짐벌락을 만나거나, 스케일이 섞인 유사변환을 강체변환으로 착각하는 사고가 현장에서 반복된다.
 
 **어디까지**: 동차좌표, SE(3)/SO(3), 쿼터니언과 회전행렬의 상호 변환, 유사변환(7-parameter Helmert)과 강체변환의 차이, 최소제곱 기반 점군 정렬(Kabsch/Horn)을 손으로 유도할 수 있으면 충분하다.
 
@@ -60,9 +60,9 @@ scan-to-BIM 자동화 연구는 오래 쌓였지만, 리뷰 계열 연구가 내
 
 ### 2.2 사진측량 원리
 
-**왜**: SfM 소프트웨어의 버튼은 몇 개 안 되지만, 결과가 틀렸을 때 원인을 찾으려면 그 안에서 무슨 일이 일어나는지 알아야 한다. 촬영 계획(중복도, 촬영 고도, GSD), 표정 요소, 지상기준점(GCP) 배치, 렌즈 왜곡 모델을 모르면 "왜 휘었는지" 설명하지 못한다.
+**왜**: SfM 소프트웨어의 버튼은 몇 개 안 되지만 결과가 틀렸을 때 원인을 찾으려면 그 안에서 무슨 일이 일어나는지 알아야 한다. 촬영 계획(중복도, 촬영 고도, GSD), 표정 요소, 지상기준점(GCP) 배치, 렌즈 왜곡 모델을 모르면 "왜 휘었는지" 설명하지 못한다.
 
-**어디까지**: 내부표정과 외부표정의 구분, 공선조건식, 전방교회법, 항공삼각측량, 정사영상 생성 원리. 여기에 GSD와 기대 정확도의 관계를 계산할 수 있어야 한다.
+**어디까지**: 내부표정과 외부표정의 구분, 공선조건식, 전방교회법, 항공삼각측량, 정사영상 생성 원리. 여기에 더해 GSD와 기대 정확도의 관계를 계산할 줄 알아야 한다.
 
 **대표 자원**
 
@@ -138,7 +138,7 @@ scan-to-BIM 자동화 연구는 오래 쌓였지만, 리뷰 계열 연구가 내
 
 - **ISO 19650 시리즈** — 건설 자산의 생애주기 정보관리 국제표준. Part 1은 개념과 원칙, Part 2는 자산 인도 단계의 정보관리 프로세스를 규정한다 — https://www.iso.org/standard/68078.html † (확인 2026-09-21, 국제표준)
 - **IFC / ISO 16739-1:2024** — openBIM 데이터 교환 스키마. IFC4.3이 2024년 3월 ISO 표준으로 발행됐고, 인프라 영역까지 확장됐다 — https://www.iso.org/standard/84123.html † (확인 2026-09-21, 국제표준)
-- **IfcOpenShell** — IFC를 코드로 읽고 쓰는 오픈소스 툴킷. IFC2X3/IFC4/IFC4X3을 지원하며 C++과 Python으로 쓴다 — https://ifcopenshell.org/ (확인 2026-09-21, 오픈소스)
+- **IfcOpenShell** — IFC를 코드로 읽고 쓰는 오픈소스 툴킷. IFC2X3/IFC4/IFC4X3을 지원하며 C++과 Python에서 쓸 수 있다 — https://ifcopenshell.org/ (확인 2026-09-21, 오픈소스)
 - **국토교통부 「건설산업 BIM 기본지침」** — 2020년 12월 발표. BIM 정의, 적용 대상, 절차, 공통 표준을 제시한다 — https://www.molit.go.kr/USR/policyData/m_34681/dtl.jsp?srch_usr_titl=Y&psize=10&lcmspage=1&id=4516 † , 보도자료 https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95084979 † (확인 2026-09-21, 정부 지침)
 - **국토교통부 「건설산업 BIM 시행지침」** — 발주자편·설계자편·시공자편으로 나뉜 실행 지침 — https://www.molit.go.kr/USR/policyData/m_34681/dtl.jsp?srch_usr_titl=Y&psize=10&lcmspage=1&id=4634 † (확인 2026-09-21, 정부 지침)
 
@@ -167,14 +167,14 @@ scan-to-BIM 자동화 연구는 오래 쌓였지만, 리뷰 계열 연구가 내
 
 **조합**: Reality Capture + 3D 딥러닝(분할·검출·재구성)
 
-**푸는 실제 문제**: 점군에서 벽·기둥·보·배관을 자동으로 찾아내 모델링 시간을 줄이는 일. 1.2에서 봤듯 이 문제는 아직 풀리지 않았다. 주요 부재 너머의 객체, 가려진 영역, 라벨 데이터 부족과 도메인 갭이 남은 과제다([Springer 리뷰](https://link.springer.com/chapter/10.1007/978-981-92-2743-3_40), 확인 2026-09-21). 뒤집어 보면 아직 들어갈 자리가 남아 있다는 뜻이다.
+**푸는 실제 문제**: 점군에서 벽·기둥·보·배관을 자동으로 찾아내 모델링 시간을 줄이는 일. 1.2에서 봤듯 이 문제는 아직 풀리지 않았다. 주요 부재 너머의 객체, 가려진 영역, 라벨 데이터 부족과 도메인 갭이 남은 과제다([Springer 리뷰](https://link.springer.com/chapter/10.1007/978-981-92-2743-3_40), 확인 2026-09-21). 뒤집어 보면 아직 들어갈 자리가 남아 있다.
 
 **필요한 학습 항목**
 
 - 3D 딥러닝 아키텍처: 희소 컨볼루션, Point Transformer 계열
 - 대규모 점군 데이터 파이프라인과 라벨링 전략
 - 도메인 적응, 합성 데이터 생성
-- 평가 지표: mIoU와 함께 기하 오차를 같이 보는 습관
+- 평가 지표: mIoU와 기하 오차를 함께 보는 습관
 - 실습 코드베이스: Pointcept — PTv1/v2/v3, SparseUNet 등을 ScanNet·S3DIS·SemanticKITTI·nuScenes 설정으로 제공한다. MIT 라이선스 — https://github.com/Pointcept/Pointcept (확인 2026-09-21, 오픈소스)
 
 **예상 진입 기간**: 파이썬과 딥러닝 경험이 있으면 6~9개월, 밑바닥부터면 12~18개월(추정)
@@ -234,7 +234,7 @@ scan-to-BIM 자동화 연구는 오래 쌓였지만, 리뷰 계열 연구가 내
 
 ### 5.1 0~3개월 — 한 번은 끝까지 돌려 본다
 
-목표는 이해가 아니라 완주다. 사진 몇 장에서 점군까지 스스로 만들어 보면, 이후 읽는 문서의 밀도가 달라진다.
+목표는 이해가 아니라 완주다. 사진 몇 장에서 점군까지 스스로 만들어 보면 이후 문서를 읽을 때 얻는 것이 달라진다.
 
 | 항목 | 무엇을 배우나 | 자원 |
 |------|---------------|------|
@@ -259,7 +259,7 @@ scan-to-BIM 자동화 연구는 오래 쌓였지만, 리뷰 계열 연구가 내
 
 ### 5.3 1년 이상 — 세로획을 깊게, 가로획을 하나 고른다
 
-이 시점부터는 목록을 따라가는 방식이 잘 안 먹는다. 4장에서 고른 조합에 따라 갈라진다.
+이 시점부터는 목록을 따라가는 방식이 잘 먹히지 않는다. 4장에서 고른 조합에 따라 갈라진다.
 
 | 방향 | 무엇을 배우나 | 자원 |
 |------|---------------|------|
@@ -276,11 +276,11 @@ scan-to-BIM 자동화 연구는 오래 쌓였지만, 리뷰 계열 연구가 내
 
 ## 6. 손으로 해볼 실습 과제
 
-읽는 것과 돌려 보는 것 사이의 간격이 이 분야에서 유독 크다. 아래 과제는 전부 공개 도구와 공개 데이터로 가능하다.
+읽는 것과 돌려 보는 것 사이의 간격이 이 분야에서 유독 크다. 아래 과제는 전부 공개 도구와 공개 데이터로 할 수 있다.
 
 ### 과제 1 — 직접 찍은 사진으로 재구성하고, 일부러 실패시켜 보기
 
-스마트폰으로 건물 외벽이나 실내 공간을 60~120장 찍어 COLMAP으로 SfM과 MVS를 돌린다. 그다음이 본론이다. 중복도를 일부러 낮추거나, 유리·반사면을 포함시키거나, 조명이 바뀐 사진을 섞어 실패를 재현한다. 실패 원인을 매칭 그래프에서 확인한다.
+스마트폰으로 건물 외벽이나 실내 공간을 60~120장 찍어 COLMAP으로 SfM과 MVS를 돌린다. 그다음이 본론이다. 중복도를 일부러 낮추거나, 유리·반사면을 넣거나, 조명이 바뀐 사진을 섞어 실패를 재현한다. 실패 원인을 매칭 그래프에서 확인한다.
 
 - 도구: COLMAP https://colmap.github.io/ (확인 2026-09-21)
 
@@ -292,7 +292,7 @@ Open3D로 두 점군을 복셀 다운샘플링 → FPFH 특징 → RANSAC 전역
 
 ### 과제 3 — 3DGS를 학습시키고 레이저 스캔과 비교하기
 
-nerfstudio의 splatfacto로 3DGS를 학습시킨 뒤, 같은 대상의 레이저 스캔 점군과 CloudCompare에서 거리 비교를 한다. 앞서 인용한 연구가 지적한 평면 노이즈가 실제로 보이는지 확인한다. 자기 눈으로 확인한 한계는 남의 논문 결론보다 오래 남는다.
+nerfstudio의 splatfacto로 3DGS를 학습시킨 뒤, 같은 대상의 레이저 스캔 점군과 CloudCompare에서 거리를 비교한다. 앞서 인용한 연구가 지적한 평면 노이즈가 실제로 보이는지 확인한다. 자기 눈으로 확인한 한계는 남의 논문 결론보다 오래 남는다.
 
 - 도구: nerfstudio https://docs.nerf.studio/ , CloudCompare https://www.cloudcompare.org/ (확인 2026-09-21)
 
@@ -332,7 +332,7 @@ PDAL 파이프라인으로 E57/LAS를 읽어 좌표계를 변환하고 필터링
 
 **특정 벤더 소프트웨어의 메뉴 구조를 먼저 외우는 일**
 
-Leica Cyclone, Autodesk ReCap, RIEGL RiSCAN PRO는 채용 공고에 자주 등장한다([amazon.jobs](https://www.amazon.jobs/en/jobs/2503498/reality-capture-bim-engineer), 확인 2026-09-21). 그런데 같은 공고가 함께 요구하는 것은 좌표계와 측량 기준점 이해, 정합 품질관리다. 원리를 알면 UI는 며칠이면 붙고, 원리 없이 UI만 익히면 제품이 바뀔 때마다 처음부터 다시 시작한다(추정).
+Leica Cyclone, Autodesk ReCap, RIEGL RiSCAN PRO는 채용 공고에 자주 등장한다([amazon.jobs](https://www.amazon.jobs/en/jobs/2503498/reality-capture-bim-engineer), 확인 2026-09-21). 그런데 같은 공고가 함께 요구하는 것은 좌표계와 측량 기준점 이해, 정합 품질관리다. 원리를 알면 UI는 며칠이면 손에 익고, 원리 없이 UI만 익히면 제품이 바뀔 때마다 처음부터 다시 시작한다(추정).
 
 **기하 기초 없이 최신 NeRF/3DGS 논문만 따라 읽는 일**
 
@@ -348,7 +348,7 @@ PCL과 Ceres를 읽다 보면 만나게 되지만, 먼저 공부할 대상은 �
 
 **"완전 자동 scan-to-BIM이 곧 온다"는 전제로 세우는 계획**
 
-리뷰 논문이 공통으로 지적하는 것은 주요 부재를 넘어선 객체, 가려진 영역, 라벨 데이터 부족과 도메인 갭이다([Springer 리뷰](https://link.springer.com/chapter/10.1007/978-981-92-2743-3_40), 확인 2026-09-21; [DawNet](https://www.sciencedirect.com/science/article/abs/pii/S0926580524002097), 확인 2026-09-21). 자동화를 전제로 모델링 역량을 건너뛰면, 자동화 결과를 검수할 사람이 사라진다.
+리뷰 논문이 공통으로 지적하는 것은 주요 부재를 넘어선 객체, 가려진 영역, 라벨 데이터 부족과 도메인 갭이다([Springer 리뷰](https://link.springer.com/chapter/10.1007/978-981-92-2743-3_40), 확인 2026-09-21; [DawNet](https://www.sciencedirect.com/science/article/abs/pii/S0926580524002097), 확인 2026-09-21). 자동화를 전제로 모델링 역량을 건너뛰면 자동화 결과를 검수할 사람이 사라진다.
 
 **시장조사 보고서의 성장률 숫자**
 
@@ -372,7 +372,7 @@ PCL과 Ceres를 읽다 보면 만나게 되지만, 먼저 공부할 대상은 �
 - **ICP(Iterative Closest Point)** — 두 점군의 대응점을 반복 갱신하며 강체변환을 추정하는 정합 알고리즘 — https://www.open3d.org/ (확인 2026-09-21)
 - **오차상태 칼만필터(Error-State Kalman Filter)** — 상태 자체가 아니라 오차를 추정해 회전의 비선형성을 다루는 필터 — https://arxiv.org/abs/1711.02508 (확인 2026-09-21)
 - **팩터그래프(Factor Graph)** — 변수와 제약을 이분 그래프로 표현해 SLAM·센서융합 문제를 푸는 방식 — https://gtsam.org/ (확인 2026-09-21)
-- **3D Gaussian Splatting(3DGS)** — 장면을 3차원 가우시안 집합으로 표현해 실시간 렌더링을 달성하는 방사휘도장 기법 — https://github.com/graphdeco-inria/gaussian-splatting (확인 2026-09-21)
+- **3D Gaussian Splatting(3DGS)** — 장면을 3차원 가우시안 집합으로 표현해 실시간으로 렌더링하는 방사휘도장 기법 — https://github.com/graphdeco-inria/gaussian-splatting (확인 2026-09-21)
 - **E57(ASTM E2807)** — 점 좌표·색·강도와 2D 영상을 함께 담는 벤더 중립 점군 교환 포맷, 2011년 2월 ASTM 승인 — https://paulbourke.net/dataformats/e57/ (확인 2026-09-21)
 - **LAS / LAZ** — ASPRS가 정의한 LiDAR 점군 표준 포맷과 그 압축 형태 — https://paulbourke.net/dataformats/laz/LAS_1_4_r15.pdf † (확인 2026-09-21)
 - **COPC(Cloud Optimized Point Cloud)** — 단일 파일 안에 옥트리로 공간 정렬해 HTTP 부분 읽기를 가능하게 한 점군 포맷 — https://lidarnews.com/cloud-optimized-point-clouds-copc/ † (확인 2026-09-21)
