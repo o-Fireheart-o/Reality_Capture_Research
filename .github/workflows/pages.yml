@@ -1,0 +1,42 @@
+name: Deploy site to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+    paths: ["site/**", ".github/workflows/pages.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      # site/index.html은 Artifact용이라 doctype·head가 없다. Pages용으로 감싸서 내보낸다.
+      - name: Build
+        run: |
+          mkdir -p _site
+          {
+            printf '<!doctype html>\n<html lang="ko">\n<head>\n<meta charset="utf-8">\n'
+            printf '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'
+            printf '<style>[hidden]{display:none!important} img{max-width:100%%}</style>\n'
+            cat site/index.html
+            printf '\n</html>\n'
+          } > _site/index.html
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
