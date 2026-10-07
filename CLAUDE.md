@@ -36,7 +36,8 @@ docs/05-learning-roadmap.md  질문 5
 - 원문 PDF·이미지 등 첨부 자료는 `sources/` 에 둔다. 웹 링크만 있으면 별도 파일을 만들지 않는다.
 - `site/index.html`은 여섯 문서를 한 장으로 묶은 웹 요약본이다. `site/_0*.html` 조각을 이어 붙여 만들고
   (`cat site/_0*.html > site/index.html`), 용어집 조각 `_07`은 `00-glossary.md`에서 `python tools/gen_glossary.py docs/00-glossary.md site/_07-glossary.html`로 생성한다. 원문과 다르면 원문이 기준이다.
-  게시 주소: https://claude.ai/artifact/LMe3sYRx6MyJb9ovYFnKaT
+  공개 주소(GitHub Pages, master push 시 자동 배포): https://o-fireheart-o.github.io/Reality_Capture_Research/
+  Claude 아티팩트(비공개): https://claude.ai/artifact/LMe3sYRx6MyJb9ovYFnKaT
 
 ## 작성 규약
 
