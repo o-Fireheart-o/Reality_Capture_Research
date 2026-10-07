@@ -1,0 +1,414 @@
+<section id="summary">
+  <div class="sec-head"><span class="sec-num">00</span><h2>다섯 질문, 다섯 개의 답</h2></div>
+  <p>이 리서치는 다섯 개의 질문에서 출발했습니다. 각 질문에 문서 한 편이 대응하고, 아래 카드는 그 결론만 먼저 꺼낸 것입니다.</p>
+
+  <div class="grid c2">
+    <div class="card">
+      <span class="kicker">질문 1 · 도구</span>
+      <h4>여덟 가지 취득 방식이 있고, 하나로 끝나는 현장은 없다</h4>
+      <p>사진측량·TLS·모바일 SLAM·드론·360·구조광/ToF·항공위성 라이다·NeRF/3DGS. 정밀·속도·범위·비용이 서로 어긋나 조합으로 쓸 수밖에 없습니다. <a href="#tools">→ 01장</a></p>
+    </div>
+    <div class="card">
+      <span class="kicker">질문 2 · 역사</span>
+      <h4>무엇을 자동화했는가의 역사다</h4>
+      <p>1850년대엔 기하를 사람이 풀었고, 1957년 계산이 컴퓨터로 넘어갔으며, 1998년 면 단위 기록이 열렸고, 2010년대에 캡처가 싸졌습니다. 남은 구간은 <b>해석</b>입니다. <a href="#history">→ 02장</a></p>
+    </div>
+    <div class="card">
+      <span class="kicker">질문 3 · 쓰임새</span>
+      <h4>기록 · 대조 · 입력 세 갈래로 굳었다</h4>
+      <p>덮이기 전에 찍고(기록), 설계·이전 회차와 맞춰 보고(대조), 다른 엔진에 먹입니다(입력). 건설·AEC는 셋을 모두 쓰는 드문 산업입니다. <a href="#usecases">→ 03장</a></p>
+    </div>
+    <div class="card">
+      <span class="kicker">질문 4 · 연계 기술</span>
+      <h4>파이프라인의 어느 이음매에 붙는가로 봐야 한다</h4>
+      <p>기술 열 가지를 S1–S5 다섯 단계에 매핑했습니다. 유행을 타지 않는 것은 표준·좌표계·클라우드 셋입니다. <a href="#adjacent">→ 04장</a></p>
+    </div>
+    <div class="card">
+      <span class="kicker">질문 5 · 학습</span>
+      <h4>세로획은 기하와 오차론, 가로획은 하나만</h4>
+      <p>도구는 3년이면 바뀌지만 좌표변환과 최소제곱은 안 바뀝니다. T자형 조합 네 가지와 3단계 로드맵을 제시합니다. <a href="#roadmap">→ 05장</a></p>
+    </div>
+    <div class="card">
+      <span class="kicker">부록 · 용어</span>
+      <h4>여섯 문서의 용어를 한곳에</h4>
+      <p>총론·취득·처리·신경렌더링·포맷·BIM·좌표계·연계기술·역사·현장 열 갈래로 묶은 용어집입니다. <a href="#glossary">→ 용어집</a></p>
+    </div>
+  </div>
+
+  <div class="kpi">
+    <div><div class="v">8</div><div class="k">취득 방식</div></div>
+    <div><div class="v">10</div><div class="k">연계 기술</div></div>
+    <div><div class="v">9</div><div class="k">산업 분야</div></div>
+    <div><div class="v">5</div><div class="k">파이프라인 단계</div></div>
+    <div><div class="v">170년</div><div class="k">1850s → 2026</div></div>
+  </div>
+
+  <h3>출처를 읽는 법</h3>
+  <p>여섯 문서가 서로 다른 표기를 썼기에 이 페이지에서는 하나로 통일했습니다. 모든 사실 주장 뒤에 성격 칩이 붙습니다.</p>
+  <ul class="legend">
+    <li><span class="chip ac">학술</span> 논문·학회·동료검토</li>
+    <li><span class="chip td">제3자</span> 업계 매체·조사기관·독립 평가</li>
+    <li><span class="chip vd">벤더</span> 제조사·공급사 자기 발표</li>
+    <li><span class="chip st">표준</span> ISO·OGC·ASTM·buildingSMART</li>
+    <li><span class="chip pb">공공</span> 정부·공공기관 문서</li>
+    <li><span class="chip es">추정</span> 출처 없는 작성자 판단</li>
+  </ul>
+  <p class="src">칩이 <span class="chip vd">벤더</span>인 수치는 대개 최적 조건에서 측정한 값입니다. <span class="chip es">추정</span>은 그대로 인용하지 마십시오. 모든 출처 확인 날짜는 2026-09-21입니다.</p>
+</section>
+
+<section id="pipeline">
+  <div class="sec-head"><span class="sec-num">—</span><h2>먼저 파이프라인부터</h2></div>
+  <p>이 문서 전체를 관통하는 뼈대입니다. 장비 이름이나 기술 이름을 외우는 것보다, <b>어느 단계에서 무엇이 들어가고 무엇이 나오는가</b>를 잡아 두는 편이 훨씬 오래 갑니다. 04장의 연계 기술 열 가지도 이 다섯 단계 위에 얹힙니다.</p>
+
+  <figure>
+    <div class="fig-box wide">
+      <svg viewBox="0 0 760 206" role="img" aria-label="Reality Capture 파이프라인 5단계 도식: 계획·캡처, 정합·처리, 의미화·모델링, 배포·활용, 운영·갱신">
+        <defs>
+          <marker id="ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0 0 L8 4 L0 8 z" fill="var(--near)"></path>
+          </marker>
+          <marker id="ar2" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0 L8 4 L0 8 z" fill="var(--far)"></path>
+          </marker>
+        </defs>
+
+        <text class="t-tick" x="8" y="14">입력</text>
+        <text class="t-tick" x="8" y="152">대표 산출물</text>
+
+        <g>
+          <rect x="8" y="30" width="128" height="62" rx="3" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1"></rect>
+          <text x="20" y="49" font-size="10" fill="var(--near)">S1</text>
+          <text class="t-hd" x="20" y="68">계획 · 캡처</text>
+          <text class="t-tick" x="20" y="84">센서로 원시 취득</text>
+          <text class="t-lab" x="20" y="116">스캔 원본</text>
+          <text class="t-tick" x="20" y="131">사진 · 궤적 로그</text>
+        </g>
+        <g>
+          <rect x="162" y="30" width="128" height="62" rx="3" fill="var(--surface)" stroke="var(--rule)" stroke-width="1"></rect>
+          <text x="174" y="49" font-size="10" fill="var(--near)">S2</text>
+          <text class="t-hd" x="174" y="68">정합 · 처리</text>
+          <text class="t-tick" x="174" y="84">하나의 좌표계로</text>
+          <text class="t-lab" x="174" y="116">통합 점군</text>
+          <text class="t-tick" x="174" y="131">메시 · 정사영상</text>
+        </g>
+        <g>
+          <rect x="316" y="30" width="128" height="62" rx="3" fill="var(--surface)" stroke="var(--rule)" stroke-width="1"></rect>
+          <text x="328" y="49" font-size="10" fill="var(--near)">S3</text>
+          <text class="t-hd" x="328" y="68">의미화 · 모델링</text>
+          <text class="t-tick" x="328" y="84">점에 이름을 붙임</text>
+          <text class="t-lab" x="328" y="116">분류된 점군</text>
+          <text class="t-tick" x="328" y="131">BIM / IFC 모델</text>
+        </g>
+        <g>
+          <rect x="470" y="30" width="128" height="62" rx="3" fill="var(--surface)" stroke="var(--rule)" stroke-width="1"></rect>
+          <text x="482" y="49" font-size="10" fill="var(--near)">S4</text>
+          <text class="t-hd" x="482" y="68">배포 · 활용</text>
+          <text class="t-tick" x="482" y="84">사람·시스템이 씀</text>
+          <text class="t-lab" x="482" y="116">웹 뷰어 · AR</text>
+          <text class="t-tick" x="482" y="131">편차 보고서</text>
+        </g>
+        <g>
+          <rect x="624" y="30" width="128" height="62" rx="3" fill="var(--near-soft)" stroke="var(--near)" stroke-width="1"></rect>
+          <text x="636" y="49" font-size="10" fill="var(--near)">S5</text>
+          <text class="t-hd" x="636" y="68">운영 · 갱신</text>
+          <text class="t-tick" x="636" y="84">반복 캡처</text>
+          <text class="t-lab" x="636" y="116">변화 이력</text>
+          <text class="t-tick" x="636" y="131">자산 상태</text>
+        </g>
+
+        <line x1="140" y1="61" x2="156" y2="61" stroke="var(--near)" stroke-width="1.2" marker-end="url(#ar)"></line>
+        <line x1="294" y1="61" x2="310" y2="61" stroke="var(--near)" stroke-width="1.2" marker-end="url(#ar)"></line>
+        <line x1="448" y1="61" x2="464" y2="61" stroke="var(--near)" stroke-width="1.2" marker-end="url(#ar)"></line>
+        <line x1="602" y1="61" x2="618" y2="61" stroke="var(--near)" stroke-width="1.2" marker-end="url(#ar)"></line>
+
+        <path d="M688 168 L688 186 L72 186 L72 100" fill="none" stroke="var(--far)" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#ar2)"></path>
+        <rect x="300" y="176" width="160" height="19" fill="var(--paper)"></rect>
+        <text x="380" y="190" font-size="10.5" text-anchor="middle" fill="var(--far)">되먹임 — 모델을 살아 있게</text>
+        <line x1="688" y1="150" x2="688" y2="168" stroke="var(--far)" stroke-width="1.2" stroke-dasharray="4 3"></line>
+      </svg>
+    </div>
+    <figcaption><span class="fig-label">그림 1</span><b>Reality Capture 파이프라인 S1–S5.</b> 04장 0절의 단계 정의를 그림으로 옮겼습니다. 점선은 되먹임 고리입니다. 정기 스캔을 모델에 되먹이지 않으면 디지털 트윈은 오래된 3D 그림이 됩니다. <span class="chip es">추정</span> 단계 구분 자체는 작성자가 세운 분석 틀입니다.</figcaption>
+  </figure>
+</section>
+
+<section id="tools">
+  <div class="sec-head"><span class="sec-num">01</span><h2>도구 지형도</h2></div>
+  <p class="q"><b>질문 1.</b> 세상에는 어떤 Reality Capture 도구들이 있는가</p>
+
+  <h3>범위를 먼저 못 박는다</h3>
+  <p>포함하는 것은 <b>실재하는 물리 공간이나 물체를 측정해 3차원 디지털 표현으로 바꾸는 기술 전반</b>입니다. 센서가 빛을 쏘아 거리를 재든(라이다), 여러 장의 사진에서 기하를 역산하든(사진측량), 결과물이 좌표를 가진 3차원 데이터라면 대상입니다. NeRF·3DGS처럼 측량보다 렌더링에 무게가 실린 계열도 입력이 현실 촬영물이라는 점에서 함께 다룹니다.</p>
+  <p>제외한 것은 네 갈래입니다.</p>
+  <ul>
+    <li><b>순수 설계 저작 도구</b> — CAD·BIM 모델링 자체는 현실을 측정하지 않습니다. 다만 취득 결과가 BIM으로 넘어가는 접점(Scan-to-BIM)은 다룹니다.</li>
+    <li><b>산업 계측 전용 장비</b> — CMM, 레이저 트래커처럼 마이크로미터급 공차를 다루는 제조 검사 영역은 정밀도 체계가 다릅니다.</li>
+    <li><b>의료 영상</b> — CT·MRI도 3차원 재구성이지만 인체 내부를 대상으로 하고 규제와 워크플로가 분리돼 있습니다.</li>
+    <li><b>분광 중심의 광학 위성 원격탐사</b> — 2차원 영상 분석이 목적인 경우는 뺐습니다. 고도를 재는 위성 라이다는 포함합니다.</li>
+  </ul>
+
+  <h3 id="tools-map">취득 방식 여덟 가지가 놓인 자리</h3>
+  <p>가로축은 대표 작업 거리, 세로축은 대표 정밀도입니다. 둘 다 로그 눈금이고, 위로 갈수록 정밀합니다. 각 방식의 대표 사용 조건에서 나온 값이라 <b>같은 조건에서 비교한 값이 아닙니다.</b></p>
+
+  <figure>
+    <div class="fig-box wide">
+      <svg viewBox="0 0 760 400" role="img" aria-label="취득 방식별 작업 거리와 정밀도 산점도. 가로축 0.1미터에서 10킬로미터, 세로축 0.1밀리미터에서 1000밀리미터, 모두 로그 눈금">
+        <text class="t-tick" x="14" y="26" transform="rotate(-90 14 26)" text-anchor="end">← 정밀</text>
+
+        <line x1="80" y1="30" x2="80" y2="346" stroke="var(--rule)" stroke-width="1"></line>
+        <line x1="80" y1="346" x2="700" y2="346" stroke="var(--rule)" stroke-width="1"></line>
+
+        <line x1="80" y1="60.6" x2="700" y2="60.6" stroke="var(--rule-soft)" stroke-width="1"></line>
+        <line x1="80" y1="128.9" x2="700" y2="128.9" stroke="var(--rule-soft)" stroke-width="1"></line>
+        <line x1="80" y1="197.3" x2="700" y2="197.3" stroke="var(--rule-soft)" stroke-width="1"></line>
+        <line x1="80" y1="265.6" x2="700" y2="265.6" stroke="var(--rule-soft)" stroke-width="1"></line>
+        <line x1="80" y1="333.9" x2="700" y2="333.9" stroke="var(--rule-soft)" stroke-width="1"></line>
+
+        <text class="t-tick" x="72" y="64" text-anchor="end">0.1 mm</text>
+        <text class="t-tick" x="72" y="132" text-anchor="end">1 mm</text>
+        <text class="t-tick" x="72" y="201" text-anchor="end">10 mm</text>
+        <text class="t-tick" x="72" y="269" text-anchor="end">100 mm</text>
+        <text class="t-tick" x="72" y="337" text-anchor="end">1 m</text>
+
+        <line x1="201.6" y1="30" x2="201.6" y2="346" stroke="var(--rule-soft)" stroke-width="1"></line>
+        <line x1="323.2" y1="30" x2="323.2" y2="346" stroke="var(--rule-soft)" stroke-width="1"></line>
+        <line x1="444.8" y1="30" x2="444.8" y2="346" stroke="var(--rule-soft)" stroke-width="1"></line>
+        <line x1="566.4" y1="30" x2="566.4" y2="346" stroke="var(--rule-soft)" stroke-width="1"></line>
+        <text class="t-tick" x="80" y="362" text-anchor="middle">0.1 m</text>
+        <text class="t-tick" x="201.6" y="362" text-anchor="middle">1 m</text>
+        <text class="t-tick" x="323.2" y="362" text-anchor="middle">10 m</text>
+        <text class="t-tick" x="444.8" y="362" text-anchor="middle">100 m</text>
+        <text class="t-tick" x="566.4" y="362" text-anchor="middle">1 km</text>
+        <text class="t-tick" x="688" y="362" text-anchor="middle">10 km</text>
+        <text class="t-lab" x="390" y="384" text-anchor="middle">대표 작업 거리 →</text>
+
+        <rect x="201.6" y="128.9" width="328.2" height="169.3" fill="none" stroke="var(--far)" stroke-width="1" stroke-dasharray="4 3" rx="2"></rect>
+        <text class="t-lab" x="212" y="146" fill="var(--far)">사진측량</text>
+        <text class="t-tick" x="212" y="160" fill="var(--far)">조건 의존 · 범위로만 표시</text>
+
+        <circle cx="182.8" cy="60.6" r="5" fill="var(--near)"></circle>
+        <text class="t-lab" x="182.8" y="50" text-anchor="middle">구조광 · ToF</text>
+        <text class="t-tick" x="182.8" y="82" text-anchor="middle">0.1 mm @0.35–1.2 m</text>
+
+        <circle cx="323.2" cy="148.0" r="5" fill="var(--near)"></circle>
+        <text class="t-lab" x="334" y="145">지상 고정식 라이다 (TLS)</text>
+        <text class="t-tick" x="334" y="158">1.9 mm @10 m</text>
+
+        <circle cx="359.8" cy="182.1" r="5" fill="var(--near)"></circle>
+        <text class="t-lab" x="371" y="180">모바일 · 핸드헬드 SLAM</text>
+        <text class="t-tick" x="371" y="193">평균 6 mm · 최대 18 mm</text>
+
+        <circle cx="286.6" cy="197.3" r="5" fill="var(--near)"></circle>
+        <text class="t-lab" x="278" y="214" text-anchor="end">스마트폰 라이다</text>
+        <text class="t-tick" x="278" y="227" text-anchor="end">약 10 mm @≤5 m</text>
+
+        <circle cx="466.2" cy="245.1" r="5" fill="var(--near)"></circle>
+        <text class="t-lab" x="477" y="243">드론 라이다</text>
+        <text class="t-tick" x="477" y="256">수평 50 mm @150 m</text>
+
+        <circle cx="603.0" cy="265.6" r="5" fill="var(--near)"></circle>
+        <text class="t-lab" x="614" y="263" text-anchor="end">항공 라이다</text>
+        <text class="t-tick" x="614" y="276" text-anchor="end">RMSEz 100 mm</text>
+        <text class="t-lab" x="592" y="263" text-anchor="end">항공 라이다</text>
+        <text class="t-tick" x="592" y="276" text-anchor="end">RMSEz 100 mm</text>
+
+        <rect x="80" y="292" width="212" height="46" fill="var(--sunk)" stroke="var(--rule)" stroke-width="1" rx="2"></rect>
+        <text class="t-tick" x="92" y="308">축에 올리지 않은 두 방식</text>
+        <text class="t-tick" x="92" y="322" fill="var(--far)">360 이미징 — 측량급 정밀도 아님</text>
+        <text class="t-tick" x="92" y="334" fill="var(--far)">NeRF · 3DGS — 기하 정확도 미검증</text>
+      </svg>
+    </div>
+    <figcaption><span class="fig-label">그림 2</span><b>취득 방식 8종의 거리·정밀도 지도.</b> 실선 원은 출처가 있는 수치, 점선 사각형은 값이 범위로만 제시된 사진측량입니다. 360 이미징과 NeRF·3DGS는 정밀도를 숫자로 제시한 출처가 없어 축에 올리지 않았습니다. 01장 3절의 경고를 그대로 옮기면 — “정밀도는 같은 조건에서 서로 비교한 값이 아니다. 절대 비교표가 아니라 자릿수 감각을 잡는 용도로 읽어야 한다.” 좌표 배치 자체는 <span class="chip es">추정</span>입니다.</figcaption>
+  </figure>
+
+  <h3 id="tools-precision">숫자를 나란히 놓으면</h3>
+  <figure>
+    <div class="fig-box wide">
+      <svg viewBox="0 0 760 372" role="img" aria-label="장비별 공표 정밀도 로그 눈금 막대그래프">
+        <line x1="254.2" y1="44" x2="254.2" y2="318" stroke="var(--rule-soft)" stroke-width="1"></line>
+        <line x1="354.6" y1="44" x2="354.6" y2="318" stroke="var(--rule-soft)" stroke-width="1"></line>
+        <line x1="455.0" y1="44" x2="455.0" y2="318" stroke="var(--rule-soft)" stroke-width="1"></line>
+        <line x1="555.4" y1="44" x2="555.4" y2="318" stroke="var(--rule-soft)" stroke-width="1"></line>
+        <line x1="655.8" y1="44" x2="655.8" y2="318" stroke="var(--rule-soft)" stroke-width="1"></line>
+
+        <text class="t-lab" x="0" y="26">장비 · 조건</text>
+        <text class="t-lab" x="224" y="26">공표 정밀도 (로그 눈금, mm)</text>
+
+        <g>
+          <text class="t-lab" x="208" y="62" text-anchor="end">Artec Leo</text>
+          <text class="t-tick" x="208" y="74" text-anchor="end">구조광 · 0.35–1.2 m</text>
+          <rect x="224" y="54" width="30.2" height="11" fill="var(--near)" rx="1"></rect>
+          <text class="t-tick" x="260" y="64">0.1 <tspan fill="var(--far)">벤더</tspan></text>
+        </g>
+        <g>
+          <text class="t-lab" x="208" y="90" text-anchor="end">Leica RTC360</text>
+          <text class="t-tick" x="208" y="102" text-anchor="end">TLS · 10 m · 신뢰 68%</text>
+          <rect x="224" y="82" width="158.6" height="11" fill="var(--near)" rx="1"></rect>
+          <text class="t-tick" x="388" y="92">1.9 <tspan fill="var(--far)">벤더</tspan></text>
+        </g>
+        <g>
+          <text class="t-lab" x="208" y="118" text-anchor="end">FARO Focus Premium</text>
+          <text class="t-tick" x="208" y="130" text-anchor="end">TLS · 10 m</text>
+          <rect x="224" y="110" width="160.8" height="11" fill="var(--near)" rx="1"></rect>
+          <text class="t-tick" x="390" y="120">2.0 <tspan fill="var(--far)">벤더</tspan></text>
+        </g>
+        <g>
+          <text class="t-lab" x="208" y="146" text-anchor="end">Trimble X9</text>
+          <text class="t-tick" x="208" y="158" text-anchor="end">TLS · 측거 150 m</text>
+          <rect x="224" y="138" width="160.8" height="11" fill="var(--near)" rx="1"></rect>
+          <text class="t-tick" x="390" y="148">2 <tspan fill="var(--far)">벤더</tspan></text>
+        </g>
+        <g>
+          <text class="t-lab" x="208" y="174" text-anchor="end">NavVis VLX 2·3</text>
+          <text class="t-tick" x="208" y="186" text-anchor="end">SLAM · 관제점 유/무</text>
+          <rect x="224" y="166" width="191.1" height="11" fill="var(--near)" rx="1"></rect>
+          <rect x="415.1" y="166" width="65.5" height="11" fill="var(--near)" opacity="0.4" rx="1"></rect>
+          <text class="t-tick" x="486" y="176">4 → 18 <tspan fill="var(--near)">학술</tspan></text>
+        </g>
+        <g>
+          <text class="t-lab" x="208" y="202" text-anchor="end">iPhone 12 Pro</text>
+          <text class="t-tick" x="208" y="214" text-anchor="end">포켓 라이다 · ≤5 m</text>
+          <rect x="224" y="194" width="231.0" height="11" fill="var(--near)" rx="1"></rect>
+          <text class="t-tick" x="461" y="204">약 10 <tspan fill="var(--near)">학술</tspan></text>
+        </g>
+        <g>
+          <text class="t-lab" x="208" y="230" text-anchor="end">Matterport Pro3</text>
+          <text class="t-tick" x="208" y="242" text-anchor="end">스테이션형 · 10 m</text>
+          <rect x="224" y="222" width="261.2" height="11" fill="var(--near)" rx="1"></rect>
+          <text class="t-tick" x="491" y="232">±20 <tspan fill="var(--far)">벤더</tspan></text>
+        </g>
+        <g>
+          <text class="t-lab" x="208" y="258" text-anchor="end">DJI Zenmuse L2</text>
+          <text class="t-tick" x="208" y="270" text-anchor="end">드론 · 150 m · 실험실 조건</text>
+          <rect x="224" y="250" width="291.5" height="11" fill="var(--near)" rx="1"></rect>
+          <rect x="515.5" y="250" width="9.7" height="11" fill="var(--near)" opacity="0.4" rx="1"></rect>
+          <text class="t-tick" x="531" y="260">40 → 50 <tspan fill="var(--far)">벤더</tspan></text>
+        </g>
+        <g>
+          <text class="t-lab" x="208" y="286" text-anchor="end">USGS 3DEP QL1·QL2</text>
+          <text class="t-tick" x="208" y="298" text-anchor="end">항공 라이다 · RMSEz</text>
+          <rect x="224" y="278" width="331.4" height="11" fill="var(--near)" rx="1"></rect>
+          <text class="t-tick" x="561" y="288">100 <tspan fill="var(--muted)">제3자</tspan></text>
+        </g>
+        <g>
+          <text class="t-lab" x="208" y="314" text-anchor="end">ICESat-2 · GEDI</text>
+          <text class="t-tick" x="208" y="326" text-anchor="end">위성 라이다 · 지형 고도</text>
+          <rect x="224" y="306" width="431.8" height="11" fill="var(--near)" opacity="0.55" rx="1"></rect>
+          <text class="t-tick" x="661" y="316">&lt;1000 <tspan fill="var(--muted)">제3자</tspan></text>
+        </g>
+
+        <line x1="224" y1="336" x2="686" y2="336" stroke="var(--rule)" stroke-width="1"></line>
+        <text class="t-tick" x="254.2" y="350" text-anchor="middle">0.1</text>
+        <text class="t-tick" x="354.6" y="350" text-anchor="middle">1</text>
+        <text class="t-tick" x="455.0" y="350" text-anchor="middle">10</text>
+        <text class="t-tick" x="555.4" y="350" text-anchor="middle">100</text>
+        <text class="t-tick" x="655.8" y="350" text-anchor="middle">1000</text>
+        <text class="t-lab" x="455" y="368" text-anchor="middle">밀리미터 (로그)</text>
+      </svg>
+    </div>
+    <figcaption><span class="fig-label">그림 3</span><b>장비별 공표 정밀도.</b> 막대는 로그 눈금이라 한 칸이 열 배입니다. 흐린 연장부는 최댓값(NavVis 최대 편차, DJI 수평 오차)입니다. 조건이 제각각이므로 순위표로 읽으면 안 됩니다. 01장 3절 원문: “정밀도는 같은 조건에서 서로 비교한 값이 아니다.”</figcaption>
+  </figure>
+
+  <h3>여덟 방식을 하나씩</h3>
+
+  <h4>1 · 사진측량 (Photogrammetry)</h4>
+  <p>같은 지점을 다른 각도에서 찍은 사진에서 특징점을 대응시켜 카메라 위치와 3차원 좌표를 동시에 역산합니다. 이 과정이 SfM이고, 이어서 MVS로 조밀한 점군을 만듭니다. 오픈소스 COLMAP이 사실상 기준 구현입니다. 정밀도는 장비가 아니라 <b>촬영 계획</b>이 결정합니다. 조건이 좋으면 밀리미터급, 나쁘면 수십 센티미터로 벌어집니다. 질감 없는 흰 벽, 유리, 금속 광택면에서 구멍이 생기고, 스케일을 절대 좌표에 묶으려면 GCP나 RTK가 따로 필요합니다.</p>
+  <p class="src">출처: <a href="https://colmap.github.io/">COLMAP 공식 문서</a> <span class="chip td">제3자</span> · 확인 2026-09-21</p>
+
+  <h4>2 · 지상 고정식 라이다 (TLS)</h4>
+  <p>삼각대에 올린 스캐너가 제자리에서 회전하며 거리를 잽니다. 이 분야에서 가장 검증된 수치가 나오는 영역입니다. Leica RTC360은 3차원 점 정확도를 10 m에서 1.9 mm, 20 m에서 2.9 mm, 40 m에서 5.3 mm로 명시합니다(신뢰수준 68%). FARO Focus Premium은 10 m에서 2 mm, 25 m에서 3.5 mm입니다.</p>
+  <p>독립 검증도 있습니다. 그라츠 공대 연구진이 RTC360의 거리 측정 성능을 실험실에서 뜯어본 결과 거리 편차는 제조사 사양을 밑돌았습니다. 다만 약 1.3 mm의 절대 오프셋이 관측됐고, 20 m 지점에서 2 mm 안팎의 불연속을 동반한 톱니 모양 패턴이 나타났습니다. 논문은 측정 잡음 사양을 비판적으로 봐야 한다고 못 박습니다. <b>편차가 무작위도 아니고 정규분포도 아니기 때문입니다.</b> 벤더 사양을 믿되 그 숫자가 뜻하는 바는 따로 읽어야 한다는 사례입니다.</p>
+  <p class="src">출처: <a href="https://leica-geosystems.com/-/media/files/leicageosystems/products/datasheets/leica-rtc360-ds.ashx">Leica RTC360 데이터시트</a> <span class="chip vd">벤더</span> · <a href="https://www.faro.com/en/Resource-Library/Tech-Sheet/techsheet-faro-focus-laser-scanners">FARO Focus 기술 사양</a> <span class="chip vd">벤더</span> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11207371/">Sensors, 2024</a> <span class="chip ac">학술</span></p>
+
+  <h4>3 · 모바일 · 핸드헬드 라이다 (SLAM 기반)</h4>
+  <p>걸어 다니면서 스캔합니다. 고정 기준점이 없으므로 SLAM으로 궤적과 지도를 동시에 추정하고, 라이다 SLAM에 IMU와 비주얼 SLAM을 섞어 표류를 억제합니다. 함부르크 HCU 연구진이 NavVis VLX 2·3을 Z+F IMAGER 5016 TLS 기준으로 측정한 결과, <b>관제점 없이 평균 6 mm·최대 18 mm, 관제점을 쓰면 평균 4 mm·최대 14 mm</b>였습니다. 제조사 공표값은 5 mm입니다. 관제점 유무가 정밀도를 가른다는 점이 핵심입니다.</p>
+  <p>Trybala 등은 부분 붕괴된 지하 터널에서 저가 핸드헬드 SLAM 3종을 측량급 기준 점군과 비교해, 장비마다 고유하고 서로 다른 강점과 약점이 드러났다고 정리했습니다. <b>하나로 다 되는 장비는 없다</b>는 뜻입니다.</p>
+  <p class="src">출처: <a href="https://isprs-archives.copernicus.org/articles/XLVIII-1-W6-2025/107/2025/">ISPRS Archives XLVIII-1/W6-2025, Kersten &amp; Marsmann</a> <span class="chip ac">학술</span> · <a href="https://knowledge.navvis.com/docs/navvis-vlx-3-specifications">NavVis VLX 3 사양</a> <span class="chip vd">벤더</span> · <a href="https://isprs-archives.copernicus.org/articles/XLVIII-1-W1-2023/517/2023/">ISPRS Archives XLVIII-1/W1-2023, Trybala 외</a> <span class="chip ac">학술</span></p>
+
+  <h4>4 · 드론 · UAV 항공촬영</h4>
+  <p>카메라를 달아 사진측량을 하거나 라이다 페이로드로 직접 거리를 잽니다. DJI Zenmuse L2는 고도 150 m에서 수평 5 cm, 수직 4 cm를 제시합니다. 다만 조건이 까다롭습니다. IMU 캘리브레이션 완료, RTK FIX 상태, 비행속도 15 m/s, 짐벌 −90도, 항로 구간 1,500 m 미만이라는 <b>실험실 조건</b>에서 측정한 값입니다. 사양서의 작은 글씨를 읽어야 하는 전형적인 예입니다. 규제가 기술보다 앞선 제약이고, 실내에서는 GNSS가 끊깁니다.</p>
+  <p class="src">출처: <a href="https://enterprise.dji.com/zenmuse-l2/specs">DJI Zenmuse L2 사양</a> <span class="chip vd">벤더</span></p>
+
+  <h4>5 · 360 파노라마 이미징</h4>
+  <p>어안 렌즈 두 개로 구면 전체를 담습니다. 그 자체로는 3차원 데이터가 아니지만, 촬영 위치를 공간에 배치하면 걸어다니듯 둘러보는 기록이 됩니다. Cupix가 이 계열의 대표입니다. 작업자가 360 카메라를 들고 현장을 걸으면 초당 두 장씩 찍히고, CupixWorks가 3차원 모델로 재구성해 BIM 좌표계에 정렬합니다. OpenSpace와 FARO Sphere XG(옛 HoloBuilder)가 같은 시장에서 경쟁합니다.</p>
+  <p><b>이 방식이 파는 값어치는 정밀도가 아니라 빈도입니다.</b> 매주 현장을 한 바퀴 도는 비용이 낮아서 시간축 기록이 쌓입니다. 치수를 다투는 용도로는 부적합합니다.</p>
+  <p class="src">출처: <a href="https://www.cupix.com/product/construction-progress-tracking-software">Cupix 제품 페이지</a> <span class="chip vd">벤더</span> · <a href="https://aecmag.com/construction/cupixworks-site-insights-to-track-construction-progress/">AEC Magazine</a> <span class="chip td">제3자</span> · <a href="https://www.insta360.com/product/insta360-x5">Insta360 X5</a> <span class="chip vd">벤더</span></p>
+
+  <h4>6 · 구조광 · ToF 스캐너</h4>
+  <p>구조광은 알려진 패턴의 일그러짐을 관측하고, ToF는 빛의 왕복 시간을 직접 잽니다. 근거리에서는 이 방식이 가장 정밀합니다. Artec Leo는 3차원 점 정확도 0.1 mm, 해상도 0.2 mm, 작업 거리 0.35–1.2 m를 제시합니다.</p>
+  <p>스마트폰 라이다는 다른 층위입니다. Luetzenburg 등이 iPhone 12 Pro를 시험한 결과 최대 측거 5 m, 소형 물체 절대 정확도 1 cm 수준이었고, 130×15×10 m 해안 절벽을 ±10 cm로 재구성했습니다. 논문이 짚은 흥미로운 대목이 있습니다. <b>라이다는 센서에 비스듬한 면도 점군을 만들어내는 반면 사진측량은 촬영면이 어느 정도 정면이어야 합니다.</b> 정밀도는 낮아도 취득 성공률이 높은 구간이 있다는 뜻입니다.</p>
+  <p class="src">출처: <a href="https://www.artec3d.com/portable-3d-scanners/artec-leo">Artec Leo 제품 페이지</a> <span class="chip vd">벤더</span> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8593014/">Scientific Reports, 2021</a> <span class="chip ac">학술</span></p>
+
+  <h4>7 · 항공 · 위성 라이다</h4>
+  <p>미국 USGS의 3DEP가 품질 등급을 규격으로 정해 뒀습니다. QL1은 공칭 펄스 간격 0.35 m 이하에 밀도 8점/m², QL2는 0.71 m 이하에 2점/m²이고, 수직 정확도(RMSEz)는 두 등급 모두 10 cm이며 3DEP 수집의 최소 허용 등급은 QL2입니다. 위성 라이다는 또 한 단계 내려갑니다. ICESat-2와 GEDI는 2018년 발사됐고 GEDI Level 2A는 지름 25 m 원형 풋프린트를 씁니다. 지형 고도 추정 오차는 대체로 1 m 미만이나 열대림에서는 벌어집니다.</p>
+  <p class="src">출처: <a href="https://www.usgs.gov/3d-elevation-program/topographic-data-quality-levels-qls">USGS 3DEP 품질 등급</a> <span class="chip pb">공공</span> · <a href="https://doi.org/10.3390/rs16132259">Remote Sensing, 2024</a> <span class="chip ac">학술</span></p>
+
+  <h4>8 · NeRF · 3D 가우시안 스플래팅</h4>
+  <p>앞의 일곱 방식이 점이나 면을 측정한다면, 이 계열은 장면을 <b>렌더링 함수</b>로 학습합니다. NeRF는 위치와 시선 방향을 넣으면 밀도와 색을 뱉는 신경망으로 장면을 표현합니다. 3DGS는 신경망 대신 수백만 개의 3차원 가우시안을 명시적으로 배치하고 최적화해, 실시간 렌더링(30 fps 이상)을 달성하면서 화질을 유지한 점이 전환점이었습니다.</p>
+  <p><b>시각적 사실성과 기하 정확도가 분리된다는 점을 반드시 구분해야 합니다.</b> 눈으로 보기에 사진 같다고 해서 치수를 믿을 근거가 되지는 않습니다. <span class="chip es">추정</span></p>
+  <p class="src">출처: <a href="https://dl.acm.org/doi/abs/10.1007/978-3-030-58452-8_24">Mildenhall 외, ECCV 2020</a> <span class="chip ac">학술</span> · <a href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/">Kerbl 외, ACM TOG 42(4), SIGGRAPH 2023</a> <span class="chip ac">학술</span></p>
+
+  <h3>한눈에 보는 비교표</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>방식</th><th>대표 제품</th><th>상대 정밀도</th><th>취득 속도</th><th>대략적 비용대</th><th>주 용도</th></tr></thead>
+      <tbody>
+        <tr><td>사진측량</td><td>RealityScan, Metashape, COLMAP</td><td>조건 의존, mm~수십 cm <span class="chip es">추정</span></td><td>촬영은 빠르고 연산이 길다</td><td>SW 무료~연 1,250 USD <span class="chip vd">벤더</span></td><td>입면, 문화재, 드론 매핑</td></tr>
+        <tr><td>지상 고정식 라이다</td><td>Leica RTC360, FARO Focus Premium, Trimble X9</td><td>10 m에서 1.9~2 mm <span class="chip vd">벤더</span> / 실험실 검증상 사양 이내 <span class="chip ac">학술</span></td><td>지점당 수 분, 이동이 병목</td><td>4천만~1억 원 <span class="chip es">추정</span></td><td>준공 실측, 정밀 Scan-to-BIM</td></tr>
+        <tr><td>모바일·핸드헬드</td><td>Leica BLK2GO, NavVis VLX 3, Emesent Hovermap ST-X</td><td>평균 6 mm, 최대 18 mm(관제점 없음) <span class="chip ac">학술</span></td><td>걷는 속도, 방식 중 가장 빠름</td><td>3천만~7천만 원 <span class="chip es">추정</span></td><td>넓은 실내, 지하, 반복 점검</td></tr>
+        <tr><td>드론·UAV</td><td>DJI Zenmuse L2 + Matrice</td><td>150 m에서 수평 5 cm, 수직 4 cm(실험실) <span class="chip vd">벤더</span></td><td>비행 1회로 수십 ha</td><td>2천만~5천만 원 <span class="chip es">추정</span></td><td>토공량, 광역 현황, 지붕·입면</td></tr>
+        <tr><td>360 이미징</td><td>Cupix, OpenSpace, FARO Sphere XG, Insta360 X5</td><td>측량급 아님, 위치 기록 수준 <span class="chip es">추정</span></td><td>현장 한 바퀴, 방식 중 최속</td><td>카메라 수십만 원 + 구독 <span class="chip es">추정</span></td><td>공정 기록, 원격 확인, BIM 대비</td></tr>
+        <tr><td>구조광·ToF</td><td>Artec Leo, iPhone·iPad 라이다</td><td>0.1 mm <span class="chip vd">벤더</span> / 스마트폰 약 1 cm <span class="chip ac">학술</span></td><td>소형 대상 수 분</td><td>2천만~5천만 원, 스마트폰 내장 <span class="chip es">추정</span></td><td>소형 부재, 설비, 간이 실측</td></tr>
+        <tr><td>항공·위성 라이다</td><td>항공 라이다 측량, ICESat-2, GEDI</td><td>RMSEz 10 cm <span class="chip pb">공공</span> / 위성 1 m 미만 <span class="chip ac">학술</span></td><td>광역 1회, 재촬영 주기 김</td><td>면적 단위 용역, 위성은 상당수 무료</td><td>국토 지형, 광역 맥락</td></tr>
+        <tr><td>NeRF·3DGS</td><td>Postshot, Polycam, Luma AI</td><td>시각 품질과 기하 정확도가 분리 <span class="chip es">추정</span></td><td>촬영은 짧고 학습에 GPU 시간</td><td>도구 무료~중저가 + GPU <span class="chip es">추정</span></td><td>시각화, 합의 형성, 프레젠테이션</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <details class="more">
+    <summary>하드웨어 제품군과 소프트웨어 지형도 펼치기</summary>
+    <h4>하드웨어</h4>
+    <ul>
+      <li><b>Leica Geosystems</b> — 고정식 RTC360·BLK360 G2, 핸드헬드 BLK2GO로 층위를 나눴습니다. BLK360 G2는 측거 0.6–60 m에 정확도 4 mm, BLK2GO는 초당 42만 점에 측거 0.5–25 m, 노이즈 ±3 mm입니다. <span class="chip vd">벤더</span></li>
+      <li><b>FARO</b> — Focus Premium 200 m, Premium Max 400 m, Core 100 m로 측거를 나눴습니다. 2022년 9월 영국 GeoSLAM을 현금·주식 합계 4,490만 달러에 인수했습니다. <span class="chip vd">벤더</span> <span class="chip td">공시</span></li>
+      <li><b>Trimble</b> — X9는 정확도 2 mm 수준, 측거 150 m, 초당 100만 점에 자동 수평과 자동 캘리브레이션. <span class="chip vd">벤더</span></li>
+      <li><b>NavVis</b> — VLX 3는 착용형 모바일 매핑. 32채널 라이다 두 개를 새로 설계해 노이즈와 표류를 줄였다고 밝힙니다. <span class="chip vd">벤더</span></li>
+      <li><b>Emesent</b> — Hovermap ST-X는 측거 300 m, 초당 100만 점 이상. 일반 환경 ±15 mm, 실내·지하 ±10 mm. 드론·핸드헬드·차량·배낭으로 형태를 바꿉니다. <span class="chip vd">벤더</span></li>
+      <li><b>Matterport</b> — Pro3는 10 m에서 ±20 mm, 스캔당 20초 미만, 초당 10만 점. 자체 모델은 측거 20 m지만 E57 내보내기는 100 m까지 담습니다. <span class="chip vd">벤더</span></li>
+      <li><b>스마트폰</b> — iPhone·iPad Pro의 라이다는 정밀도를 다투는 장비가 아니라 <b>접근성을 바꾼 장비</b>입니다.</li>
+    </ul>
+    <h4>소프트웨어</h4>
+    <ul>
+      <li><b>RealityScan(옛 RealityCapture)</b> — Epic Games가 2025년 6월 4일 리브랜딩을 알렸습니다. AI 마스킹, 매끈한 표면 정합 개선, 커버리지 히트맵, 항공 라이다 지원이 함께 들어갔고 2025년 11월 2.1이 나왔습니다. 가격은 2024년 4월부터 연 매출 100만 달러 미만 무료, 그 이상은 좌석당 연 1,250달러입니다. <span class="chip td">제3자</span> <span class="chip vd">벤더</span></li>
+      <li><b>Agisoft Metashape</b> — 영구 라이선스. Professional 3,499달러, Standard 179달러, 교육용 549/59달러. <span class="chip vd">벤더</span></li>
+      <li><b>Pix4D</b> — 구독 중심. PIX4Dmapper 연 3,990달러 안팎. 가이드가 잘 잡힌 대신 자유도는 낮습니다. <span class="chip vd">벤더</span></li>
+      <li><b>오픈소스</b> — COLMAP이 SfM/MVS 기준 구현, OpenDroneMap은 OpenSfM으로 자세를 풀고 OpenMVS로 조밀화합니다. 비용은 없고 학습 곡선이 비용입니다.</li>
+      <li><b>Autodesk ReCap Pro / Bentley iTwin Capture / Cupix / Matterport</b> — 점군 정리와 생태계 연결, 인프라 디지털 트윈, 360 기반 4D 트윈, 하드웨어+클라우드 묶음으로 각자 자리가 다릅니다. <span class="chip vd">벤더</span></li>
+    </ul>
+    <p class="note"><b>이름이 바뀐 제품이 두 개입니다.</b> ContextCapture는 iTwin Capture Modeler가 됐고 RealityCapture는 RealityScan이 됐습니다. 3년쯤 지난 자료를 읽을 때 제품명으로 검색하면 헛다리를 짚기 쉽습니다.</p>
+  </details>
+
+  <h3>데이터 포맷과 상호운용</h3>
+  <p>도구를 고르는 일은 결국 <b>데이터를 어디로 넘길 수 있는가</b>의 문제로 돌아옵니다.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>포맷</th><th>정체</th><th>담는 것 / 못 담는 것</th><th>성격</th></tr></thead>
+      <tbody>
+        <tr><td>E57 (ASTM E2807)</td><td>ASTM E57 위원회의 벤더 중립 교환 포맷, 2011년 2월 승인</td><td>3차원 좌표, 점별 속성(RGB·강도·반사율), 보정 파노라마, 스캔 지점별 자세 행렬</td><td><span class="chip st">표준</span></td></tr>
+        <tr><td>LAS / LAZ</td><td>ASPRS가 2003년 제정, 현재 1.4 R15(2019)</td><td>기하 중심. 스캔 자세나 파노라마는 담지 않음</td><td><span class="chip td">제3자</span></td></tr>
+        <tr><td>RCP / RCS</td><td>Autodesk ReCap 고유 포맷</td><td>생태계 안에서는 빠르지만 밖으로 나가는 순간 벽 <span class="chip es">추정</span></td><td><span class="chip vd">벤더</span></td></tr>
+        <tr><td>IFC</td><td>buildingSMART 개방형 BIM 스키마</td><td>점군 자체가 아니라 Scan-to-BIM 결과물의 도착지. 4.3에서 인프라 확장</td><td><span class="chip st">표준</span></td></tr>
+        <tr><td>3D Tiles / I3S</td><td>OGC 스트리밍 표준군</td><td>건물·지형·점군의 웹 스트리밍. I3S는 1.3(OGC 17-014r9)</td><td><span class="chip st">표준</span></td></tr>
+        <tr><td>USD / glTF</td><td>저작·교환은 USD, 배포·전달은 glTF</td><td>AOUSD와 Khronos가 연락 협정으로 두 생태계를 정렬 중</td><td><span class="chip st">표준</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><b>가우시안 스플래팅이 표준으로 들어왔습니다.</b> 2026년 2월 3일 Khronos가 KHR_gaussian_splatting 확장을 발표했습니다. glTF 2.0 파일 안에 스플랫의 위치·방향·크기·색·불투명도를 저장하고 렌더링 해석 규칙을 정합니다. 지원하지 않는 뷰어에서는 점군으로 폴백하며 메시나 지형 자산과 한 장면에 공존합니다. CesiumJS, Esri ArcGIS, Niantic Spatial의 Scaniverse, XGRIDS Lixel Cybercolor가 릴리스 후보를 구현 중이고 비준은 2026년 2분기 예정입니다. <b>3DGS 논문 발표(2023년 7월)부터 표준 확장까지 약 2년 반이 걸렸습니다.</b></p>
+  <p class="src">출처: <a href="https://www.ri.cmu.edu/pub_files/2011/1/2011-huber-e57-v3.pdf">Huber, E57 포맷 논문 (CMU)</a> <span class="chip ac">학술</span> · <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000418.shtml">미 의회도서관 LAS 기술서</a> <span class="chip td">제3자</span> · <a href="https://www.ogc.org/standards/3dtiles/">OGC 3D Tiles</a> <span class="chip st">표준</span> · <a href="https://www.ogc.org/standards/i3s/">OGC I3S</a> <span class="chip st">표준</span> · <a href="https://www.khronos.org/news/press/gltf-gaussian-splatting-press-release">Khronos 보도자료</a> <span class="chip st">표준</span></p>
+
+  <h3>01장이 남긴 것 네 가지</h3>
+  <div class="grid c2">
+    <div class="card"><span class="kicker">하나</span><h4>정밀도 수치는 조건과 함께 읽는다</h4><p>DJI L2의 5 cm는 실험실 조건값이고 NavVis VLX 3의 5 mm는 500 m² 전용 시험 환경에서 나왔습니다. 사양서는 출발점이지 결론이 아닙니다.</p></div>
+    <div class="card"><span class="kicker">둘</span><h4>관제점이 정밀도를 가른다</h4><p>NavVis 연구에서 관제점 유무가 평균 6 mm와 4 mm, 최대 18 mm와 14 mm를 갈랐습니다. 장비 등급을 올리는 것보다 기준점 작업을 제대로 하는 편이 나을 때가 있습니다.</p></div>
+    <div class="card"><span class="kicker">셋</span><h4>한 방식으로 끝나는 현장은 없다</h4><p>TLS는 정밀하지만 느리고, 핸드헬드는 빠르지만 표류하며, 360은 값싸지만 치수를 못 재고, 드론은 넓지만 실내에 못 들어갑니다. 도구 선택은 조합의 문제입니다.</p></div>
+    <div class="card"><span class="kicker">넷</span><h4>제품명과 소유 구조가 빠르게 바뀐다</h4><p>ContextCapture는 iTwin Capture가, RealityCapture는 RealityScan이 됐고, GeoSLAM과 HoloBuilder는 FARO 안으로 들어갔습니다. 자료의 날짜를 먼저 확인해야 합니다.</p></div>
+  </div>
+</section>

@@ -1,0 +1,248 @@
+<section id="adjacent">
+  <div class="sec-head"><span class="sec-num">04</span><h2>연계 기술 지도</h2></div>
+  <p class="q"><b>질문 4.</b> Reality Capture 기술과 연계할 수 있는 기술은 어떤 것이 있는가</p>
+
+  <p>연계 기술을 나열하기만 하면 목록은 길어지고 쓸모는 줄어듭니다. 그래서 이 장은 기술을 소개하는 대신 <b>파이프라인의 어느 지점에 무엇이 붙는가</b>를 축으로 삼습니다. 앞서 본 S1–S5가 그 축입니다.</p>
+
+  <figure>
+    <div class="fig-box wide">
+      <svg viewBox="0 0 760 330" role="img" aria-label="연계 기술 10가지가 파이프라인 S1에서 S5 중 어느 단계에 붙는지 보여주는 매핑 도표">
+        <rect x="178" y="26" width="106" height="20" fill="var(--sunk)" rx="2"></rect>
+        <rect x="290" y="26" width="106" height="20" fill="var(--sunk)" rx="2"></rect>
+        <rect x="402" y="26" width="106" height="20" fill="var(--sunk)" rx="2"></rect>
+        <rect x="514" y="26" width="106" height="20" fill="var(--sunk)" rx="2"></rect>
+        <rect x="626" y="26" width="106" height="20" fill="var(--sunk)" rx="2"></rect>
+        <text class="t-tick" x="231" y="40" text-anchor="middle">S1 계획·캡처</text>
+        <text class="t-tick" x="343" y="40" text-anchor="middle">S2 정합·처리</text>
+        <text class="t-tick" x="455" y="40" text-anchor="middle">S3 의미화</text>
+        <text class="t-tick" x="567" y="40" text-anchor="middle">S4 배포·활용</text>
+        <text class="t-tick" x="679" y="40" text-anchor="middle">S5 운영·갱신</text>
+
+        <line x1="284" y1="52" x2="284" y2="312" stroke="var(--rule-soft)" stroke-width="1"></line>
+        <line x1="396" y1="52" x2="396" y2="312" stroke="var(--rule-soft)" stroke-width="1"></line>
+        <line x1="508" y1="52" x2="508" y2="312" stroke="var(--rule-soft)" stroke-width="1"></line>
+        <line x1="620" y1="52" x2="620" y2="312" stroke="var(--rule-soft)" stroke-width="1"></line>
+
+        <text class="t-lab" x="170" y="70" text-anchor="end">표준 · 상호운용</text>
+        <rect x="178" y="60" width="554" height="12" fill="var(--near)" opacity="0.35" rx="2"></rect>
+        <text class="t-tick" x="455" y="70" text-anchor="middle" fill="var(--ink)">단계 사이 이음매 전체</text>
+
+        <text class="t-lab" x="170" y="96" text-anchor="end">클라우드 · 대용량</text>
+        <rect x="514" y="86" width="106" height="12" fill="var(--near)" rx="2"></rect>
+
+        <text class="t-lab" x="170" y="122" text-anchor="end">지리공간 · 좌표계</text>
+        <rect x="290" y="112" width="218" height="12" fill="var(--near)" rx="2"></rect>
+
+        <text class="t-lab" x="170" y="148" text-anchor="end">BIM · 디지털 트윈</text>
+        <rect x="402" y="138" width="330" height="12" fill="var(--near)" rx="2"></rect>
+
+        <text class="t-lab" x="170" y="174" text-anchor="end">SLAM · 센서 퓨전</text>
+        <rect x="178" y="164" width="218" height="12" fill="var(--near)" rx="2"></rect>
+        <text class="t-tick" x="287" y="174" text-anchor="middle" fill="var(--paper)">S1 ↔ S2 경계를 지움</text>
+
+        <text class="t-lab" x="170" y="200" text-anchor="end">컴퓨터 비전 · 딥러닝</text>
+        <rect x="290" y="190" width="218" height="12" fill="var(--near)" rx="2"></rect>
+
+        <text class="t-lab" x="170" y="226" text-anchor="end">IoT · 센서</text>
+        <rect x="626" y="216" width="106" height="12" fill="var(--near)" rx="2"></rect>
+
+        <text class="t-lab" x="170" y="252" text-anchor="end">XR — AR · VR</text>
+        <rect x="514" y="242" width="106" height="12" fill="var(--near)" rx="2"></rect>
+
+        <text class="t-lab" x="170" y="278" text-anchor="end">로보틱스</text>
+        <rect x="178" y="268" width="106" height="12" fill="var(--near)" rx="2"></rect>
+        <rect x="626" y="268" width="106" height="12" fill="var(--near)" rx="2"></rect>
+        <line x1="288" y1="274" x2="622" y2="274" stroke="var(--near)" stroke-width="1" stroke-dasharray="3 3"></line>
+        <text class="t-tick" x="455" y="266" text-anchor="middle">캡처를 반복 가능하게</text>
+
+        <text class="t-lab" x="170" y="304" text-anchor="end">생성형 AI — LLM · VLM</text>
+        <rect x="514" y="294" width="106" height="12" fill="var(--near)" rx="2"></rect>
+
+        <line x1="178" y1="316" x2="732" y2="316" stroke="var(--rule)" stroke-width="1"></line>
+      </svg>
+    </div>
+    <figcaption><span class="fig-label">그림 6</span><b>연계 기술 10가지의 연결 지점.</b> 막대가 걸친 칸이 그 기술이 붙는 단계입니다. 로보틱스는 S1에서 캡처를 대신하고 S5에서 반복 주기를 만들어, 사이를 점선으로 이었습니다. 배치는 04장 각 절의 “연결 지점” 서술을 그대로 옮긴 것입니다.</figcaption>
+  </figure>
+
+  <h3>파이프라인 다섯 단계</h3>
+  <div class="stage"><span class="sid">S1</span><div><h4>계획 · 캡처</h4><p>현장에서 센서로 원시 데이터를 얻는다 — 스캔 원본, 사진, 궤적 로그</p></div></div>
+  <div class="stage"><span class="sid">S2</span><div><h4>정합 · 처리</h4><p>여러 스테이션·경로의 데이터를 하나의 좌표계로 묶는다 — 통합 점군, 메시, 정사영상</p></div></div>
+  <div class="stage"><span class="sid">S3</span><div><h4>의미화 · 모델링</h4><p>점 덩어리에 이름을 붙여 객체로 만든다 — 분류된 점군, BIM/IFC 모델</p></div></div>
+  <div class="stage"><span class="sid">S4</span><div><h4>배포 · 활용</h4><p>사람과 시스템이 꺼내 쓴다 — 웹 뷰어, AR 중첩, 보고서</p></div></div>
+  <div class="stage"><span class="sid">S5</span><div><h4>운영 · 갱신</h4><p>반복 캡처로 모델을 살아 있게 유지한다 — 변화 이력, 자산 상태</p></div></div>
+
+  <h3>기술 열 가지</h3>
+
+  <h4>1 · BIM · 디지털 트윈 <span class="chip td">S3 → S5</span></h4>
+  <p>통합 점군이 들어가고 IFC 같은 객체 모델이 나옵니다. 그 모델이 준공 후에는 자산 대장이 되고, S5의 반복 캡처가 다시 그 모델을 갱신합니다. <b>Reality Capture의 출구이자 재입구입니다.</b></p>
+  <p>Open Design Alliance의 Scan-to-BIM SDK는 RCP/RCS, LAS, PTS, PCD, XYZ를 입력으로 받고 기하 기반과 ML 보조 두 갈래 분류 파이프라인을 씁니다. 다만 <b>아직 베타이고, 자동 방(room) 인식이나 대용량 점군 ML 지원은 2026년 로드맵 항목으로 남아 있습니다. 인식 대상이 바닥·벽·개구부·경사 지붕 네 종류뿐이라는 점을 놓치면 안 됩니다.</b> MEP 배관이나 구조 부재까지 자동으로 뽑는다는 주장은 벤더마다 편차가 크므로 따로 검증해야 합니다.</p>
+  <p>COBie는 장비 목록, 제품 문서, 보증, 예비품, 예방정비 일정을 준공 시점에 넘기기 위한 규격입니다. 미국 NBIMS-US는 2011년 COBie 2.26을 승인했고, 영국 BS 1192-4:2014는 실무 지침으로 다루며, 미국 GSA P-100(2017)은 자본 사업의 납품물로 요구합니다. <b>Reality Capture는 COBie의 “어디에 무엇이 있는가”를 실측으로 채워 주고, COBie는 점군에 없는 “그것이 무엇이며 언제 고쳐야 하는가”를 채웁니다.</b></p>
+  <p class="note"><b>AEC 관점.</b> Scan-to-BIM은 여전히 사람 손이 많이 듭니다. 자동화가 없애는 것은 모델링 전체가 아니라 <b>반복 트레이싱 구간</b>이고 검수는 남습니다. 이 구간을 어디까지 줄였느냐가 곧 업체 경쟁력입니다.</p>
+  <p class="src">출처: <a href="https://www.opendesign.com/products/scan-to-bim">ODA Scan-to-BIM SDK</a> <span class="chip vd">벤더</span> · <a href="https://en.wikipedia.org/wiki/COBie">COBie</a> <span class="chip td">제3자</span></p>
+
+  <h4>2 · 컴퓨터 비전 · 딥러닝 <span class="chip td">S2 → S3</span></h4>
+  <p>원시 스캔이 들어가고 라벨이 붙은 점·픽셀이 나옵니다. 1절의 Scan-to-BIM이 “자동”이라고 말할 때 <b>그 자동을 실제로 수행하는 엔진</b>이 여기입니다.</p>
+  <p>PointNet 계열이 출발점이지만 현장 데이터에 그대로 쓰기엔 규모가 걸립니다. RandLA-Net은 랜덤 샘플링에 지역 특징 집계 모듈을 붙여 <b>한 번에 100만 점</b>을 처리하며 기존 접근보다 <b>최대 200배 빠르다</b>고 보고했고, Semantic3D와 SemanticKITTI에서 당시 최고 성능을 넘었습니다. 현장 스캔 한 건이 수억 점인 것을 감안하면 <b>“정확도”보다 “한 번에 몇 점을 삼키는가”가 먼저 걸리는 제약</b>이라는 뜻입니다.</p>
+  <p>자동 정합 쪽은 다릅니다. 전통적 ICP는 초기 위치에 의존하고 지역 최적해에 빠지며, 학습 기반 정합이 이를 우회합니다. 다만 공개된 비교는 주로 ModelNet40 같은 합성·소규모 벤치마크에서 이뤄졌고, <b>실제 건설 현장의 부분 겹침·반복 패턴 조건에서 같은 우위가 유지되는지는 별도 검증이 필요합니다.</b> <span class="chip es">추정</span></p>
+  <p>점군만으로는 균열 폭이나 표면 결함을 잡기 어렵습니다. 같은 위치의 고해상도 사진에 결함 탐지 모델을 돌리고 그 결과를 점군 좌표에 다시 얹는 방식이 현실적이고, 상용 플랫폼도 이 방향으로 갑니다.</p>
+  <p class="note"><b>AEC 관점.</b> 학습 데이터가 병목입니다. 도로·플랜트처럼 객체가 정형적인 분야는 모델이 잘 붙지만, 현장마다 가설재와 자재 적치가 제각각인 건축 시공 현장은 라벨링 비용이 그대로 남습니다.</p>
+  <p class="src">출처: <a href="https://arxiv.org/abs/1911.11236">RandLA-Net</a> <span class="chip ac">학술</span> · <a href="https://www.bentley.com/software/itwin-capture-cloud-services/">Bentley iTwin Capture Cloud Services</a> <span class="chip vd">벤더</span></p>
+
+  <h4>3 · 생성형 AI — LLM · VLM <span class="chip td">S4</span></h4>
+  <p>이미 만들어진 점군·사진·모델이 들어가고 자연어 질의응답과 문서가 나옵니다. 2절이 데이터를 “구조화”한다면 이쪽은 구조화된 데이터를 <b>“말로 꺼내 쓰게”</b> 만듭니다.</p>
+  <p>3D Vision-Language Model은 3D 임베딩을 시각·텍스트 표현과 정렬해 제로샷 분류, 교차 모달 검색, 개방 어휘 인식을 가능하게 합니다. 2026년 9월 공개된 개관 논문은 언어로 유도하는 3D 가우시안 스플래팅, 3D 형상 생성, 로보틱스용 체화 AI까지 범위를 넓혀 잡습니다.</p>
+  <p>검사 이미지의 관심 영역에 표시를 얹어 멀티모달 LLM에 넘기는 Set-of-Mark 프롬프팅으로 시공 검사 보고서를 자동 작성한 사례가 ISARC 2024에 보고됐습니다. 결과는 <b>“검사 보고서의 기본 요건을 충족”하는 수준</b>이며, 어떤 모델을 썼는지는 초록에 없고 정량 결과도 제시되지 않았습니다. 그 표현을 그대로 읽는 편이 안전합니다.</p>
+  <p class="note"><b>성숙도 경고.</b> 무인 차량이 수집한 현장 정보로 검사 보고서를 만드는 AutoRepo 프레임워크는 arXiv 프리프린트가 2023년 12월 4일 <b>저자에 의해 철회</b>됐습니다. 철회 사유는 “현재 연구 방향과 결과에 대한 혼동이나 오해를 부를 수 있다”였습니다. 한 건을 분야 전체로 일반화할 수는 없지만, 프리프린트를 근거로 삼을 때는 인용 시점의 상태를 반드시 확인해야 한다는 점은 분명합니다.</p>
+  <p class="note"><b>AEC 관점.</b> 보고서 초안과 “이 층에서 설계와 다른 곳을 찾아 줘” 수준의 검색은 지금도 값이 나옵니다. 반대로 <b>수치 판정과 규정 준수 판단을 맡기기에는 근거 추적이 약합니다.</b> 사람이 서명할 문서에는 아직 초안 생성기로만 쓰는 편이 맞습니다.</p>
+  <p class="src">출처: <a href="https://arxiv.org/abs/2609.05583">3D VLM 개관, 2026-09</a> <span class="chip ac">학술</span> · <a href="http://www.iaarc.org/publications/2024_proceedings_of_the_41st_isarc_lille_france/automated_inspection_report_generation_using_multimodal_large_language_models_and_set-of-mark_prompting.html">ISARC 2024, Set-of-Mark</a> <span class="chip ac">학술</span> · <a href="https://arxiv.org/abs/2310.07944">AutoRepo (철회)</a> <span class="chip ac">학술</span></p>
+
+  <h4>4 · SLAM · 센서 퓨전 · 측위 <span class="chip td">S1 ↔ S2</span></h4>
+  <p>캡처와 정합 사이의 경계를 지우는 기술입니다. 고정식 스캐너는 찍고 나서 정합하지만, SLAM 장비는 걸어 다니는 동안 위치를 추정하며 정합을 끝냅니다. 대신 <b>누적 오차를 떠안습니다.</b></p>
+  <p>LiDAR 단독으로는 특징 없는 복도나 터널에서 미끄러지고, IMU 단독으로는 표류하며, GNSS는 실내에서 끊깁니다. <b>서로의 실패 구간이 다르므로 묶어서 씁니다.</b> Leica BLK ARC는 LiDAR SLAM, 비주얼 SLAM, IMU를 묶은 GrandSLAM으로 자율 주행과 캡처를 함께 수행한다고 설명합니다. 다만 같은 회사의 Spot 인증 보도자료 본문에는 GrandSLAM 언급이 없습니다.</p>
+  <p>루프 클로저는 같은 장소로 돌아왔음을 인식해 누적 오차를 한꺼번에 되돌리는 보정입니다. Scan Context, DBoW2 같은 장소 인식 기법을 붙이는 방식이 널리 쓰이지만 <span class="chip es">추정</span>, <b>반복 패턴이 많은 건물 내부는 거짓 루프 클로저를 유발해 오히려 모델을 뒤틀 수 있습니다.</b></p>
+  <p class="note"><b>AEC 관점.</b> 선택 기준은 정확도 단일 축이 아닙니다. <b>“3 mm가 필요한 구간은 고정식, 5 cm면 충분한 구간은 SLAM”</b>으로 현장을 나눠 잡는 판단이 실무의 핵심입니다. 그 판단을 하려면 오차가 어디서 생기는지를 알아야 하고, 그래서 SLAM은 장비 사용자도 원리 수준에서 이해해 둘 가치가 있습니다.</p>
+  <p class="src">출처: <a href="https://leica-geosystems.com/products/laser-scanners/scanners/leica-blk-arc">Leica BLK ARC</a> <span class="chip vd">벤더</span></p>
+
+  <h4>5 · 클라우드 · 대용량 데이터 <span class="chip td">S4</span></h4>
+  <p>수백 GB짜리 점군이 들어가고 브라우저에서 즉시 열리는 화면이 나옵니다. <b>Reality Capture가 “찍은 사람만 보는 데이터”에서 벗어나는 지점이 정확히 여기입니다.</b></p>
+  <p>전체를 내려받지 않고 화면에 보이는 만큼만 가져오는 구조가 관건입니다. Potree는 TU Wien에서 나온 무료 오픈소스 WebGL 점군 렌더러로, PotreeConverter가 만든 다중 해상도 옥트리를 씁니다. 뷰어는 처음에 메타데이터와 최저 해상도 루트 노드만 요청하고, 카메라가 다가가면 해당 노드를 추가로 받습니다. <b>Potree가 구현체라면 3D Tiles는 규격입니다.</b> 뷰어를 갈아탈 가능성이 있다면 규격 쪽에 데이터를 맞춰 두는 편이 안전합니다.</p>
+  <p>처리를 클라우드로 올리면 워크스테이션 투자에서 벗어나지만 저장·전송 비용이 새로 생깁니다. Cesium ion은 무료 Community 10 GB 저장·월 15 GB 스트리밍, Commercial 100 GB 저장·월 150 GB 스트리밍(개인 월 149달러, 팀 월 524달러), Premium 500 GB 저장·월 500 GB 스트리밍(개인 월 499달러, 팀 월 874달러)으로 구간이 나뉩니다. <b>현장 한 곳을 정밀 스캔하면 원본이 수백 GB를 넘기는 일이 흔합니다. 100 GB 구간은 생각보다 금방 찹니다.</b></p>
+  <p class="note"><b>AEC 관점.</b> 스캔 원본을 몇 년 보관할지부터 정해야 합니다. 준공 후 하자 분쟁이 나면 그때 필요한 것은 가공된 모델이 아니라 원본입니다. 반면 원본을 다 들고 있으면 비용이 계속 나갑니다. <b>보관 정책이 곧 비용 설계입니다.</b></p>
+  <p class="src">출처: <a href="https://github.com/potree/potree">Potree</a> <span class="chip ac">학술</span> · <a href="https://www.ogc.org/standards/3dtiles/">OGC 3D Tiles</a> <span class="chip st">표준</span> · <a href="https://cesium.com/platform/cesium-ion/pricing/">Cesium ion 가격</a> <span class="chip vd">벤더</span></p>
+
+  <h4>6 · XR — AR · VR <span class="chip td">S4</span></h4>
+  <p>점군이나 BIM 모델이 들어가고 현장에 겹쳐 보이는 화면이 나옵니다. 5절이 “화면에 띄우기”라면 이쪽은 <b>“실제 공간에 맞춰 띄우기”</b>이고, 추가로 필요한 것이 공간 앵커입니다.</p>
+  <p>Meta Horizon OS에서는 앵커를 만들고, 저장하고, 다시 찾고, 공유하는 생애주기를 지원합니다. 저장은 기기 로컬과 Meta 서버를 추상화한 계층 위에서 이뤄지며, 공유 앵커를 쓰면 같은 공간의 여러 사용자가 동일한 정렬을 유지합니다. <b>앱이 소유하는 Spatial Anchor와 시스템이 소유하는 Scene Anchor가 구분된다는 점도 실무에서 걸립니다. 가구·벽 정보는 앱이 고칠 수 없습니다.</b></p>
+  <p>visionOS 26은 위젯이 사용자의 공간에 자리 잡고 헤드셋을 다시 착용할 때마다 같은 자리에 나타나게 했고, 기기 공유 풀 관리와 Protected Content API 같은 기업용 기능을 함께 내놨습니다. 다만 이 발표문에 영속 공간 앵커가 명시돼 있지는 않습니다.</p>
+  <p class="note"><b>AEC 관점.</b> AR 현장 중첩의 병목은 헤드셋 성능이 아니라 <b>정렬 정확도와 장비 운용</b>입니다. 수 센티미터 어긋난 중첩은 오히려 오판을 부릅니다. 먼지·소음·안전모가 있는 현장에서 헤드셋을 쓸 수 있느냐도 별개 문제이고, 당분간은 태블릿 AR이 현실적인 선택지로 남을 공산이 큽니다. <span class="chip es">추정</span></p>
+  <p class="src">출처: <a href="https://developers.meta.com/horizon/documentation/unity/unity-spatial-anchors-overview/">Meta 공간 앵커</a> <span class="chip vd">벤더</span> · <a href="https://www.apple.com/newsroom/2025/06/visionos-26-introduces-powerful-new-spatial-experiences-for-apple-vision-pro/">visionOS 26</a> <span class="chip vd">벤더</span></p>
+
+  <h4>7 · 로보틱스 <span class="chip td">S1 → S5</span></h4>
+  <p>사람이 들고 다니던 스캐너를 로봇이 대신 들고, 그 결과 <b>일회성 캡처가 정기 캡처로 바뀝니다.</b> 5단계 순환을 실제로 돌게 만드는 장치입니다.</p>
+  <p>Trimble은 2021년 10월 19일 X7 3D 레이저 스캐너와 FieldLink를 Boston Dynamics Spot에 완전 통합한 솔루션을 발표했습니다. FieldLink에서 웨이포인트 경로를 미리 지정하면 Spot이 그 경로를 따라가며 스캔하고, 수집 임무는 정기 반복 실행하도록 예약할 수 있습니다. <b>널리 인용되는 “X7 2 mm 정확도” 수치는 이 보도자료 본문에 없습니다.</b> 다른 제품 자료에서 옮겨진 것으로 보여 이 리서치에서는 쓰지 않았습니다.</p>
+  <p>Leica Geosystems는 2024년 9월 24일 BLK ARC를 Spot용 첫 인증 리얼리티 캡처 장비로 발표했습니다. Spot 앱에서 레이저 스캐닝이 포함된 Autowalk를 시작하면 사람 개입 없이 실행됩니다.</p>
+  <p class="note"><b>로봇이 바꾸는 것은 정확도가 아니라 빈도입니다.</b> 사람이 하면 월 1회인 스캔이 로봇이 하면 주 1회 또는 야간 매일이 됩니다. 빈도가 올라가야 2절의 변화 탐지와 1절의 트윈 갱신이 비로소 의미를 갖습니다. 로보틱스는 단독 가치보다 <b>다른 기술을 작동시키는 가치</b>가 큽니다.</p>
+  <p class="note"><b>AEC 관점.</b> 시공 중 현장은 바닥이 매일 바뀌고 자재가 통로를 막습니다. 경로가 고정된 자율 반복 캡처가 가장 먼저 자리 잡은 곳이 시공 현장이 아니라 <b>플랜트·창고·데이터센터</b>인 이유가 여기 있습니다. 두 벤더가 공통으로 드는 용례도 그쪽입니다.</p>
+  <p class="src">출처: <a href="https://news.trimble.com/2021-10-19-Trimble-Releases-Turnkey-Autonomous-Robotic-Scanning-Solution">Trimble 보도자료</a> <span class="chip vd">벤더</span> · <a href="https://leica-geosystems.com/about-us/news-room/news-overview/2024/09/leica-blk-arc-now-the-first-certified-reality-capture-device-available-for-boston-dynamics-spot">Leica BLK ARC × Spot</a> <span class="chip vd">벤더</span></p>
+
+  <h4>8 · IoT · 센서 <span class="chip td">S5</span></h4>
+  <p>공간 데이터가 이미 있다는 전제 위에 시간 데이터를 얹습니다. <b>Reality Capture는 “어느 시점의 모양”을 주고, IoT 센서는 “그 사이에 무슨 일이 있었는가”를 줍니다. 둘을 합쳐야 원인을 봅니다.</b></p>
+  <p>진동·온습도·변형률 센서가 뱉는 것은 시계열 숫자뿐입니다. 숫자에 “3층 동측 보 중앙”이라는 위치가 붙어야 판단이 됩니다. 실측 모델이 그 위치 체계를 제공하고, 거꾸로 센서가 이상을 알리면 그 지점을 다시 스캔해 형상 변화를 확인하는 순서가 성립합니다.</p>
+  <p><b>비용 구조가 다릅니다.</b> 스캔은 1회 비용이 크고 이후가 쌉니다. 센서는 설치는 싸지만 통신·전원·교체가 계속 듭니다. 두 기술을 같은 예산 항목으로 묶으면 어느 한쪽이 먼저 잘려 나갑니다. <span class="chip es">추정</span></p>
+  <p class="note"><b>AEC 관점.</b> 신축 현장보다 <b>유지관리 자산</b>에서 값이 나옵니다. 교량·터널·댐처럼 접근이 어렵고 사고 비용이 큰 대상이 1순위입니다. 국내 시설물안전법 체계의 정기점검 업무와 접점이 크지만, 제도가 요구하는 산출물 형식과 트윈 데이터 형식이 아직 맞지 않습니다. <span class="chip es">추정</span></p>
+
+  <h4>9 · 지리공간(GIS) · 좌표계 <span class="chip td">S2 → S3</span></h4>
+  <p>이 절은 화려하지 않은데 <b>빠지면 나머지가 전부 어긋납니다.</b> 정합된 점군이 “지구 위 어디인가”를 얻는 단계이고, 여기서 틀리면 BIM 연계도 도시 규모 통합도 무너집니다.</p>
+  <p>지상 레이저 스캐닝 점군을 지심 좌표계로 옮길 때는 원점 3성분, 축척 1개, 회전각 3개의 7 파라미터 헬머트 변환을 쓰고 기준점 여러 개를 두고 최소제곱으로 풉니다. <span class="chip es">추정</span> <b>실무에서 사고가 나는 지점은 수평 좌표계보다 수직 기준면입니다. 타원체고와 표고를 섞으면 수십 미터가 어긋납니다.</b></p>
+  <p>IFC는 IfcProjectedCRS로 투영 좌표계를, IfcMapConversion으로 모델 좌표에서 지도 좌표로 가는 변환을 담습니다. Esri는 IFC 모델이 제대로 지리 참조되려면 IFCSite, IFCProjectedCRS, IFCMapConversion 세 엔티티가 모델 안에 있어야 한다고 안내합니다. 그런데 이것으로도 충분치 않다는 지적이 있습니다. Jaud, Clemen, Muhič, Borrmann(2022)은 IFC의 지리 참조 방식이 인프라·건축 산업 요구를 충족하지 못한다고 보고, 지리 좌표계를 지원하는 엔티티와 BIM 형상의 강체 변환을 담는 엔티티 두 개를 스키마에 추가할 것을 제안했습니다.</p>
+  <p class="note"><b>AEC 관점.</b> 국내는 중부원점 기반 TM 좌표계와 KGD2002/KGD2012 계열 기준계를 쓰고 사업마다 적용이 갈립니다. <b>스캔 발주 사양에 좌표계와 수직 기준면을 명시하지 않으면 납품 후 통합 단계에서 반드시 문제가 터집니다.</b> <span class="chip es">추정</span> 이 절은 기술 학습보다 <b>발주 문서 작성 역량</b>에 가깝습니다.</p>
+  <p class="src">출처: <a href="https://doc.arcgis.com/en/geobim/11.2/get-started/georeferencing-workflows.htm">Esri GeoBIM 지리참조</a> <span class="chip vd">벤더</span> · <a href="https://isprs-annals.copernicus.org/articles/X-4-W2-2022/145/2022/">Jaud 외, ISPRS Annals 2022</a> <span class="chip ac">학술</span></p>
+
+  <h4>10 · 표준 · 상호운용 <span class="chip td">전 단계</span></h4>
+  <p>표준은 파이프라인의 한 지점이 아니라 <b>단계 사이의 이음매</b>에 붙습니다. S2→S3의 이음매에 IFC가, S4의 이음매에 3D Tiles가, 여러 도구 사이 장면 교환에 USD가 놓입니다.</p>
+  <p>Alliance for OpenUSD는 2026년 3월 25일 Core Specification 1.0 비준 이후의 진척과 신규 회원 7곳(Aras, Booz Allen Hamilton, C-Infinity, Mobiltech, Qualcomm Technologies, SGDL Innovation, XGRIDS) 합류를 발표했습니다. <b>신규 회원 중 Mobiltech와 XGRIDS가 공간 스캐닝 쪽 회사라는 점은 USD가 Reality Capture 진영으로 넘어오고 있다는 신호로 읽힙니다.</b> <span class="chip es">추정</span></p>
+  <p class="note"><b>겹침을 어떻게 볼 것인가.</b> IFC, 3D Tiles, USD는 경쟁 관계가 아니라 층위가 다릅니다. <b>IFC는 의미를, 3D Tiles는 전송을, USD는 장면 조립을 맡습니다.</b> 어느 하나가 나머지를 대체한다는 서술을 만나면 누가 쓴 글인지부터 보는 편이 좋습니다.</p>
+  <p class="note"><b>AEC 관점.</b> 표준은 배우는 데 시간이 걸리고 당장 눈에 보이는 성과가 없어 늘 뒤로 밀립니다. 그러나 납품 데이터가 5년 뒤에도 열려야 하는 공공 발주에서는 <b>표준 준수가 곧 계약 조건</b>입니다. 기술 선택이 아니라 사업 조건으로 접근해야 합니다.</p>
+  <p class="src">출처: <a href="https://aousd.org/news/alliance-for-openusd-announces-new-member-milestone-industrial-momentum-and-core-specification-progress/">AOUSD 발표</a> <span class="chip st">표준</span> · <a href="https://en.wikipedia.org/wiki/COBie">COBie</a> <span class="chip td">제3자</span></p>
+
+  <h3 id="adjacent-value">조합 난이도 대비 가치</h3>
+  <p class="note"><b>주의.</b> 아래 성숙도·진입 난이도·기대 가치 세 축은 출처로 뒷받침되는 수치가 아니라 <b>작성자 판단</b>입니다 <span class="chip es">추정</span>. 1~10절의 근거 위에서 매겼고 기준은 — 성숙도는 현장 납품 사례가 있는가, 진입 난이도는 한 사람이 몇 달 안에 쓸 만한 수준에 닿는가(자본 투자 포함), 기대 가치는 건설·AEC 실무에서 지금 무엇이 달라지는가입니다.</p>
+
+  <figure>
+    <div class="fig-box wide">
+      <svg viewBox="0 0 760 412" role="img" aria-label="연계 기술의 성숙도 대 진입 난이도 산점도. 원 크기는 기대 가치">
+        <line x1="90" y1="30" x2="90" y2="340" stroke="var(--rule)" stroke-width="1"></line>
+        <line x1="90" y1="340" x2="716" y2="340" stroke="var(--rule)" stroke-width="1"></line>
+        <line x1="90" y1="211.4" x2="716" y2="211.4" stroke="var(--rule-soft)" stroke-width="1" stroke-dasharray="3 4"></line>
+        <line x1="395" y1="30" x2="395" y2="340" stroke="var(--rule-soft)" stroke-width="1" stroke-dasharray="3 4"></line>
+
+        <text class="t-tick" x="82" y="86" text-anchor="end">매우 높음</text>
+        <text class="t-tick" x="82" y="172" text-anchor="end">높음</text>
+        <text class="t-tick" x="82" y="258" text-anchor="end">중</text>
+        <text class="t-tick" x="82" y="301" text-anchor="end">낮음~중</text>
+        <text class="t-lab" x="16" y="190" transform="rotate(-90 16 190)" text-anchor="middle">성숙도 →</text>
+
+        <text class="t-tick" x="191.7" y="358" text-anchor="middle">낮음</text>
+        <text class="t-tick" x="293.3" y="358" text-anchor="middle">낮음~중</text>
+        <text class="t-tick" x="395" y="358" text-anchor="middle">중</text>
+        <text class="t-tick" x="598.3" y="358" text-anchor="middle">높음</text>
+        <text class="t-lab" x="403" y="378" text-anchor="middle">진입 난이도 →</text>
+
+        <text class="t-tick" x="100" y="46" fill="var(--near)">지금 손대면 손해 볼 일이 적은 영역</text>
+        <text class="t-tick" x="706" y="330" text-anchor="end" fill="var(--far)">투자가 크거나 아직 이른 영역</text>
+
+        <circle cx="395" cy="82.9" r="15.6" fill="var(--near)" opacity="0.28" stroke="var(--near)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="416" y="87">지리공간 · 좌표계</text>
+
+        <circle cx="191.7" cy="168.6" r="15.6" fill="var(--near)" opacity="0.28" stroke="var(--near)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="191.7" y="143" text-anchor="middle">표준 · 상호운용</text>
+
+        <circle cx="293.3" cy="168.6" r="15.6" fill="var(--near)" opacity="0.28" stroke="var(--near)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="293.3" y="200" text-anchor="middle">클라우드 · 대용량</text>
+
+        <circle cx="395" cy="168.6" r="18" fill="var(--near)" opacity="0.28" stroke="var(--near)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="395" y="140" text-anchor="middle">BIM · 디지털 트윈</text>
+
+        <circle cx="598.3" cy="168.6" r="14.4" fill="var(--near)" opacity="0.28" stroke="var(--near)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="598.3" y="143" text-anchor="middle">SLAM · 센서 퓨전</text>
+
+        <circle cx="598.3" cy="211.4" r="15.6" fill="var(--near)" opacity="0.28" stroke="var(--near)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="618" y="215">컴퓨터 비전 · 딥러닝</text>
+
+        <circle cx="395" cy="211.4" r="13.2" fill="var(--near)" opacity="0.28" stroke="var(--near)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="413" y="215">IoT · 센서</text>
+
+        <circle cx="395" cy="254.3" r="13.2" fill="var(--near)" opacity="0.28" stroke="var(--near)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="413" y="258">XR</text>
+
+        <circle cx="598.3" cy="254.3" r="14.4" fill="var(--near)" opacity="0.28" stroke="var(--near)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="618" y="258">로보틱스</text>
+
+        <circle cx="191.7" cy="297.1" r="13.2" fill="var(--far)" opacity="0.28" stroke="var(--far)" stroke-width="1.4"></circle>
+        <text class="t-lab" x="211" y="301">생성형 AI</text>
+
+        <g>
+          <text class="t-tick" x="90" y="398">원 크기 = 기대 가치</text>
+          <circle cx="238" cy="393" r="6.6" fill="none" stroke="var(--muted)" stroke-width="1"></circle>
+          <text class="t-tick" x="250" y="397">중</text>
+          <circle cx="292" cy="393" r="8.6" fill="none" stroke="var(--muted)" stroke-width="1"></circle>
+          <text class="t-tick" x="306" y="397">높음</text>
+          <circle cx="360" cy="393" r="10" fill="none" stroke="var(--muted)" stroke-width="1"></circle>
+          <text class="t-tick" x="374" y="397">매우 높음</text>
+        </g>
+      </svg>
+    </div>
+    <figcaption><span class="fig-label">그림 7</span><b>연계 기술의 성숙도 × 진입 난이도 × 기대 가치.</b> 세 축 모두 서열 척도이며 <b>작성자 판단</b>입니다 <span class="chip es">추정</span>. 왼쪽 위로 갈수록 “지금 손대면 손해 볼 일이 적은” 영역입니다. 생성형 AI만 다른 색인 이유는 진입이 가장 쉬운데 기대 가치의 편차가 가장 크기 때문입니다.</figcaption>
+  </figure>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>기술</th><th>연결 지점</th><th>성숙도</th><th>진입 난이도</th><th>기대 가치</th><th>판단 근거</th></tr></thead>
+      <tbody>
+        <tr><td>표준 · 상호운용</td><td>단계 사이 이음매 전체</td><td>높음</td><td>낮음</td><td>높음</td><td>규격 문서 읽기로 시작, 공공 발주 요건</td></tr>
+        <tr><td>클라우드 · 대용량</td><td>S4 배포</td><td>높음</td><td>낮음~중</td><td>높음</td><td>상용 서비스 성숙, 비용 설계가 관건</td></tr>
+        <tr><td>지리공간 · 좌표계</td><td>S2 → S3</td><td>매우 높음</td><td>중</td><td>높음</td><td>측량 기본기, 빠뜨리면 전부 어긋남</td></tr>
+        <tr><td>BIM · 디지털 트윈</td><td>S3 → S5</td><td>높음</td><td>중</td><td>매우 높음</td><td>Reality Capture의 출구, 이미 발주 요건</td></tr>
+        <tr><td>SLAM · 센서 퓨전</td><td>S1 ↔ S2</td><td>높음</td><td>높음</td><td>중~높음</td><td>장비 선택·정확도 판단의 근거</td></tr>
+        <tr><td>컴퓨터 비전 · 딥러닝</td><td>S2 → S3</td><td>중~높음</td><td>높음</td><td>높음</td><td>자동화의 실제 엔진, 학습 데이터가 병목</td></tr>
+        <tr><td>IoT · 센서</td><td>S5 운영</td><td>중~높음</td><td>중</td><td>중</td><td>유지관리 자산에 한정, 운영비 부담</td></tr>
+        <tr><td>XR</td><td>S4 배포</td><td>중</td><td>중</td><td>중</td><td>VR 리뷰는 지금, AR 정렬 정확도는 아직</td></tr>
+        <tr><td>로보틱스</td><td>S1 → S5</td><td>중</td><td>높음(자본)</td><td>중~높음</td><td>반복 캡처 빈도를 바꾸나 적용 시설 제한</td></tr>
+        <tr><td>생성형 AI (LLM · VLM)</td><td>S4 배포</td><td>낮음~중</td><td>낮음</td><td>중(변동 큼)</td><td>초안 생성은 즉시, 판정 위임은 시기상조</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p><b>읽는 법.</b> 표를 위에서부터 훑으면 “지금 손대면 손해 볼 일이 적은 것”이 위쪽에 옵니다. 표준·좌표계·클라우드 세 가지는 유행을 타지 않습니다. <b>십 년 뒤에도 IFC와 좌표계 지식은 값을 합니다.</b> 반대로 맨 아래 생성형 AI는 진입이 가장 쉬운데 기대 가치 편차가 가장 큽니다. 배우기 쉽다는 이유로 우선순위를 올리면 판단을 그르칩니다.</p>
+  <p><b>조합의 관점.</b> 표의 항목은 서로 독립적이지 않습니다. 로보틱스는 단독으로 값이 크지 않지만 반복 캡처 빈도를 올려 변화 탐지와 트윈 갱신을 작동시킵니다. 컴퓨터 비전은 BIM 연계가 없으면 라벨만 남습니다. <b>한 가지를 고를 때는 그것이 어느 조합의 부품인지를 함께 봐야 합니다.</b> 이 관점이 다음 장의 학습 로드맵으로 이어집니다.</p>
+
+  <details class="more">
+    <summary>04장이 답하지 못한 것</summary>
+    <ul>
+      <li>SHM(구조물 건전성 모니터링) 사례의 정량 결과는 원문 접근이 막혀 확인하지 못했습니다.</li>
+      <li>국내 좌표계·시설물 점검 제도 관련 서술은 국내 기준 원문을 확인하지 않은 <span class="chip es">추정</span>입니다.</li>
+      <li>변화 탐지 연구는 검색 요약 수준에서만 다뤘습니다. 개별 논문 검증이 필요합니다.</li>
+      <li>성숙도·난이도·가치 평가는 작성자 판단이며 조직 상황에 따라 순서가 바뀔 수 있습니다.</li>
+    </ul>
+  </details>
+</section>

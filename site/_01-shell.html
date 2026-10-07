@@ -1,0 +1,278 @@
+<title>Reality Capture 지형도</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Song+Myung&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --paper:#F1F4F0; --surface:#FAFCF8; --sunk:#E6EBE3;
+  --ink:#151C19; --muted:#5B6862; --faint:#8A9791;
+  --rule:#D2D9CF; --rule-soft:#E2E7DE;
+  --near:#1C6F68; --near-soft:#DCEDEA;
+  --far:#A84A19; --far-soft:#F5E6DB;
+  --chip-ink:#2B3833;
+  --shadow:0 1px 2px rgba(21,28,25,.06), 0 8px 24px -16px rgba(21,28,25,.25);
+  --display:"Song Myung", "Nanum Myeongjo", "Apple SD Gothic Neo", serif;
+  --body:"IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "Consolas", monospace;
+  --measure:72ch;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0E1311; --surface:#161C19; --sunk:#1D2420;
+    --ink:#E6EDE8; --muted:#95A49D; --faint:#71807A;
+    --rule:#2A332E; --rule-soft:#222A26;
+    --near:#5FCFC1; --near-soft:#14302C;
+    --far:#E0904F; --far-soft:#322214;
+    --chip-ink:#C9D6D0;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.8);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0E1311; --surface:#161C19; --sunk:#1D2420;
+  --ink:#E6EDE8; --muted:#95A49D; --faint:#71807A;
+  --rule:#2A332E; --rule-soft:#222A26;
+  --near:#5FCFC1; --near-soft:#14302C;
+  --far:#E0904F; --far-soft:#322214;
+  --chip-ink:#C9D6D0;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.8);
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--body); font-size:16px; line-height:1.78;
+  -webkit-font-smoothing:antialiased; word-break:keep-all; overflow-wrap:break-word;
+}
+h1,h2,h3,h4{text-wrap:balance; line-height:1.3; margin:0}
+a{color:var(--near); text-underline-offset:.2em; text-decoration-thickness:1px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--near); outline-offset:3px; border-radius:2px}
+hr{border:0; border-top:1px solid var(--rule); margin:0}
+
+/* ---------- layout ---------- */
+.wrap{display:grid; grid-template-columns:minmax(0,1fr); }
+@media (min-width:1000px){
+  .wrap{grid-template-columns:268px minmax(0,1fr); align-items:start}
+}
+.nav{
+  position:sticky; top:env(safe-area-inset-top,0px); z-index:20;
+  background:var(--surface); border-bottom:1px solid var(--rule);
+  padding:10px 16px; padding-block:10px;
+}
+@media (min-width:1000px){
+  .nav{
+    height:100vh; height:100dvh; overflow-y:auto; border-bottom:0; border-right:1px solid var(--rule);
+    padding:28px 20px 40px; padding-block:28px 40px;
+  }
+}
+.main{padding:0 16px 96px; padding-block:0 96px; min-width:0}
+.col{max-width:var(--measure); margin-inline:auto}
+@media (min-width:1000px){ .main{padding-inline:48px} }
+
+.nav-brand{font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); margin-bottom:2px}
+.nav-title{font-family:var(--display); font-size:19px; line-height:1.25; margin-bottom:14px}
+.nav-list{list-style:none; margin:0; padding:0; display:none}
+@media (min-width:1000px){ .nav-list{display:block} }
+.nav-list.open{display:block}
+.nav-list li{margin:0}
+.nav-list a{
+  display:grid; grid-template-columns:2.3em 1fr; gap:.2em; align-items:baseline;
+  padding:5px 0; color:var(--muted); text-decoration:none; font-size:14px; line-height:1.45;
+  border-bottom:1px solid transparent;
+}
+.nav-list a:hover{color:var(--ink)}
+.nav-list a .n{font-family:var(--mono); font-size:11px; color:var(--faint)}
+.nav-sub{margin-left:2.3em !important; font-size:13px !important; color:var(--faint) !important; display:block !important; padding:3px 0 !important}
+.nav-toggle{
+  display:inline-flex; gap:.5em; align-items:center; background:none; border:1px solid var(--rule);
+  color:var(--muted); font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+  padding:5px 10px; border-radius:2px; cursor:pointer;
+}
+@media (min-width:1000px){ .nav-toggle{display:none} }
+.nav-foot{margin-top:22px; padding-top:14px; border-top:1px solid var(--rule); font-size:12px; color:var(--faint); line-height:1.6; display:none}
+@media (min-width:1000px){ .nav-foot{display:block} }
+
+/* ---------- masthead ---------- */
+.mast{padding-block:56px 40px; border-bottom:1px solid var(--rule)}
+.eyebrow{font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--far); margin-bottom:14px}
+.mast h1{font-family:var(--display); font-size:clamp(34px,7vw,58px); line-height:1.12; letter-spacing:-.01em}
+.mast .lede{margin-top:20px; font-size:17px; color:var(--muted); max-width:58ch}
+.meta-row{display:flex; flex-wrap:wrap; gap:8px 22px; margin-top:26px; font-family:var(--mono); font-size:11.5px; color:var(--faint); letter-spacing:.04em}
+
+/* ---------- sections ---------- */
+section{padding-block:52px; border-bottom:1px solid var(--rule-soft)}
+section:last-of-type{border-bottom:0}
+.sec-head{display:flex; align-items:baseline; gap:.75em; margin-bottom:6px}
+.sec-num{font-family:var(--mono); font-size:12px; color:var(--far); letter-spacing:.1em; flex:none}
+h2{font-family:var(--display); font-size:clamp(25px,4.4vw,34px)}
+h3{font-size:19px; font-weight:600; margin-top:38px; letter-spacing:-.005em}
+h4{font-size:16px; font-weight:600; margin-top:26px; color:var(--ink)}
+.q{
+  font-size:14px; color:var(--muted); margin:14px 0 0; padding:12px 16px;
+  background:var(--sunk); border-left:2px solid var(--near); border-radius:0 3px 3px 0;
+}
+p{margin:14px 0}
+ul,ol{margin:14px 0; padding-left:1.3em}
+li{margin:6px 0}
+li::marker{color:var(--faint)}
+strong{font-weight:600}
+
+/* ---------- chips ---------- */
+.chip{
+  display:inline-block; font-family:var(--mono); font-size:10.5px; line-height:1.5;
+  letter-spacing:.06em; padding:1px 6px; border-radius:2px; border:1px solid var(--rule);
+  color:var(--chip-ink); background:var(--surface); vertical-align:.12em; white-space:nowrap;
+}
+.chip.ac{border-color:var(--near); color:var(--near)}
+.chip.vd{border-color:var(--far); color:var(--far)}
+.chip.td{border-color:var(--rule); color:var(--muted)}
+.chip.st{border-color:var(--chip-ink); color:var(--chip-ink); background:var(--sunk)}
+.chip.pb{border-color:var(--chip-ink); color:var(--chip-ink); background:var(--sunk)}
+.chip.es{border-style:dashed; border-color:var(--faint); color:var(--faint)}
+.legend{display:flex; flex-wrap:wrap; gap:10px 16px; margin:18px 0 0; padding:0; list-style:none; font-size:13px; color:var(--muted)}
+.legend li{margin:0; display:flex; gap:.5em; align-items:baseline}
+
+/* ---------- source line ---------- */
+.src{font-size:12.5px; color:var(--faint); line-height:1.6; margin:8px 0 0}
+.src a{color:var(--muted); text-decoration-color:var(--rule)}
+.src a:hover{color:var(--near)}
+
+/* ---------- cards ---------- */
+.grid{display:grid; gap:14px; margin-top:22px}
+.grid.c2{grid-template-columns:repeat(auto-fit,minmax(248px,1fr))}
+.grid.c3{grid-template-columns:repeat(auto-fit,minmax(198px,1fr))}
+.card{background:var(--surface); border:1px solid var(--rule); border-radius:3px; padding:18px 18px 20px}
+.card h4{margin-top:0}
+.card p{margin:8px 0 0; font-size:14.5px; color:var(--muted)}
+.card .kicker{font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--far); display:block; margin-bottom:8px}
+
+/* stage cards: no border, rule-led instead */
+.stage{display:grid; grid-template-columns:3.4em 1fr; gap:0 14px; padding:14px 0; border-top:1px solid var(--rule-soft)}
+.stage:last-child{border-bottom:1px solid var(--rule-soft)}
+.stage .sid{font-family:var(--mono); font-size:12px; color:var(--near); padding-top:.28em}
+.stage h4{margin:0; font-size:15.5px}
+.stage p{margin:4px 0 0; font-size:14px; color:var(--muted)}
+
+/* ---------- tables ---------- */
+.tbl-wrap{overflow-x:auto; margin:22px 0; border:1px solid var(--rule); border-radius:3px; background:var(--surface)}
+table{border-collapse:collapse; width:100%; min-width:560px; font-size:13.5px; font-variant-numeric:tabular-nums}
+th,td{text-align:left; padding:9px 13px; border-bottom:1px solid var(--rule-soft); vertical-align:top; line-height:1.6}
+thead th{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--faint); font-weight:500; background:var(--sunk); border-bottom:1px solid var(--rule); white-space:nowrap;
+}
+tbody tr:last-child td{border-bottom:0}
+td.num{text-align:right; font-family:var(--mono); font-size:12.5px}
+
+/* ---------- figures ---------- */
+figure{margin:32px 0; padding:0}
+.fig-box{background:var(--surface); border:1px solid var(--rule); border-radius:3px; padding:18px 14px 14px; overflow-x:auto}
+.fig-box svg{display:block; width:100%; height:auto; min-width:0; max-width:100%}
+.fig-box.wide svg{min-width:560px}
+figcaption{margin-top:10px; font-size:12.5px; color:var(--faint); line-height:1.65}
+figcaption b{color:var(--muted); font-weight:600}
+.fig-label{font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--far); display:block; margin-bottom:2px}
+svg text{font-family:var(--mono); fill:var(--muted)}
+svg .t-ink{fill:var(--ink); font-family:var(--body)}
+svg .t-lab{fill:var(--muted); font-size:11px}
+svg .t-tick{fill:var(--faint); font-size:10px}
+svg .t-hd{fill:var(--ink); font-size:12px; font-weight:500}
+
+/* ---------- timeline ---------- */
+.tl{list-style:none; margin:26px 0 0; padding:0; position:relative}
+.tl::before{content:""; position:absolute; left:calc(4.6em + 4px); top:6px; bottom:6px; width:1px; background:var(--rule)}
+.tl li{display:grid; grid-template-columns:4.6em 1fr; gap:0 24px; padding:9px 0; position:relative}
+.tl .yr{font-family:var(--mono); font-size:12px; color:var(--far); padding-top:.2em; text-align:right}
+.tl li::after{
+  content:""; position:absolute; left:4.6em; top:1.05em; width:9px; height:9px;
+  background:var(--paper); border:1.5px solid var(--near); border-radius:50%; transform:translateX(0);
+}
+.tl li.major::after{background:var(--near)}
+.tl .ev{font-size:14.5px}
+.tl .why{display:block; font-size:13px; color:var(--faint); margin-top:2px}
+
+/* ---------- bottleneck chain ---------- */
+.bn{margin:22px 0; border-left:2px solid var(--far); padding:2px 0 2px 16px; background:linear-gradient(90deg,var(--far-soft),transparent 60%)}
+.bn p{margin:6px 0; font-size:14.5px}
+.bn .lab{font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--far)}
+
+/* ---------- pipeline callout ---------- */
+.pipe{font-family:var(--mono); font-size:12.5px; color:var(--muted); background:var(--sunk); padding:10px 13px; border-radius:3px; margin:12px 0 0; line-height:1.7}
+.pipe b{color:var(--near); font-weight:500}
+
+/* ---------- glossary ---------- */
+.gl{margin-top:26px}
+.gl-group{margin-top:28px}
+.gl-group > h3{margin-top:0; padding-bottom:6px; border-bottom:1px solid var(--rule)}
+.gl-item{padding:11px 0; border-bottom:1px solid var(--rule-soft)}
+.gl-item dt{font-weight:600; font-size:15px}
+.gl-item dd{margin:3px 0 0; font-size:14px; color:var(--muted)}
+dl{margin:0}
+.gl-filter{
+  width:100%; max-width:320px; font-family:var(--body); font-size:14px; padding:8px 12px;
+  border:1px solid var(--rule); border-radius:3px; background:var(--surface); color:var(--ink); margin-top:18px;
+}
+.gl-filter::placeholder{color:var(--faint)}
+
+/* ---------- misc ---------- */
+.note{font-size:13.5px; color:var(--muted); background:var(--sunk); border-radius:3px; padding:14px 16px; margin:22px 0}
+.note b{color:var(--ink)}
+.kpi{display:flex; flex-wrap:wrap; gap:26px 40px; margin:24px 0 0}
+.kpi div{min-width:110px}
+.kpi .v{font-family:var(--mono); font-size:26px; color:var(--near); line-height:1.1; font-variant-numeric:tabular-nums}
+.kpi .k{font-size:12.5px; color:var(--faint); margin-top:5px}
+.tag-row{display:flex; flex-wrap:wrap; gap:6px; margin:10px 0 0}
+details.more{margin-top:14px; border-top:1px solid var(--rule-soft); padding-top:10px}
+details.more summary{cursor:pointer; font-family:var(--mono); font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--far); list-style:none}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary::before{content:"+ "; }
+details.more[open] summary::before{content:"− "; }
+.foot{padding-block:44px 0; font-size:13px; color:var(--faint); line-height:1.75}
+.foot a{color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{animation:none !important; transition:none !important}}
+</style>
+
+<div class="wrap">
+<nav class="nav" aria-label="목차">
+  <div class="nav-brand">리서치 노트 · 2026</div>
+  <div class="nav-title">Reality Capture 지형도</div>
+  <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navList">목차 열기</button>
+  <ul class="nav-list" id="navList">
+    <li><a href="#summary"><span class="n">00</span><span>다섯 질문 요약</span></a></li>
+    <li><a href="#pipeline"><span class="n">—</span><span>S1–S5 파이프라인</span></a></li>
+    <li><a href="#tools"><span class="n">01</span><span>도구 지형도</span></a></li>
+    <li><a href="#tools-map" class="nav-sub">취득 방식 8종 지도</a></li>
+    <li><a href="#tools-precision" class="nav-sub">정밀도 비교</a></li>
+    <li><a href="#history"><span class="n">02</span><span>역사와 진행 방향</span></a></li>
+    <li><a href="#history-chain" class="nav-sub">병목 → 돌파 사슬</a></li>
+    <li><a href="#history-timeline" class="nav-sub">연표</a></li>
+    <li><a href="#usecases"><span class="n">03</span><span>현재의 쓰임새</span></a></li>
+    <li><a href="#usecases-limits" class="nav-sub">한계와 실패 요인</a></li>
+    <li><a href="#adjacent"><span class="n">04</span><span>연계 기술 지도</span></a></li>
+    <li><a href="#adjacent-value" class="nav-sub">난이도 대비 가치</a></li>
+    <li><a href="#roadmap"><span class="n">05</span><span>학습 로드맵</span></a></li>
+    <li><a href="#roadmap-t" class="nav-sub">T자형 조합</a></li>
+    <li><a href="#glossary"><span class="n">부록</span><span>용어집</span></a></li>
+    <li><a href="#method"><span class="n">부록</span><span>출처 원칙</span></a></li>
+  </ul>
+  <div class="nav-foot">
+    작성일 2026-09-21<br>최종수정일 2026-10-07<br>
+    원본 마크다운은 저장소 <span style="font-family:var(--mono)">docs/</span>에 있습니다.
+  </div>
+</nav>
+
+<main class="main">
+<div class="col">
+
+<header class="mast">
+  <div class="eyebrow">Reality Capture 심층 리서치 · 2026</div>
+  <h1>현실을 숫자로<br>바꾸는 기술의 지형도</h1>
+  <p class="lede">사진측량에서 라이다, SLAM, 가우시안 스플래팅까지. 다섯 개의 연구 질문에 답하기 위해 쓴 여섯 편의 문서를 한 장으로 묶었습니다. <b>전 산업을 훑되 건설·AEC를 주 렌즈로 삼습니다.</b></p>
+  <div class="meta-row">
+    <span>작성일 2026-09-21</span>
+    <span>최종수정일 2026-10-07</span>
+    <span>원문 6편 · 약 1,900행</span>
+    <span>모든 출처 확인일 2026-09-21</span>
+  </div>
+</header>
